@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 
 name: Microchip Technology
-title: Bootloader application examples using serial memory
+title: Microchip MPLAB Harmony SERIAL MEMORY Bootloader Applications help
 lang: en-US
 timezone: America/Phoenix
 
-description: Bootloader application examples using serial memory
+description: Harmony 3 SERIAL MEMORY Bootloader Applications package
 url: "https://microchip-mplab-harmony.github.io"
 baseurl: "/bootloader_apps_serial_memory"
 remote_theme: "Microchip-MPLAB-Harmony/just-the-docs@mchp-harmony"
@@ -92,7 +92,7 @@ exclude:
 aux_links:
 #  "See me on GitHub":
 #  "{% octicon mark-github %}":
-#    - "//github.com/Microchip-MPLAB-Harmony/aerospace"
+#    - "//github.com/Microchip-MPLAB-Harmony/bootloader_apps_serial_memory"
   "Obtain Support from Microchip":
     - "https://support.microchip.com"
 

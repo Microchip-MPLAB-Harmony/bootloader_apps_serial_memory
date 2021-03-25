@@ -15,3 +15,5 @@
 *.ico binary
 *.elf binary
 *.bin binary
+*.jpg binary
+*.gif binary
