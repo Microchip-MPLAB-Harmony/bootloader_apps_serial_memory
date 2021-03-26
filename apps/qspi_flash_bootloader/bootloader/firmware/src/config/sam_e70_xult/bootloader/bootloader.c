@@ -1,0 +1,603 @@
+/*******************************************************************************
+  QSPI Bootloader Source File
+
+  File Name:
+    bootloader.c
+
+  Summary:
+    This file contains source code necessary to execute QSPI bootloader.
+
+  Description:
+    This file contains source code necessary to execute QSPI bootloader.
+    It implements bootloader protocol which uses QSPI peripheral to download
+    application firmware into internal flash from QSPI Flash Memory.
+ *******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *******************************************************************************/
+// DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Include Files
+// *****************************************************************************
+// *****************************************************************************
+
+#include <string.h>
+#include "definitions.h"
+#include <device.h>
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+
+#define FLASH_START             (0x00400000UL)
+#define FLASH_LENGTH            (0x00200000UL)
+#define PAGE_SIZE               (512UL)
+#define ERASE_BLOCK_SIZE        (8192UL)
+#define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
+#define DATA_SIZE               ERASE_BLOCK_SIZE
+
+#define BOOTLOADER_SIZE         8192
+
+#define APP_START_ADDRESS       (0x402000UL)
+
+#define APP_UPDATE_REQUIRED         (0xFFFFFFFFU)
+#define APP_CLEAR_UPDATE_REQUIRED   (0x00000000U)
+
+#define APP_META_DATA_PROLOGUE      (0xDEADBEEFU)
+#define APP_META_DATA_EPILOGUE      (0xBEEFDEADU)
+#define APP_META_DATA_CLR           (0xFFFFFFFFU)
+
+typedef enum
+{
+    BOOTLOADER_STATE_INIT = 0,
+
+    BOOTLOADER_STATE_OPEN_DRIVER,
+
+    BOOTLOADER_STATE_GEOMETRY_GET,
+
+    BOOTLOADER_STATE_GET_METADATA,
+
+    BOOTLOADER_STATE_CHECK_UPDATE,
+
+    BOOTLOADER_STATE_CHECK_TRIGGER,
+
+    BOOTLOADER_STATE_RUN_APPLICATION,
+
+    BOOTLOADER_STATE_READ_APP_BINARY,
+
+    BOOTLOADER_STATE_READ_WAIT,
+
+    BOOTLOADER_STATE_FLASH,
+
+    BOOTLOADER_STATE_VERIFY_BINARY,
+
+    BOOTLOADER_STATE_UPDATE_META_DATA,
+
+    BOOTLOADER_STATE_UPDATE_WAIT,
+
+    BOOTLOADER_STATE_ERROR
+
+} BOOTLOADR_STATES;
+
+typedef enum
+{
+    /* Transfer being processed */
+    SERIAL_MEM_TRANSFER_BUSY,
+
+    /* Transfer is successfully completed*/
+    SERIAL_MEM_TRANSFER_COMPLETED,
+
+    /* Transfer had error*/
+    SERIAL_MEM_TRANSFER_ERROR_UNKNOWN,
+
+} SERIAL_MEM_TRANSFER_STATUS;
+
+/*
+ Summary:
+    Memory Device Geometry Table.
+
+ Description:
+    This Data Structure is used by Bootloader to get
+    the geometry details.
+
+    The Serial Memory attached to bootloader needs to fill in
+    this data structure when GEOMETRY_GET is called.
+
+ Remarks:
+    None.
+*/
+typedef struct
+{
+    uint32_t read_blockSize;
+    uint32_t read_numBlocks;
+    uint32_t numReadRegions;
+
+    uint32_t write_blockSize;
+    uint32_t write_numBlocks;
+    uint32_t numWriteRegions;
+
+    uint32_t erase_blockSize;
+    uint32_t erase_numBlocks;
+    uint32_t numEraseRegions;
+
+    uint32_t blockStartAddress;
+
+} SERIAL_MEM_GEOMETRY;
+
+/* Structure to store the Meta Data of the application binary for bootloader
+ * Note: The order of the members should not be changed
+ */
+typedef struct
+{
+    /* Used to Validate the Meta Data itself*/
+    uint32_t prologue;
+
+    /* Flag to indicate if a firmware update is required
+     * 0xFFFFFFFF --> Update Required. Set by QSPI programmer after programming
+     *                the image in QSPI memory
+     * 0x00000000 --> Update Completed. Changed by bootloader after programming
+     *                the image from QSPI to internal flash
+     */
+    uint32_t isAppUpdateRequired;
+
+    /* Application Start address */
+    uint32_t appStartAddress;
+
+    /* Size of the application binary */
+    uint32_t appSize;
+
+    /* CRC32 value for the application binary */
+    uint32_t appCRC32;
+
+    /* Used to Validate the Meta Data itself*/
+    uint32_t epilogue;
+
+} APP_META_DATA;
+
+typedef struct
+{
+    BOOTLOADR_STATES state;
+
+    DRV_HANDLE handle;
+
+    SERIAL_MEM_GEOMETRY geometry;
+
+    uint32_t read_index;
+
+    uint32_t serialFlashStart;
+
+    uint32_t serialFlashSize;
+
+    uint32_t appMetaDataAddress;
+
+    uint32_t flash_addr;
+
+    uint32_t appStartAddress;
+
+    uint32_t crc32;
+
+} BOOTLOADER_DATA;
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Global objects
+// *****************************************************************************
+// *****************************************************************************
+
+APP_META_DATA CACHE_ALIGN appMetaData;
+
+BOOTLOADER_DATA CACHE_ALIGN btlData =
+{
+    .state              = BOOTLOADER_STATE_INIT,
+    .flash_addr         = APP_START_ADDRESS,
+    .appStartAddress    = APP_START_ADDRESS,
+};
+
+static uint32_t CACHE_ALIGN clearUpdateRequired[DRV_SST26_PAGE_SIZE / sizeof(uint32_t)];
+
+static uint8_t CACHE_ALIGN flash_data[DATA_SIZE];
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Bootloader Local Functions
+// *****************************************************************************
+// *****************************************************************************
+
+static void bootloader_TriggerReset(void)
+{
+    NVIC_SystemReset();
+}
+
+void run_Application(void)
+{
+    uint32_t msp            = *(uint32_t *)(btlData.appStartAddress);
+    uint32_t reset_vector   = *(uint32_t *)(btlData.appStartAddress + 4);
+
+    if (msp == 0xffffffff)
+    {
+        return;
+    }
+
+    __set_MSP(msp);
+
+    asm("bx %0"::"r" (reset_vector));
+}
+
+/* Function to Generate CRC by reading the firmware programmed into internal flash */
+static uint32_t crc_generate(void)
+{
+    uint32_t   i, j, value;
+    uint32_t   crc_tab[256];
+    uint32_t   size    = appMetaData.appSize;
+    uint32_t   crc     = 0xffffffff;
+    uint8_t    data;
+
+    for (i = 0; i < 256; i++)
+    {
+        value = i;
+
+        for (j = 0; j < 8; j++)
+        {
+            if (value & 1)
+            {
+                value = (value >> 1) ^ 0xEDB88320;
+            }
+            else
+            {
+                value >>= 1;
+            }
+        }
+        crc_tab[i] = value;
+    }
+
+    for (i = 0; i < size; i++)
+    {
+        data = *(uint8_t *)(btlData.appStartAddress + i);
+        crc = crc_tab[(crc ^ data) & 0xff] ^ (crc >> 8);
+    }
+    return crc;
+}
+
+static bool BOOTLOADER_WaitForXferComplete( void )
+{
+    bool status = false;
+
+    SERIAL_MEM_TRANSFER_STATUS transferStatus = SERIAL_MEM_TRANSFER_ERROR_UNKNOWN;
+
+    do
+    {
+        transferStatus = DRV_SST26_TransferStatusGet(btlData.handle);
+
+    } while (transferStatus == SERIAL_MEM_TRANSFER_BUSY);
+
+    if(transferStatus == SERIAL_MEM_TRANSFER_COMPLETED)
+    {
+        status = true;
+    }
+
+    return status;
+}
+
+static bool BOOTLOADER_GetMetaData( void )
+{
+    bool status = false;
+
+    btlData.serialFlashStart    = btlData.geometry.blockStartAddress;
+
+    btlData.serialFlashSize     = (btlData.geometry.read_blockSize * btlData.geometry.read_numBlocks);
+
+    btlData.appMetaDataAddress  = ((btlData.serialFlashStart + btlData.serialFlashSize) - btlData.geometry.erase_blockSize);
+
+    if (DRV_SST26_Read(btlData.handle, (uint32_t *)&appMetaData, sizeof(appMetaData), btlData.appMetaDataAddress) != true)
+    {
+        return false;
+    }
+
+    status = BOOTLOADER_WaitForXferComplete();
+
+    return status;
+}
+
+static bool BOOTLOADER_CheckForUpdate( void )
+{
+    bool status = false;
+
+    /* Check if Meta Data has expected prologue and epilogue before update
+     * When meta Data is in Reset State or corrupted jump to existing
+     * application running in internal flash.
+    */
+    if ((appMetaData.prologue == APP_META_DATA_PROLOGUE) &&
+        (appMetaData.epilogue == APP_META_DATA_EPILOGUE) &&
+        (appMetaData.appSize  != 0))
+    {
+        if (appMetaData.isAppUpdateRequired == APP_UPDATE_REQUIRED)
+        {
+            status = true;
+        }
+
+        btlData.flash_addr      = appMetaData.appStartAddress;
+        btlData.appStartAddress = appMetaData.appStartAddress;
+    }
+    else
+    {
+        btlData.flash_addr      = APP_START_ADDRESS;
+        btlData.appStartAddress = APP_START_ADDRESS;
+    }
+
+    return status;
+}
+
+static bool BOOTLOADER_UpdateMetaData( void )
+{
+    bool status = false;
+
+    memset((void *)clearUpdateRequired, 0xFF, sizeof(clearUpdateRequired));
+
+    /* Read existing Meta Data to Perform Read-Modify-Write */
+    if (DRV_SST26_Read(btlData.handle, clearUpdateRequired, sizeof(appMetaData), btlData.appMetaDataAddress) == false)
+    {
+        return status;
+    }
+
+    if (BOOTLOADER_WaitForXferComplete() == false)
+    {
+        return status;
+    }
+
+    /* Clear the Update required field (btlData.appMetaDataAddress + 4)  */
+    clearUpdateRequired[1] = APP_CLEAR_UPDATE_REQUIRED;
+
+    /* Only Update the "isUpdatRequired" field of meta data to indicate the update is completed.
+     * No Need to Erase before Write as the "isUpdatRequired" location is already in Erased State (0xFFFFFFFF)
+     */
+    status = DRV_SST26_PageWrite(btlData.handle, (uint32_t *)clearUpdateRequired, btlData.appMetaDataAddress);
+
+    if (status == true)
+    {
+        status = BOOTLOADER_WaitForXferComplete();
+    }
+
+    return status;
+}
+
+
+static void BOOTLOADER_ReleaseResources(void)
+{
+}
+
+/* Function to program received application firmware data into internal flash */
+static void flash_task(void)
+{
+    uint32_t addr       = btlData.flash_addr;
+    uint32_t page       = 0;
+    uint32_t write_idx  = 0;
+
+    // Lock region size is always bigger than the row size
+    EFC_RegionUnlock(addr);
+
+    while(EFC_IsBusy() == true)
+    {
+
+    }
+
+    /* Erase the Current sector */
+    EFC_SectorErase(addr);
+
+    while(EFC_IsBusy() == true)
+    {
+
+    }
+
+    for (page = 0; page < PAGES_IN_ERASE_BLOCK; page++)
+    {
+        EFC_PageWrite((uint32_t *)&flash_data[write_idx], addr);
+
+        while(EFC_IsBusy() == true)
+        {
+
+        }
+
+        addr        += PAGE_SIZE;
+        write_idx   += PAGE_SIZE;
+    }
+
+    btlData.flash_addr += DATA_SIZE;
+}
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Bootloader Global Functions
+// *****************************************************************************
+// *****************************************************************************
+
+bool __WEAK bootloader_Trigger(void)
+{
+    /* Function can be overriden with custom implementation */
+    return false;
+}
+
+void bootloader_Tasks ( void )
+{
+    /* Check the application's current state. */
+    switch ( btlData.state )
+    {
+        case BOOTLOADER_STATE_INIT:
+        {
+            if (DRV_SST26_Status(DRV_SST26_INDEX) == SYS_STATUS_READY)
+            {
+                btlData.state = BOOTLOADER_STATE_OPEN_DRIVER;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_OPEN_DRIVER:
+        {
+            btlData.handle = DRV_SST26_Open(DRV_SST26_INDEX, DRV_IO_INTENT_READWRITE);
+
+            if (btlData.handle != DRV_HANDLE_INVALID)
+            {
+                btlData.state = BOOTLOADER_STATE_GEOMETRY_GET;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_GEOMETRY_GET:
+        {
+            if (DRV_SST26_GeometryGet(btlData.handle, (DRV_SST26_GEOMETRY *)&btlData.geometry) != true)
+            {
+                btlData.state = BOOTLOADER_STATE_ERROR;
+                break;
+            }
+
+            btlData.state = BOOTLOADER_STATE_GET_METADATA;
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_GET_METADATA:
+        {
+            if (BOOTLOADER_GetMetaData() == true)
+            {
+                btlData.state = BOOTLOADER_STATE_CHECK_UPDATE;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_RUN_APPLICATION;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_CHECK_UPDATE:
+        {
+            if (BOOTLOADER_CheckForUpdate() == true)
+            {
+                btlData.state = BOOTLOADER_STATE_READ_APP_BINARY;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_CHECK_TRIGGER;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_CHECK_TRIGGER:
+        {
+            if (bootloader_Trigger() == true)
+            {
+                btlData.state = BOOTLOADER_STATE_READ_APP_BINARY;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_RUN_APPLICATION;
+            }
+                
+            break;
+        }
+
+        case BOOTLOADER_STATE_RUN_APPLICATION:
+        {
+            BOOTLOADER_ReleaseResources();
+
+            run_Application();
+            break;
+        }
+
+        case BOOTLOADER_STATE_READ_APP_BINARY:
+        {
+            memset((void *)flash_data, 0xFF, DATA_SIZE);
+
+            if (DRV_SST26_Read(btlData.handle, (uint32_t *)&flash_data[0], DATA_SIZE, (btlData.serialFlashStart + btlData.read_index)) == false)
+            {
+                btlData.state = BOOTLOADER_STATE_ERROR;
+                break;
+            }
+
+            if (BOOTLOADER_WaitForXferComplete() == true)
+            {
+                btlData.state = BOOTLOADER_STATE_FLASH;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_ERROR;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_FLASH:
+        {
+            flash_task();
+
+            btlData.read_index += DATA_SIZE;
+
+            if (btlData.read_index >= appMetaData.appSize)
+            {
+                btlData.state = BOOTLOADER_STATE_VERIFY_BINARY;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_READ_APP_BINARY;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_VERIFY_BINARY:
+        {
+            btlData.crc32 = crc_generate();
+
+            if (btlData.crc32 == appMetaData.appCRC32)
+            {
+                btlData.state = BOOTLOADER_STATE_UPDATE_META_DATA;
+            }
+            else
+            {
+                btlData.state = BOOTLOADER_STATE_ERROR;
+            }
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_UPDATE_META_DATA:
+        {
+            BOOTLOADER_UpdateMetaData();
+
+            bootloader_TriggerReset();
+
+            break;
+        }
+
+        case BOOTLOADER_STATE_ERROR:
+        default:
+            break;
+    }
+}
