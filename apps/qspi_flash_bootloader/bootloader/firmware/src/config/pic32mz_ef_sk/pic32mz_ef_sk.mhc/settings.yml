@@ -1,0 +1,14 @@
+configName: pic32mz_ef_sk
+folderName: pic32mz_ef_sk
+format_version: v1.0
+frameworkPath: ..\..\..\..\..\..\harmony_3
+processor: PIC32MZ2048EFH144
+projectName: sqi_bootloader_pic32mz_ef_sk
+settings:
+  PackageFilter: bootloader;bootloader_apps_can;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_serial_memory;bootloader_apps_uart;bootloader_apps_usb;bsp;core;csp;net;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\PIC32MZ-EF_DFP\1.3.58\atdf\PIC32MZ2048EFH144.atdf
