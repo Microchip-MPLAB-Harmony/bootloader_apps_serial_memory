@@ -1,0 +1,47 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: sqi1}
+children:
+- type: Symbols
+  children:
+  - type: Comment
+    attributes: {id: SQI_CLK_DIV_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '*** SQI Clock Frequency Is Set To 50000000 for REFCLK2
+            Frequency At 50000000'}
+  - type: Combo
+    attributes: {id: SQI_LANE_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sqi1, value: QUAD}
+  - type: Combo
+    attributes: {id: SQI_STATTYPE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sqi1, value: QUAD}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: SQI1_SQI}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: drv_sst26}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: drv_sst26_SQI_dependency}
+- type: ElementPosition
+  attributes: {x: '21', y: '190', id: sqi1}
