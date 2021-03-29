@@ -1,0 +1,14 @@
+configName: sam_d21_xpro
+folderName: sam_d21_xpro
+format_version: v1.0
+frameworkPath: ..\..\..\..
+processor: ATSAMD21J18A
+projectName: i2c_eeprom_bootloader_sam_d21_xpro
+settings:
+  PackageFilter: bootloader;bootloader_apps_can;bootloader_apps_ethernet;bootloader_apps_i2c;bootloader_apps_sdcard;bootloader_apps_serial_memory;bootloader_apps_uart;bootloader_apps_usb;bsp;core;csp;net;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMD21_DFP\3.4.116\samd21a\atdf\ATSAMD21J18A.atdf
