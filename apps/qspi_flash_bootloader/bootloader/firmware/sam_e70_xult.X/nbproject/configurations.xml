@@ -315,12 +315,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../qspi_programmer_app/firmware/sam_e70_xult.X"
+          <makeArtifact PL="../../../programmer_app/firmware/sam_e70_xult.X"
                         CT="1"
                         CN="sam_e70_xult"
                         AC="true"
                         BL="true"
-                        WD="../../../qspi_programmer_app/firmware/sam_e70_xult.X"
+                        WD="../../../programmer_app/firmware/sam_e70_xult.X"
                         BC="${MAKE}  -f Makefile CONF=sam_e70_xult"
                         DBC="${MAKE}  -f Makefile CONF=sam_e70_xult TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/sam_e70_xult&quot; &quot;dist/sam_e70_xult&quot;"

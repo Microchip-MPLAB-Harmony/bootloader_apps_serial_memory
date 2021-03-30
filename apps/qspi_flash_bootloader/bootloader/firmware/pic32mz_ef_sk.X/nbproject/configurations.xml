@@ -170,12 +170,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../qspi_programmer_app/firmware/pic32mz_ef_sk.X"
+          <makeArtifact PL="../../../programmer_app/firmware/pic32mz_ef_sk.X"
                         CT="1"
                         CN="pic32mz_ef_sk"
                         AC="true"
                         BL="true"
-                        WD="../../../qspi_programmer_app/firmware/pic32mz_ef_sk.X"
+                        WD="../../../programmer_app/firmware/pic32mz_ef_sk.X"
                         BC="${MAKE}  -f Makefile CONF=pic32mz_ef_sk"
                         DBC="${MAKE}  -f Makefile CONF=pic32mz_ef_sk TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/pic32mz_ef_sk&quot; &quot;dist/pic32mz_ef_sk&quot;"

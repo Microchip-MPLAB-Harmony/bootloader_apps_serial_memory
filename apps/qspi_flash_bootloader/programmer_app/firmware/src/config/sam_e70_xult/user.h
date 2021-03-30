@@ -45,7 +45,7 @@
 #define USER_H
 
 #include "bsp/bsp.h"
-#include "sys/kmem.h"
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -60,39 +60,34 @@ extern "C" {
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
-#define LED_ON()                LED3_On()
-#define LED_OFF()               LED3_Off()
-#define LED_TOGGLE()            LED3_Toggle()
+#define LED_ON()                LED1_On()
+#define LED_OFF()               LED1_Off()
+#define LED_TOGGLE()            LED1_Toggle()
 
-#define SWITCH_GET()            SWITCH1_Get()
-#define SWITCH_PRESSED          SWITCH1_STATE_PRESSED
+// The On-Board switch cannot be used as it is shared with QSPI Chip Select pin
+#define SWITCH_GET()            1
+#define SWITCH_PRESSED          0
 
-#define FLASH_START             (0x9d000000UL)
-#define FLASH_LENGTH            (0x200000UL)
-#define PAGE_SIZE               (2048UL)
-#define ERASE_BLOCK_SIZE        (16384UL)
+#define FLASH_START             (0x00400000UL)
+#define FLASH_LENGTH            (0x00200000UL)
+#define PAGE_SIZE               (512UL)
+#define ERASE_BLOCK_SIZE        (8192UL)
 #define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
-#define APP_TIMER_START         CORETIMER_Start
-#define APP_TIMER_DelayMs       CORETIMER_DelayMs
+#define APP_TIMER_START         SYSTICK_TimerStart
+#define APP_TIMER_DelayMs       SYSTICK_DelayMs
 
-#define UART_FUNC(OP)           (UART2_ ## OP)
+#define UART_FUNC(OP)           (USART1_ ## OP)
 
-#define UART_EVENT              UART_EVENT
-#define UART_EVENT_READ_ERROR   UART_EVENT_READ_ERROR
-#define UART_ERROR_NONE         UART_ERROR_NONE
+#define INPUT_EVENT             USART_EVENT
+#define INPUT_EVENT_READ_ERROR  USART_EVENT_READ_ERROR
+#define INPUT_ERROR_NONE        USART_ERROR_NONE
 
 #define USE_HW_CRC_GEN          false
 
 static inline void APP_SystemReset( void )
 {
-    /* Perform system unlock sequence */ 
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
-
-    RSWRSTSET = _RSWRST_SWRST_MASK;
-    (void)RSWRST;
+    NVIC_SystemReset();
 }
 
 

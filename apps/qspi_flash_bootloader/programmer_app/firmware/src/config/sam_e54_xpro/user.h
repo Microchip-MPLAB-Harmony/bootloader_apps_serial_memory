@@ -46,7 +46,6 @@
 
 #include "bsp/bsp.h"
 
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -60,16 +59,15 @@ extern "C" {
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
-#define LED_ON()                LED1_On()
-#define LED_OFF()               LED1_Off()
-#define LED_TOGGLE()            LED1_Toggle()
+#define LED_ON()                LED_On()
+#define LED_OFF()               LED_Off()
+#define LED_TOGGLE()            LED_Toggle()
 
-// The On-Board switch cannot be used as it is shared with QSPI Chip Select pin
-#define SWITCH_GET()            1
-#define SWITCH_PRESSED          0
+#define SWITCH_GET()            SWITCH_Get()
+#define SWITCH_PRESSED          SWITCH_STATE_PRESSED
 
-#define FLASH_START             (0x00400000UL)
-#define FLASH_LENGTH            (0x00200000UL)
+#define FLASH_START             (0UL)
+#define FLASH_LENGTH            (1048576UL)
 #define PAGE_SIZE               (512UL)
 #define ERASE_BLOCK_SIZE        (8192UL)
 #define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
@@ -77,13 +75,13 @@ extern "C" {
 #define APP_TIMER_START         SYSTICK_TimerStart
 #define APP_TIMER_DelayMs       SYSTICK_DelayMs
 
-#define UART_FUNC(OP)           (USART1_ ## OP)
+#define UART_FUNC(OP)           (SERCOM2_USART_ ## OP)
 
-#define UART_EVENT              USART_EVENT
-#define UART_EVENT_READ_ERROR   USART_EVENT_READ_ERROR
-#define UART_ERROR_NONE         USART_ERROR_NONE
+#define INPUT_EVENT             SERCOM_USART_EVENT
+#define INPUT_EVENT_READ_ERROR  SERCOM_USART_EVENT_READ_ERROR
+#define INPUT_ERROR_NONE        USART_ERROR_NONE
 
-#define USE_HW_CRC_GEN          false
+#define USE_HW_CRC_GEN          true
 
 static inline void APP_SystemReset( void )
 {

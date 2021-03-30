@@ -78,9 +78,9 @@ extern "C" {
 
 #define UART_FUNC(OP)           (UART2_ ## OP)
 
-#define UART_EVENT              UART_EVENT
-#define UART_EVENT_READ_ERROR   UART_EVENT_READ_ERROR
-#define UART_ERROR_NONE         UART_ERROR_NONE
+#define INPUT_EVENT             UART_EVENT
+#define INPUT_EVENT_READ_ERROR  UART_EVENT_READ_ERROR
+#define INPUT_ERROR_NONE        UART_ERROR_NONE
 
 #define USE_HW_CRC_GEN          false
 
