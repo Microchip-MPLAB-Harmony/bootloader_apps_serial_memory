@@ -225,7 +225,7 @@ static T_APP_INPUT_STATUS command_Task( uint8_t command )
 // *****************************************************************************
 // *****************************************************************************
 
-void usart_ReadEventHandler( UART_EVENT event, uintptr_t context )
+void usart_ReadEventHandler( INPUT_EVENT event, uintptr_t context )
 {
     uint32_t idx                    = 0;
     static uint32_t bytes_read      = 0;
@@ -236,9 +236,9 @@ void usart_ReadEventHandler( UART_EVENT event, uintptr_t context )
     uint8_t input_data[12]          = {0};
     uint8_t *byte_buf               = (uint8_t *)&app_input_buffer[0];
 
-    if(event == UART_EVENT_READ_ERROR)
+    if(event == INPUT_EVENT_READ_ERROR)
     {
-        if(UART_FUNC(ErrorGet)() != UART_ERROR_NONE)
+        if(UART_FUNC(ErrorGet)() != INPUT_ERROR_NONE)
         {
             /* ErrorGet clears errors, set error flag to notify to the application */
             app_input.error_status = true;
