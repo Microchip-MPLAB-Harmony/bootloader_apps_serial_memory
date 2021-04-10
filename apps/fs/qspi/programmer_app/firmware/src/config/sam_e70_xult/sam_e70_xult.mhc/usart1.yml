@@ -1,0 +1,99 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: usart1}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: '81'}
+  - type: Comment
+    attributes: {id: USART_BAUD_WARNING}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: USART_CLOCK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: '150000000'}
+  - type: File
+    attributes: {id: USART_HEADER1}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/usart_6089/templates/plib_usart.h.ftl}
+  - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: USART_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: '0'}
+  - type: KeyValueSet
+    attributes: {id: USART_OPERATING_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: '0'}
+  - type: Boolean
+    attributes: {id: USART_RING_BUFFER_MODE_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: 'false'}
+  - type: File
+    attributes: {id: USART_SOURCE1}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/usart_6089/templates/plib_usart.c.ftl}
+  - type: Integer
+    attributes: {id: USART_SPI_BRG_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: usart1, value: '150'}
+- type: Attachments
+  children:
+  - type: DirectCapability
+    attributes: {id: USART1_UART}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: stdio}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: UART}
+- type: ElementPosition
+  attributes: {x: '4', y: '375', id: usart1}
