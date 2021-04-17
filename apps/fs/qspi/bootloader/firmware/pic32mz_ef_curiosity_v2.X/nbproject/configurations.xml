@@ -234,12 +234,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../programmer_app/firmware/pic32mz_ef_curiosity_v2.X"
+          <makeArtifact PL="../../../app_programmer/firmware/pic32mz_ef_curiosity_v2.X"
                         CT="1"
                         CN="pic32mz_ef_curiosity_v2"
                         AC="true"
                         BL="true"
-                        WD="../../../programmer_app/firmware/pic32mz_ef_curiosity_v2.X"
+                        WD="../../../app_programmer/firmware/pic32mz_ef_curiosity_v2.X"
                         BC="${MAKE}  -f Makefile CONF=pic32mz_ef_curiosity_v2"
                         DBC="${MAKE}  -f Makefile CONF=pic32mz_ef_curiosity_v2 TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/pic32mz_ef_curiosity_v2&quot; &quot;dist/pic32mz_ef_curiosity_v2&quot;"

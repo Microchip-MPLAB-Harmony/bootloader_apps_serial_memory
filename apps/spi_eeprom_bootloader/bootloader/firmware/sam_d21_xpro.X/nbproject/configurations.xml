@@ -298,12 +298,12 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../programmer_app/firmware/sam_d21_xpro.X"
+          <makeArtifact PL="../../../app_programmer/firmware/sam_d21_xpro.X"
                         CT="1"
                         CN="sam_d21_xpro"
                         AC="true"
                         BL="true"
-                        WD="../../../programmer_app/firmware/sam_d21_xpro.X"
+                        WD="../../../app_programmer/firmware/sam_d21_xpro.X"
                         BC="${MAKE}  -f Makefile CONF=sam_d21_xpro"
                         DBC="${MAKE}  -f Makefile CONF=sam_d21_xpro TYPE_IMAGE=DEBUG_RUN"
                         CC="rm -rf &quot;build/sam_d21_xpro&quot; &quot;dist/sam_d21_xpro&quot;"

@@ -12,7 +12,7 @@
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
-                <make-dep-project>../../../programmer_app/firmware/pic32mz_w1_curiosity.X</make-dep-project>
+                <make-dep-project>../../../app_programmer/firmware/pic32mz_w1_curiosity.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
