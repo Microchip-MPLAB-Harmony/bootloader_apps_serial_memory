@@ -4,9 +4,24 @@ attributes: {id: serial_mem_bootloader}
 children:
 - type: Symbols
   children:
+  - type: Setting
+    attributes: {id: BOOTLOADER_XC32_LINKER_PREPROC_MARCOS}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: value}
+        children:
+        - {type: Value, value: ROM_LENGTH=0x2000;RAM_ORIGIN=0x20400000;RAM_LENGTH=0x60000}
   - type: String
     attributes: {id: BTL_SIZE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
