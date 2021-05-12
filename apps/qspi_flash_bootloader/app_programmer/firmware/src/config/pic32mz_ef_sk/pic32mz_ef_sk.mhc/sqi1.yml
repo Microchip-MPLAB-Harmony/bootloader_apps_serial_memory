@@ -14,9 +14,24 @@ children:
         children:
         - {type: Value, value: '*** SQI Clock Frequency Is Set To 50000000 for REFCLK2
             Frequency At 50000000'}
+  - type: Boolean
+    attributes: {id: SQI_FLASH_STATUS_CHECK}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
   - type: Combo
     attributes: {id: SQI_LANE_MODE}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
