@@ -1296,6 +1296,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Setting
+    attributes: {id: XC32_LINKER_PREPROC_MARCOS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
   - type: KeyValueSet
     attributes: {id: clkSvcMode}
     children:

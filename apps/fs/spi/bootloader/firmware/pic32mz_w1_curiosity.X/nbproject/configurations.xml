@@ -6,19 +6,19 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_w1_curiosity" projectFiles="true">
-          <logicalFolder name="f3" displayName="bootloader" projectFiles="true">
+          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/pic32mz_w1_curiosity/bootloader/bootloader.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_w1_curiosity/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="memory" projectFiles="true">
+          <logicalFolder name="f3" displayName="driver" projectFiles="true">
+            <logicalFolder name="f1" displayName="memory" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/drv_memory.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/drv_memory_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/src/drv_memory_local.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
+            <logicalFolder name="f2" displayName="sst26" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/sst26/drv_sst26.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/sst26/src/drv_sst26_local.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/driver/sst26/drv_sst26_definitions.h</itemPath>
@@ -26,43 +26,43 @@
             <itemPath>../src/config/pic32mz_w1_curiosity/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/pic32mz_w1_curiosity/osal/osal.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/pic32mz_w1_curiosity/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="cache" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache_pic32mz.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="clk" projectFiles="true">
+            <logicalFolder name="f2" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="gpio" projectFiles="true">
+            <logicalFolder name="f4" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="nvm" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/nvm/plib_nvm.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="spi" projectFiles="true">
+            <logicalFolder name="f6" displayName="spi" projectFiles="true">
               <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
                 <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/spi/spi_master/plib_spi1_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="system" projectFiles="true">
-            <logicalFolder name="f5" displayName="cache" projectFiles="true">
+          <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="debug" projectFiles="true">
+            <logicalFolder name="f2" displayName="debug" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="fs" projectFiles="true">
+            <logicalFolder name="f3" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
                 <logicalFolder name="f1" displayName="file_system" projectFiles="true">
                   <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/file_system/ff.h</itemPath>
@@ -78,11 +78,11 @@
               <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs_media_manager_local.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/sys_fs_fat_interface.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="int" projectFiles="true">
+            <logicalFolder name="f4" displayName="int" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="ports" projectFiles="true">
+            <logicalFolder name="f5" displayName="ports" projectFiles="true">
               <itemPath>../src/config/pic32mz_w1_curiosity/system/ports/sys_ports.h</itemPath>
               <itemPath>../src/config/pic32mz_w1_curiosity/system/ports/sys_ports_mapping.h</itemPath>
             </logicalFolder>
@@ -102,93 +102,9 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
-      <itemPath>../src/config/pic32mz_w1_curiosity/btl.ld</itemPath>
-    </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="pic32mz_w1_curiosity" projectFiles="true">
-          <logicalFolder name="f4" displayName="bootloader" projectFiles="true">
-            <itemPath>../src/config/pic32mz_w1_curiosity/bootloader/bootloader.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/pic32mz_w1_curiosity/bsp/bsp.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="memory" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/src/drv_memory.c</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/src/drv_memory_file_system.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/driver/sst26/src/drv_sst26.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache_local.h</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache.c</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache_pic32mz.S</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/clk/plib_clk.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="evic" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/evic/plib_evic.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="gpio" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/gpio/plib_gpio.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="nvm" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/nvm/plib_nvm.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="spi" projectFiles="true">
-              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/spi/spi_master/plib_spi1_master.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/pic32mz_w1_curiosity/stdio/xc32_monitor.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f6" displayName="system" projectFiles="true">
-            <logicalFolder name="f3" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/system/cache/sys_cache.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="fs" projectFiles="true">
-              <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
-                <logicalFolder name="f1" displayName="file_system" projectFiles="true">
-                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/file_system/ff.c</itemPath>
-                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
-                </logicalFolder>
-                <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
-                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
-                </logicalFolder>
-              </logicalFolder>
-              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs.c</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs_media_manager.c</itemPath>
-              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs_fat_interface.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="int" projectFiles="true">
-              <itemPath>../src/config/pic32mz_w1_curiosity/system/int/src/sys_int.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <itemPath>../src/config/pic32mz_w1_curiosity/initialization.c</itemPath>
-          <itemPath>../src/config/pic32mz_w1_curiosity/interrupts.c</itemPath>
-          <itemPath>../src/config/pic32mz_w1_curiosity/exceptions.c</itemPath>
-          <itemPath>../src/config/pic32mz_w1_curiosity/system_pmu_mldo_trim.c</itemPath>
-          <itemPath>../src/config/pic32mz_w1_curiosity/tasks.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
-                   projectFiles="false">
+                   projectFiles="true">
       <logicalFolder name="f1"
                      displayName="pic32mz_w1_curiosity.mhc"
                      projectFiles="true">
@@ -209,6 +125,90 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_w1_curiosity/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <itemPath>../src/config/pic32mz_w1_curiosity/btl.ld</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_w1_curiosity" projectFiles="true">
+          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
+            <itemPath>../src/config/pic32mz_w1_curiosity/bootloader/bootloader.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/pic32mz_w1_curiosity/bsp/bsp.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="driver" projectFiles="true">
+            <logicalFolder name="f1" displayName="memory" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/src/drv_memory.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity/driver/memory/src/drv_memory_file_system.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="sst26" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/driver/sst26/src/drv_sst26.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/cache/plib_cache_pic32mz.S</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="clk" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/clk/plib_clk.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="evic" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/evic/plib_evic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f4" displayName="gpio" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/gpio/plib_gpio.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="nvm" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/nvm/plib_nvm.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="spi" projectFiles="true">
+              <logicalFolder name="f1" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_w1_curiosity/peripheral/spi/spi_master/plib_spi1_master.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f5" displayName="stdio" projectFiles="true">
+            <itemPath>../src/config/pic32mz_w1_curiosity/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/system/cache/sys_cache.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="fs" projectFiles="true">
+              <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
+                <logicalFolder name="f1" displayName="file_system" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/file_system/ff.c</itemPath>
+                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="f2" displayName="hardware_access" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs_media_manager.c</itemPath>
+              <itemPath>../src/config/pic32mz_w1_curiosity/system/fs/src/sys_fs_fat_interface.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="int" projectFiles="true">
+              <itemPath>../src/config/pic32mz_w1_curiosity/system/int/src/sys_int.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/pic32mz_w1_curiosity/initialization.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity/interrupts.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity/exceptions.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity/system_pmu_mldo_trim.c</itemPath>
+          <itemPath>../src/config/pic32mz_w1_curiosity/tasks.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
+    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -223,11 +223,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>3.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MZ-W_DFP" vendor="Microchip" version="1.3.177"/>
+        <pack name="PIC32MZ-W_DFP" vendor="Microchip" version="1.4.193"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -285,13 +285,14 @@
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
         <property key="make-warnings-into-errors" value="true"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="optimization-level" value="-O2"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value=""/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -323,6 +324,7 @@
       </C32-AS>
       <C32-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
@@ -404,6 +406,7 @@
         <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
       <PICkit3PlatformTool>
@@ -489,7 +492,6 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
@@ -509,6 +511,32 @@
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="true"/>
       </PKOBSKDEPlatformTool>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="10000000-100fffff"/>
+        <property key="memories.userotp" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="true"/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
