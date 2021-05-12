@@ -1,0 +1,78 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.bootloader_apps_serial_memory_i2c_eeprom_bootloader_sam_d21_xpro",
+		"version": "3.1.0",
+		"displayName": "I2C EEPROM Bootloader Example for SAM D21/DA1 Family",
+		"projectName": "i2c_eeprom_bootloader_sam_d21_xpro",
+		"shortDescription": "This example application shows how to use the Serial Memory Bootloader Library to bootload an application from I2C EEPROM (AT24) to Internal Flash.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.00.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.7.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD21J18A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit",
+				"SAM D21 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony",
+				"Bootloader",
+				"I2C EEPROM"
+			],
+			[
+				"Bootloader",
+				"I2C EEPROM"
+			]
+		],
+		"peripherals": [
+			"Bootloader"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"Bootloader",
+			"I2C EEPROM",
+			"ATSAMD21J18A",
+			"SAM D21/DA1 Family"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
