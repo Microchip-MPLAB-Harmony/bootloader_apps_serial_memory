@@ -34,6 +34,12 @@ children:
   - type: KeyValueSet
     attributes: {id: SPI_MSTR_MODE_EN}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -41,6 +47,12 @@ children:
   - type: KeyValueSet
     attributes: {id: SPI_SPICON_MSSEN}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: readOnly}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
