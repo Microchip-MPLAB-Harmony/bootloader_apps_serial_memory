@@ -62,12 +62,11 @@ PROVIDE(_min_stack_size = 0x400) ;
  * The SFR definitions are now provided in a processor-specific *.S
  * assembly source file rather than the processor.o file. Use the new
  * .S file rather than this processor.o file for new projects. MPLAB XC32
- * v2.10 and later will automatically link the new .S file. When using * this linker script with an older MPLAB XC32 version, remove the
- * OPTIONAL() line below and add the pic32mx/lib/proc/<device>.S file
- * to your project.
+ * v2.10 and later will automatically link the new .S file.
  *************************************************************************/
+#if defined(__XC32_VERSION__) && (__XC32_VERSION__ < 2100)
 OPTIONAL("processor.o")
-
+#endif
 
 /*************************************************************************
  * Vector-offset initialization
@@ -81,7 +80,12 @@ OPTIONAL("vector_offset_init.o")
  *   xc32-gcc src.c -Wl,--defsym=_ebase_address=0x9D001000
  *************************************************************************/
 PROVIDE(_vector_spacing = 0x0001);
-PROVIDE(_ebase_address = 0x9D001000);
+PROVIDE(_ebase_address = 0x9D000000);
+
+/* Place the vector table and other exceptions after the device reset and
+ * cache init code.
+ */
+PROVIDE(_ebase_vector_offsets = 0x1000);
 
 /*************************************************************************
  * Memory Address Equates
@@ -92,10 +96,10 @@ PROVIDE(_ebase_address = 0x9D001000);
  * _CACHE_ERR_EXCPT_ADDR          -- Cache-error Exception Vector
  * _GEN_EXCPT_ADDR                -- General Exception Vector
  *************************************************************************/
-_RESET_ADDR                    = 0x9D000000;
-_SIMPLE_TLB_REFILL_EXCPT_ADDR  = _ebase_address + 0;
-_CACHE_ERR_EXCPT_ADDR          = _ebase_address + 0x100;
-_GEN_EXCPT_ADDR                = _ebase_address + 0x180;
+_RESET_ADDR                    = 0xBD000000;
+_SIMPLE_TLB_REFILL_EXCPT_ADDR  = _ebase_address + _ebase_vector_offsets + 0;
+_CACHE_ERR_EXCPT_ADDR          = _ebase_address + _ebase_vector_offsets + 0x100;
+_GEN_EXCPT_ADDR                = _ebase_address + _ebase_vector_offsets + 0x180;
 
 /*************************************************************************
  * Memory Regions
@@ -112,8 +116,8 @@ MEMORY
 {
     /* All C files will be located here */
     kseg0_program_mem  (rx) : ORIGIN = 0x9D001000, LENGTH = 0x200000 - 0x1000
-    kseg1_boot_mem          : ORIGIN = 0x9D000000, LENGTH = 0x480
-    kseg1_boot_mem_4B0      : ORIGIN = 0x9D0004B0, LENGTH = 0x1000 - 0x4B0
+    kseg1_boot_mem          : ORIGIN = 0xBD000000, LENGTH = 0x480
+    kseg1_boot_mem_4B0      : ORIGIN = 0xBD0004B0, LENGTH = 0x1000 - 0x4B0
 
     /* Reserve 16 Bytes to Store Bootloader Trigger Pattern */
     kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000 + 16, LENGTH = 0xA0000 - 16
@@ -160,7 +164,7 @@ SECTIONS
   } > kseg0_program_mem
 
   /* Interrupt vector table with vector offsets */
-  .vectors _ebase_address + 0x200 :
+  .vectors _ebase_address + _ebase_vector_offsets + 0x200 :
   {
     /*  Symbol __vector_offset_n points to .vector_n if it exists, 
      *  otherwise points to the default handler. The
