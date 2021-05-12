@@ -13,6 +13,20 @@ children:
         attributes: {id: value}
         children:
         - {type: Value, value: ROM_LENGTH=0x6000;RAM_ORIGIN=0x20000010;RAM_LENGTH=0x3fff0}
+  - type: Comment
+    attributes: {id: BTL_APP_START_ADDR_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: WARNING!!! Application Start Address Should be equal
+            to or Greater than Bootloader Size !!!}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: String
     attributes: {id: BTL_SIZE}
     children:
@@ -22,6 +36,10 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'false'}
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
