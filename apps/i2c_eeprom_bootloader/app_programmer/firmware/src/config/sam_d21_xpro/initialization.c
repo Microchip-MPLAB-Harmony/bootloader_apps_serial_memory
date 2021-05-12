@@ -165,9 +165,9 @@ void SYS_Initialize ( void* data )
 
 
 
-	BSP_Initialize();
     SERCOM3_USART_Initialize();
 
+	BSP_Initialize();
     NVMCTRL_Initialize( );
 
     SERCOM2_I2C_Initialize();

@@ -48,8 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "bsp/bsp.h"
 #include "peripheral/sercom/usart/plib_sercom3_usart.h"
+#include "bsp/bsp.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h"
 #include "peripheral/evsys/plib_evsys.h"
