@@ -1,16 +1,16 @@
 /*******************************************************************************
-  QSPI Bootloader Source File
+  SERIAL MEMORY Bootloader Source File
 
   File Name:
     bootloader.c
 
   Summary:
-    This file contains source code necessary to execute QSPI bootloader.
+    This file contains source code necessary to execute SERIAL MEMORY bootloader.
 
   Description:
-    This file contains source code necessary to execute QSPI bootloader.
-    It implements bootloader protocol which uses QSPI peripheral to download
-    application firmware into internal flash from QSPI Flash Memory.
+    This file contains source code necessary to execute SERIAL MEMORY bootloader.
+    It implements bootloader protocol which uses Serial memory peripheral to download
+    application firmware into internal flash from Serial Memory.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -158,10 +158,10 @@ typedef struct
     uint32_t prologue;
 
     /* Flag to indicate if a firmware update is required
-     * 0xFFFFFFFF --> Update Required. Set by QSPI programmer after programming
-     *                the image in QSPI memory
+     * 0xFFFFFFFF --> Update Required. Set by Serial Memory programmer after programming
+     *                the image in Serial memory
      * 0x00000000 --> Update Completed. Changed by bootloader after programming
-     *                the image from QSPI to internal flash
+     *                the image from Serial memory to internal flash
      */
     uint32_t isAppUpdateRequired;
 
@@ -393,9 +393,14 @@ static bool BOOTLOADER_UpdateMetaData( void )
     return status;
 }
 
+void __WEAK SYS_DeInitialize( void *data )
+{
+    /* Function can be overriden with custom implementation */
+}
 
 static void BOOTLOADER_ReleaseResources(void)
 {
+    SYS_DeInitialize ( NULL );
 }
 
 /* Function to program received application firmware data into internal flash */

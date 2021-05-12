@@ -1222,6 +1222,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '200000000'}
+  - type: String
+    attributes: {id: REFO2TRIM_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
   - type: Integer
     attributes: {id: REFO2_CLOCK_FREQUENCY}
     children:
