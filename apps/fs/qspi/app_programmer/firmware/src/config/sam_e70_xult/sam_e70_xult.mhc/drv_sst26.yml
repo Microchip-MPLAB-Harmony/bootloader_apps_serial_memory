@@ -43,6 +43,24 @@ children:
         attributes: {id: source}
         children:
         - {type: Value, value: driver/sqi_flash/sst26/src/drv_sst26_qspi.c}
+  - type: Integer
+    attributes: {id: ERASE_BUFFER_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Comment
+    attributes: {id: ERASE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
 - type: Attachments
   children:
   - type: DirectDependency
