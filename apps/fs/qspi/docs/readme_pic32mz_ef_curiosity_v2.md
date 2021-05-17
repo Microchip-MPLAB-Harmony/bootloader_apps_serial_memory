@@ -70,7 +70,9 @@ To build the application, refer to the following table and open the project usin
 
 8. Update **app_programmer/firmware/src/app_monitor.c** to update printf message from **Serial Memory** to **QSPI Flash Memory** as below
 
-        printf("\r\n###### File System (QSPI Flash Memory) Programmer Application Running ######\r\n");
+    ```c
+printf("\r\n###### File System (QSPI Flash Memory) Programmer Application Running ######\r\n");
+    ```
 
 9. Clean and Build the project to generate the binary **(Do not program the binary)**
 

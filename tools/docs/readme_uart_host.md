@@ -56,7 +56,7 @@ python <harmony3_path>/bootloader_apps_serial_memory/tools/uart_host.py --help
 python <harmony3_path>/bootloader_apps_serial_memory/tools/uart_host.py -v -i <COM PORT> -d <Device Name> -a <address> -f <Application_binary_path>
 ```
 
-```
+```c
 python <harmony3_path>/bootloader/tools/btl_host.py -v -i COM7 -d same5x -a 0x2000 -f E:/projects/h3_bootloader/bootloader_apps_serial_memory/apps/qspi_flash_bootloader/app_programmer/firmware/sam_e54_xpro.X/dist/sam_e54_xpro/production/sam_e54_xpro.X.production.bin
 ```
 
@@ -68,7 +68,7 @@ python <harmony3_path>/bootloader/tools/btl_host.py -v -i COM7 -d same5x -a 0x20
 python <harmony3_path>/bootloader_apps_serial_memory/tools/uart_host.py -v -i <COM PORT> -r
 ```
 
-```
+```c
 python <harmony3_path>/bootloader/tools/btl_host.py -v -i COM7 -r
 ```
 

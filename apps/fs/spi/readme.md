@@ -61,7 +61,7 @@ This example application shows how to use the File System Bootloader Library to 
 
     - Prints messages on UART console
 
-    - Uses On board Switch OR a GPIO pin to trigger bootloader once copying of image binary to SPI Flash memory is commplete
+    - Uses On board Switch OR a GPIO pin to trigger bootloader once copying of image binary to SPI Flash memory is complete
 
 ## Development Kits
 The following table provides links to documentation on how to build and run File System based SPI Flash bootloader on different development kits

@@ -34,7 +34,7 @@ To clone or download these application from Github,go to the [main page of this 
 
 ## Bootloader Examples
 
-The following applications are provided to demonstrate the UART bootloader
+The following applications are provided to demonstrate the Serial Memory bootloaders
 
 | Name                                                                  | Description                                                        |
 | --------                                                              | -----------                                                        |
