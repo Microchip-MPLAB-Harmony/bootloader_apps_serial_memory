@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.bootloader_apps_serial_memory_i2c_eeprom_bootloader_sam_d21_xpro",
-		"version": "3.1.0",
+		"version": "3.0.0",
 		"displayName": "I2C EEPROM Bootloader Example for SAM D21/DA1 Family",
 		"projectName": "i2c_eeprom_bootloader_sam_d21_xpro",
 		"shortDescription": "This example application shows how to use the Serial Memory Bootloader Library to bootload an application from I2C EEPROM (AT24) to Internal Flash.",

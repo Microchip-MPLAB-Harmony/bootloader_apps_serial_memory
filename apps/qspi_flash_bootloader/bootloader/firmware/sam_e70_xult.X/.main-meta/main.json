@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.bootloader_apps_serial_memory_qspi_flash_bootloader_sam_e70_xult",
-		"version": "3.1.0",
+		"version": "3.0.0",
 		"displayName": "QSPI Flash Bootloader Example for SAM E70/S70/V70/V71 Family",
 		"projectName": "qspi_flash_bootloader_sam_e70_xult",
 		"shortDescription": "This example application shows how to use the Serial Memory Bootloader Library to bootload an application from QSPI Flash memory (SST26) to Internal Flash.",

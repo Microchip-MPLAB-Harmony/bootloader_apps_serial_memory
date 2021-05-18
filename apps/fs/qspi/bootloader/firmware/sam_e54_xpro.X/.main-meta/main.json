@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.bootloader_apps_serial_memory_fs_qspi_flash_bootloader_sam_e54_xpro",
-		"version": "3.1.0",
+		"version": "3.0.0",
 		"displayName": "FS QSPI Flash Bootloader Example for SAM D5x/E5x Family",
 		"projectName": "fs_qspi_flash_bootloader_sam_e54_xpro",
 		"shortDescription": "This example application shows how to use the File System Bootloader Library to bootload an application from QSPI Flash memory (SST26) to Internal Flash.",
