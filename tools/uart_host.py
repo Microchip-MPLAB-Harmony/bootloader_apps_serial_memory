@@ -163,8 +163,15 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         print()
 
 def setupPort(options):
+    uart_parity = serial.PARITY_NONE
+
+    if (options.parity == 'even'):
+        uart_parity = serial.PARITY_EVEN
+    elif (options.parity == 'odd'):
+        uart_parity = serial.PARITY_ODD
+
     try:
-        port = serial.Serial(options.port, options.baud, timeout=1)
+        port = serial.Serial(port=options.port, baudrate=options.baud, parity=uart_parity, timeout=1)
     except serial.serialutil.SerialException as inst:
         error(inst)
 
@@ -195,13 +202,14 @@ def main():
     parser = optparse.OptionParser(usage = 'usage: %prog [options]')
     parser.add_option('-v', '--verbose', dest='verbose', help='enable verbose output', default=False, action='store_true')
     parser.add_option('-b', '--baud', dest='baud', help='UART baudrate', default=115200, metavar='BAUD')
+    parser.add_option('-u', '--parity', dest='parity', help='UART Parity (none/even/odd)', default='none', metavar='PARITY')
     parser.add_option('-t', '--tune', dest='tune', help='auto-tune UART baudrate', default=False, action='store_true')
     parser.add_option('-i', '--interface', dest='port', help='communication interface', metavar='PATH')
     parser.add_option('-f', '--file', dest='file', help='binary file to program', metavar='FILE')
     parser.add_option('-a', '--address', dest='address', help='destination address', metavar='ADDR')
     parser.add_option('-p', '--sectorSize', dest='sectSize', help='Device Sector Size in Bytes', metavar='SectSize')
     parser.add_option('-r', '--reboot', dest='reboot', help='updates meta data and triggers soft reset', default=False, action='store_true')
-    parser.add_option('-d', '--device', dest='device', help='target device (samc2x/samd1x/samd2x/samd5x/samda1/same7x/same5x/samg5x/saml2x/samha1/pic32mk/pic32mx/pic32mz/pic32mzw)', metavar='DEV')
+    parser.add_option('-d', '--device', dest='device', help='target device (samc2x/samd1x/samd2x/samd5x/samda1/same7x/same5x/samg5x/saml2x/samha1/pic32mk/pic32mx/pic32mz/pic32mzw/pic32cm)', metavar='DEV')
 
     (options, args) = parser.parse_args()
 
@@ -241,14 +249,30 @@ def main():
     except ValueError as inst:
         error('invalid address value: %s' % options.address)
 
-    if (("SAM" in device)):
+    if (("SAM" in device) or ("PIC32C" in device)):
         if address < BOOTLOADER_SIZE:
             error('address is within the bootlaoder area')
 
     port = setupPort(options)
 
+    data = []
+
+    if ("PIC32M" in device):
+        if ("PIC32MK" in device):
+            # For PIC32MK devices the general exception is placed at 0x180 offset from _ebase_address
+            # Fill 0xFF from _ebase_address to 0x180
+            for i in range(0, 0x180):
+                data += [0xff]
+
+            # Move the start address to start of Exceptions region (_ebase_address or start of application space)
+            address = (address & (~(ERASE_SIZE - 1)))
+
+        elif ("PIC32MZ" in device):
+            # Move the start address to start of Exceptions region (_ebase_address)
+            address = (address & (~(ERASE_SIZE - 1)))
+
     try:
-        data = data = [(x) for x in open(options.file, 'rb').read()]
+        data += [(x) for x in open(options.file, 'rb').read()]
     except Exception as inst:
         error(inst)
 

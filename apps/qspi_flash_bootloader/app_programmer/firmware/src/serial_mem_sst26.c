@@ -300,6 +300,7 @@ bool SERIAL_MEM_UpdateMetaData(SERIAL_MEM_META_DATA *metaData)
     memset(serialMemMetaData, 0xFF, sizeof(serialMemMetaData));
 
     metaDataPtr->appStartAddress        = metaData->appStartAddress;
+    metaDataPtr->appJumpAddress         = metaData->appJumpAddress;
     metaDataPtr->appSize                = metaData->appSize;
     metaDataPtr->appCRC32               = metaData->appCRC32;
     metaDataPtr->isAppUpdateRequired    = SERIAL_MEM_APP_UPDATE_REQUIRED;

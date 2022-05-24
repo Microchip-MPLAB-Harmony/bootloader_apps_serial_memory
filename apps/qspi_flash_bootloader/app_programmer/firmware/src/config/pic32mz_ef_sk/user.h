@@ -73,6 +73,12 @@ extern "C" {
 #define ERASE_BLOCK_SIZE        (16384UL)
 #define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
+/* Reset Handler is stored at offset 0x200 from start of program flash memory
+ * as exceptions are stored from start of program flash aligning to the
+ * _ebase_address in app_xxx.ld
+*/
+#define APP_JUMP_ADDRESS_OFFSET (0x200)
+
 #define APP_TIMER_START         CORETIMER_Start
 #define APP_TIMER_DelayMs       CORETIMER_DelayMs
 

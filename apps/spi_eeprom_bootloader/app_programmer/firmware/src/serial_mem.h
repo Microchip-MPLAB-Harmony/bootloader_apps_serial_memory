@@ -78,16 +78,19 @@ typedef struct
     uint32_t prologue;
 
     /* Flag to indicate if a firmware update is required
-     * 0xFFFFFFFF --> Update Required. Set by QSPI loader after programming
-     *                the image in QSPI memory
+     * 0xFFFFFFFF --> Update Required. Set by Serial Memory programmer after programming
+     *                the image in Serial memory
      * 0x00000000 --> Update Completed. Changed by bootloader after programming
-     *                the image from QSPI to internal flash
+     *                the image from Serial memory to internal flash
      */
     uint32_t isAppUpdateRequired;
 
     /* Application Start address */
     uint32_t appStartAddress;
 
+    /* Application Jump address */
+    uint32_t appJumpAddress;
+    
     /* Size of the application binary */
     uint32_t appSize;
 

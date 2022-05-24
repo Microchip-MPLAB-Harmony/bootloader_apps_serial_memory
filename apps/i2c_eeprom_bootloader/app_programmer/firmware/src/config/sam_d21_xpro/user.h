@@ -72,6 +72,8 @@ extern "C" {
 #define ERASE_BLOCK_SIZE        (256UL)
 #define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
+#define APP_JUMP_ADDRESS_OFFSET (0x0)
+
 #define APP_TIMER_START         SYSTICK_TimerStart
 #define APP_TIMER_DelayMs       SYSTICK_DelayMs
 

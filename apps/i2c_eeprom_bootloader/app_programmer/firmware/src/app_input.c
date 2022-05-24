@@ -119,6 +119,7 @@ static bool updateAppMetaData( void )
     bool status = false;
 
     serialMemMetaData.appStartAddress       = app_input.app_start_address;
+    serialMemMetaData.appJumpAddress        = (app_input.app_start_address + APP_JUMP_ADDRESS_OFFSET);
     serialMemMetaData.appSize               = app_input.app_size;
     serialMemMetaData.appCRC32              = app_input.app_crc;
 
