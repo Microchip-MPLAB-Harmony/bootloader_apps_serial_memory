@@ -8,13 +8,14 @@
         <logicalFolder name="f1"
                        displayName="pic32mz_ef_curiosity_v2"
                        projectFiles="true">
-          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
-            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader.h</itemPath>
+          <logicalFolder name="f6" displayName="bootloader" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader_serial_memory.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="driver" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="memory" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/drv_memory.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/drv_memory_definitions.h</itemPath>
@@ -28,12 +29,12 @@
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="osal" projectFiles="true">
+          <logicalFolder name="f3" displayName="osal" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/cache/plib_cache.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/cache/plib_cache_pic32mz.h</itemPath>
@@ -55,7 +56,7 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/sqi/plib_sqi1.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="system" projectFiles="true">
+          <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
@@ -120,6 +121,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity_v2/harmony-manifest-success.yml</itemPath>
+      <itemPath>fs_qspi_flash_bootloader_pic32mz_ef_curiosity_v2.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -133,13 +135,14 @@
         <logicalFolder name="f1"
                        displayName="pic32mz_ef_curiosity_v2"
                        projectFiles="true">
-          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
-            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader.c</itemPath>
+          <logicalFolder name="f6" displayName="bootloader" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader_serial_memory.c</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2/bootloader/bootloader_common.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="driver" projectFiles="true">
+          <logicalFolder name="f2" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="memory" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/src/drv_memory.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/src/drv_memory_file_system.c</itemPath>
@@ -148,7 +151,7 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sst26/src/drv_sst26.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/cache/plib_cache_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/cache/plib_cache.c</itemPath>
@@ -170,10 +173,10 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/peripheral/sqi/plib_sqi1.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f4" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="system" projectFiles="true">
+          <logicalFolder name="f5" displayName="system" projectFiles="true">
             <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/system/cache/sys_cache.c</itemPath>
             </logicalFolder>
@@ -216,9 +219,9 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.00</languageToolchainVersion>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -269,13 +272,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -325,6 +329,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -364,6 +369,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -373,7 +379,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access;../src/packs/PIC32MZ2048EFM144_DFP"/>
+                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -585,14 +591,25 @@
         <property key="TIMER9" value="true"/>
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
         <property key="UART3" value="true"/>
         <property key="UART4" value="true"/>
         <property key="UART5" value="true"/>
         <property key="UART6" value="true"/>
+        <property key="communication.interface" value=""/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -600,6 +617,7 @@
         <property key="memories.configurationmemory2" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.instruction.ram" value="true"/>
@@ -609,10 +627,12 @@
         <property key="memories.programmemory.end" value="0x1d003fff"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
         <property key="memories.programmemory.start" value="0x1d000000"/>
+        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -624,11 +644,16 @@
         <property key="programoptions.preserveprogramrange.end" value="0x1d003fff"/>
         <property key="programoptions.preserveprogramrange.start" value="0x1d000000"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.25"/>
       </Tool>
       <pkob4hybrid>
@@ -710,6 +735,8 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>
@@ -725,23 +752,23 @@
         <property key="memories.instruction.ram.ranges"
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="memories.rww" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
+                  value="${programoptions.preservedataflash.ranges}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
