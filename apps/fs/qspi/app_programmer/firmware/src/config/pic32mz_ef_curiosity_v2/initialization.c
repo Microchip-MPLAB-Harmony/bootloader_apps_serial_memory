@@ -140,7 +140,7 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
     .read = (DRV_SDSPI_PLIB_READ)SPI1_Read,
 
     /* SPI PLIB Transfer Status function */
-    .isBusy = (DRV_SDSPI_PLIB_IS_BUSY)SPI1_IsBusy,
+    .isTransmitterBusy = (DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)SPI1_IsTransmitterBusy,
 
     .transferSetup = (DRV_SDSPI_PLIB_SETUP)SPI1_TransferSetup,
 
@@ -187,11 +187,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
 
     .isFsEnabled            = true,
 
-    /* DMA Channel for Transmit */
-    .txDMAChannel           = SYS_DMA_CHANNEL_NONE,
-
-    /* DMA Channel for Receive */
-    .rxDMAChannel           = SYS_DMA_CHANNEL_NONE,
 };
 
 // </editor-fold>
@@ -317,13 +312,15 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 };
 
 
+
 const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    }
+    },
 };
+
 
 // </editor-fold>
 
@@ -396,6 +393,8 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
@@ -405,7 +404,6 @@ void SYS_Initialize ( void* data )
 
   
     CLK_Initialize();
-    
     /* Configure Prefetch, Wait States and ECC */
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 3;
@@ -449,6 +447,7 @@ void SYS_Initialize ( void* data )
     __builtin_enable_interrupts();
 
 
+    /* MISRAC 2012 deviation block end */
 }
 
 
