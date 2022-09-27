@@ -62,7 +62,7 @@
 
 
 /* Callback object for channel 0 */
-TC_TIMER_CALLBACK_OBJECT TC0_CH0_CallbackObj;
+static TC_TIMER_CALLBACK_OBJECT TC0_CH0_CallbackObj;
 
 /* Initialize channel in timer mode */
 void TC0_CH0_TimerInitialize (void)
@@ -113,13 +113,13 @@ void TC0_CH0_TimerCompareSet (uint16_t compare)
 /* Read timer period */
 uint16_t TC0_CH0_TimerPeriodGet (void)
 {
-    return TC0_REGS->TC_CHANNEL[0].TC_RC;
+    return (uint16_t)TC0_REGS->TC_CHANNEL[0].TC_RC;
 }
 
 /* Read timer counter value */
 uint16_t TC0_CH0_TimerCounterGet (void)
 {
-    return TC0_REGS->TC_CHANNEL[0].TC_CV;
+    return (uint16_t)TC0_REGS->TC_CHANNEL[0].TC_CV;
 }
 
 /* Register callback for period interrupt */
