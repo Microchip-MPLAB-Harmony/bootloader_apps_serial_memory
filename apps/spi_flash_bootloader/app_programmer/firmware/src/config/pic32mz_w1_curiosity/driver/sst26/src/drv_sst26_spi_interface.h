@@ -1,19 +1,21 @@
 /*******************************************************************************
-  Interface definition of Core Timer PLIB.
+  SST26 Driver SPI Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_coretimer.h
+    drv_sst26_spi_interface.h
 
   Summary:
-    Interface definition of the Core Timer Plib .
+    SST26 Driver PLIB Interface implementation
 
   Description:
-    This file defines the interface for the Core Timer Plib.
+    This interface file segregates the SST26 protocol from the underlying
+    hardware layer implementation.
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
@@ -35,38 +37,33 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_CORETIMER_H    // Guards against multiple inclusion
-#define PLIB_CORETIMER_H
+#ifndef _DRV_SST26_SPI_INTERFACE_H
+#define _DRV_SST26_SPI_INTERFACE_H
 
-#include <stdint.h>
-#include <stdbool.h>
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
 
-#ifdef __cplusplus // Provide C++ Compatibility
-	extern "C" {
-#endif
-
-#define CORE_TIMER_FREQUENCY    100000000
-
-
-
-#define CORE_TIMER_COMPARE_VALUE    0x186a0
-
-void CORETIMER_Initialize(void);
-void CORETIMER_Start(void);
-void CORETIMER_Stop(void);
-uint32_t CORETIMER_FrequencyGet (void);
-void CORETIMER_CompareSet ( uint32_t compare);
-uint32_t CORETIMER_CounterGet (void);
-bool CORETIMER_CompareHasExpired(void);
+#include "drv_sst26_local.h"
 
 
-void CORETIMER_DelayMs (uint32_t delay_ms);
-void CORETIMER_DelayUs (uint32_t delay_us);
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+void _DRV_SST26_SPIPlibCallbackHandler(uintptr_t context );
 
-#ifdef __cplusplus // Provide C++ Compatibility
- }
-#endif
+void _DRV_SST26_InterfaceInit(DRV_SST26_OBJECT* dObj, DRV_SST26_INIT* sst26Init);
 
-#endif
+bool _DRV_SST26_SPIWriteRead(
+    DRV_SST26_OBJECT* dObj,
+    DRV_SST26_TRANSFER_OBJ* transferObj
+);
+
+#endif //#ifndef _DRV_SST26_SPI_INTERFACE_H

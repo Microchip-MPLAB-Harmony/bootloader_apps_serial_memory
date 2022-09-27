@@ -1,22 +1,23 @@
-/*******************************************************************************
- System Interrupts File
+/******************************************************************************
+  SST26 Driver SPI Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    interrupt.h
+    drv_sst26_spi_interface.c
 
   Summary:
-    Interrupt vectors mapping
+    SST26 Driver Interface implementation
 
   Description:
-    This file contains declarations of device vectors used by Harmony 3
- *******************************************************************************/
+    This interface file segregates the SST26 protocol from the underlying
+    hardware layer implementation for SPI PLIB and SPI driver
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,24 +40,49 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
-
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
-#include <stdint.h>
-
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Handler Routines
+// Section: Include Files
 // *****************************************************************************
 // *****************************************************************************
 
+#include <string.h>
+#include "drv_sst26_spi_interface.h"
+
+extern void DRV_SST26_Handler(void);
 
 
-#endif // INTERRUPTS_H
+
+
+void _DRV_SST26_SPIPlibCallbackHandler(uintptr_t context )
+{
+    DRV_SST26_OBJECT* dObj = (DRV_SST26_OBJECT*)context;
+
+    dObj->transferDataObj.txSize = dObj->transferDataObj.rxSize = 0;
+    dObj->transferDataObj.pTransmitData = dObj->transferDataObj.pReceiveData = NULL;
+
+    DRV_SST26_Handler();
+}
+
+
+void _DRV_SST26_InterfaceInit(DRV_SST26_OBJECT* dObj, DRV_SST26_INIT* sst26Init)
+{
+
+    /* Initialize the attached memory device functions */
+    dObj->sst26Plib = sst26Init->sst26Plib;
+    dObj->sst26Plib->callbackRegister(_DRV_SST26_SPIPlibCallbackHandler, (uintptr_t)dObj);
+}
+
+bool _DRV_SST26_SPIWriteRead(
+    DRV_SST26_OBJECT* dObj,
+    DRV_SST26_TRANSFER_OBJ* transferObj
+)
+{
+    bool isSuccess = true;
+
+    SYS_PORT_PinClear(dObj->chipSelectPin);
+
+    dObj->transferStatus    = DRV_SST26_TRANSFER_BUSY;
+    dObj->sst26Plib->writeRead (transferObj->pTransmitData, transferObj->txSize, transferObj->pReceiveData, transferObj->rxSize);
+    return isSuccess;
+}
