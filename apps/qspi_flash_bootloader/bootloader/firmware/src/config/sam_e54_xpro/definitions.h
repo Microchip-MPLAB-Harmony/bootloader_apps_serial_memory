@@ -59,7 +59,7 @@
 #include "peripheral/pac/plib_pac.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "driver/sst26/drv_sst26.h"
-#include "bootloader/bootloader.h"
+#include "bootloader/bootloader_serial_mem.h"
 #include "peripheral/dsu/plib_dsu.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
