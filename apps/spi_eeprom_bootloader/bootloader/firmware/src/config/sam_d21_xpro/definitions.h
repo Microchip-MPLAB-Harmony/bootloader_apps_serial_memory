@@ -57,7 +57,7 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/pac/plib_pac.h"
 #include "driver/at25/drv_at25.h"
-#include "bootloader/bootloader.h"
+#include "bootloader/bootloader_serial_mem.h"
 #include "peripheral/dsu/plib_dsu.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"

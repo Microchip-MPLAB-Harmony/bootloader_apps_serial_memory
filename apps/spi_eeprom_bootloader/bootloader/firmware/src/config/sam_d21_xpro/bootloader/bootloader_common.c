@@ -1,26 +1,19 @@
 /*******************************************************************************
-  System Configuration Header
+  Bootloader Common Source File
 
   File Name:
-    configuration.h
+    bootloader_common.c
 
   Summary:
-    Build-time configuration header for the system defined by this project.
+    This file contains common definitions and functions.
 
   Description:
-    An MPLAB Project may have multiple configurations.  This file defines the
-    build-time options for a single configuration.
-
-  Remarks:
-    This configuration header must not define any prototypes or data
-    definitions (or include any files that do).  It only provides macro
-    definitions for build-time configuration options
-
-*******************************************************************************/
+    This file contains common definitions and functions.
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -40,85 +33,105 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-// DOM-IGNORE-END
-
-#ifndef CONFIGURATION_H
-#define CONFIGURATION_H
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
-/*  This section Includes other configuration headers necessary to completely
-    define this configuration.
-*/
-
-#include "user.h"
-#include "device.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-extern "C" {
-
-#endif
+ *******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System Configuration
+// Section: Include Files
 // *****************************************************************************
 // *****************************************************************************
 
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: System Service Configuration
-// *****************************************************************************
-// *****************************************************************************
-
+#include "bootloader_common.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Driver Configuration
+// Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-/* AT25M Driver Configuration Options */
-#define DRV_AT25_INSTANCES_NUMBER              1
-#define DRV_AT25_INDEX                         0
-#define DRV_AT25_CLIENTS_NUMBER_IDX            1
-#define DRV_AT25_INT_SRC_IDX                   SERCOM1_IRQn
-#define DRV_AT25_EEPROM_FLASH_SIZE             262144
-#define DRV_AT25_EEPROM_PAGE_SIZE              256
-#define DRV_AT25_CHIP_SELECT_PIN_IDX           SYS_PORT_PIN_PA17
-#define DRV_AT25_HOLD_PIN_IDX                  SYS_PORT_PIN_PB12
-#define DRV_AT25_WP_PIN_IDX                    SYS_PORT_PIN_PA20
 
+/* Bootloader Major and Minor version sent for a Read Version command (MAJOR.MINOR)*/
+#define BTL_MAJOR_VERSION       3
+#define BTL_MINOR_VERSION       6
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Middleware & Other Library Configuration
+// Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Application Configuration
+// Section: Bootloader Local Functions
 // *****************************************************************************
 // *****************************************************************************
 
 
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
+// *****************************************************************************
+// *****************************************************************************
+// Section: Bootloader Global Functions
+// *****************************************************************************
+// *****************************************************************************
+
+
+bool __WEAK bootloader_Trigger(void)
+{
+    /* Function can be overriden with custom implementation */
+    return false;
 }
-#endif
-//DOM-IGNORE-END
 
-#endif // CONFIGURATION_H
-/*******************************************************************************
- End of File
-*/
+void __WEAK SYS_DeInitialize( void *data )
+{
+    /* Function can be overriden with custom implementation */
+}
+
+uint16_t __WEAK bootloader_GetVersion( void )
+{
+    /* Function can be overriden with custom implementation */
+    uint16_t btlVersion = (((BTL_MAJOR_VERSION & 0xFF) << 8) | (BTL_MINOR_VERSION & 0xFF));
+
+    return btlVersion;
+}
+
+
+
+/* Function to Generate CRC using the device service unit peripheral on programmed data */
+uint32_t bootloader_CRCGenerate(uint32_t start_addr, uint32_t size)
+{
+    uint32_t crc  = 0xffffffff;
+
+    PAC_PeripheralProtectSetup (PAC_PERIPHERAL_DSU, PAC_PROTECTION_CLEAR);
+
+    DSU_CRCCalculate (start_addr, size, crc, &crc);
+
+    PAC_PeripheralProtectSetup (PAC_PERIPHERAL_DSU, PAC_PROTECTION_SET);
+
+    return crc;
+}
+
+/* Trigger a reset */
+void __NO_RETURN bootloader_TriggerReset(void)
+{
+    NVIC_SystemReset();
+}
+
+void run_Application(uint32_t address)
+{
+    uint32_t msp            = *(uint32_t *)(address);
+    uint32_t reset_vector   = *(uint32_t *)(address + 4);
+
+    if (msp == 0xffffffff)
+    {
+        return;
+    }
+
+    /* Call Deinitialize routine to free any resources acquired by Bootloader */
+    SYS_DeInitialize(NULL);
+
+    __set_MSP(msp);
+
+    asm("bx %0"::"r" (reset_vector));
+}
+
+
