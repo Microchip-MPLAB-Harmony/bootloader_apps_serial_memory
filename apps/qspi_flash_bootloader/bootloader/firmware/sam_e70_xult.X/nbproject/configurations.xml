@@ -6,15 +6,16 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
-          <logicalFolder name="f3" displayName="bootloader" projectFiles="true">
+          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
             <logicalFolder name="f1" displayName="sst26" projectFiles="true">
             </logicalFolder>
-            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader_serial_mem.h</itemPath>
+            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/sam_e70_xult/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="driver" projectFiles="true">
+          <logicalFolder name="f3" displayName="driver" projectFiles="true">
             <logicalFolder name="f1" displayName="sst26" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/driver/sst26/drv_sst26.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/driver/sst26/src/drv_sst26_local.h</itemPath>
@@ -23,7 +24,7 @@
             <itemPath>../src/config/sam_e70_xult/driver/driver.h</itemPath>
             <itemPath>../src/config/sam_e70_xult/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+          <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <logicalFolder name="f1" displayName="cache" projectFiles="true">
             </logicalFolder>
             <logicalFolder name="f2" displayName="debug" projectFiles="true">
@@ -34,36 +35,36 @@
             <itemPath>../src/config/sam_e70_xult/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/sam_e70_xult/osal/osal_impl_basic.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f2" displayName="clk" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="efc" projectFiles="true">
+            <logicalFolder name="f2" displayName="efc" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/efc/plib_efc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="mpu" projectFiles="true">
+            <logicalFolder name="f3" displayName="mpu" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/mpu/plib_mpu.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/peripheral/mpu/plib_mpu_local.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="pio" projectFiles="true">
+            <logicalFolder name="f5" displayName="pio" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/pio/plib_pio.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="qspi" projectFiles="true">
+            <logicalFolder name="f6" displayName="qspi" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/peripheral/qspi/plib_qspi_common.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/peripheral/qspi/plib_qspi.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="system" projectFiles="true">
-            <logicalFolder name="f2" displayName="cache" projectFiles="true">
+          <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="debug" projectFiles="true">
+            <logicalFolder name="f2" displayName="debug" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="int" projectFiles="true">
+            <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/sam_e70_xult/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/sam_e70_xult/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
@@ -112,7 +113,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/spi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/ssc.h</itemPath>
@@ -126,6 +126,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/component/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/acc.h</itemPath>
@@ -158,7 +159,6 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rswdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/rtt.h</itemPath>
-            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/sdramc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi0.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/spi1.h</itemPath>
@@ -184,6 +184,7 @@
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/utmi.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME70Q21B_DFP/instance/fuses.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME70Q21B_DFP/pio/same70q21b.h</itemPath>
@@ -211,90 +212,9 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
-          <itemPath>../src/config/sam_e70_xult/ATSAME70Q21B.ld</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-    </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
-          <logicalFolder name="f4" displayName="bootloader" projectFiles="true">
-            <logicalFolder name="f1" displayName="clk" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="efc" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="mpu" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="pio" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="f6" displayName="qspi" projectFiles="true">
-            </logicalFolder>
-            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f1" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/sam_e70_xult/bsp/bsp.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f5" displayName="driver" projectFiles="true">
-            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/driver/sst26/src/drv_sst26.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f2" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/clk/plib_clk.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f6" displayName="efc" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/efc/plib_efc.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="mpu" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/mpu/plib_mpu.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/nvic/plib_nvic.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="pio" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/pio/plib_pio.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="qspi" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/peripheral/qspi/plib_qspi.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <logicalFolder name="f3" displayName="stdio" projectFiles="true">
-            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
-            </logicalFolder>
-            <itemPath>../src/config/sam_e70_xult/stdio/xc32_monitor.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f6" displayName="system" projectFiles="true">
-            <logicalFolder name="f2" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/system/cache/sys_cache.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="int" projectFiles="true">
-              <itemPath>../src/config/sam_e70_xult/system/int/src/sys_int.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-          <itemPath>../src/config/sam_e70_xult/initialization.c</itemPath>
-          <itemPath>../src/config/sam_e70_xult/interrupts.c</itemPath>
-          <itemPath>../src/config/sam_e70_xult/exceptions.c</itemPath>
-          <itemPath>../src/config/sam_e70_xult/startup_xc32.c</itemPath>
-          <itemPath>../src/config/sam_e70_xult/libc_syscalls.c</itemPath>
-          <itemPath>../src/config/sam_e70_xult/tasks.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/app.c</itemPath>
-    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
-                   projectFiles="false">
+                   projectFiles="true">
       <logicalFolder name="f1" displayName="sam_e70_xult.mhc" projectFiles="true">
         <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/BSP_SAM_E70_Xplained_Ultra.yml</itemPath>
         <itemPath>../src/config/sam_e70_xult/sam_e70_xult.mhc/cmsis.yml</itemPath>
@@ -311,6 +231,90 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e70_xult/harmony-manifest-success.yml</itemPath>
+      <itemPath>../src/config/sam_e70_xult/pin_configurations.csv</itemPath>
+      <itemPath>qspi_flash_bootloader_sam_e70_xult.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
+          <itemPath>../src/config/sam_e70_xult/ATSAME70Q21B.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_e70_xult" projectFiles="true">
+          <logicalFolder name="f1" displayName="bootloader" projectFiles="true">
+            <logicalFolder name="f1" displayName="clk" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="efc" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="mpu" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="pio" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="qspi" projectFiles="true">
+            </logicalFolder>
+            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader_serial_mem.c</itemPath>
+            <itemPath>../src/config/sam_e70_xult/bootloader/bootloader_common.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/sam_e70_xult/bsp/bsp.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f3" displayName="driver" projectFiles="true">
+            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/driver/sst26/src/drv_sst26.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clk" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/clk/plib_clk.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="efc" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/efc/plib_efc.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f3" displayName="mpu" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/mpu/plib_mpu.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f4" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/nvic/plib_nvic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f5" displayName="pio" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/pio/plib_pio.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="qspi" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/peripheral/qspi/plib_qspi.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f5" displayName="stdio" projectFiles="true">
+            <logicalFolder name="f1" displayName="sst26" projectFiles="true">
+            </logicalFolder>
+            <itemPath>../src/config/sam_e70_xult/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f6" displayName="system" projectFiles="true">
+            <logicalFolder name="f1" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/system/cache/sys_cache.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f2" displayName="int" projectFiles="true">
+              <itemPath>../src/config/sam_e70_xult/system/int/src/sys_int.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/sam_e70_xult/initialization.c</itemPath>
+          <itemPath>../src/config/sam_e70_xult/interrupts.c</itemPath>
+          <itemPath>../src/config/sam_e70_xult/exceptions.c</itemPath>
+          <itemPath>../src/config/sam_e70_xult/startup_xc32.c</itemPath>
+          <itemPath>../src/config/sam_e70_xult/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/sam_e70_xult/tasks.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -324,14 +328,14 @@
         <targetDevice>ATSAME70Q21B</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.00</languageToolchainVersion>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME70_DFP" vendor="Microchip" version="4.5.86"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -402,6 +406,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -458,6 +463,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -498,6 +504,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -526,6 +533,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -540,9 +548,13 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -550,6 +562,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -563,7 +577,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-5fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -575,6 +588,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -1116,6 +1133,8 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -1124,6 +1143,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
