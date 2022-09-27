@@ -69,7 +69,7 @@ To build the application, refer to the following table and open the project usin
 
 8. Run the **uart_host.py** from command prompt to program the **updated programmer application binary** in SPI Flash memory
 
-        python <harmony3_path>/bootloader_apps_serial_memory/tools/uart_host.py -v -i <COM PORT> -d pic32mz -a 0x9D000000 -f <harmony3_path>/bootloader_apps_serial_memory/apps/spi_flash_bootloader/app_programmer/firmware/pic32mz_w1_curiosity.X/dist/pic32mz_w1_curiosity/production/pic32mz_w1_curiosity.X.production.bin
+        python <harmony3_path>/bootloader_apps_serial_memory/tools/uart_host.py -v -i <COM PORT> -d pic32mzw -a 0x90000000 -f <harmony3_path>/bootloader_apps_serial_memory/apps/spi_flash_bootloader/app_programmer/firmware/pic32mz_w1_curiosity.X/dist/pic32mz_w1_curiosity/production/pic32mz_w1_curiosity.X.production.bin
 
 9. Following snapshot shows output of successfully programming the **programmer application**
     - **RED LED (D202)** should still be blinking

@@ -1,21 +1,20 @@
 /*******************************************************************************
-  Non-Volatile Memory Controller(NVM) PLIB.
+  SST26 Driver SPI Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_nvm.h
+    drv_sst26_spi_interface.h
 
   Summary:
-    Interface definition of NVM Plib.
+    SST26 Driver PLIB Interface implementation
 
   Description:
-    This file defines the interface for the NVM Plib.
-    It allows user to Program, Erase and lock the on-chip Non Volatile Flash
-    Memory.
-
+    This interface file segregates the SST26 protocol from the underlying
+    hardware layer implementation.
 *******************************************************************************/
+
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
@@ -38,11 +37,11 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_NVM_H
-#define PLIB_NVM_H
+#ifndef _DRV_SST26_SPI_INTERFACE_H
+#define _DRV_SST26_SPI_INTERFACE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -50,64 +49,21 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "device.h"     // For device registers and uint32_t
-#include <stdbool.h>    // For bool
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
-// DOM-IGNORE-END
-
-#define NVM_FLASH_START_ADDRESS    (0x90000000U)
-#define NVM_FLASH_SIZE             (0x100000U)
-#define NVM_FLASH_ROWSIZE          (1024U)
-#define NVM_FLASH_PAGESIZE         (4096U)
-
-/* No error */
-#define   NVM_ERROR_NONE       ( 0x0U )
-
-/* NVM write error */
-#define    NVM_ERROR_WRITE     ( _NVMCON_WRERR_MASK )
-
-/* NVM Low Voltage Detect error */
-#define    NVM_ERROR_LOWVOLTAGE ( _NVMCON_LVDERR_MASK )
-
-typedef uint32_t NVM_ERROR;
+#include "drv_sst26_local.h"
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+void _DRV_SST26_SPIPlibCallbackHandler(uintptr_t context );
 
+void _DRV_SST26_InterfaceInit(DRV_SST26_OBJECT* dObj, DRV_SST26_INIT* sst26Init);
 
-void NVM_Initialize( void );
+bool _DRV_SST26_SPIWriteRead(
+    DRV_SST26_OBJECT* dObj,
+    DRV_SST26_TRANSFER_OBJ* transferObj
+);
 
-bool NVM_Read( uint32_t *data, uint32_t length, const uint32_t address );
-
-bool NVM_SingleDoubleWordWrite( uint32_t *data, uint32_t address );
-
-bool NVM_QuadDoubleWordWrite( uint32_t *data, uint32_t address );
-
-bool NVM_RowWrite( uint32_t *data, uint32_t address );
-
-bool NVM_PageErase( uint32_t address );
-
-NVM_ERROR NVM_ErrorGet( void );
-
-bool NVM_IsBusy( void );
-
-void NVM_ProgramFlashWriteProtect( uint32_t laddress, uint32_t haddress);
-
-void NVM_ProgramFlashWriteProtectLock( void );
-
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-    }
-
-#endif
-
-// DOM-IGNORE-END
-#endif // PLIB_NVM_H
+#endif //#ifndef _DRV_SST26_SPI_INTERFACE_H

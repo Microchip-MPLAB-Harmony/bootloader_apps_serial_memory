@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------------------
- * MPLAB XC Compiler -  PIC32MZEF Application linker script
- * Build date : Aug 03 2020
+ * MPLAB XC Compiler -  PIC32MZ W1 Application linker script
+ * Build date : Feb 02 2021
  * 
- * Copyright (c) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -80,10 +80,11 @@ OPTIONAL("vector_offset_init.o")
  *   xc32-gcc src.c -Wl,--defsym=_ebase_address=0x9D001000
  *************************************************************************/
 PROVIDE(_vector_spacing = 0x0001);
-PROVIDE(_ebase_address = 0x9D000000);
-
-/* Place the vector table after the device reset code. */
-PROVIDE(_ebase_vector_offsets = 0x1200);
+PROVIDE(_ebase_address = 0x90000000);
+/* Place the vector table and other exceptions after the device reset and
+ * cache init code.
+ */
+PROVIDE(_ebase_vector_offsets = 0x1000);
 
 /*************************************************************************
  * Memory Address Equates
@@ -94,7 +95,7 @@ PROVIDE(_ebase_vector_offsets = 0x1200);
  * _CACHE_ERR_EXCPT_ADDR          -- Cache-error Exception Vector
  * _GEN_EXCPT_ADDR                -- General Exception Vector
  *************************************************************************/
-_RESET_ADDR                    = 0xBD000200;
+_RESET_ADDR                    = 0xB0000200;
 _SIMPLE_TLB_REFILL_EXCPT_ADDR  = _ebase_address + 0;
 _CACHE_ERR_EXCPT_ADDR          = _ebase_address + 0x100;
 _GEN_EXCPT_ADDR                = _ebase_address + 0x180;
@@ -112,22 +113,21 @@ _GEN_EXCPT_ADDR                = _ebase_address + 0x180;
 
 MEMORY
 {
-    /* Place the exceptions starting from _ebase_address as required by device specification */
-    kseg0_exception_mem (rx) : ORIGIN = 0x9D000000, LENGTH = 0x200
+  /* Place the exceptions starting from _ebase_address as required by device specification */
+  kseg0_exception_mem (rx) : ORIGIN = 0x90000000, LENGTH = 0x200
 
-    kseg1_boot_mem          : ORIGIN = 0xBD000200, LENGTH = 0x480
-    kseg1_boot_mem_4B0      : ORIGIN = 0xBD000680, LENGTH = 0x1000 - 0x4B0
+  /* All C files will be located here */
+  kseg0_program_mem     (rx)  : ORIGIN = 0x90001000, LENGTH = 0x100000 - 0x1000
+  kseg1_boot_mem              : ORIGIN = 0xB0000200, LENGTH = 0x480
+  kseg1_boot_mem_4B0          : ORIGIN = 0xB00006B0, LENGTH = 0x1000 - 0x6B0
 
-    /* All C files will be located here */
-    kseg0_program_mem  (rx) : ORIGIN = 0x9D001200, LENGTH = 0x200000 - 0x1200
-
-    kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000, LENGTH = 0x80000
-
-    sfrs                        : ORIGIN = 0xBF800000, LENGTH = 0x100000
-    kseg2_ebi_data_mem          : ORIGIN = 0xC0000000, LENGTH = 0x4000000
-    kseg2_sqi_data_mem          : ORIGIN = 0xD0000000, LENGTH = 0x4000000
-    kseg3_ebi_data_mem          : ORIGIN = 0xE0000000, LENGTH = 0x4000000
-    kseg3_sqi_data_mem          : ORIGIN = 0xF0000000, LENGTH = 0x4000000
+  /* Reserve 16 Bytes to Store Bootloader Trigger Pattern */
+  kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000 + 16, LENGTH = 0x40000 - 16
+  sfrs                        : ORIGIN = 0xBF800000, LENGTH = 0x100000
+  configsfrs_BFC55E88         : ORIGIN = 0xBFC55E88, LENGTH = 0x18
+  configsfrs_BFC55EBC         : ORIGIN = 0xBFC55EBC, LENGTH = 0x4
+  configsfrs_BFC55F88         : ORIGIN = 0xBFC55F88, LENGTH = 0x18
+  configsfrs_BFC55FBC         : ORIGIN = 0xBFC55FBC, LENGTH = 0x4
 }
 
 /*************************************************************************
@@ -165,7 +165,7 @@ SECTIONS
   } > kseg0_exception_mem
 
   /* Interrupt vector table with vector offsets */
-  .vectors _ebase_address + _ebase_vector_offsets + 0x200 :
+  .vectors _ebase_address + _ebase_vector_offsets :
   {
     /*  Symbol __vector_offset_n points to .vector_n if it exists, 
      *  otherwise points to the default handler. The
@@ -1076,8 +1076,6 @@ SECTIONS
     . += (DEFINED (_DEBUGGER) ? 0x200 : 0x0);
     /* Additional data memory required for DSPr2 registers */
     . += (DEFINED (_DEBUGGER) ? 0x80 : 0x0);
-    /* Additional data memory required for FPU64 registers */
-    . += (DEFINED (_DEBUGGER) ? 0x100 : 0x0);
   } >kseg0_data_mem
   .jcr   :
   {
@@ -1259,214 +1257,7 @@ SECTIONS
  *  the cache at startup.
  */
 EXTERN  (__pic32_init_cache_program_base_addr)
-PROVIDE (__pic32_init_cache_program_base_addr = 0x9D000000) ;
+PROVIDE (__pic32_init_cache_program_base_addr = 0x90000000) ;
 EXTERN  (__pic32_init_cache_data_base_addr)
 PROVIDE (__pic32_init_cache_data_base_addr = 0x80000000) ;
-
-/*************************************************************************
- *   TLB-Based MMU Initialization section for EBI/SQI memory regions
- *************************************************************************/
-/*
- *  Provide virtual and physical addresses of the SQI for TLB initialization
- *  These symbols are used below to create a table, which is in turn used to
- *  initialize the TLB at startup.
- */
-EXTERN  (__pic32_init_sqi_kseg2_virtual_base_addr)
-PROVIDE (__pic32_init_sqi_kseg2_virtual_base_addr = 0xD0000000) ;
-EXTERN  (__pic32_init_sqi_kseg2_physical_base_addr)
-PROVIDE (__pic32_init_sqi_kseg2_physical_base_addr = 0x30000000) ;
-EXTERN  (__pic32_init_sqi_kseg2_entrylo0_bitset)
-PROVIDE (__pic32_init_sqi_kseg2_entrylo0_bitset = 0x1F) ;
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_0_entryhi  = __pic32_init_sqi_kseg2_virtual_base_addr ;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_0_entrylo0 = (__pic32_init_sqi_kseg2_physical_base_addr >> 6) | __pic32_init_sqi_kseg2_entrylo0_bitset ;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_0_entrylo1 = __pic32_tlb_0_entrylo0 | ((__pic32_init_sqi_kseg2_physical_base_addr + 0x1000000) >> 6) ;
-
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_1_entryhi  = __pic32_init_sqi_kseg2_virtual_base_addr + 0x2000000;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_1_entrylo0 = ((__pic32_init_sqi_kseg2_physical_base_addr + 0x2000000) >> 6) | __pic32_init_sqi_kseg2_entrylo0_bitset;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_1_entrylo1 = __pic32_tlb_1_entrylo0 | 0x00040000 ;
-
-EXTERN  (__pic32_init_sqi_kseg3_virtual_base_addr)
-PROVIDE (__pic32_init_sqi_kseg3_virtual_base_addr = 0xF0000000) ;
-EXTERN  (__pic32_init_sqi_kseg3_physical_base_addr)
-PROVIDE (__pic32_init_sqi_kseg3_physical_base_addr = 0x30000000) ;
-EXTERN  (__pic32_init_sqi_kseg3_entrylo0_bitset)
-PROVIDE (__pic32_init_sqi_kseg3_entrylo0_bitset = 0x17) ;
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_2_entryhi  = __pic32_init_sqi_kseg3_virtual_base_addr ;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0. 
- */
-__pic32_tlb_2_entrylo0 = (__pic32_init_sqi_kseg3_physical_base_addr >> 6) | __pic32_init_sqi_kseg3_entrylo0_bitset ;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_2_entrylo1 = __pic32_tlb_2_entrylo0 | ((__pic32_init_sqi_kseg3_physical_base_addr + 0x1000000) >> 6) ;
-
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_3_entryhi  = __pic32_init_sqi_kseg3_virtual_base_addr + 0x2000000;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_3_entrylo0 = ((__pic32_init_sqi_kseg3_physical_base_addr + 0x2000000) >> 6) | __pic32_init_sqi_kseg3_entrylo0_bitset;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_3_entrylo1 = __pic32_tlb_3_entrylo0 | 0x00040000 ;
-
-/*
- *  Provide virtual and physical addresses of the EBI for TLB initialization
- *  These symbols are used below to create a table, which is in turn used to
- *  initialize the TLB at startup.
- */
-EXTERN  (__pic32_init_ebi_kseg2_virtual_base_addr)
-PROVIDE (__pic32_init_ebi_kseg2_virtual_base_addr = 0xC0000000) ;
-EXTERN  (__pic32_init_ebi_kseg2_physical_base_addr)
-PROVIDE (__pic32_init_ebi_kseg2_physical_base_addr = 0x20000000) ;
-EXTERN  (__pic32_init_ebi_kseg2_entrylo0_bitset)
-PROVIDE (__pic32_init_ebi_kseg2_entrylo0_bitset = 0x1F) ;
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_4_entryhi  = __pic32_init_ebi_kseg2_virtual_base_addr ;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_4_entrylo0 = (__pic32_init_ebi_kseg2_physical_base_addr >> 6) | __pic32_init_ebi_kseg2_entrylo0_bitset ;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_4_entrylo1 = __pic32_tlb_4_entrylo0 | ((__pic32_init_ebi_kseg2_physical_base_addr + 0x1000000) >> 6) ;
-
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_5_entryhi  = __pic32_init_ebi_kseg2_virtual_base_addr + 0x2000000;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_5_entrylo0 = ((__pic32_init_ebi_kseg2_physical_base_addr + 0x2000000) >> 6) | __pic32_init_ebi_kseg2_entrylo0_bitset;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_5_entrylo1 = __pic32_tlb_5_entrylo0 | 0x00040000 ;
-
-EXTERN  (__pic32_init_ebi_kseg3_virtual_base_addr)
-PROVIDE (__pic32_init_ebi_kseg3_virtual_base_addr = 0xE0000000) ;
-EXTERN  (__pic32_init_ebi_kseg3_physical_base_addr)
-PROVIDE (__pic32_init_ebi_kseg3_physical_base_addr = 0x20000000) ;
-EXTERN  (__pic32_init_ebi_kseg3_entrylo0_bitset)
-PROVIDE (__pic32_init_ebi_kseg3_entrylo0_bitset = 0x17) ;
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_6_entryhi  = __pic32_init_ebi_kseg3_virtual_base_addr ;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_6_entrylo0 = (__pic32_init_ebi_kseg3_physical_base_addr >> 6) | __pic32_init_ebi_kseg3_entrylo0_bitset ;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_6_entrylo1 = __pic32_tlb_6_entrylo0 | ((__pic32_init_ebi_kseg3_physical_base_addr + 0x1000000) >> 6) ;
-
-
-/*  ENTRYHI = VPN2<31:13> VPN2X<12:11> 0<10:8> ASID<7:0> */
-__pic32_tlb_7_entryhi  = __pic32_init_ebi_kseg3_virtual_base_addr + 0x2000000;
-
-
-/*  Create one page table entry consisting of two 16MB physical pages. 
- *  ENTRYLO0 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> 
- *  Shift __pic32_init_sqi_kseg3_physical_base_addr to PFN. 
- *  Bitwise-OR the other bits of ENTRYLO0.
- */
-__pic32_tlb_7_entrylo0 = ((__pic32_init_ebi_kseg3_physical_base_addr + 0x2000000) >> 6) | __pic32_init_ebi_kseg3_entrylo0_bitset;
-
-
-/*  ENTRYLO1 = RI<31> XI<30> 0<29:26> PFN<25:6> C<5:3> D<2> V<1> G<0> */
-__pic32_tlb_7_entrylo1 = __pic32_tlb_7_entrylo0 | 0x00040000 ;
-
-/*
- *  The default pic32_init_tlb_ebi_sqi.o module, which is
- *  called by the default C startup code (crt0_<isa>.o),
- *  uses the table created in the .tlb_init_values output
- *  section to initialize the Translation Lookaside buffer (TLB)
- *  of the Memory Management Unit (MMU).
- */
-SECTIONS
-{
-  .tlb_init_values :
-  {
-    . = ALIGN(4) ;
-    __pic32_tlb_init_values_begin = ABSOLUTE(.);
-    LONG(__pic32_tlb_0_entryhi) ;
-    LONG(__pic32_tlb_0_entrylo0) ;
-    LONG(__pic32_tlb_0_entrylo1) ;
-    LONG(__pic32_tlb_1_entryhi) ;
-    LONG(__pic32_tlb_1_entrylo0) ;
-    LONG(__pic32_tlb_1_entrylo1) ;
-    LONG(__pic32_tlb_2_entryhi) ;
-    LONG(__pic32_tlb_2_entrylo0) ;
-    LONG(__pic32_tlb_2_entrylo1) ;
-    LONG(__pic32_tlb_3_entryhi) ;
-    LONG(__pic32_tlb_3_entrylo0) ;
-    LONG(__pic32_tlb_3_entrylo1) ;
-    LONG(__pic32_tlb_4_entryhi) ;
-    LONG(__pic32_tlb_4_entrylo0) ;
-    LONG(__pic32_tlb_4_entrylo1) ;
-    LONG(__pic32_tlb_5_entryhi) ;
-    LONG(__pic32_tlb_5_entrylo0) ;
-    LONG(__pic32_tlb_5_entrylo1) ;
-    LONG(__pic32_tlb_6_entryhi) ;
-    LONG(__pic32_tlb_6_entrylo0) ;
-    LONG(__pic32_tlb_6_entrylo1) ;
-    LONG(__pic32_tlb_7_entryhi) ;
-    LONG(__pic32_tlb_7_entrylo0) ;
-    LONG(__pic32_tlb_7_entrylo1) ;
-    __pic32_tlb_init_values_end = ABSOLUTE(.);
-    __pic32_tlb_init_values_count = 8 ;
-  } > kseg1_boot_mem_4B0
-}
 

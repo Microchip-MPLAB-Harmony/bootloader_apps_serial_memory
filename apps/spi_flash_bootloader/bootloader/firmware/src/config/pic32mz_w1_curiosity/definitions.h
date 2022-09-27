@@ -53,13 +53,13 @@
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
+#include "bootloader/bootloader_serial_mem.h"
 #include "driver/sst26/drv_sst26.h"
-#include "bootloader/bootloader.h"
+#include "peripheral/nvm/plib_nvm.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "peripheral/nvm/plib_nvm.h"
 #include "app.h"
 
 

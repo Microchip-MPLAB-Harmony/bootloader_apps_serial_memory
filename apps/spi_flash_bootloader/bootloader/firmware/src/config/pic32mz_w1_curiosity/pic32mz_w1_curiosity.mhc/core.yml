@@ -837,6 +837,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Boolean
+    attributes: {id: IOLOCK_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: KEIL_STACK_HEAP_SIZE}
     children:
@@ -902,6 +909,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '419631639'}
+  - type: Boolean
+    attributes: {id: PMDLOCK_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
   - type: Integer
     attributes: {id: PTG_CLOCK_FREQUENCY}
     children:
@@ -1091,6 +1105,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '8'}
+  - type: Hex
+    attributes: {id: SYS_PORT_K_LAT}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: SYS_PORT_K_TRIS}
     children:
