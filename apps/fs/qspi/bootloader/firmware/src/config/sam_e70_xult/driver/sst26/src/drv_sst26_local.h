@@ -50,7 +50,6 @@
 #include <string.h>
 #include "configuration.h"
 #include "driver/sst26/drv_sst26.h"
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Local Data Type Definitions
@@ -171,7 +170,11 @@ typedef struct
 
     /* PLIB API list that will be used by the driver to access the hardware */
     const DRV_SST26_PLIB_INTERFACE *sst26Plib;
+
 } DRV_SST26_OBJECT;
+
+
+
 
 
 #endif //#ifndef _DRV_SST26_LOCAL_H

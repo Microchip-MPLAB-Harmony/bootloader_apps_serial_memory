@@ -46,16 +46,8 @@
 #include <string.h>
 #include "configuration.h"
 #include "peripheral/efc/plib_efc.h"
-#include "bootloader/bootloader.h"
+#include "bootloader/bootloader_serial_memory.h"
 #include "system/fs/sys_fs.h"
-
-#define APP_START_ADDRESS       (0x406000UL)
-
-#define FLASH_START             (0x00400000UL)
-#define FLASH_LENGTH            (0x00200000UL)
-#define PAGE_SIZE               (512UL)
-#define ERASE_BLOCK_SIZE        (8192UL)
-#define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
 #define BOOTLOADER_MOUNT_NAME   SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
 #define BOOTLOADER_DEV_NAME     SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
@@ -110,32 +102,6 @@ BOOTLOADER_DATA btlData =
     .deviceAttached = false,
     .progAddr       = APP_START_ADDRESS
 };
-
-bool __WEAK bootloader_Trigger(void)
-{
-    /* Function can be overriden with custom implementation */
-    return false;
-}
-
-static void bootloader_TriggerReset(void)
-{
-    NVIC_SystemReset();
-}
-
-void run_Application(void)
-{
-    uint32_t msp            = *(uint32_t *)(APP_START_ADDRESS);
-    uint32_t reset_vector   = *(uint32_t *)(APP_START_ADDRESS + 4);
-
-    if (msp == 0xffffffff)
-    {
-        return;
-    }
-
-    __set_MSP(msp);
-
-    asm("bx %0"::"r" (reset_vector));
-}
 
 
 void bootloader_SysFsEventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context)
@@ -197,7 +163,7 @@ void bootloader_NVMPageWrite(uint8_t* data)
     btlData.progAddr += PAGE_SIZE;
 }
 
-void bootloader_Tasks( void )
+void bootloader_SERIAL_MEMORY_Tasks( void )
 {
     size_t fileReadLength;
 

@@ -14,8 +14,8 @@ compiler: xc32
 
 modules:
     - {name: "core", version: "v3.11.1"}
-    - {name: "csp", version: "v3.13.1"}
-    - {name: "dev_packs", version: "v3.13.1"}
-    - {name: "bootloader", version: "unknown"}
+    - {name: "csp", version: "v3.14.0"}
+    - {name: "dev_packs", version: "v3.14.0"}
+    - {name: "bootloader", version: "v3.6.0"}
     - {name: "bsp", version: "v3.13.0"}
 

@@ -80,7 +80,7 @@ SYS_FS_Tasks();
     /* Maintain Device Drivers */
     DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
-    bootloader_Tasks();
+    bootloader_SERIAL_MEMORY_Tasks();
 
 
 
