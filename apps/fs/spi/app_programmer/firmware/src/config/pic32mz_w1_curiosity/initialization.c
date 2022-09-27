@@ -55,14 +55,10 @@
 // ****************************************************************************
 // ****************************************************************************
 
-
-
-
 /*** FBCFG0 ***/
 #pragma config BUHSWEN =    OFF
 #pragma config PCSCMODE =    DUAL
 #pragma config BOOTISA =    MIPS32
-
 
 
 /*** DEVCFG0 ***/
@@ -108,7 +104,6 @@
 #pragma config WDTPSS =    PSS1
 
 
-
 /*** DEVCFG2 ***/
 #pragma config DMTINTV =    WIN_63_64
 #pragma config POSCMOD =    HS
@@ -126,7 +121,6 @@
 #pragma config DMTEN =    OFF
 
 
-
 /*** DEVCFG4 ***/
 #pragma config SOSCCFG =    0
 #pragma config VBZPBOREN =    ON
@@ -136,6 +130,11 @@
 #pragma config DSWDTEN =    OFF
 #pragma config DSEN =    OFF
 #pragma config SOSCEN =    OFF
+
+
+/*** FCPN0 ***/
+#pragma config CP =    OFF
+
 
 
 
@@ -166,7 +165,7 @@ const DRV_SDSPI_PLIB_INTERFACE drvSDSPI0PlibAPI = {
     .read = (DRV_SDSPI_PLIB_READ)SPI2_Read,
 
     /* SPI PLIB Transfer Status function */
-    .isBusy = (DRV_SDSPI_PLIB_IS_BUSY)SPI2_IsBusy,
+    .isTransmitterBusy = (DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)SPI2_IsTransmitterBusy,
 
     .transferSetup = (DRV_SDSPI_PLIB_SETUP)SPI2_TransferSetup,
 
@@ -213,11 +212,6 @@ const DRV_SDSPI_INIT drvSDSPI0InitData =
 
     .isFsEnabled            = true,
 
-    /* DMA Channel for Transmit */
-    .txDMAChannel           = SYS_DMA_CHANNEL_NONE,
-
-    /* DMA Channel for Receive */
-    .rxDMAChannel           = SYS_DMA_CHANNEL_NONE,
 };
 
 // </editor-fold>
@@ -235,7 +229,7 @@ const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
 const DRV_SST26_INIT drvSST26InitData =
 {
     .sst26Plib      = &drvSST26PlibAPI,
-    .chipSelectPin  = DRV_SST26_CHIP_SELECT_PIN
+    .chipSelectPin  = DRV_SST26_CHIP_SELECT_PIN,
 };
 // </editor-fold>
 
@@ -347,13 +341,15 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 };
 
 
+
 const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    }
+    },
 };
+
 
 // </editor-fold>
 
@@ -426,6 +422,8 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
@@ -434,8 +432,8 @@ void SYS_Initialize ( void* data )
 
 
   
-    CLK_Initialize();
-	SYS_PMU_MLDO_TRIM();
+    PMU_Initialize();
+	CLK_Initialize();
 
     /* Configure Wait States */
     PRECONbits.PFMWS = 5;
@@ -478,6 +476,7 @@ void SYS_Initialize ( void* data )
     __builtin_enable_interrupts();
 
 
+    /* MISRAC 2012 deviation block end */
 }
 
 

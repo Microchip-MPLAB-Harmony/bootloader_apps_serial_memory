@@ -1,20 +1,21 @@
 /*******************************************************************************
-  UART1 PLIB
+  SST26 Driver SPI Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_uart1.h
+    drv_sst26_spi_interface.h
 
   Summary:
-    UART1 PLIB Header File
+    SST26 Driver PLIB Interface implementation
 
   Description:
-    None
-
+    This interface file segregates the SST26 protocol from the underlying
+    hardware layer implementation.
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
@@ -36,66 +37,33 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-
-#ifndef PLIB_UART1_H
-#define PLIB_UART1_H
-
-#include <stddef.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "device.h"
-#include "plib_uart_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
+ *******************************************************************************/
 // DOM-IGNORE-END
 
+#ifndef _DRV_SST26_SPI_INTERFACE_H
+#define _DRV_SST26_SPI_INTERFACE_H
+
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define UART1_FrequencyGet()    (uint32_t)(100000000UL)
-
-/****************************** UART1 API *********************************/
-
-void UART1_Initialize( void );
-
-bool UART1_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
-
-bool UART1_Write( void *buffer, const size_t size );
-
-bool UART1_Read( void *buffer, const size_t size );
-
-UART_ERROR UART1_ErrorGet( void );
-
-bool UART1_AutoBaudQuery( void );
-
-void UART1_AutoBaudSet( bool enable );
-
-int UART1_ReadByte( void );
-
-bool UART1_ReceiverIsReady( void );
-
-void UART1_WriteByte( int data );
-
-bool UART1_TransmitterIsReady( void );
+#include "drv_sst26_local.h"
 
 
-bool UART1_TransmitComplete( void );
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Type Definitions
+// *****************************************************************************
+// *****************************************************************************
+void _DRV_SST26_SPIPlibCallbackHandler(uintptr_t context );
 
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
+void _DRV_SST26_InterfaceInit(DRV_SST26_OBJECT* dObj, DRV_SST26_INIT* sst26Init);
 
-    }
+bool _DRV_SST26_SPIWriteRead(
+    DRV_SST26_OBJECT* dObj,
+    DRV_SST26_TRANSFER_OBJ* transferObj
+);
 
-#endif
-// DOM-IGNORE-END
-
-#endif // PLIB_UART1_H
+#endif //#ifndef _DRV_SST26_SPI_INTERFACE_H

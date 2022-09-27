@@ -161,6 +161,11 @@ bool SPI2_Read(void* pReceiveData, size_t rxSize)
     return(SPI2_WriteRead(NULL, 0, pReceiveData, rxSize));
 }
 
+bool SPI2_IsTransmitterBusy (void)
+{
+    return ((SPI2STAT & _SPI2STAT_SRMT_MASK) == 0)? true : false;
+}
+
 bool SPI2_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize)
 {
     bool isRequestAccepted = false;
