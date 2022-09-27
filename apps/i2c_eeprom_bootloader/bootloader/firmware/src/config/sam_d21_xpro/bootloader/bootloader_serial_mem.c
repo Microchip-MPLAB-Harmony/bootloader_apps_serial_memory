@@ -54,16 +54,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define FLASH_START             (0x00000000UL)
-#define FLASH_LENGTH            (0x40000UL)
-#define PAGE_SIZE               (64UL)
-#define ERASE_BLOCK_SIZE        (256UL)
-#define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
-#define DATA_SIZE               ERASE_BLOCK_SIZE
-
-#define BOOTLOADER_SIZE         8192
-
-#define APP_START_ADDRESS       (0x2000UL)
+#define DATA_SIZE                   ERASE_BLOCK_SIZE
 
 #define APP_UPDATE_REQUIRED         (0xFFFFFFFFU)
 #define APP_CLEAR_UPDATE_REQUIRED   (0x00000000U)
@@ -168,6 +159,9 @@ typedef struct
     /* Application Start address */
     uint32_t appStartAddress;
 
+    /* Application Jump address */
+    uint32_t appJumpAddress;
+    
     /* Size of the application binary */
     uint32_t appSize;
 
@@ -199,6 +193,8 @@ typedef struct
 
     uint32_t appStartAddress;
 
+    uint32_t appJumpAddress;
+
     uint32_t crc32;
 
 } BOOTLOADER_DATA;
@@ -216,6 +212,7 @@ BOOTLOADER_DATA CACHE_ALIGN btlData =
     .state              = BOOTLOADER_STATE_INIT,
     .flash_addr         = APP_START_ADDRESS,
     .appStartAddress    = APP_START_ADDRESS,
+    .appJumpAddress     = APP_START_ADDRESS,
 };
 
 static uint32_t CACHE_ALIGN clearUpdateRequired[DRV_AT24_EEPROM_PAGE_SIZE / sizeof(uint32_t)];
@@ -227,42 +224,6 @@ static uint8_t CACHE_ALIGN flash_data[DATA_SIZE];
 // Section: Bootloader Local Functions
 // *****************************************************************************
 // *****************************************************************************
-
-static void bootloader_TriggerReset(void)
-{
-    NVIC_SystemReset();
-}
-
-void run_Application(void)
-{
-    uint32_t msp            = *(uint32_t *)(btlData.appStartAddress);
-    uint32_t reset_vector   = *(uint32_t *)(btlData.appStartAddress + 4);
-
-    if (msp == 0xffffffff)
-    {
-        return;
-    }
-
-    __set_MSP(msp);
-
-    asm("bx %0"::"r" (reset_vector));
-}
-
-/* Function to Generate CRC using the device service unit peripheral on programmed data */
-static uint32_t crc_generate(void)
-{
-    uint32_t addr = btlData.appStartAddress;
-    uint32_t size = appMetaData.appSize;
-    uint32_t crc  = 0;
-
-    PAC_PeripheralProtectSetup (PAC_PERIPHERAL_DSU, PAC_PROTECTION_CLEAR);
-
-    DSU_CRCCalculate (addr, size, 0xffffffff, &crc);
-
-    PAC_PeripheralProtectSetup (PAC_PERIPHERAL_DSU, PAC_PROTECTION_SET);
-
-    return crc;
-}
 
 static bool BOOTLOADER_WaitForXferComplete( void )
 {
@@ -323,11 +284,13 @@ static bool BOOTLOADER_CheckForUpdate( void )
 
         btlData.flash_addr      = appMetaData.appStartAddress;
         btlData.appStartAddress = appMetaData.appStartAddress;
+        btlData.appJumpAddress  = appMetaData.appJumpAddress;
     }
     else
     {
         btlData.flash_addr      = APP_START_ADDRESS;
         btlData.appStartAddress = APP_START_ADDRESS;
+        btlData.appJumpAddress  = APP_START_ADDRESS;
     }
 
     return status;
@@ -366,10 +329,7 @@ static bool BOOTLOADER_UpdateMetaData( void )
     return status;
 }
 
-void __WEAK SYS_DeInitialize( void *data )
-{
-    /* Function can be overriden with custom implementation */
-}
+extern void SYS_DeInitialize( void *data );
 
 static void BOOTLOADER_ReleaseResources(void)
 {
@@ -421,13 +381,7 @@ static void flash_task(void)
 // *****************************************************************************
 // *****************************************************************************
 
-bool __WEAK bootloader_Trigger(void)
-{
-    /* Function can be overriden with custom implementation */
-    return false;
-}
-
-void bootloader_Tasks ( void )
+void bootloader_SERIAL_MEM_Tasks ( void )
 {
     /* Check the application's current state. */
     switch ( btlData.state )
@@ -513,7 +467,8 @@ void bootloader_Tasks ( void )
         {
             BOOTLOADER_ReleaseResources();
 
-            run_Application();
+            run_Application(btlData.appJumpAddress);
+
             break;
         }
 
@@ -559,7 +514,7 @@ void bootloader_Tasks ( void )
 
         case BOOTLOADER_STATE_VERIFY_BINARY:
         {
-            btlData.crc32 = crc_generate();
+            btlData.crc32 = bootloader_CRCGenerate(btlData.appStartAddress, appMetaData.appSize);
 
             if (btlData.crc32 == appMetaData.appCRC32)
             {
