@@ -1,29 +1,19 @@
 /*******************************************************************************
-  MPLAB Harmony Application Source File
-
-  Company:
-    Microchip Technology Inc.
+  Bootloader Common Source File
 
   File Name:
-    app.c
+    bootloader_common.c
 
   Summary:
-    This file contains the source code for the MPLAB Harmony application.
+    This file contains common definitions and functions.
 
   Description:
-    This file contains the source code for the MPLAB Harmony application.  It
-    implements the logic of the application's state machine and it may call
-    API routines of other MPLAB Harmony modules in the system, such as drivers,
-    system services, and middleware.  However, it does not call any of the
-    system interfaces (such as the "Initialize" and "Tasks" functions) of any of
-    the modules in the system or make any assumptions about when those functions
-    are called.  That is the responsibility of the configuration-specific system
-    files.
+    This file contains common definitions and functions.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -48,126 +38,134 @@
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files
+// Section: Include Files
 // *****************************************************************************
 // *****************************************************************************
 
-#include "app.h"
-#include "bootloader/bootloader_serial_mem.h"
+#include "bootloader_common.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Global Data Definitions
+// Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
 
-// *****************************************************************************
-/* Application Data
+/* Bootloader Major and Minor version sent for a Read Version command (MAJOR.MINOR)*/
+#define BTL_MAJOR_VERSION       3
+#define BTL_MINOR_VERSION       6
 
-  Summary:
-    Holds application data
-
-  Description:
-    This structure holds the application's data.
-
-  Remarks:
-    This structure should be initialized by the APP_Initialize function.
-
-    Application strings and buffers are be defined outside this structure.
-*/
-
-APP_DATA appData;
+#define WORD_ALIGN_MASK         (~(sizeof(uint32_t) - 1))
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Application Callback Functions
-// *****************************************************************************
-// *****************************************************************************
-
-/* TODO:  Add any necessary callback functions.
-*/
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Application Local Functions
+// Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Application Initialization and State Machine Functions
+// Section: Bootloader Local Functions
 // *****************************************************************************
 // *****************************************************************************
 
-/*******************************************************************************
-  Function:
-    void APP_Initialize ( void )
 
-  Remarks:
-    See prototype in app.h.
- */
+// *****************************************************************************
+// *****************************************************************************
+// Section: Bootloader Global Functions
+// *****************************************************************************
+// *****************************************************************************
 
-void APP_Initialize ( void )
+
+bool __WEAK bootloader_Trigger(void)
 {
-    /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_INIT;
+    /* Function can be overriden with custom implementation */
+    return false;
+}
 
+void __WEAK SYS_DeInitialize( void *data )
+{
+    /* Function can be overriden with custom implementation */
+}
 
+uint16_t __WEAK bootloader_GetVersion( void )
+{
+    /* Function can be overriden with custom implementation */
+    uint16_t btlVersion = (((BTL_MAJOR_VERSION & 0xFF) << 8) | (BTL_MINOR_VERSION & 0xFF));
 
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
+    return btlVersion;
 }
 
 
-/******************************************************************************
-  Function:
-    void APP_Tasks ( void )
 
-  Remarks:
-    See prototype in app.h.
- */
-
-void APP_Tasks ( void )
+/* Function to Generate CRC by reading the firmware programmed into internal flash */
+uint32_t bootloader_CRCGenerate(uint32_t start_addr, uint32_t size)
 {
+    uint32_t   i, j, value;
+    uint32_t   crc_tab[256];
+    uint32_t   crc = 0xffffffff;
+    uint8_t    data;
 
-    /* Check the application's current state. */
-    switch ( appData.state )
+    for (i = 0; i < 256; i++)
     {
-        /* Application's initial state. */
-        case APP_STATE_INIT:
+        value = i;
+
+        for (j = 0; j < 8; j++)
         {
-            bool appInitialized = true;
-
-
-            if (appInitialized)
+            if (value & 1)
             {
-
-                appData.state = APP_STATE_SERVICE_TASKS;
+                value = (value >> 1) ^ 0xEDB88320;
             }
-            break;
+            else
+            {
+                value >>= 1;
+            }
         }
-
-        case APP_STATE_SERVICE_TASKS:
-        {
-
-            break;
-        }
-
-        /* TODO: implement your application state machine.*/
-
-
-        /* The default state should never be executed. */
-        default:
-        {
-            /* TODO: Handle error in application's state machine. */
-            break;
-        }
+        crc_tab[i] = value;
     }
+
+    for (i = 0; i < size; i++)
+    {
+        data = *(uint8_t *)KVA0_TO_KVA1((start_addr + i));
+
+        crc = crc_tab[(crc ^ data) & 0xff] ^ (crc >> 8);
+    }
+
+    return crc;
 }
 
 
-/*******************************************************************************
- End of File
- */
+/* Trigger a reset */
+void bootloader_TriggerReset(void)
+{
+    /* Perform system unlock sequence */
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;
+
+    RSWRSTSET = _RSWRST_SWRST_MASK;
+    (void)RSWRST;
+}
+
+void run_Application(uint32_t address)
+{
+    uint32_t jumpAddrVal = *(uint32_t *)(address & WORD_ALIGN_MASK);
+
+    void (*fptr)(void);
+
+    fptr = (void (*)(void))address;
+
+    if (jumpAddrVal == 0xffffffff)
+    {
+        return;
+    }
+
+    /* Call Deinitialize routine to free any resources acquired by Bootloader */
+    SYS_DeInitialize(NULL);
+
+    __builtin_disable_interrupts();
+
+    fptr();
+}
+
+

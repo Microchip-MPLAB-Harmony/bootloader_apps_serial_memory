@@ -54,7 +54,7 @@
 #include "bsp/bsp.h"
 #include "peripheral/sqi/plib_sqi1.h"
 #include "driver/sst26/drv_sst26.h"
-#include "bootloader/bootloader.h"
+#include "bootloader/bootloader_serial_mem.h"
 #include "system/int/sys_int.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
