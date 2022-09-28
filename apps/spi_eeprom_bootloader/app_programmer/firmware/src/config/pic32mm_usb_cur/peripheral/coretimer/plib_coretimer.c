@@ -42,42 +42,41 @@
 #include "peripheral/coretimer/plib_coretimer.h"
 
 
-
-static uint32_t compareValue = CORE_TIMER_COMPARE_VALUE;
-
+CORETIMER_OBJECT coreTmr;
 void CORETIMER_Initialize()
 {
-
-    // Clear Core Timer
-    _CP0_SET_COUNT(0);
-    _CP0_SET_COMPARE(compareValue);
-
-    // Enable Timer by clearing Disable Count (DC) bit
-    _CP0_SET_CAUSE(_CP0_GET_CAUSE() & (~_CP0_CAUSE_DC_MASK));
+    // Disable Timer by setting Disable Count (DC) bit
+    _CP0_SET_CAUSE(_CP0_GET_CAUSE() | _CP0_CAUSE_DC_MASK);
+    coreTmr.callback = NULL;
 }
 
-void CORETIMER_Start( void )
+void CORETIMER_CallbackSet ( CORETIMER_CALLBACK callback, uintptr_t context )
+{
+    coreTmr.callback = callback;
+    coreTmr.context = context;
+}
+
+void CORETIMER_Start()
 {
     // Disable Timer by setting Disable Count (DC) bit
     _CP0_SET_CAUSE(_CP0_GET_CAUSE() | _CP0_CAUSE_DC_MASK);
-
-    // Clear Compare Timer Interrupt Flag
-    IFS0CLR=0x1;
-
+    // Disable Interrupt
+    IEC0CLR=0x1;
     // Clear Core Timer
     _CP0_SET_COUNT(0);
-
-    _CP0_SET_COMPARE(compareValue);
-
+    _CP0_SET_COMPARE(0xFFFFFFFF);
     // Enable Timer by clearing Disable Count (DC) bit
     _CP0_SET_CAUSE(_CP0_GET_CAUSE() & (~_CP0_CAUSE_DC_MASK));
-
+    // Enable Interrupt
+    IEC0SET=0x1;
 }
 
-void CORETIMER_Stop( void )
+void CORETIMER_Stop()
 {
     // Disable Timer by setting Disable Count (DC) bit
     _CP0_SET_CAUSE(_CP0_GET_CAUSE() | _CP0_CAUSE_DC_MASK);
+    // Disable Interrupt
+    IEC0CLR=0x1;
 }
 
 uint32_t CORETIMER_FrequencyGet ( void )
@@ -87,8 +86,7 @@ uint32_t CORETIMER_FrequencyGet ( void )
 
 void CORETIMER_CompareSet ( uint32_t compare )
 {
-    compareValue = compare;
-    _CP0_SET_COMPARE(compareValue);
+    _CP0_SET_COMPARE(compare);
 }
 
 uint32_t CORETIMER_CounterGet ( void )
@@ -98,18 +96,17 @@ uint32_t CORETIMER_CounterGet ( void )
     return count;
 }
 
-bool CORETIMER_CompareHasExpired( void )
+void CORE_TIMER_InterruptHandler (void)
 {
-    if (IFS0bits.CTIF != 0)
+    uint32_t status = IFS0bits.CTIF;
+    IFS0CLR=0x1;
+    if(coreTmr.callback != NULL)
     {
-        // Clear Compare Timer Interrupt Flag
-        IFS0CLR=0x1;
-
-        return true;
+        coreTmr.callback(status, coreTmr.context);
     }
-
-    return false;
 }
+
+
 
 void CORETIMER_DelayMs ( uint32_t delay_ms)
 {
