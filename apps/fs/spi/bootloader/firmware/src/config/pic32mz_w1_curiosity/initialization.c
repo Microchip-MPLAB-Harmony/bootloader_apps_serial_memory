@@ -55,14 +55,10 @@
 // ****************************************************************************
 // ****************************************************************************
 
-
-
-
 /*** FBCFG0 ***/
 #pragma config BUHSWEN =    OFF
 #pragma config PCSCMODE =    DUAL
 #pragma config BOOTISA =    MIPS32
-
 
 
 /*** DEVCFG0 ***/
@@ -108,7 +104,6 @@
 #pragma config WDTPSS =    PSS1
 
 
-
 /*** DEVCFG2 ***/
 #pragma config DMTINTV =    WIN_63_64
 #pragma config POSCMOD =    HS
@@ -126,7 +121,6 @@
 #pragma config DMTEN =    OFF
 
 
-
 /*** DEVCFG4 ***/
 #pragma config SOSCCFG =    0
 #pragma config VBZPBOREN =    ON
@@ -136,6 +130,11 @@
 #pragma config DSWDTEN =    OFF
 #pragma config DSEN =    OFF
 #pragma config SOSCEN =    OFF
+
+
+/*** FCPN0 ***/
+#pragma config CP =    OFF
+
 
 
 
@@ -193,7 +192,7 @@ const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
 const DRV_SST26_INIT drvSST26InitData =
 {
     .sst26Plib      = &drvSST26PlibAPI,
-    .chipSelectPin  = DRV_SST26_CHIP_SELECT_PIN
+    .chipSelectPin  = DRV_SST26_CHIP_SELECT_PIN,
 };
 // </editor-fold>
 
@@ -264,13 +263,15 @@ const SYS_FS_FUNCTIONS FatFsFunctions =
 };
 
 
+
 const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 {
     {
         .nativeFileSystemType = FAT,
         .nativeFileSystemFunctions = &FatFsFunctions
-    }
+    },
 };
+
 
 // </editor-fold>
 
@@ -307,8 +308,8 @@ void SYS_Initialize ( void* data )
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
 
-    CLK_Initialize();
-	SYS_PMU_MLDO_TRIM();
+    PMU_Initialize();
+	CLK_Initialize();
 
     /* Configure Wait States */
     PRECONbits.PFMWS = 5;
@@ -321,7 +322,7 @@ void SYS_Initialize ( void* data )
 
     if (bootloader_Trigger() == false)
     {
-        run_Application();
+        run_Application(APP_JUMP_ADDRESS);
     }
 
 	BSP_Initialize();

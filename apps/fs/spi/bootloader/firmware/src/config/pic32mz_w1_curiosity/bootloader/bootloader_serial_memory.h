@@ -1,22 +1,19 @@
 /*******************************************************************************
- System Interrupts File
-
-  Company:
-    Microchip Technology Inc.
+  SERIAL_MEMORY Bootloader Header File
 
   File Name:
-    interrupt.h
+    bootloader_serial_memory.h
 
   Summary:
-    Interrupt vectors mapping
+    This file contains Interface definitions of bootloder
 
   Description:
-    This file contains declarations of device vectors used by Harmony 3
+    This file defines interface for bootloader.
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,24 +36,60 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
+#ifndef BOOTLOADER_SERIAL_MEMORY_H
+#define BOOTLOADER_SERIAL_MEMORY_H
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
 #include <stdint.h>
+#include <stdbool.h>
+#include "bootloader_common.h"
+
+#include "sys/kmem.h"
+
+
 
 
 
 // *****************************************************************************
-// *****************************************************************************
-// Section: Handler Routines
-// *****************************************************************************
-// *****************************************************************************
+/* Function:
+    void bootloader_SERIAL_MEMORY_Tasks( void )
 
+ Summary:
+    Starts bootloader execution.
 
+ Description:
+    This function can be used to start bootloader execution.
 
-#endif // INTERRUPTS_H
+    The function continuously waits for application firmware from the HOST via
+    selected communication protocol to program into internal flash memory.
+
+    Once the complete application is received, programmed and verified successfully,
+    It resets the device to jump into programmed application.
+
+    Note:
+    For Optimized Bootloaders:
+        - This function never returns.
+        - This function will be directly called from main function
+
+    For Unified and File System based Bootloaders:
+        - This function returns once the state machine execution is completed
+        - This function will be called from SYS_Tasks() routine from the super loop
+
+ Precondition:
+    bootloader_Trigger() must be called to check for bootloader triggers at startup.
+
+ Parameters:
+    None.
+
+ Returns:
+    None
+
+ Example:
+    <code>
+
+        bootloader_SERIAL_MEMORY_Tasks();
+
+    </code>
+*/
+void bootloader_SERIAL_MEMORY_Tasks( void );
+
+#endif  //BOOTLOADER_SERIAL_MEMORY_H

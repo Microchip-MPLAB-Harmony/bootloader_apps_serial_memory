@@ -46,17 +46,8 @@
 #include <string.h>
 #include "configuration.h"
 #include "peripheral/nvm/plib_nvm.h"
-#include "bootloader/bootloader.h"
+#include "bootloader/bootloader_serial_memory.h"
 #include "system/fs/sys_fs.h"
-#include "sys/kmem.h"
-
-#define APP_START_ADDRESS       ((uint32_t)(PA_TO_KVA0(0x10000000UL)))
-
-#define FLASH_START             (0x90000000UL)
-#define FLASH_LENGTH            (0x100000UL)
-#define PAGE_SIZE               (1024UL)
-#define ERASE_BLOCK_SIZE        (4096UL)
-#define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
 #define BOOTLOADER_MOUNT_NAME   SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
 #define BOOTLOADER_DEV_NAME     SYS_FS_MEDIA_IDX0_DEVICE_NAME_VOLUME_IDX0
@@ -111,40 +102,6 @@ BOOTLOADER_DATA btlData =
     .deviceAttached = false,
     .progAddr       = APP_START_ADDRESS
 };
-
-bool __WEAK bootloader_Trigger(void)
-{
-    /* Function can be overriden with custom implementation */
-    return false;
-}
-
-static void bootloader_TriggerReset(void)
-{
-    /* Perform system unlock sequence */
-    SYSKEY = 0x00000000;
-    SYSKEY = 0xAA996655;
-    SYSKEY = 0x556699AA;
-
-    RSWRSTSET = _RSWRST_SWRST_MASK;
-    (void)RSWRST;
-}
-
-void run_Application(void)
-{
-    uint32_t msp            = *(uint32_t *)(APP_START_ADDRESS);
-
-    void (*fptr)(void);
-
-    /* Set default to APP_RESET_ADDRESS */
-    fptr = (void (*)(void))APP_START_ADDRESS;
-
-    if (msp == 0xffffffff)
-    {
-        return;
-    }
-
-    fptr();
-}
 
 
 void bootloader_SysFsEventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context)
@@ -206,7 +163,7 @@ void bootloader_NVMPageWrite(uint8_t* data)
     btlData.progAddr += PAGE_SIZE;
 }
 
-void bootloader_Tasks( void )
+void bootloader_SERIAL_MEMORY_Tasks( void )
 {
     size_t fileReadLength;
 
