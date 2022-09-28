@@ -124,7 +124,7 @@ MEMORY
   config_BFC017D4             : ORIGIN = 0xBFC017D4, LENGTH = 0x4
   config_BFC017D8             : ORIGIN = 0xBFC017D8, LENGTH = 0x4
   config_BFC017E0             : ORIGIN = 0xBFC017E0, LENGTH = 0x4
-  kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000, LENGTH = 0x8000
+  kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000 + 16, LENGTH = 0x8000 - 16
   sfrs                        : ORIGIN = 0xBF800000, LENGTH = 0x100000
   configsfrs_BFC01740         : ORIGIN = 0xBFC01740, LENGTH = 0x1C
   configsfrs_BFC017C0         : ORIGIN = 0xBFC017C0, LENGTH = 0x1C

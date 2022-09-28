@@ -22,6 +22,7 @@ This example application shows how to use the Serial Memory Bootloader Library t
 
 - This is a bootloader application which resides from
     - The starting location of the flash memory region for SAM devices
+    - The starting location of the Program Flash memory for PIC32MM devices
 
 **Performs Below Operation:**
 
@@ -55,6 +56,7 @@ This example application shows how to use the Serial Memory Bootloader Library t
 
 - This is a SPI EEPROM programmer application which resides from
     - The end of bootloader size in device flash memory for SAM devices
+    - The end of bootloader size in Program Flash memory for PIC32MM devices
 
 - It will be loaded into **internal flash memory** from **SPI EEPROM** by bootloader application
 
@@ -85,4 +87,5 @@ The following table provides links to documentation on how to build and run SPI 
 | Development Kit |
 |:---------|
 |[SAM D21 Xplained Pro Evaluation Kit](docs/readme_sam_d21_xpro.md) |
+|[PIC32MM USB Curiosity board](docs/readme_pic32mm_usb_curiosity.md) |
 

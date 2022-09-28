@@ -1,4 +1,4 @@
-<config configName="pic32mm_usb_cur" projectName="pic32mm_usb_cur" configVersion="1.1" device="PIC32MM0256GPM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="pic32mm_usb_cur" projectName="pic32mm_usb_cur" configVersion="1.1" device="PIC32MM0256GPM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.11">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -1541,7 +1541,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\btl.ld</file>
-         <hash>9bdcdf8872788f3b24f67344e70da53b94b9cec3e099b7826a7c638358ec42d2</hash>
+         <hash>d38dfd64d4b4449b7efc42976ece436baea8de10362657195d613fcfcf5e8fb4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\bootloader\bootloader_common.c</file>
@@ -1553,7 +1553,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\initialization.c</file>
-         <hash>982853d94b5eb9b832e85c27169986c44e444e4241720e8d9cf20aeab956c7d7</hash>
+         <hash>0407f6fe830d23e31e9d6d50260513bda53fbcb2f3c2fe9f321da02bd715dce2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\driver\driver.h</file>
@@ -1561,7 +1561,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\bootloader\bootloader_common.h</file>
-         <hash>f5f951b8a43a574993cb0878a664517af1cef142faa3f01b36020907d823b248</hash>
+         <hash>77875d19663acc3b18255ccf35e72261ad2da4b47b480a33f8cf6ac7e19b1c4e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\system\int\sys_int.h</file>

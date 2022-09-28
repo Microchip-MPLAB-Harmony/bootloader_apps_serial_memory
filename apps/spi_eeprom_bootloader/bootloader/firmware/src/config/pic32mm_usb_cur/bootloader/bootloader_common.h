@@ -71,6 +71,9 @@
 #define APP_JUMP_ADDRESS                        ((uint32_t)(PA_TO_KVA0(0x1d002001UL)))
 
 
+#define BTL_TRIGGER_RAM_START                   KVA0_TO_KVA1(0x80000000)
+
+#define BTL_TRIGGER_LEN                         16
 
 // *****************************************************************************
 /* Function:
