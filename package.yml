@@ -1,0 +1,14 @@
+package:
+  format-version: "1.0.0"
+  name: "bootloader_apps_serial_memory"
+  version: "3.1.0"
+  type: "application"
+  status: "production"
+  required: true
+
+  dependencies:
+    - name: "bootloader"
+      type: "package"
+      version: "3.6.0"
+
+
