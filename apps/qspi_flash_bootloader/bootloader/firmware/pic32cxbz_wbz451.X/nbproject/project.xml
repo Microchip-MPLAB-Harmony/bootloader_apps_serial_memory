@@ -7,7 +7,9 @@
             <creation-uuid>b47ecba2-0d1d-4c44-99dc-2fc055b834c2</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../../../app_programmer/firmware/pic32cxbz_wbz451.X</make-dep-project>
+            </make-dep-projects>
             <sourceRootList/>
             <confList>
                 <confElem>

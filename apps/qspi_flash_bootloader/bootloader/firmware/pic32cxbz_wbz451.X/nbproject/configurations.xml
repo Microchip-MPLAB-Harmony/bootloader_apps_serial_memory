@@ -324,6 +324,21 @@
         <archiverTool>
         </archiverTool>
         <loading>
+          <makeArtifact PL="../../../app_programmer/firmware/pic32cxbz_wbz451.X"
+                        CT="1"
+                        CN="qspi_app_bootloader_pic32cx_bz"
+                        AC="true"
+                        BL="true"
+                        WD="../../../app_programmer/firmware/pic32cxbz_wbz451.X"
+                        BC="${MAKE}  -f Makefile CONF=qspi_app_bootloader_pic32cx_bz"
+                        DBC="${MAKE}  -f Makefile CONF=qspi_app_bootloader_pic32cx_bz TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/qspi_app_bootloader_pic32cx_bz&quot; &quot;dist/qspi_app_bootloader_pic32cx_bz&quot;"
+                        OP="dist/qspi_app_bootloader_pic32cx_bz/production/pic32cxbz_wbz451.X.production.hex"
+                        DOP="dist/qspi_app_bootloader_pic32cx_bz/debug/pic32cxbz_wbz451.X.debug.elf"
+                        FL="dist/qspi_app_bootloader_pic32cx_bz/production/pic32cxbz_wbz451.X.production.hex"
+                        PD="dist/qspi_app_bootloader_pic32cx_bz/production/pic32cxbz_wbz451.X.production.elf"
+                        DD="dist/qspi_app_bootloader_pic32cx_bz/debug/pic32cxbz_wbz451.X.debug.elf">
+          </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
