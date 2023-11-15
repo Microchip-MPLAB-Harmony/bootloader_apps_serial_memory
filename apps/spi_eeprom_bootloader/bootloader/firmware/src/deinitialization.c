@@ -54,7 +54,7 @@
 /* Fill this function to release or De-Initialize all the resources used 
  * It will be called by bootloader before jumping into application
  */
-void SYS_DeInitialize( void)
+void SYS_DeInitialize(void *data)
 {
     /* Reset SERCOM SPI peripheral as it will Re-Initialized in application space */
     SERCOM1_REGS->SPIM.SERCOM_CTRLA = SERCOM_SPIM_CTRLA_SWRST_Msk;

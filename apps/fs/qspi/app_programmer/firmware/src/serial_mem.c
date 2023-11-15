@@ -89,8 +89,8 @@ SERIAL_MEM_DATA serialMemData;
 
 uint8_t CACHE_ALIGN writeBuffer[WRITE_BUFFER_SIZE];
 
-/* Work buffer used by FAT FS during Format */
-uint8_t CACHE_ALIGN work[SYS_FS_FAT_MAX_SS];
+/* work1 buffer used by FAT FS during Format */
+uint8_t CACHE_ALIGN work1[SYS_FS_FAT_MAX_SS];
 
 SYS_FS_FORMAT_PARAM formatOpt;
 
@@ -235,7 +235,7 @@ void SERIAL_MEM_Tasks ( void )
             formatOpt.fmt = SYS_FS_FORMAT_FAT;
             formatOpt.au_size = 0;
 
-            if (SYS_FS_DriveFormat (SERIAL_MEM_MOUNT_NAME, &formatOpt, (void *)work, SYS_FS_FAT_MAX_SS) != SYS_FS_RES_SUCCESS)
+            if (SYS_FS_DriveFormat (SERIAL_MEM_MOUNT_NAME, &formatOpt, (void *)work1, SYS_FS_FAT_MAX_SS) != SYS_FS_RES_SUCCESS)
             {
                 /* Format of the disk failed. */
                 printf("\r\n!!!!!! ERROR: Format Of Serial Memory Failed !!!!!!\r\n");

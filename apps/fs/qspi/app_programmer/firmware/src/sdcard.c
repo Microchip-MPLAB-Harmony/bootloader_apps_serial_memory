@@ -87,7 +87,7 @@
 
 SDCARD_DATA sdcardData;
 
-uint8_t CACHE_ALIGN readBuffer[READ_BUFFER_SIZE];
+uint8_t CACHE_ALIGN readBuffer1[READ_BUFFER_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -154,7 +154,7 @@ SDCARD_STATUS SDCARD_getCurrentStatus( void )
 /* Functions used by Serial Memory Task to get the data read from SD Card */
 void SDCARD_getReceivedData(uint8_t *buffer, uint32_t *bytesRead)
 {
-    memcpy(buffer, readBuffer, sdcardData.bytesRead);
+    memcpy(buffer, readBuffer1, sdcardData.bytesRead);
 
     *bytesRead = sdcardData.bytesRead;
 
@@ -270,9 +270,9 @@ void SDCARD_Tasks ( void )
 
         case SDCARD_READ_DATA:
         {
-            memset(readBuffer, 0xFF, READ_BUFFER_SIZE);
+            memset(readBuffer1, 0xFF, READ_BUFFER_SIZE);
 
-            sdcardData.bytesRead = SYS_FS_FileRead(sdcardData.fileHandle, (void *)readBuffer, READ_BUFFER_SIZE);
+            sdcardData.bytesRead = SYS_FS_FileRead(sdcardData.fileHandle, (void *)readBuffer1, READ_BUFFER_SIZE);
 
             /* Reached End of File */
             if (sdcardData.bytesRead <= 0)
