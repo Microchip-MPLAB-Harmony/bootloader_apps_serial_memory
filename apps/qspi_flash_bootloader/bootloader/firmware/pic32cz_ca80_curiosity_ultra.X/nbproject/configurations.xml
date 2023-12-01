@@ -11,6 +11,7 @@
           <logicalFolder name="bootloader" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/pic32cz_ca80/bootloader/bootloader_common.h</itemPath>
             <itemPath>../src/config/pic32cz_ca80/bootloader/bootloader_serial_mem.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80/bootloader/bootloader_interrupt.h</itemPath>
           </logicalFolder>
           <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32cz_ca80/bsp/bsp.h</itemPath>
@@ -448,7 +449,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="RAM_LENGTH=0xffff0;RAM_ORIGIN=0x20020010;ROM_LENGTH=0x2000"/>
+                  value="RAM_LENGTH=0xffff0;RAM_ORIGIN=0x20020010;ROM_LENGTH=0x2000;ROM_ORIGIN=&quot;BOOT_ROM_ORIGIN + 1024&quot;"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>

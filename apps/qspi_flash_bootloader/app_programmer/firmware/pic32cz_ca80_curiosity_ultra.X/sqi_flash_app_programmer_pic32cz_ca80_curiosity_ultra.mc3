@@ -7601,7 +7601,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80\definitions.h</file>
-         <hash>2ca353cec6e8b54fe11a9a3614fb702d797a056e4302f28e98394d7aca46a19a</hash>
+         <hash>c270fafe5fcd899f504956468a23c71e28a130d600b123ed3a4b316f1d2b689a</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CZ8110CA80208_DFP\component\prm.h</file>
@@ -7689,7 +7689,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80\initialization.c</file>
-         <hash>2f49dde1fb33fd63620367efe97649f2537c5b73b21e75ac02c172c4ff63634f</hash>
+         <hash>6fb0292845e04a6cb86dea135f293f06b4826db8003553dbf0090129de45e3f7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80\peripheral\sqi\plib_sqi_common.h</file>

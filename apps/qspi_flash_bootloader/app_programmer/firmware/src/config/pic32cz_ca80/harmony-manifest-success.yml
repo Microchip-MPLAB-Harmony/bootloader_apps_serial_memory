@@ -4,12 +4,12 @@
 
 
 project: app_programmer
-creation_date: 2023-12-01T11:38:04.669+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-12-01T22:10:57.123+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.7
 mcc_core_version: v5.5.7
-mplabx_version: v6.15        # if MPLAB X plugin only
+mplabx_version: v6.10        # if MPLAB X plugin only
 harmony_version: v1.3.2
 compiler: XC32 (v4.30) 
 

@@ -73,6 +73,8 @@ The following table provides links to documentation on how to build and run File
 | Development Kit |
 |:---------|
 |[Curiosity PIC32MZ EF 2.0 Development Board](docs/readme_pic32mz_ef_curiosity_v2.md) |
+|[PIC32CZ CA80 Curiosity Ultra Development Board](docs/readme_pic32cz_ca80_curiosity_ultra.md) |
+|[WBZ451 Curiosity Development Board](docs/readme_wbz451_curiosity.md)
 |[SAM E54 Xplained Pro Evaluation Kit](docs/readme_sam_e54_xpro.md) |
 |[SAM E70 Xplained Ultra Evaluation Kit](docs/readme_sam_e70_xult.md) |
 

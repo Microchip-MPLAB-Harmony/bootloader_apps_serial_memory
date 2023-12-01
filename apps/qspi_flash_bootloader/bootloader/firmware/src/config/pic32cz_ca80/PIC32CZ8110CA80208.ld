@@ -62,12 +62,20 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
  *************************************************************************/
 
 #ifndef ROM_ORIGIN
-#  define ROM_ORIGIN 0x8000000
+#  define ROM_ORIGIN 0xc000000
 #endif
 #ifndef ROM_LENGTH
 #  define ROM_LENGTH 0x800000
 #elif (ROM_LENGTH > 0x800000)
 #  error ROM_LENGTH is greater than the max size of 0x800000
+#endif
+#ifndef BOOT_ROM_ORIGIN
+#  define BOOT_ROM_ORIGIN 0x8000000
+#endif
+#ifndef BOOT_ROM_LENGTH
+#  define BOOT_ROM_LENGTH 0x20000
+#elif (BOOT_ROM_LENGTH > 0x20000)
+#  error BOOT_ROM_LENGTH is greater than the max size of 0x20000
 #endif
 #ifndef RAM_ORIGIN
 #  define RAM_ORIGIN 0x20020000
@@ -107,6 +115,7 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
  *************************************************************************/
 MEMORY
 {
+  boot_rom (LRX) : ORIGIN = BOOT_ROM_ORIGIN, LENGTH = BOOT_ROM_LENGTH
   rom (LRX) : ORIGIN = ROM_ORIGIN, LENGTH = ROM_LENGTH
   ram (WX!R) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH
  itcm (WX) : ORIGIN = ITCM_ORIGIN, LENGTH = __XC32_ITCM_LENGTH
@@ -246,7 +255,7 @@ dtcm (WX!R) : ORIGIN = DTCM_ORIGIN, LENGTH = __XC32_DTCM_LENGTH
 # define DATA_REGION ram
 #endif 
 #ifndef VECTOR_REGION
-# define VECTOR_REGION rom
+# define VECTOR_REGION boot_rom
 #endif
 
 __rom_end = ORIGIN(rom) + LENGTH(rom);

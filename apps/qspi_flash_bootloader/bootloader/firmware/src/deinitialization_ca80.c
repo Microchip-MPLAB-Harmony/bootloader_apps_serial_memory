@@ -70,7 +70,7 @@ void CLOCK_DeInitialize(void)
 /* Fill this function to release or De-Initialize all the resources used 
  * It will be called by bootloader before jumping into application
  */
-void SYS_DeInitialize( void)
+void SYS_DeInitialize(void *data)
 {
     /* Reset CLOCK as it will Re-Initialized in application space */
     CLOCK_DeInitialize();
