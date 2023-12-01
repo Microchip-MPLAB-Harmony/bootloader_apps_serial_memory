@@ -506,7 +506,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="ROM_LENGTH=0xfb000;ROM_ORIGIN=0x1005000"/>
+                  value="ROM_LENGTH=0xfb000;ROM_ORIGIN=0x1005000;VECTOR_REGION=rom"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>

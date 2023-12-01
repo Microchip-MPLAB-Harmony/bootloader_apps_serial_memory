@@ -328,6 +328,21 @@
         <archiverTool>
         </archiverTool>
         <loading>
+          <makeArtifact PL="../../../app_programmer/firmware/pic32cz_ca80_curiosity_ultra.X"
+                        CT="1"
+                        CN="pic32cz_ca80"
+                        AC="true"
+                        BL="true"
+                        WD="../../../app_programmer/firmware/pic32cz_ca80_curiosity_ultra.X"
+                        BC="${MAKE}  -f Makefile CONF=pic32cz_ca80"
+                        DBC="${MAKE}  -f Makefile CONF=pic32cz_ca80 TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/pic32cz_ca80&quot; &quot;dist/pic32cz_ca80&quot;"
+                        OP="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
+                        DOP="dist/pic32cz_ca80/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf"
+                        FL="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
+                        PD="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.elf"
+                        DD="dist/pic32cz_ca80/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf">
+          </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>

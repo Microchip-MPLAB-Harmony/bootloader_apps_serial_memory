@@ -7,7 +7,9 @@
             <creation-uuid>3dda3cb2-c44a-4a69-8e8a-967a3c0cbf7f</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../../../app_programmer/firmware/pic32cz_ca80_curiosity_ultra.X</make-dep-project>
+            </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
             </sourceRootList>

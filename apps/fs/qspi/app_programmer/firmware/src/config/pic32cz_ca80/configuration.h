@@ -145,9 +145,6 @@ extern "C" {
 
 /* Memory Driver Global Configuration Options */
 #define DRV_MEMORY_INSTANCES_NUMBER          (1U)
-/* SDSPI Driver Common Configuration Options */
-#define DRV_SDSPI_INSTANCES_NUMBER              (1U)
-
 /* SST26 Driver Instance Configuration */
 #define DRV_SST26_INDEX                 (0U)
 #define DRV_SST26_CLIENTS_NUMBER        (1U)
@@ -155,6 +152,9 @@ extern "C" {
 #define DRV_SST26_PAGE_SIZE             (256U)
 #define DRV_SST26_ERASE_BUFFER_SIZE     (4096U)
 #define DRV_SST26_BUFF_DESC_NUMBER      (16U)
+
+/* SDSPI Driver Common Configuration Options */
+#define DRV_SDSPI_INSTANCES_NUMBER              (1U)
 
 
 /* Memory Driver Instance 0 Configuration */

@@ -6497,6 +6497,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="VTABLE_MEM_REGION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;VTABLE_MEM_REGION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;FLASH&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="WDT_ALLOWED_WINDOW_PERIOD"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;WDT_ALLOWED_WINDOW_PERIOD&quot;&gt;
@@ -12624,7 +12635,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\peripheral\nvm\plib_nvm.c</file>
-         <hash>beea6086790bc497c66bd5254fa43913115d800b37059e489011c6ee55181ce5</hash>
+         <hash>0a36c28e0fbcbe7a22854571366befbf4fff1cd8d1c629a2158a9a99eb1bb01e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -12692,7 +12703,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\peripheral\nvm\plib_nvm.h</file>
-         <hash>02d79b96ad2eb654561fed7dbc8def5e16cb5dd507094523e270f2ef8e16e0df</hash>
+         <hash>e0efb6c83051afb638c654362c3715842aa337429f180a36f8f378aaf8b9b617</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\system\debug\sys_debug.h</file>
@@ -12740,7 +12751,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\peripheral\clk\plib_clk.c</file>
-         <hash>bd7501709ff4abcfee4141e6c8e01d29f82701f88e9d4f08f3eacdddd1c6aa48</hash>
+         <hash>e2f4b4ea40ae5ec89c55c9921a0e1d6104843957dee4ef54a805346b9c8a294f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\system\fs\fat_fs\hardware_access\diskio.h</file>
@@ -12856,7 +12867,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\definitions.h</file>
-         <hash>9abedd6d5b28a95dba91ab33e2d7057dfc1d623a3cf3b5402daca1fda1c98e5d</hash>
+         <hash>775bae5eea40e52e23e54f0bf639ba0065ba2e7a344e05065b3f3ca7379f275e</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ451_DFP\instance\evsys.h</file>
@@ -13344,7 +13355,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\peripheral\clk\plib_clk.h</file>
-         <hash>5c60d83daf6d9466ddbaf17627b852eee42dc0ab695c5410bba0c2c652cb7c09</hash>
+         <hash>39b2476052565e9b20debaa1266d19d5072cff729d06d053e629dc57699ec485</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\driver\sdspi\src\drv_sdspi_plib_interface.c</file>
@@ -13384,7 +13395,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cxbz_wbz451\initialization.c</file>
-         <hash>bf08bdc9896ba9f65df56e0f80d7c05a544fb4cb8082b2b544505ee9c114bff2</hash>
+         <hash>8929e6422fb7c21f020ac8fe0b31d4307d1baa6b0103c7ac627f0f217f52f5a6</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ451_DFP\component\zigbee.h</file>
