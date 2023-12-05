@@ -1,24 +1,27 @@
 /*******************************************************************************
-  User Configuration Header
+ System Tasks File
 
   File Name:
-    user.h
+    tasks.c
 
   Summary:
-    Build-time configuration header for the user defined by this project.
+    This file contains source code necessary to maintain system's polled tasks.
 
   Description:
-    An MPLAB Project may have multiple configurations.  This file defines the
-    build-time options for a single configuration.
+    This file contains source code necessary to maintain system's polled tasks.
+    It implements the "SYS_Tasks" function that calls the individual "Tasks"
+    functions for all polled MPLAB Harmony modules in the system.
 
   Remarks:
-    It only provides macro definitions for build-time configuration options
-
-*******************************************************************************/
+    This file requires access to the systemObjects global data structure that
+    contains the object handles to all MPLAB Harmony module objects executing
+    polled in the system.  These handles are passed into the individual module
+    "Tasks" functions to identify the instance of the module to maintain.
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -41,39 +44,56 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef USER_H
-#define USER_H
-
-#include "bsp/bsp.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-extern "C" {
-
-#endif
-// DOM-IGNORE-END
-
 // *****************************************************************************
 // *****************************************************************************
-// Section: User Configuration macros
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
+#include "configuration.h"
+#include "definitions.h"
+#include "sys_tasks.h"
 
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
 
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: System "Tasks" Routine
+// *****************************************************************************
+// *****************************************************************************
+
+/*******************************************************************************
+  Function:
+    void SYS_Tasks ( void )
+
+  Remarks:
+    See prototype in system/common/sys_module.h.
+*/
+void SYS_Tasks ( void )
+{
+    /* Maintain system services */
+    
+
+    /* Maintain Device Drivers */
+    
+
+    /* Maintain Middleware & Other Libraries */
+    
+
+    /* Maintain the application's state machine. */
+        /* Call Application task APP. */
+    APP_Tasks();
+
+    /* Call Application task APP_INPUT. */
+    APP_INPUT_Tasks();
+
+
+
+
 }
-#endif
-//DOM-IGNORE-END
 
-#endif // USER_H
 /*******************************************************************************
  End of File
-*/
+ */
+

@@ -75,6 +75,8 @@
 #define BTL_TRIGGER_LEN                         16
 
 // *****************************************************************************
+/* MISRA C-2012 Rule 5.8 deviated below. Deviation record ID -
+   H3_MISRAC_2012_R_5_8_DR_1 */
 
 void SYS_DeInitialize( void *data );
 
@@ -124,8 +126,6 @@ Example:
 */
 uint16_t bootloader_GetVersion( void );
 
-/* MISRA C-2012 Rule 5.8 deviated below. Deviation record ID -
-   H3_MISRAC_2012_R_5_8_DR_1 */
 // *****************************************************************************
 /* Function:
     bool bootloader_Trigger( void );

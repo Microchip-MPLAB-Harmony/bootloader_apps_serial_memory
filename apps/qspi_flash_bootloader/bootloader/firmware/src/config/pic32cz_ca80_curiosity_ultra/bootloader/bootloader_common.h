@@ -62,7 +62,7 @@
 #define PAGES_IN_ERASE_BLOCK                    (ERASE_BLOCK_SIZE / PAGE_SIZE)
 
 
-#define BOOTLOADER_SIZE                         24576
+#define BOOTLOADER_SIZE                         8192
 
 #define FLASH_END_ADDRESS                       (FLASH_START + FLASH_LENGTH)
 

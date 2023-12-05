@@ -345,9 +345,9 @@
         <targetDevice>PIC32CZ8110CA80208</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.30</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -366,18 +366,18 @@
         <loading>
           <makeArtifact PL="../../../app_programmer/firmware/pic32cz_ca80_curiosity_ultra.X"
                         CT="1"
-                        CN="pic32cz_ca80"
+                        CN="pic32cz_ca80_curiosity_ultra"
                         AC="true"
                         BL="true"
                         WD="../../../app_programmer/firmware/pic32cz_ca80_curiosity_ultra.X"
-                        BC="${MAKE}  -f Makefile CONF=pic32cz_ca80"
-                        DBC="${MAKE}  -f Makefile CONF=pic32cz_ca80 TYPE_IMAGE=DEBUG_RUN"
-                        CC="rm -rf &quot;build/pic32cz_ca80&quot; &quot;dist/pic32cz_ca80&quot;"
-                        OP="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
-                        DOP="dist/pic32cz_ca80/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf"
-                        FL="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
-                        PD="dist/pic32cz_ca80/production/pic32cz_ca80_curiosity_ultra.X.production.elf"
-                        DD="dist/pic32cz_ca80/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf">
+                        BC="${MAKE}  -f Makefile CONF=pic32cz_ca80_curiosity_ultra"
+                        DBC="${MAKE}  -f Makefile CONF=pic32cz_ca80_curiosity_ultra TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/pic32cz_ca80_curiosity_ultra&quot; &quot;dist/pic32cz_ca80_curiosity_ultra&quot;"
+                        OP="dist/pic32cz_ca80_curiosity_ultra/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
+                        DOP="dist/pic32cz_ca80_curiosity_ultra/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf"
+                        FL="dist/pic32cz_ca80_curiosity_ultra/production/pic32cz_ca80_curiosity_ultra.X.production.hex"
+                        PD="dist/pic32cz_ca80_curiosity_ultra/production/pic32cz_ca80_curiosity_ultra.X.production.elf"
+                        DD="dist/pic32cz_ca80_curiosity_ultra/debug/pic32cz_ca80_curiosity_ultra.X.debug.elf">
           </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
@@ -399,7 +399,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -418,7 +417,7 @@
         <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
-        <property key="tentative-definitions" value="-fno-common"/>
+        <property key="tentative-definitions" value="${tentative.default}"/>
         <property key="toplevel-reordering" value=""/>
         <property key="unaligned-access" value=""/>
         <property key="use-cci" value="false"/>
@@ -456,7 +455,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -497,7 +495,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -526,7 +523,6 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>

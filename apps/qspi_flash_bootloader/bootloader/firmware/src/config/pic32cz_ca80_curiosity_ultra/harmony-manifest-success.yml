@@ -4,7 +4,7 @@
 
 
 project: bootloader
-creation_date: 2023-12-04T21:29:10.133+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-12-05T10:37:30.056+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.7
@@ -18,6 +18,5 @@ modules:
     - {name: "core", version: "v3.13.2-rc.1-2-g5ee23aa"}
     - {name: "dev_packs", version: "v3.18.0-rc.1-4-g0df67bb"}
     - {name: "bootloader", version: "v3.7.0-rc.1-14-ge70c1e2"}
-    - {name: "littlefs", version: "v2.8.0"}
     - {name: "bsp", version: "v3.17.0"}
 

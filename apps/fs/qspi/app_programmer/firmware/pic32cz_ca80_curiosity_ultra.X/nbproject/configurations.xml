@@ -5,126 +5,129 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="pic32cz_ca80"
-                       displayName="pic32cz_ca80"
+        <logicalFolder name="pic32cz_ca80_curiosity_ultra"
+                       displayName="pic32cz_ca80_curiosity_ultra"
                        projectFiles="true">
           <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/pic32cz_ca80/bsp/bsp.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/bsp/bsp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
             <logicalFolder name="memory" displayName="memory" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/drv_memory.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/src/drv_memory_file_system.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/src/drv_memory_local.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/src/drv_memory_file_system.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/src/drv_memory_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/drv_memory.h</itemPath>
             </logicalFolder>
             <logicalFolder name="sdspi" displayName="sdspi" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/drv_sdspi_definitions.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi_file_system.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/drv_sdspi.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/drv_sdspi.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi_file_system.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/drv_sdspi_definitions.h</itemPath>
             </logicalFolder>
             <logicalFolder name="sst26" displayName="sst26" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/sst26/drv_sst26.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sst26/drv_sst26_definitions.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sst26/src/drv_sst26_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sst26/drv_sst26.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sst26/src/drv_sst26_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sst26/drv_sst26_definitions.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/pic32cz_ca80/driver/driver_common.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/driver/driver.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/driver.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/driver_common.h</itemPath>
           </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/pic32cz_ca80/osal/osal_impl_basic.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/osal/osal.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/osal/osal_impl_basic.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/osal/osal.h</itemPath>
           </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/clock/plib_clock.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/evsys/plib_evsys.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/evsys/plib_evsys.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="fcw" displayName="fcw" projectFiles="true">
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/fcw/plib_fcw.h</itemPath>
             </logicalFolder>
             <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/nvic/plib_nvic.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="port" displayName="port" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/port/plib_port.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
             <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/rtc/plib_rtc.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/rtc/plib_rtc.h</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/spi_master/plib_sercom3_spi_master.h</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/spi_master/plib_sercom3_spi_master.h</itemPath>
               </logicalFolder>
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/usart/plib_sercom1_usart.h</itemPath>
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/usart/plib_sercom1_usart.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="sqi" displayName="sqi" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/sqi/plib_sqi1.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/peripheral/sqi/plib_sqi_common.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sqi/plib_sqi1.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sqi/plib_sqi_common.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="system" displayName="system" projectFiles="true">
             <logicalFolder name="cache" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/cache/sys_cache.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
             <logicalFolder name="debug" displayName="debug" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/debug/sys_debug.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="dma" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/dma/sys_dma_mapping.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/dma/sys_dma.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/dma/sys_dma_mapping.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/dma/sys_dma.h</itemPath>
             </logicalFolder>
             <logicalFolder name="fs" displayName="fs" projectFiles="true">
               <logicalFolder name="fat_fs" displayName="fat_fs" projectFiles="true">
                 <logicalFolder name="file_system" displayName="file_system" projectFiles="true">
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/file_system/ff.h</itemPath>
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/file_system/ffconf.h</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system/ffconf.h</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system/ff.h</itemPath>
                 </logicalFolder>
                 <logicalFolder name="hardware_access"
                                displayName="hardware_access"
                                projectFiles="true">
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/hardware_access/diskio.h</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/hardware_access/diskio.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/sys_fs_media_manager.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/sys_fs_fat_interface.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/src/sys_fs_local.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/sys_fs.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/src/sys_fs_media_manager_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/sys_fs.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/sys_fs_fat_interface.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/sys_fs_media_manager.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/src/sys_fs_local.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/src/sys_fs_media_manager_local.h</itemPath>
             </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/int/sys_int_mapping.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
             <logicalFolder name="ports" displayName="ports" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/ports/sys_ports_mapping.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/ports/sys_ports.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/ports/sys_ports_mapping.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/ports/sys_ports.h</itemPath>
             </logicalFolder>
             <logicalFolder name="time" displayName="time" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/time/src/sys_time_local.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/time/sys_time.h</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/time/sys_time_definitions.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/time/sys_time.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/time/sys_time_definitions.h</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/time/src/sys_time_local.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/pic32cz_ca80/system/system.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/system/system_common.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/system/system_media.h</itemPath>
-            <itemPath>../src/config/pic32cz_ca80/system/system_module.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/system_media.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/system_common.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/system.h</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/system_module.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/config/pic32cz_ca80/device_vectors.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/device.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/user.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/sys_tasks.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/device_cache.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/definitions.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/interrupts.h</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/configuration.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/sys_tasks.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/device_cache.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/definitions.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/device.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/configuration.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/user.h</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -268,10 +271,10 @@
                    displayName="Linker Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="pic32cz_ca80"
-                       displayName="pic32cz_ca80"
+        <logicalFolder name="pic32cz_ca80_curiosity_ultra"
+                       displayName="pic32cz_ca80_curiosity_ultra"
                        projectFiles="true">
-          <itemPath>../src/config/pic32cz_ca80/PIC32CZ8110CA80208.ld</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/PIC32CZ8110CA80208.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -279,111 +282,114 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="pic32cz_ca80"
-                       displayName="pic32cz_ca80"
+        <logicalFolder name="pic32cz_ca80_curiosity_ultra"
+                       displayName="pic32cz_ca80_curiosity_ultra"
                        projectFiles="true">
           <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/pic32cz_ca80/bsp/bsp.c</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/bsp/bsp.c</itemPath>
           </logicalFolder>
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
             <logicalFolder name="memory" displayName="memory" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/src/drv_memory_file_system.c</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/memory/src/drv_memory.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/src/drv_memory_file_system.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/memory/src/drv_memory.c</itemPath>
             </logicalFolder>
             <logicalFolder name="sdspi" displayName="sdspi" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi.c</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi_file_system.c</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/driver/sdspi/src/drv_sdspi_plib_interface.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi_file_system.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sdspi/src/drv_sdspi_plib_interface.c</itemPath>
             </logicalFolder>
             <logicalFolder name="sst26" displayName="sst26" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/driver/sst26/src/drv_sst26.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/driver/sst26/src/drv_sst26.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/clock/plib_clock.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/evsys/plib_evsys.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/evsys/plib_evsys.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="fcw" displayName="fcw" projectFiles="true">
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/fcw/plib_fcw.c</itemPath>
             </logicalFolder>
             <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/nvic/plib_nvic.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="port" displayName="port" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/port/plib_port.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
             <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/rtc/plib_rtc_timer.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/rtc/plib_rtc_timer.c</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/spi_master/plib_sercom3_spi_master.c</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/spi_master/plib_sercom3_spi_master.c</itemPath>
               </logicalFolder>
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
-                <itemPath>../src/config/pic32cz_ca80/peripheral/sercom/usart/plib_sercom1_usart.c</itemPath>
+                <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sercom/usart/plib_sercom1_usart.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="sqi" displayName="sqi" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/peripheral/sqi/plib_sqi1.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/peripheral/sqi/plib_sqi1.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/pic32cz_ca80/stdio/xc32_monitor.c</itemPath>
+            <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="system" displayName="system" projectFiles="true">
             <logicalFolder name="cache" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/cache/sys_cache.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/cache/sys_cache.c</itemPath>
             </logicalFolder>
             <logicalFolder name="dma" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/dma/sys_dma.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/dma/sys_dma.c</itemPath>
             </logicalFolder>
             <logicalFolder name="fs" displayName="fs" projectFiles="true">
               <logicalFolder name="fat_fs" displayName="fat_fs" projectFiles="true">
                 <logicalFolder name="file_system" displayName="file_system" projectFiles="true">
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/file_system/ff.c</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system/ff.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="hardware_access"
                                displayName="hardware_access"
                                projectFiles="true">
-                  <itemPath>../src/config/pic32cz_ca80/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
+                  <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/src/sys_fs_fat_interface.c</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/src/sys_fs_media_manager.c</itemPath>
-              <itemPath>../src/config/pic32cz_ca80/system/fs/src/sys_fs.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/src/sys_fs.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/src/sys_fs_fat_interface.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/fs/src/sys_fs_media_manager.c</itemPath>
             </logicalFolder>
             <logicalFolder name="int" displayName="int" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/int/src/sys_int.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
             <logicalFolder name="time" displayName="time" projectFiles="true">
-              <itemPath>../src/config/pic32cz_ca80/system/time/src/sys_time.c</itemPath>
+              <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/pic32cz_ca80/startup_xc32.c</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/libc_syscalls.c</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/exceptions.c</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/initialization.c</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/interrupts.c</itemPath>
-          <itemPath>../src/config/pic32cz_ca80/tasks.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/tasks.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/exceptions.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/startup_xc32.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/interrupts.c</itemPath>
+          <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/initialization.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_monitor.c</itemPath>
+      <itemPath>../src/config/pic32cz_ca80_curiosity_ultra/pin_configurations.csv</itemPath>
       <itemPath>../src/sdcard.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/serial_mem.c</itemPath>
-      <itemPath>../src/config/pic32cz_ca80/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>fs_bootloader_test_app_pic32cz_ca80_curiosity_ultra.mc3</itemPath>
+      <itemPath>fs_qspi_bootloader_test_app_pic32cz_ca80_curiosity_ultra.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="pic32cz_ca80" type="2">
+    <conf name="pic32cz_ca80_curiosity_ultra" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32CZ8110CA80208</targetDevice>
@@ -391,12 +397,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CZ-CA80_DFP" vendor="Microchip" version="1.2.150"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="PIC32CZ-CA80_DFP" vendor="Microchip" version="1.2.150"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -434,7 +440,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32cz_ca80;../src/config/pic32cz_ca80/system/fs/fat_fs/file_system;../src/config/pic32cz_ca80/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CZ8110CA80208_DFP"/>
+                  value="../src;../src/config/pic32cz_ca80_curiosity_ultra;../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system;../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CZ8110CA80208_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -533,7 +539,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32cz_ca80;../src/config/pic32cz_ca80/system/fs/fat_fs/file_system;../src/config/pic32cz_ca80/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CZ8110CA80208_DFP"/>
+                  value="../src;../src/config/pic32cz_ca80_curiosity_ultra;../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/file_system;../src/config/pic32cz_ca80_curiosity_ultra/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CZ8110CA80208_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -564,114 +570,6 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
-      <Tool>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="communication.interface" value="swd"/>
-        <property key="communication.interface.jtag" value="2wire"/>
-        <property key="communication.speed" value="2.000"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="event.recorder.enabled" value="false"/>
-        <property key="event.recorder.scvd.files" value=""/>
-        <property key="freeze.timers" value="false"/>
-        <property key="lastid" value=""/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.exclude.configurationmemory" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0-9fffffff"/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.program.otpconfig" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
-        <property key="x.erase.key" value="0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF"/>
-      </Tool>
-      <pkob4hybrid>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="communication.interface" value="swd"/>
-        <property key="communication.interface.jtag" value="2wire"/>
-        <property key="communication.speed" value="2.000"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="event.recorder.enabled" value="false"/>
-        <property key="event.recorder.scvd.files" value=""/>
-        <property key="freeze.timers" value="false"/>
-        <property key="lastid" value=""/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.exclude.configurationmemory" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0-9fffffff"/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.program.otpconfig" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
-        <property key="x.erase.key" value="0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF"/>
-      </pkob4hybrid>
     </conf>
   </confs>
 </configurationDescriptor>

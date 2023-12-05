@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>sqi_bootloader_pic32cz_ca80_curiosity_ultra</name>
-            <creation-uuid>3dda3cb2-c44a-4a69-8e8a-967a3c0cbf7f</creation-uuid>
+            <name>sqi_flash_bootloader_pic32cz_ca80_curiosity_ultra</name>
+            <creation-uuid>33e81eb3-d327-4967-a69f-5e56613e3a35</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
@@ -15,7 +15,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>pic32cz_ca80</name>
+                    <name>pic32cz_ca80_curiosity_ultra</name>
                     <type>2</type>
                 </confElem>
             </confList>

@@ -1,24 +1,22 @@
 /*******************************************************************************
-  User Configuration Header
+  Board Support Package Implementation
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    user.h
+    bsp.c
 
   Summary:
-    Build-time configuration header for the user defined by this project.
+    Board Support Package implementation.
 
   Description:
-    An MPLAB Project may have multiple configurations.  This file defines the
-    build-time options for a single configuration.
-
-  Remarks:
-    It only provides macro definitions for build-time configuration options
-
+    This file contains routines that implement the board support package
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,42 +36,51 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
-// DOM-IGNORE-END
-
-#ifndef USER_H
-#define USER_H
-
-#include "bsp/bsp.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-extern "C" {
-
-#endif
+*******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: User Configuration macros
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
+#include "bsp.h"
 
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
+// *****************************************************************************
+// *****************************************************************************
 
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
+// *****************************************************************************
+/* Function:
+    void BSP_Initialize(void)
+
+  Summary:
+    Performs the necessary actions to initialize a board
+
+  Description:
+    This function initializes the LED, Switch and other ports on the board.
+    This function must be called by the user before using any APIs present in
+    this BSP.
+
+  Remarks:
+    Refer to bsp.h for usage information.
+*/
+
+void BSP_Initialize(void )
+{
+
+
+    /* Switch off LEDs */
+    LED0_Off();
+    LED1_Off();
+
+
 }
-#endif
-//DOM-IGNORE-END
 
-#endif // USER_H
 /*******************************************************************************
  End of File
 */

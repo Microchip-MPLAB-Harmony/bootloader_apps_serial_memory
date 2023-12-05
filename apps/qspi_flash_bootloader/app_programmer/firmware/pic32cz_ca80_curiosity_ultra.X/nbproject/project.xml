@@ -4,7 +4,7 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>sqi_flash_app_programmer_pic32cz_ca80_curiosity_ultra</name>
-            <creation-uuid>90a87822-7b34-4bc2-87c0-bfed75f0e130</creation-uuid>
+            <creation-uuid>00bd5eb0-f0d5-430f-aada-2e10a7d1d43c</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
@@ -13,7 +13,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>pic32cz_ca80</name>
+                    <name>pic32cz_ca80_curiosity_ultra</name>
                     <type>2</type>
                 </confElem>
             </confList>

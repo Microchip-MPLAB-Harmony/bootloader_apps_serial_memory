@@ -59,13 +59,21 @@ extern "C" {
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
+#define LED_ON()                LED1_On()
+#define LED_OFF()               LED1_Off()
+#define LED_TOGGLE()            LED1_Toggle()
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
+#define SWITCH_GET()            SWITCH0_Get()
+#define SWITCH_PRESSED          SWITCH0_STATE_PRESSED
+    
+#define BTL_TRIGGER_METHOD      "PRESS SWITCH 0"
+#define BTL_TRIGGER_RAM_START   (0x20020000U)
 
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
+static inline void APP_SystemReset( void )
+{
+    NVIC_SystemReset();
+}
+
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

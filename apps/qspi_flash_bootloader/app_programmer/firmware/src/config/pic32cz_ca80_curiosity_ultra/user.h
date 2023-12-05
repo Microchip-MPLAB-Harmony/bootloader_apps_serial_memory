@@ -59,13 +59,37 @@ extern "C" {
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
+#define LED_ON()                LED1_On()
+#define LED_OFF()               LED1_Off()
+#define LED_TOGGLE()            LED1_Toggle()
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
+#define SWITCH_GET()            SWITCH0_Get()
+#define SWITCH_PRESSED          SWITCH0_STATE_PRESSED
 
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
+#define FLASH_START             (0xC000000UL)
+#define FLASH_LENGTH            (0x800000UL)
+#define PAGE_SIZE               (1024UL)
+#define ERASE_BLOCK_SIZE        (4096UL)
+#define PAGES_IN_ERASE_BLOCK    (ERASE_BLOCK_SIZE / PAGE_SIZE)
+
+#define APP_JUMP_ADDRESS_OFFSET (0xc000000)
+
+#define APP_TIMER_START         SYSTICK_TimerStart
+#define APP_TIMER_DelayMs       SYSTICK_DelayMs
+
+#define UART_FUNC(OP)           (SERCOM1_USART_ ## OP)
+
+#define INPUT_EVENT             SERCOM_USART_EVENT
+#define INPUT_EVENT_READ_ERROR  SERCOM_USART_EVENT_READ_ERROR
+#define INPUT_ERROR_NONE        USART_ERROR_NONE
+
+#define USE_HW_CRC_GEN          true
+
+static inline void APP_SystemReset( void )
+{
+    NVIC_SystemReset();
+}
+
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

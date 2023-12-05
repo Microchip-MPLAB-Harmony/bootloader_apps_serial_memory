@@ -1,24 +1,23 @@
 /*******************************************************************************
-  User Configuration Header
+  Device Service Unit (DSU) PLIB
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    user.h
+    plib_dsu.c
 
   Summary:
-    Build-time configuration header for the user defined by this project.
+    DSU PLIB Implementation File
 
   Description:
-    An MPLAB Project may have multiple configurations.  This file defines the
-    build-time options for a single configuration.
-
-  Remarks:
-    It only provides macro definitions for build-time configuration options
+    This file contains the implementation of the DSU Peripheral Library. This is
+    generated file.
 
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,42 +37,54 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
-// DOM-IGNORE-END
+*******************************************************************************/
 
-#ifndef USER_H
-#define USER_H
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+/* This section lists the other files that are included in this file.*/
 
-#include "bsp/bsp.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-extern "C" {
-
-#endif
-// DOM-IGNORE-END
+#include "plib_dsu.h"
+#include "device.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: User Configuration macros
+// Section: DSU CRC Implementation
 // *****************************************************************************
 // *****************************************************************************
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
+bool DSU_CRCCalculate (uint32_t startAddress, size_t length, uint32_t crcSeed, uint32_t * crc)
+{
+    bool statusValue = false;
 
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
+    if( (0U != length) && (NULL != crc) )
+    {
+        DSU_REGS->DSU_ADDR = startAddress;
 
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
+        DSU_REGS->DSU_LENGTH = (uint32_t)length;
+
+        /* Initial CRC Value  */
+        DSU_REGS->DSU_DATA = crcSeed;
+
+        /* Clear Status Register */
+        DSU_REGS->DSU_STATUSA = DSU_REGS->DSU_STATUSA;
+
+        DSU_REGS->DSU_CTRL = DSU_CTRL_CMD(DSU_CTRL_CMD_CRC32_Val);
+
+        while((DSU_REGS->DSU_STATUSA & DSU_STATUSA_DONE_Msk) == 0U)
+        {
+            /* Wait for the DSU Operation to Complete */
+        }
+
+        if((DSU_REGS->DSU_STATUSA & DSU_STATUSA_BERR_Msk) == 0U)
+        {
+            /* Reading the resultant crc value from the DATA register */
+            *crc = (uint32_t) DSU_REGS->DSU_DATA;
+
+            statusValue = true;
+        }
+    }
+
+    return statusValue;
 }
-#endif
-//DOM-IGNORE-END
-
-#endif // USER_H
-/*******************************************************************************
- End of File
-*/

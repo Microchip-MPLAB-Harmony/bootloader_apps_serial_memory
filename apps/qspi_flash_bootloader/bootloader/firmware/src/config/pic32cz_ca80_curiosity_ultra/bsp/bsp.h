@@ -1,32 +1,23 @@
 /*******************************************************************************
-  SYS CLK Static Functions for Clock System Service
+  Board Support Package Header File.
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_clk.h
+    bsp.h
 
   Summary:
-    SYS CLK static function interface for the Clock System Service.
+    Board Support Package Header File 
 
   Description:
-    The Clock System Service provides a simple interface to manage the
-    oscillators on Microchip microcontrollers. This file defines the static
-    implementation for the Clock System Service.
-
-  Remarks:
-    Static functions incorporate all system clock configuration settings as
-    determined by the user via the Microchip Harmony Configurator GUI.
-    It provides static version of the routines, eliminating the need for an
-    object ID or object handle.
-
-    Static single-open interfaces also eliminate the need for the open handle.
-
+    This file contains constants, macros, type definitions and function
+    declarations 
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -47,9 +38,10 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_CLK_H
-#define PLIB_CLK_H
+#ifndef BSP_H
+#define BSP_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -57,61 +49,84 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stddef.h>
-#include <stdbool.h>  
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "device.h"
 
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-	extern "C" {
-
-#endif
-// DOM-IGNORE-END
- 
 // *****************************************************************************
 // *****************************************************************************
-// Section: CLK Module System Interface Routines
+// Section: BSP Macros
+// *****************************************************************************
+// *****************************************************************************
+#define pic32cz_ca80_curiosity_ultra
+#define BSP_NAME             "pic32cz_ca80_curiosity_ultra"
+
+
+
+/*** LED Macros for LED0 ***/
+#define LED0_Toggle()     (PORT_REGS->GROUP[1].PORT_OUTTGL = 1UL << 21)
+#define LED0_On()         (PORT_REGS->GROUP[1].PORT_OUTCLR = 1UL << 21)
+#define LED0_Off()        (PORT_REGS->GROUP[1].PORT_OUTSET = 1UL << 21)
+/*** LED Macros for LED1 ***/
+#define LED1_Toggle()     (PORT_REGS->GROUP[1].PORT_OUTTGL = 1UL << 22)
+#define LED1_On()         (PORT_REGS->GROUP[1].PORT_OUTCLR = 1UL << 22)
+#define LED1_Off()        (PORT_REGS->GROUP[1].PORT_OUTSET = 1UL << 22)
+
+/*** SWITCH Macros for SWITCH0 ***/
+#define SWITCH0_Get()     ((PORT_REGS->GROUP[1].PORT_IN >> 24) & 0x01)
+#define SWITCH0_STATE_PRESSED   0
+#define SWITCH0_STATE_RELEASED  1
+/*** SWITCH Macros for SWITCH1 ***/
+#define SWITCH1_Get()     ((PORT_REGS->GROUP[2].PORT_IN >> 23) & 0x01)
+#define SWITCH1_STATE_PRESSED   0
+#define SWITCH1_STATE_RELEASED  1
+
+
+
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
 // *****************************************************************************
 /* Function:
-    void CLK_Initialize( void )
+    void BSP_Initialize(void)
 
   Summary:
-    Initializes hardware of the System Clock and Peripheral Clock.
-    
+    Performs the necessary actions to initialize a board
+
   Description:
-    This function initializes the hardware of System Clock and Peripheral Clocks.
+    This function initializes the LED and Switch ports on the board.  This
+    function must be called by the user before using any APIs present on this
+    BSP.
 
   Precondition:
     None.
 
   Parameters:
-    None.
+    None
 
   Returns:
     None.
 
   Example:
     <code>
-    CLOCK_Initialize ( );
-
+    BSP_Initialize();
     </code>
 
   Remarks:
-    None.
+    None
 */
 
-void CLOCK_Initialize( void );
+void BSP_Initialize(void);
 
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
+#endif // BSP_H
 
-    }
-
-#endif
-// DOM-IGNORE-END
-
-#endif //PLIB_CLK_H
-
+/*******************************************************************************
+ End of File
+*/

@@ -1,24 +1,24 @@
 /*******************************************************************************
-  User Configuration Header
+  Device Service Unit (DSU) PLIB
+
+  Company:
+    Microchip Technology Inc.
 
   File Name:
-    user.h
+    plib_dsu.h
 
   Summary:
-    Build-time configuration header for the user defined by this project.
+    DSU PLIB Header File
 
   Description:
-    An MPLAB Project may have multiple configurations.  This file defines the
-    build-time options for a single configuration.
-
-  Remarks:
-    It only provides macro definitions for build-time configuration options
+    This file defines the interface to the DSU peripheral library.
+    This library provides access to and control of the associated
+    peripheral instance.
 
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,42 +38,32 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
-// DOM-IGNORE-END
-
-#ifndef USER_H
-#define USER_H
-
-#include "bsp/bsp.h"
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
+#ifndef PLIB_DSU_H
+#define PLIB_DSU_H
 
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+/* This section lists the other files that are included in this file.*/
+
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
+#ifdef __cplusplus // Provide C++ Compatibility
 extern "C" {
-
 #endif
+
 // DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: User Configuration macros
-// *****************************************************************************
-// *****************************************************************************
+bool DSU_CRCCalculate (uint32_t startAddress, size_t length, uint32_t crcSeed, uint32_t * crc);
 
-#define LED_ON()        LED0_On()
-#define LED_OFF()       LED0_Off()
-#define LED_TOGGLE()    LED0_Toggle()
-
-#define SWITCH_GET()    SWITCH0_Get()
-#define SWITCH_PRESSED  SWITCH0_STATE_PRESSED
-
-//DOM-IGNORE-BEGIN
-#ifdef __cplusplus
+#ifdef __cplusplus // Provide C++ Compatibility
 }
 #endif
-//DOM-IGNORE-END
 
-#endif // USER_H
-/*******************************************************************************
- End of File
-*/
+#endif /* PLIB_DSU_H */

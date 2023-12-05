@@ -4,7 +4,7 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>fs_qspi_bootloader_pic32cz_ca80_curiosity_ultra</name>
-            <creation-uuid>7a7d9966-dc8c-4fa8-b69d-1f1ae68c06bb</creation-uuid>
+            <creation-uuid>420b6bfb-9420-4af1-99ba-8469897bf6fb</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
