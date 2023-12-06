@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_uart6.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -58,15 +59,15 @@ void static UART6_ErrorClear( void )
     if(errors != UART_ERROR_NONE)
     {
         /* If it's a overrun error then clear it to flush FIFO */
-        if(U6STA & _U6STA_OERR_MASK)
+        if((U6STA & _U6STA_OERR_MASK) != 0U)
         {
             U6STACLR = _U6STA_OERR_MASK;
         }
 
         /* Read existing error bytes from FIFO to clear parity and framing error flags */
-        while(U6STA & _U6STA_URXDA_MASK)
+        while((U6STA & _U6STA_URXDA_MASK) != 0U)
         {
-            dummyData = U6RXREG;
+            dummyData = (uint8_t)U6RXREG;
         }
 
     }
@@ -99,35 +100,33 @@ bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
     bool status = false;
     uint32_t baud;
     uint32_t status_ctrl;
-    bool brgh = 1;
-    int32_t uxbrg = 0;
+    uint32_t uxbrg = 0;
 
     if (setup != NULL)
     {
         baud = setup->baudRate;
 
-        if ((baud == 0) || ((setup->dataWidth == UART_DATA_9_BIT) && (setup->parity != UART_PARITY_NONE)))
+        if ((baud == 0U) || ((setup->dataWidth == UART_DATA_9_BIT) && (setup->parity != UART_PARITY_NONE)))
         {
             return status;
         }
 
-        if(srcClkFreq == 0)
+        if(srcClkFreq == 0U)
         {
             srcClkFreq = UART6_FrequencyGet();
         }
 
         /* Calculate BRG value */
-        if (brgh == 0)
+        uxbrg = (((srcClkFreq >> 2) + (baud >> 1)) / baud);
+        /* Check if the baud value can be set with low baud settings */
+        if (uxbrg < 1U)
         {
-            uxbrg = (((srcClkFreq >> 4) + (baud >> 1)) / baud ) - 1;
-        }
-        else
-        {
-            uxbrg = (((srcClkFreq >> 2) + (baud >> 1)) / baud ) - 1;
+            return status;
         }
 
-        /* Check if the baud value can be set with low baud settings */
-        if((uxbrg < 0) || (uxbrg > UINT16_MAX))
+        uxbrg -= 1U;
+
+        if (uxbrg > UINT16_MAX)
         {
             return status;
         }
@@ -157,7 +156,7 @@ bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 
         U6MODESET = _U6MODE_ON_MASK;
 
-        /* Re-enable UTXEN, URXEN and UTXBRK. */
+        /* Restore UTXEN, URXEN and UTXBRK bits. */
         U6STASET = status_ctrl;
 
         status = true;
@@ -168,10 +167,13 @@ bool UART6_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 
 bool UART6_AutoBaudQuery( void )
 {
-    if(U6MODE & _U6MODE_ABAUD_MASK)
-        return true;
-    else
-        return false;
+    bool autobaudqcheck = false;
+    if((U6MODE & _U6MODE_ABAUD_MASK) != 0U)
+    {
+
+       autobaudqcheck = true;
+    }
+    return autobaudqcheck;
 }
 
 void UART6_AutoBaudSet( bool enable )
@@ -188,36 +190,38 @@ void UART6_AutoBaudSet( bool enable )
 bool UART6_Read(void* buffer, const size_t size )
 {
     bool status = false;
-    uint8_t* lBuffer = (uint8_t* )buffer;
     uint32_t errorStatus = 0;
     size_t processedSize = 0;
 
-    if(lBuffer != NULL)
+    if(buffer != NULL)
     {
+
         /* Clear error flags and flush out error data that may have been received when no active request was pending */
         UART6_ErrorClear();
 
         while( size > processedSize )
         {
-            while(!(U6STA & _U6STA_URXDA_MASK));
+            while((U6STA & _U6STA_URXDA_MASK) == 0U)
+            {
+                /* Wait for receiver to be ready */
+            }
 
             /* Error status */
             errorStatus = (U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
 
-            if(errorStatus != 0)
+            if(errorStatus != 0U)
             {
                 break;
             }
             if (( U6MODE & (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK)) == (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK))
             {
                 /* 9-bit mode */
-                *(uint16_t*)lBuffer = (U6RXREG );
-                lBuffer += 2;
+                ((uint16_t*)(buffer))[processedSize] = (uint16_t)(U6RXREG );
             }
             else
             {
                 /* 8-bit mode */
-                *lBuffer++ = (U6RXREG );
+                ((uint8_t*)(buffer))[processedSize] = (uint8_t)(U6RXREG);
             }
 
             processedSize++;
@@ -235,26 +239,27 @@ bool UART6_Read(void* buffer, const size_t size )
 bool UART6_Write( void* buffer, const size_t size )
 {
     bool status = false;
-    uint8_t* lBuffer = (uint8_t*)buffer;
     size_t processedSize = 0;
 
-    if(lBuffer != NULL)
+    if(buffer != NULL)
     {
         while( size > processedSize )
         {
             /* Wait while TX buffer is full */
-            while (U6STA & _U6STA_UTXBF_MASK);
+            while ((U6STA & _U6STA_UTXBF_MASK) != 0U)
+            {
+                /* Wait for transmitter to be ready */
+            }
 
             if (( U6MODE & (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK)) == (_U6MODE_PDSEL0_MASK | _U6MODE_PDSEL1_MASK))
             {
                 /* 9-bit mode */
-                U6TXREG = *(uint16_t*)lBuffer;
-                lBuffer += 2;
+                U6TXREG = ((uint16_t*)(buffer))[processedSize];
             }
             else
             {
                 /* 8-bit mode */
-                U6TXREG = *lBuffer++;
+                U6TXREG = ((uint8_t*)(buffer))[processedSize];
             }
 
             processedSize++;
@@ -270,7 +275,7 @@ UART_ERROR UART6_ErrorGet( void )
 {
     UART_ERROR errors = UART_ERROR_NONE;
 
-    errors = (UART_ERROR)(U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
+    errors = (U6STA & (_U6STA_OERR_MASK | _U6STA_FERR_MASK | _U6STA_PERR_MASK));
 
     if(errors != UART_ERROR_NONE)
     {
@@ -283,16 +288,19 @@ UART_ERROR UART6_ErrorGet( void )
 
 void UART6_WriteByte(int data)
 {
-    while ((U6STA & _U6STA_UTXBF_MASK));
+    while (((U6STA & _U6STA_UTXBF_MASK) != 0U))
+    {
+        /* Do Nothing */
+    }
 
-    U6TXREG = data;
+    U6TXREG = (uint32_t)data;
 }
 
 bool UART6_TransmitterIsReady( void )
 {
     bool status = false;
 
-    if(!(U6STA & _U6STA_UTXBF_MASK))
+    if((U6STA & _U6STA_UTXBF_MASK) == 0U)
     {
         status = true;
     }
@@ -302,7 +310,7 @@ bool UART6_TransmitterIsReady( void )
 
 int UART6_ReadByte( void )
 {
-    return(U6RXREG);
+    return (int)(U6RXREG);
 }
 
 bool UART6_ReceiverIsReady( void )
@@ -321,7 +329,7 @@ bool UART6_TransmitComplete( void )
 {
     bool transmitComplete = false;
 
-    if((U6STA & _U6STA_TRMT_MASK))
+    if((U6STA & _U6STA_TRMT_MASK) != 0U)
     {
         transmitComplete = true;
     }

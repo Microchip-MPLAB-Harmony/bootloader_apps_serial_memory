@@ -10261,7 +10261,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\initialization.c</file>
-         <hash>f79d4bef26422dba4b9fb4f0d4961cbb7efa198b3ba6b976094873e0f304e59e</hash>
+         <hash>328684975735ebd9d455f4c632d7f6bee8c6e9a7006272bafc670490ab689abf</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ451_DFP\instance\icm.h</file>
@@ -10369,7 +10369,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\definitions.h</file>
-         <hash>5febb06d8366cea25933fd130d6c42593c0354251d52642cde2baf28b08fa2bc</hash>
+         <hash>b3ac5089bf93608609d45712433e88a7d2a99d0f566da0fbd17a9dc169b2cd14</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -10449,7 +10449,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.h</file>
-         <hash>39b2476052565e9b20debaa1266d19d5072cff729d06d053e629dc57699ec485</hash>
+         <hash>5c60d83daf6d9466ddbaf17627b852eee42dc0ab695c5410bba0c2c652cb7c09</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\nvic\plib_nvic.c</file>
@@ -10485,7 +10485,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>c7f19f6b2089b18aca1cd7da31d2063a7c5a80caabe772dbd75c1415a2166c17</hash>
+         <hash>c8393fe34de7b8af48348433ee9446eb915ae172cb880f5a7acb928250ec59a6</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\system\fs\src\sys_fs_local.h</file>

@@ -1,23 +1,23 @@
-    /******************************************************************************
-  MEMORY Driver File System Interface Implementation
+/******************************************************************************
+  SD Card (SPI) Driver File System Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    drv_memory_file_system.c
+    drv_sdspi_file_system.h
 
   Summary:
-    MEMORY Driver Interface Definition
+    SD Card (SPI) Driver Interface Definition
 
   Description:
-    The MEMORY Driver provides a interface to access the MEMORY on the PIC32
-    microcontroller. This file implements the MEMORY Driver file system interface.
-    This file should be included in the project if MEMORY driver functionality with
-    File system is needed.
+    The SD Card Driver provides a interface to access the SD Card. This file
+    implements the SD Card Driver file system interface.
+    This file should be included in the project if SD Card driver functionality
+    with File system is needed.
 *******************************************************************************/
 
-//DOM-IGNORE-BEGIN
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -39,8 +39,10 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-//DOM-IGNORE-END
+ *******************************************************************************/
+// DOM-IGNORE-END
+#ifndef DRV_SDSPI_FILE_SYSTEM_H
+#define DRV_SDSPI_FILE_SYSTEM_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -48,45 +50,31 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "driver/memory/src/drv_memory_file_system.h"
+#include "driver/sdspi/drv_sdspi.h"
+#include "system/fs/sys_fs_media_manager.h"
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+    extern "C" {
+#endif
+// DOM-IGNORE-END
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
-/* MISRA C-2012 Rule 11.1 deviated:7 Deviation record ID -  H3_MISRAC_2012_R_11_1_DR_1 */
 
-static const SYS_FS_MEDIA_FUNCTIONS memoryMediaFunctions =
-{
-    .mediaStatusGet     = DRV_MEMORY_IsAttached,
-    .mediaGeometryGet   = DRV_MEMORY_GeometryGet,
-    .sectorRead         = DRV_MEMORY_AsyncRead,
-    .sectorWrite        = DRV_MEMORY_AsyncEraseWrite,
-    .eventHandlerset    = DRV_MEMORY_TransferHandlerSet,
-    .commandStatusGet   = (CommandStatusGetType)DRV_MEMORY_CommandStatusGet,
-    .Read               = DRV_MEMORY_AsyncRead,
-    .erase              = DRV_MEMORY_AsyncErase,
-    .addressGet         = DRV_MEMORY_AddressGet,
-    .open               = DRV_MEMORY_Open,
-    .close              = DRV_MEMORY_Close,
-    .tasks              = DRV_MEMORY_Tasks,
-};
 
-/* MISRAC 2012 deviation block end */
 // *****************************************************************************
 // *****************************************************************************
 // Section: MEMORY Driver File system interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
-void DRV_MEMORY_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex, uint8_t mediaType)
-{
-    (void) SYS_FS_MEDIA_MANAGER_Register
-    (
-        (SYS_MODULE_OBJ)drvIndex,
-        (SYS_MODULE_INDEX)drvIndex,
-        &memoryMediaFunctions,
-        (SYS_FS_MEDIA_TYPE)mediaType
-    );
+void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex);
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif //#ifndef DRV_SDSPI_FILE_SYSTEM_H

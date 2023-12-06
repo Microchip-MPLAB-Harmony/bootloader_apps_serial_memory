@@ -16,12 +16,14 @@
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/src/drv_memory_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/drv_memory.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/memory/src/drv_memory_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="sdspi" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sdspi/drv_sdspi_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sdspi/src/drv_sdspi_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sdspi/src/drv_sdspi_plib_interface.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sdspi/drv_sdspi.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sdspi/src/drv_sdspi_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="sst26" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity_v2/driver/sst26/drv_sst26.h</itemPath>
@@ -120,6 +122,7 @@
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/device.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/configuration.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/sdcard.h</itemPath>
@@ -275,7 +278,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

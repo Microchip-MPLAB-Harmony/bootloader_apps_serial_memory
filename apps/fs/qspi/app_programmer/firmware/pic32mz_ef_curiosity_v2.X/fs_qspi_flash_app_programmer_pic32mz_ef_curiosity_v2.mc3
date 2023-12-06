@@ -1,4 +1,4 @@
-<config configName="pic32mz_ef_curiosity_v2" projectName="fs_qspi_flash_app_programmer_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.11">
+<config configName="pic32mz_ef_curiosity_v2" projectName="fs_qspi_flash_app_programmer_pic32mz_ef_curiosity_v2" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -5700,11 +5700,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\system_media.h</file>
-         <hash>be592b4eb9eb4cc8f25cf734fc15b088de091d2f8051b0fcba091c1b6194df5f</hash>
+         <hash>e61ba67015cfba6a7425d077cd2c633ba9989218bbe585078efe2face729401f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\evic\plib_evic.c</file>
-         <hash>66e5cf7a5bea72312e5686a0197cb5a18a24148d521ac04868bc50dcf6719306</hash>
+         <hash>bc4d81e3d8732b6de160bea9682bb774e01dda9266edb50bb5c57885f904ad3a</hash>
       </entry>
       <entry>
          <file>..\src\app_monitor.c</file>
@@ -5712,55 +5712,63 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\evic\plib_evic.h</file>
-         <hash>8b7673c73f8d03aa75093884824ba31d5b4af59a88890b86d8fedf8fe2a0a3e5</hash>
+         <hash>55a4d4a3985da6e88a9548a0a29a4f8d08e077348dbad6cd6ddce5fe40d01a33</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\time\sys_time_definitions.h</file>
-         <hash>904195d4340ba6b97cf19c25b9695d2a9f37ed67cf6abdf8ee1ee839506e2801</hash>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\drv_sdspi.h</file>
-         <hash>b33d6b822b44e0b83cf616e72cf454d6c721ec2cc1704d681789ea2eea95e63c</hash>
+         <hash>e32ef37da37e9aa65eced2ce7837fa357a49de927902754c92d7df4300d76a7c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\tasks.c</file>
-         <hash>65234296adf62412f8010c2ef7c544117c081aff74523717b2ccc378e67239bb</hash>
+         <hash>7a12e83f5611dd6ba764d30e75c43afd75fe7e90e6c4e6e1aabb95169955f337</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>fe067c1842e5d3843cd88f1aaa7f4931c3c4452f5ddfa79318404c6bea0cf3dc</hash>
+         <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\clk\plib_clk.c</file>
-         <hash>7754352dcfe484b5106757b893d5adc010eef079fc54fdffb56a171139cfb8e7</hash>
+         <hash>af26fa3d6517583afb0814390335a498e093983a052a1943e9b192622c03db14</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi_file_system.h</file>
+         <hash>17db69f76094817bad08afa773c9ace5c292cbea019e024b428d0ea11e056bff</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\toolchain_specifics.h</file>
-         <hash>84276afca06869943bba17727ff4f41fea61e4f81329ee20a333cafe39562a73</hash>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi_file_system.c</file>
-         <hash>0401d3958915039940acb976829e80f23c27bfd37ef687624112d13852076df8</hash>
+         <hash>3fb4d5b9bc5a3b213c3fbf2eb72bd3375d104fc3ed57513c266c48788d9bba90</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>3b518d0f3667efcff16c9f0972d35f38eb4b97d22eca4ca2e7a862eb61e7cd6d</hash>
+         <hash>d88929a1d7d6d0428c517cb789359c574c42d52c3c8a04bb267990255ad81706</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\drv_memory_definitions.h</file>
-         <hash>1e3d2eb7fd3cbaf473c3ad343f80e9da31f41f856d08c2dc268eb0c1001a2aee</hash>
+         <hash>b8f10e5a04840558da99e20856d3f7394b280d5e399d72ee5ef1cf13b3ee48f2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\dma\sys_dma.h</file>
-         <hash>557896cd9ba1256276537379aa5f3cb06e1129a660db4a566e747a0ce6c63ec5</hash>
+         <hash>696ee09354ceb3954ef5ca0be1fc9dc45cb6955beff13ff6ebdf92a923b62890</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\ports\sys_ports.h</file>
@@ -5768,7 +5776,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sst26\src\drv_sst26.c</file>
-         <hash>92c5ed93cba3f8dfad1c5e3a4c4b66fb58c383f325c24ce28d710e3178b7dbab</hash>
+         <hash>43c1602f9b57fbb9989d0501fc0b45e22101ebfc8c1e5e49823523a9ad081514</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\system.h</file>
@@ -5780,19 +5788,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\definitions.h</file>
-         <hash>a4a698780369945da81cddc65189d87614ccfb51a4c1579be6a40da91b84bd54</hash>
+         <hash>e2fcdd36530594d1661efef105c22aece6bd7887f2715dd2a4936e0652fd969d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\src\drv_memory.c</file>
-         <hash>b9b7cd3017239bb840c2aa997fcb9940bec33e6d0a0ba3786f2164e9f5b2ae78</hash>
+         <hash>808d43318deace95edc80d3ccbadfcfff5298b35a2e705be7ac5fcae1d7f8c98</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\app_monitor.h</file>
@@ -5800,19 +5808,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\sqi\plib_sqi1.c</file>
-         <hash>c63c99a0b46ca1602601a1c837b7ebbcbc1d44fa16a2a3b8263152d0aad0510f</hash>
+         <hash>f77811bca7938a72cbd61ab2a49b0633b6067ac73cb81e90288a6c22d4a86502</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\src\sys_fs_media_manager_local.h</file>
-         <hash>bbc6074719c421b07d4540ee6e745ae4145239f698780819c479e13bfdd9ddd5</hash>
+         <hash>5d471f0372ec41b3ef362ad533beede076e4e959274e57221ed229b996d7231e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\debug\sys_debug.h</file>
-         <hash>16fbc4bbf026e4713e9b835b1511411e053aaf92ab7d6a000638630576fe92b3</hash>
+         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\sys_fs_fat_interface.h</file>
-         <hash>47379030a7b158d0db57e79d9ee9d056b9bbad70e13152b6ea603f1cbf37a459</hash>
+         <hash>8abf10cb082958d08f5cf3210694cef73fdb6fa9b6a641e00da547cbcec0719b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\cache\plib_cache_pic32mz.S</file>
@@ -5820,27 +5828,27 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi_local.h</file>
-         <hash>1d43abbabd895d565f4eb452875df193bf673d6cee98c30c96ce59861c61ab5d</hash>
+         <hash>b2a0ab1b9c938fe352c9bff54307e6c644d7367835caa7ab40df60c1f6e4becc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\src\drv_memory_local.h</file>
-         <hash>7938d56b25af2bfaad712cba18a690a52bad94080eafbc9c15c235b587cdd5cb</hash>
+         <hash>129258f301260bf3f612f02652c061c7df89379cc21950df0d02ba5f5ee1845d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\sqi\plib_sqi_common.h</file>
-         <hash>d8881376ce0436984fa180e014e57abc6e5303fe0f59ab0571e48ecca7317a58</hash>
+         <hash>f9152f24aa11a7b202603a48759e6bc8923aab09fcc9caf50faf0d528e5a3e64</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\fat_fs\file_system\ff.c</file>
-         <hash>ef75bad24073ec54d3e76b06b26c56b604bb4f063fe6bd9ebe7c80bae94fd6d5</hash>
+         <hash>09f73618c1ac3bd9736650439be337fbfe49018a1db7205126fcbfde1e384a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\uart\plib_uart6.c</file>
-         <hash>4fccf375cdcb01d9a0653111fbc3fb15366507a4bd957b35ec6d661aa5e2cd52</hash>
+         <hash>3fdf59f3ece6f6663ac0f3e454eaf923939d80c166c6c36c6bf30ee9323d241b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\uart\plib_uart6.h</file>
@@ -5848,15 +5856,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>01e99d3c566fe5ed973464a8d42fd56c2af403674134dfeb6b68e3b9c4dc3c15</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>d7b45a8f01fcd9923e18f8618408613021f2d36f35c632de31edaf5f4acf6c6b</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\interrupts.c</file>
-         <hash>0a227b1583555f26d823c9e13eed70ca45a3e9f9c81ff277456bacb0ae496d2d</hash>
+         <hash>2f1a01c005b9fdf20ea8913ee034fdd33fd32b94259074baf41cf595041d2e48</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\spi\spi_master\plib_spi_master_common.h</file>
@@ -5868,19 +5876,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\stdio\xc32_monitor.c</file>
-         <hash>a85f324022ab237e1ed118d47890741097b4aae57d9a673c9d03b94a38586f21</hash>
+         <hash>9b94a2c69e3e47de57f2b184c6225491b16521d57a80d89ee84745d94030b597</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sst26\src\drv_sst26_local.h</file>
-         <hash>48184de5be9eae94b847b27694b9789c93d21175d1d7d61dacc7a46ea8586819</hash>
+         <hash>29c71a6ae051fcf47b8235ad561a592dbdc820cfa2831c0aac0371c39671ad3a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\spi\spi_master\plib_spi1_master.c</file>
-         <hash>a9f250ed35b953014df5a20371dc64b22458c1a631ede01e66a38fbb02452cc3</hash>
+         <hash>ace2598c41be526c596262e7599d51e016c14a7551c1db380a55a54c82befc61</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\initialization.c</file>
-         <hash>d2d00a0615cccbfe4fe869ffe5c402ff55e1e13f631bea210b61db4b96bc08b9</hash>
+         <hash>d3f5bec6c7706d2704866e9c54f46985b83658504d159aeb729b669bfbc86aaa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\spi\spi_master\plib_spi1_master.h</file>
@@ -5888,7 +5896,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\fat_fs\file_system\ffunicode.c</file>
-         <hash>b519b20a6de1ceea6ae01421480d0137d03abe788b4e6553b2153d2a8591b840</hash>
+         <hash>3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -5896,7 +5904,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\src\sys_fs_fat_interface.c</file>
-         <hash>581a4c11a2e6c4aa4aa2c64742b276d5d4b3bd1dbdbed1983aab17f162f4c47b</hash>
+         <hash>c7873a18d6d2ee9cb2eb1bf9c678dfc6c22837d4c22e5c3bcbf30507b3aa125f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\driver_common.h</file>
@@ -5908,7 +5916,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\bsp\bsp.h</file>
-         <hash>d2a13f4cf4f307afe586fd9ffe04a8cb765988a5e10adce88295e5992d70fbdc</hash>
+         <hash>f13e3ded102e0196087a7d8240ebdc39c741c38023481ffd5a6280fbe6840c76</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\bsp\bsp.c</file>
@@ -5920,11 +5928,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\src\sys_fs.c</file>
-         <hash>aba5ae4d2d52843de0d236941838bd3ff6428f6acade1fb5ef923b2aa7615968</hash>
+         <hash>9fddd0e0f98f78690226049c454d1f1f05f1b24f89b37da043f7fd2522a49502</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\serial_mem.h</file>
@@ -5936,11 +5944,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\cache\plib_cache.h</file>
-         <hash>114b4101b4690f99a531562fe08f7b52654664d811ee3ca2ecdfd72aefe96792</hash>
+         <hash>da01fae7f39626c9f25c0c8f4f9a8cf25ed0c4b8dd6c0d4bae146210efe8da46</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sst26\drv_sst26.h</file>
-         <hash>680c0a5105c81776c0fd61686c56e29278a1dfe2b68f3654976c90d5b070b77a</hash>
+         <hash>f11f50198610ebfb0697699a3e8d3a5fa52d5e3982a5d5dbd05a88e638b6031e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\gpio\plib_gpio.h</file>
@@ -5948,11 +5956,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\drv_memory.h</file>
-         <hash>23efb46974c19b12bca3a289f273f20c6993da56604044d7ba6cc581f333ce3c</hash>
+         <hash>614702f2ebbb2a6a2b1baf1c9f8472c94ea3588e370c507c9bf408b1d86702af</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\cache\plib_cache.c</file>
-         <hash>28c61150a2e09ba1c80c2a1658351ba6d75e37ea0f3dbe56b4adc79ff49d7a64</hash>
+         <hash>500634fa5c5cb4efb91faa7a54e3ccbb26ad7ff6d188ff0e91cbaabc606cf054</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\fat_fs\hardware_access\diskio.h</file>
@@ -5964,15 +5972,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\gpio\plib_gpio.c</file>
-         <hash>36b857376603c964b04aa0d7043317038045f21ab9399ae82949bc0c5066f666</hash>
+         <hash>c067d1d4c605543850b77ed273aad94a49ed5ef88c0ee9c7ac452ef4b7642446</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\fat_fs\file_system\ffconf.h</file>
-         <hash>3b4332b64fb29bbd794cf590236dbc46ee991a8b8a8320b6230b77cc9664c8e1</hash>
+         <hash>4b18e8ce0011ac7b0914aa6de52c456333b08a6d02b0d6953fed80ed67f5d2fa</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\cache\sys_cache.c</file>
-         <hash>c588752333a197d8ca33071ed888a98ace2149b1123aaaa71dcb5d5a30134e49</hash>
+         <hash>53fd36c6040f1cd83a5a625dc5dbf3b9a1f337988e5c10b776da9235f7b7579e</hash>
       </entry>
       <entry>
          <file>..\src\sdcard.c</file>
@@ -5980,7 +5988,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi.c</file>
-         <hash>bdcd9756cc63f2dd2c2494293c608c9deeb2a4dd9a734bf7552aaca60ccea9df</hash>
+         <hash>4acc0f597a68691d21dcaa467ccae5a83c81f63478e4b2d89502ed78cbd25f7e</hash>
       </entry>
       <entry>
          <file>..\src\sdcard.h</file>
@@ -5988,7 +5996,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\cache\sys_cache.h</file>
-         <hash>3407ecac4da455d4b8ba70043f10c20b10e1304e92402db824ca5efa6a2f8402</hash>
+         <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\user.h</file>
@@ -5996,7 +6004,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\configuration.h</file>
-         <hash>80cdc0630b5e09a446dab19d9101e1c056bc311e5a93b5fc559a3e2bb40f00d5</hash>
+         <hash>53152e6a32a3c8b6a2fd25def403ec3c84769399557ce1c31950fa468590e492</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sst26\drv_sst26_definitions.h</file>
@@ -6004,19 +6012,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\int\src\sys_int.c</file>
-         <hash>ff706bb4bde7b62a65b603efea8bab8b5a7d9a1a2c1cb2a9e981d68bbf20f764</hash>
+         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\drv_sdspi_definitions.h</file>
-         <hash>6506972cd90772194097fe9d177951755eeef742333dd109b8010a6d8a06f8f9</hash>
+         <hash>520f57ca7c2768a585182b4f7457f093df2b35ae935ccce10a06e11c994e2e3a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\time\src\sys_time.c</file>
-         <hash>b722ac0c5d955d289bd906609ab6f302342166c5ba66f87b30cac17ac6bfdcd9</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi_plib_interface.c</file>
-         <hash>35e6ebec47741fe1b0b778fe08f194fe5e49c71975c26d1e25b73636ed70bab8</hash>
+         <hash>2a7ac8214c54005e4bb76183dd94b7096e59f438a904d270a22c73a689cdcd11</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\dma\sys_dma.c</file>
@@ -6024,35 +6032,39 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\sdspi\src\drv_sdspi_plib_interface.h</file>
-         <hash>752b2c57f09d38aa5d1e420b748c6a54bb137c7501817791d9a66fcfc965ee27</hash>
+         <hash>9b9e73fbd8cba393b1fbdd9bce697cdeb32c3cf050b832ffb717367426cd88c9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\src\drv_memory_file_system.c</file>
-         <hash>2509e2da0da9c4d502c7a6bdab37feaa0790f421bab99db43fea4a76d30ed215</hash>
+         <hash>ad02bcbc7e97a16a5e8b08c735b79e783435094db2e1803bb0cafa4a7ee7eb25</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\sys_fs_media_manager.h</file>
-         <hash>29bda64831783de33b10c3841e1eb703dc9f5b04287c1e26af8f3b75b7197b39</hash>
+         <hash>2f7c76d5a40a41594e86a831470c67d7aeec5b6e540fb967518ce095fe6da271</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2\driver\memory\src\drv_memory_file_system.h</file>
+         <hash>25417962a1c2116c903c6b4061d496b3aaf075ea17b372ca28e1766f23bc9c56</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\int\sys_int.h</file>
-         <hash>c6ec8fc3c7ad1fa570998b9f65cb37fba4364ab07c3869f2d6cb30612a8a91e8</hash>
+         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\exceptions.c</file>
-         <hash>c7f83f167acb4cd93e430dd7eb6a3d13194218fdad1d75c129783ede94db1723</hash>
+         <hash>30b880390be9495d817d130a99612cbe4a21ce5f953a22bf77fc97872b770538</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\cache\plib_cache_local.h</file>
-         <hash>d8172028d448563ad48e5258b140e6746274aed4742c450ef84336e6574c810e</hash>
+         <hash>91d5a1a9920a5aea939f16fe36e9346b60ba3a8577817f24c0e8198cba2e089d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\src\sys_fs_media_manager.c</file>
-         <hash>e86665dbb855f19c9e072ebe2217facc93947b529cbf3d16542d9755e9e32224</hash>
+         <hash>624b1c2481ed47a4e0753d72c928b9bf00e9afbdf77efc008b572e174816fbd4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\driver\driver.h</file>
@@ -6060,19 +6072,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\sys_fs.h</file>
-         <hash>c3bce19e69290a393dca6f7ddbdb103ed7cf21be40f492fdfea185eb85ecbb93</hash>
+         <hash>4ca0bf61b93d1b4335bad8755bfeeed6dfda8a7eb3f2eabfcd9239a0b78e01af</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\peripheral\uart\plib_uart_common.h</file>
-         <hash>c218c6173a59f6dff90ca776b4bf86cc2a856fa7e3272fb08dd42921ef56b24b</hash>
+         <hash>b87295faadae4157d5880e22970f89094f2b51e1866930040a90ba49c6b29797</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\int\sys_int_mapping.h</file>
-         <hash>771b853250bfb05ceac0f525749007ca1d4478e660c13f6a7b7e8fe28eefcf75</hash>
+         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\device_cache.h</file>
@@ -6080,7 +6092,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\fs\src\sys_fs_local.h</file>
-         <hash>9757dc4a413f39e70813ea66b1825a7467f1b9a38a94d066fd39eb399361b438</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
