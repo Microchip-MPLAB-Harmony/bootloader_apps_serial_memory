@@ -60,7 +60,7 @@ To build the application, refer to the following table and open the project usin
 6. Update **app_programmer/firmware/src/app.c** to reduce the LED blink duration from **500ms** to **100ms** as below
 
     ```c
-APP_TIMER_DelayMs(100);
+    APP_TIMER_DelayMs(100);
     ```
 
 7. Clean and Build the project to generate the binary **(Do not program the binary)**
