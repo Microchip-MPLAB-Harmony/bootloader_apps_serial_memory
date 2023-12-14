@@ -62,7 +62,7 @@ To build the application, refer to the following table and open the project usin
 6. Update **app_programmer/firmware/src/config/pic32mz_w1_curiosity/user.h** to use **GREEN LED (D204)** instead of **RED LED (D202)** as below
 
     ```c
-#define LED_TOGGLE()            LED_GREEN_Toggle()
+    #define LED_TOGGLE()            LED_GREEN_Toggle()
     ```
 
 7. Clean and Build the project to generate the binary **(Do not program the binary)**
@@ -88,7 +88,7 @@ To build the application, refer to the following table and open the project usin
 12. Update **app_programmer/firmware/src/config/pic32mz_w1_curiosity/user.h** to revert to **RED LED (D202)** from **GREEN LED (D204)** as below
 
     ```c
-#define LED_TOGGLE()            LED_RED_Toggle()
+    #define LED_TOGGLE()            LED_RED_Toggle()
     ```
 
 13. Clean and Build the project to generate the binary **(Do not program the binary)**
