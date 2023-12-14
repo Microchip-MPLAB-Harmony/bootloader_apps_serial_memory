@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_das_sk" projectFiles="true">
           <logicalFolder name="f6" displayName="bootloader" projectFiles="true">
@@ -67,9 +65,7 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="true">
+    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
       <logicalFolder name="f1" displayName="pic32mz_das_sk.mhc" projectFiles="true">
         <itemPath>../src/config/pic32mz_das_sk/pic32mz_das_sk.mhc/BSP_PIC32MZ_DA_Starter_Kit.yml</itemPath>
         <itemPath>../src/config/pic32mz_das_sk/pic32mz_das_sk.mhc/core.yml</itemPath>
@@ -87,14 +83,10 @@
       <itemPath>../src/config/pic32mz_das_sk/harmony-manifest-success.yml</itemPath>
       <itemPath>qspi_flash_bootloader_pic32mz_das_sk.mc3</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <itemPath>../src/config/pic32mz_das_sk/btl.ld</itemPath>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_das_sk" projectFiles="true">
           <logicalFolder name="f6" displayName="bootloader" projectFiles="true">
@@ -153,11 +145,11 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MZ2064DAS169</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -173,24 +165,11 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../app_programmer/firmware/pic32mz_das_sk.X"
-                        CT="1"
-                        CN="pic32mz_das_sk"
-                        AC="true"
-                        BL="true"
-                        WD="../../../app_programmer/firmware/pic32mz_das_sk.X"
-                        BC="${MAKE}  -f Makefile CONF=pic32mz_das_sk"
-                        DBC="${MAKE}  -f Makefile CONF=pic32mz_das_sk TYPE_IMAGE=DEBUG_RUN"
-                        CC="rm -rf &quot;build/pic32mz_das_sk&quot; &quot;dist/pic32mz_das_sk&quot;"
-                        OP="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.hex"
-                        DOP="dist/pic32mz_das_sk/debug/pic32mz_das_sk.X.debug.elf"
-                        FL="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.hex"
-                        PD="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.elf"
-                        DD="dist/pic32mz_das_sk/debug/pic32mz_das_sk.X.debug.elf">
+          <makeArtifact PL="../../../app_programmer/firmware/pic32mz_das_sk.X" CT="1" CN="pic32mz_das_sk" AC="true" BL="true" WD="../../../app_programmer/firmware/pic32mz_das_sk.X" BC="${MAKE}  -f Makefile CONF=pic32mz_das_sk" DBC="${MAKE}  -f Makefile CONF=pic32mz_das_sk TYPE_IMAGE=DEBUG_RUN" CC="rm -rf &quot;build/pic32mz_das_sk&quot; &quot;dist/pic32mz_das_sk&quot;" OP="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.hex" DOP="dist/pic32mz_das_sk/debug/pic32mz_das_sk.X.debug.elf" FL="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.hex" PD="dist/pic32mz_das_sk/production/pic32mz_das_sk.X.production.elf" DD="dist/pic32mz_das_sk/debug/pic32mz_das_sk.X.debug.elf">
           </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -198,9 +177,9 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -214,8 +193,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_das_sk"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mz_das_sk"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -314,8 +292,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_das_sk"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mz_das_sk"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -414,8 +391,7 @@
         <property key="TIMER7" value="true"/>
         <property key="TIMER8" value="true"/>
         <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
@@ -434,8 +410,7 @@
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
         <property key="poweroptions.powerenable" value="false"/>
@@ -444,8 +419,7 @@
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${programoptions.preservedataflash.ranges}"/>
+        <property key="programoptions.preservedataflash.ranges" value="${programoptions.preservedataflash.ranges}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -461,8 +435,7 @@
       <PKOBSKDEPlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
@@ -479,8 +452,7 @@
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value=""/>
         <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges"
-                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveeeprom.ranges" value="${memories.eedata.default}"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
@@ -489,8 +461,7 @@
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
@@ -507,8 +478,7 @@
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value=""/>
         <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges"
-                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveeeprom.ranges" value="${memories.eedata.default}"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>

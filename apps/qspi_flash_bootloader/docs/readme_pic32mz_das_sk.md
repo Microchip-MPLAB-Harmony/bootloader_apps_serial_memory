@@ -62,7 +62,7 @@ To build the application, refer to the following table and open the project usin
 6. Update **app_programmer/firmware/src/config/pic32mz_das_sk/user.h** to use **LED2** instead of **LED3** as below
 
     ```c
-#define LED_TOGGLE()            LED2_Toggle()
+    #define LED_TOGGLE()            LED2_Toggle()
     ```
 
 7. Clean and Build the project to generate the binary **(Do not program the binary)**
@@ -88,7 +88,7 @@ To build the application, refer to the following table and open the project usin
 12. Update **app_programmer/firmware/src/config/pic32mz_das_sk/user.h** to revert to **LED3** from **LED2** as below
 
     ```c
-#define LED_TOGGLE()            LED3_Toggle()
+    #define LED_TOGGLE()            LED3_Toggle()
     ```
 
 13. Clean and Build the project to generate the binary **(Do not program the binary)**
