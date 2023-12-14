@@ -66,7 +66,8 @@ devices = {
             "PIC32MZ"   : [16384, 16384],
             "PIC32MZW"  : [4096, 12288],
             "PIC32MM"   : [2048, 4096],
-
+            "PIC32CZ"   : [4096, 8192],
+            "WBZ451"    : [4096, 8192],
 }
 
 #------------------------------------------------------------------------------
@@ -126,15 +127,17 @@ def get_response(port):
 
 #------------------------------------------------------------------------------
 def send_request(port, cmd, size, data):
-    req = uint32(BL_GUARD) + size + [cmd] + data
+    packet = uint32(BL_GUARD) + size + [cmd] + data
+    blocks = [packet[i:i + 10] for i in range(0, len(packet), 10)]
 
-    port.write(bytes(bytearray(req)))
+    for blk in blocks:
+        port.write(bytes(bytearray(blk)))
 
     for i in range(3):
         resp = get_response(port)
 
         if (resp is None):
-            warning('no response received, Waiting %d' % (i+1))
+            warning('no response received, retrying %d' % (i+1))
             time.sleep(0.2)
         else:
             return resp
@@ -160,7 +163,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
 
     print ('\r%s |%s| %s%% %s \r' % (prefix, bar, percent, suffix), end =""),
 
-    if iteration == total: 
+    if iteration == total:
         print()
 
 def setupPort(options):
@@ -305,6 +308,9 @@ def main():
 
         if resp != BL_RESP_OK:
             error('invalid response code (0x%02x)' % resp)
+
+        if device == "PIC32CZ":
+            time.sleep(1)
 
     # Send Verification command
     verbose(options.verbose, 'Verification')

@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app_monitor.c
+    app_pic32cz_ca.c
 
   Summary:
     This file contains the source code for the MPLAB Harmony application.
@@ -20,8 +20,7 @@
     are called.  That is the responsibility of the configuration-specific system
     files.
  *******************************************************************************/
-
-//DOM-IGNORE-BEGIN
+ 
 /*******************************************************************************
 * Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
 *
@@ -44,7 +43,6 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-//DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
@@ -52,21 +50,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stdio.h>
-#include "app_monitor.h"
-#include "sdcard.h"
-#include "serial_mem.h"
+#include "app_pic32cz_ca.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
-
-#define BTL_TRIGGER_PATTERN     (0x5048434DUL)
-
-#define TIMER_DELAY_BOOT_MS     3000
-#define TIMER_DELAY_MS          1000
 
 // *****************************************************************************
 /* Application Data
@@ -78,14 +69,12 @@
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP_MONITOR_Initialize function.
+    This structure should be initialized by the APP_PIC32CZ_CA_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
 
-APP_MONITOR_DATA app_monitorData;
-
-static uint32_t ramStart[4] __attribute__((address(BTL_TRIGGER_RAM_START)));
+APP_PIC32CZ_CA_DATA app_pic32cz_caData;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -93,16 +82,53 @@ static uint32_t ramStart[4] __attribute__((address(BTL_TRIGGER_RAM_START)));
 // *****************************************************************************
 // *****************************************************************************
 
-void timerCallback(uintptr_t context)
-{
-    LED_TOGGLE();
-}
+/* TODO:  Add any necessary callback functions.
+*/
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
 // *****************************************************************************
 // *****************************************************************************
+
+#define BTL_TRIGGER_PATTERN (0x5048434DUL)
+
+static uint32_t *ramStart = (uint32_t *)BTL_TRIGGER_RAM_START;
+
+bool bootloader_Trigger(void)
+{
+    uint32_t i;
+
+    // Cheap delay. This should give at leat 1 ms delay.
+    for (i = 0; i < 2000; i++)
+    {
+        asm("nop");
+    }
+
+    if (RSTC_REGS->RSTC_RCAUSE & (RSTC_RCAUSE_WDT_Msk | RSTC_RCAUSE_SYST_Msk))
+    {
+        /* Check for Bootloader Trigger Pattern in first 16 Bytes of RAM to enter
+         * Bootloader.
+         */
+        if (BTL_TRIGGER_PATTERN == ramStart[0] && BTL_TRIGGER_PATTERN == ramStart[1] &&
+            BTL_TRIGGER_PATTERN == ramStart[2] && BTL_TRIGGER_PATTERN == ramStart[3])
+        {
+            ramStart[0] = 0;
+
+            DCACHE_CLEAN_BY_ADDR(ramStart, 4);
+
+            return true;
+        }
+    }
+
+    /* Check for Switch press to enter Bootloader */
+    if (SWITCH_GET() == SWITCH_PRESSED)
+    {
+        return true;
+    }
+
+    return false;
+}
 
 
 // *****************************************************************************
@@ -113,141 +139,50 @@ void timerCallback(uintptr_t context)
 
 /*******************************************************************************
   Function:
-    void APP_MONITOR_Initialize ( void )
+    void APP_PIC32CZ_CA_Initialize ( void )
 
   Remarks:
-    See prototype in app_monitor.h.
+    See prototype in app_pic32cz_ca.h.
  */
 
-void APP_MONITOR_Initialize ( void )
+void APP_PIC32CZ_CA_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    app_monitorData.state = APP_MONITOR_INIT;
+    app_pic32cz_caData.state = APP_PIC32CZ_CA_STATE_INIT;
 
+
+
+    /* TODO: Initialize your application's state machine and other
+     * parameters.
+     */
 }
 
 
 /******************************************************************************
   Function:
-    void APP_MONITOR_Tasks ( void )
+    void APP_PIC32CZ_CA_Tasks ( void )
 
   Remarks:
-    See prototype in app_monitor.h.
+    See prototype in app_pic32cz_ca.h.
  */
 
-void APP_MONITOR_Tasks ( void )
+void APP_PIC32CZ_CA_Tasks ( void )
 {
 
     /* Check the application's current state. */
-    switch ( app_monitorData.state )
+    switch ( app_pic32cz_caData.state )
     {
         /* Application's initial state. */
-        case APP_MONITOR_INIT:
-        {
-            /* Add Delay for the UART Console to get enumerated after reset */
-            app_monitorData.timerHandle = SYS_TIME_HANDLE_INVALID;
-
-            if (SYS_TIME_DelayMS(TIMER_DELAY_BOOT_MS, &app_monitorData.timerHandle) != SYS_TIME_SUCCESS)
-            {
-                app_monitorData.state = APP_MONITOR_ERROR;
-
-                break;
-            }
-
-            if(SYS_TIME_DelayIsComplete(app_monitorData.timerHandle) != true)
-            {
-                // Wait till the delay has not expired
-                while (SYS_TIME_DelayIsComplete(app_monitorData.timerHandle) == false)
-                {
-
-                }
-            }
-
-            printf("\r\n--------------------------------------------------------------------------------\r\n");
-
-            printf("\r\n###### File System (Serial Memory) Programmer Application Running ######\r\n");
-
-            /* Register a 1 Second periodic callback with time system service to Blink LED */
-            app_monitorData.timerHandle = SYS_TIME_HANDLE_INVALID;
-
-            app_monitorData.timerHandle = SYS_TIME_CallbackRegisterMS(timerCallback, (uintptr_t)&app_monitorData, TIMER_DELAY_MS, SYS_TIME_PERIODIC);
-
-            if (app_monitorData.timerHandle == SYS_TIME_HANDLE_INVALID)
-            {
-                printf("\r\n!!!!!! ERROR: Unable To Start Periodic Timer !!!!!!\r\n");
-
-                app_monitorData.state = APP_MONITOR_ERROR;
-            }
-            else
-            {
-                app_monitorData.state = APP_MONITOR_WAIT_FOR_COMPLETE;
-            }
-
-            break;
-        }
-
-        case APP_MONITOR_WAIT_FOR_COMPLETE:
-        {
-            /* Wait for Image binary to be copied in Serial memory */
-            if (SDCARD_getCurrentStatus() == SDCARD_STATUS_UPDATE_COMPLETE)
-            {
-                printf("\r\n\r\n###### Copied Image Binary To Serial Memory ######\r\n");
-
-                printf("\r\n###### Eject SD Card And " BTL_TRIGGER_METHOD " To Trigger FS Bootloader ######\r\n");
-
-                 app_monitorData.state = APP_MONITOR_WAIT_FOR_SWITCH_PRESS;
-            }
-
-            break;
-        }
-
-
-        case APP_MONITOR_WAIT_FOR_SWITCH_PRESS:
-        {
-            /* Wait for switch press to trigger Bootloader */
-            if (SWITCH_GET() == SWITCH_PRESSED)
-            {
-                while(SWITCH_GET() == SWITCH_PRESSED)
-                {
-
-                }
-
-                printf("\r\n###### FS Bootloader Triggered To Program Image Binary In Internal Flash ######\r\n\r\n");
-
-                app_monitorData.state = APP_MONITOR_TRIGGER_SYS_RESET;
-            }
-
-            break;
-        }
-
-        case APP_MONITOR_TRIGGER_SYS_RESET:
-        {
-            /* Load Bootloader trigger pattern and initiate reset */
-            ramStart[0] = BTL_TRIGGER_PATTERN;
-            ramStart[1] = BTL_TRIGGER_PATTERN;
-            ramStart[2] = BTL_TRIGGER_PATTERN;
-            ramStart[3] = BTL_TRIGGER_PATTERN;
-
-            DCACHE_CLEAN_BY_ADDR(ramStart, 16);
-
-            APP_SystemReset();
-
-            break;
-        }
-
-        case APP_MONITOR_IDLE:
-        {
-            break;
-        }
-
-        case APP_MONITOR_ERROR:
+        case APP_PIC32CZ_CA_STATE_INIT:
         {
             LED_ON();
             break;
         }
 
+        /* The default state should never be executed. */
         default:
         {
+            /* TODO: Handle error in application's state machine. */
             break;
         }
     }
