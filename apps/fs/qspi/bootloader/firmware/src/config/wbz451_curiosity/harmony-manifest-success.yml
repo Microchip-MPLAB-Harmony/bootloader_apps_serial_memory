@@ -4,15 +4,20 @@
 
 
 project: bootloader
-creation_date: 2023-12-14T16:14:48.317+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-12-19T14:24:18.763+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.4.1
 mcc_core_version: v5.6.1
 mplabx_version: v6.15        # if MPLAB X plugin only
 harmony_version: v1.4.0
-compiler: XC32 (v4.35)
+compiler: XC32 4.35
 
 modules:
     - {name: "CMSIS_5", version: "5.8.0"}
-    - {name: "bsp", version: "v3.17.0"}
+    - {name: "bootloader", version: "kev_bootloader_updates"}
+    - {name: "littlefs", version: "master"}
+
+packs:
+    - {name: "PIC32CX-BZ_DFP", version: "1.2.230"}
+

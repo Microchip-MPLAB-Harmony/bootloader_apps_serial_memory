@@ -3364,8 +3364,11 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;386&quot; canvasWidth=&quot;599&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;409&quot; canvasWidth=&quot;605&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
+      &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
+    &lt;/PowerProfiles&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_WBZ451_Curiosity&quot; x=&quot;30&quot; y=&quot;102&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;216&quot; y=&quot;61&quot;/&gt;
@@ -3375,7 +3378,7 @@
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drv_memory&quot; x=&quot;307&quot; y=&quot;236&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;drv_sst26&quot; x=&quot;171&quot; y=&quot;260&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;evsys&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;file_system_bootloader&quot; x=&quot;398&quot; y=&quot;84&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;file_system_bootloader&quot; x=&quot;398&quot; y=&quot;83&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;nvm&quot; x=&quot;209&quot; y=&quot;157&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;qspi&quot; x=&quot;14&quot; y=&quot;297&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sys_fs&quot; x=&quot;463&quot; y=&quot;228&quot;/&gt;
@@ -3395,6 +3398,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;APP_START_ADDRESS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;file_system_bootloader&quot; value=&quot;1006000&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1005000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3881,6 +3885,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CONFIG_QSPI_HSEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_QSPI_HSEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIRECT&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CoreMPU_PRIVDEFENA"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CoreMPU_PRIVDEFENA&quot;&gt;
@@ -3907,7 +3922,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CoreUseMPU&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3997,7 +4012,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;MPU_Region_0_Enable&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4075,7 +4090,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;MPU_SYSTEM_DEFINITIONS_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/core&gt;
@@ -4154,7 +4169,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;PLIB_MPU_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/core&gt;
@@ -4167,7 +4182,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;PLIB_MPU_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/core&gt;
@@ -4180,7 +4195,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;PLIB_MPU_LOCAL_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
   &lt;/core&gt;
@@ -6823,7 +6838,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\bootloader\bootloader_common.h</file>
-         <hash>1b9096c7beb3273e4a4bbf166b6d5d0b11c7f82eea7af3929ed036356448e042</hash>
+         <hash>6ab5c3bf8219a59bc184008984384de0dbec5505135aefb1a8205f11fc4c2790</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\bootloader\bootloader_interrupt.h</file>
@@ -6851,7 +6866,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\definitions.h</file>
-         <hash>42fbedbac2be2477d37e28bb719e245c0d34974431645ca3252c74ac29694f04</hash>
+         <hash>6326cf73d0e281d75b6f0df71a2f3b3e86f4762fc2c626fd3cf8e0f46bc03a08</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\device.h</file>
@@ -6919,7 +6934,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\initialization.c</file>
-         <hash>b16d470cb837e9666f9408cb99577b6cfedeb0a3dfcdc5622cb6907491ebf62c</hash>
+         <hash>6816f18d98b167f5e69c11068586efd6aee95b5fb36729b787a24ea802d423c3</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\interrupts.c</file>
@@ -6947,11 +6962,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>cafe48f84330ec61aa9de2d9e74f368368b00fbc3d0bc34e68b5f5d8d5e3419f</hash>
+         <hash>fb8b4f67f4e83f4a319e4ec5bedf816915e5f4db12ac0215666bc097297b33de</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.h</file>
-         <hash>5c60d83daf6d9466ddbaf17627b852eee42dc0ab695c5410bba0c2c652cb7c09</hash>
+         <hash>2d1939a0da512a64fea40fffe4c2f30f2d3d16344591a807c5814fc1e67fcc01</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\cmcc\plib_cmcc.c</file>
@@ -6976,6 +6991,18 @@
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\gpio\plib_gpio.h</file>
          <hash>4dc4069aee7a3eb602bc43b59193c82f6a2b845d07ca9a4f6efe465fd1979333</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\wbz451_curiosity\peripheral\mpu\plib_mpu.c</file>
+         <hash>d45f2bff4038952b0b3f6f63c847bae531c45eccd7fef26ab505ae3877835825</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\wbz451_curiosity\peripheral\mpu\plib_mpu.h</file>
+         <hash>727520c5779c12c056e19f9dbcdf96bd8456ef3aa0e3a25773a285b04376d015</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\wbz451_curiosity\peripheral\mpu\plib_mpu_local.h</file>
+         <hash>73030a35f400fdc885595c7fdec97d4383017a3c3a88afc6bf98028b0d42130a</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\nvic\plib_nvic.c</file>
@@ -7007,7 +7034,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\startup_xc32.c</file>
-         <hash>6945b6a1826ae28babaae6cd59e20b8e74e464d4de4fa6fdbb92158ffaa02257</hash>
+         <hash>5dcb60b02dfdf661eb0519ab24ae3cec1478e2a41b054c88779ebb38ecf02976</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\stdio\xc32_monitor.c</file>

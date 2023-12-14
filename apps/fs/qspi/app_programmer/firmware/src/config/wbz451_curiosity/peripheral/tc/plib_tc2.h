@@ -1,14 +1,14 @@
 /*******************************************************************************
-  Timer/Counter(TC0) PLIB
+  Timer/Counter(TC2) PLIB
 
   Company
     Microchip Technology Inc.
 
   File Name
-    plib_tc0.h
+    plib_tc2.h
 
   Summary
-    TC0 PLIB Header File.
+    TC2 PLIB Header File.
 
   Description
     This file defines the interface to the TC peripheral library. This
@@ -45,8 +45,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_TC0_H      // Guards against multiple inclusion
-#define PLIB_TC0_H
+#ifndef PLIB_TC2_H      // Guards against multiple inclusion
+#define PLIB_TC2_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -87,31 +87,31 @@
 
 // *****************************************************************************
 
-void TC0_TimerInitialize( void );
+void TC2_TimerInitialize( void );
 
-void TC0_TimerStart( void );
+void TC2_TimerStart( void );
 
-void TC0_TimerStop( void );
+void TC2_TimerStop( void );
 
-uint32_t TC0_TimerFrequencyGet( void );
-
-
-void TC0_Timer16bitPeriodSet( uint16_t period );
-
-uint16_t TC0_Timer16bitPeriodGet( void );
-
-uint16_t TC0_Timer16bitCounterGet( void );
-
-void TC0_Timer16bitCounterSet( uint16_t count );
-
-void TC0_Timer16bitCompareSet( uint16_t compare );
+uint32_t TC2_TimerFrequencyGet( void );
 
 
+void TC2_Timer16bitPeriodSet( uint16_t period );
 
-void TC0_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context );
+uint16_t TC2_Timer16bitPeriodGet( void );
+
+uint16_t TC2_Timer16bitCounterGet( void );
+
+void TC2_Timer16bitCounterSet( uint16_t count );
+
+void TC2_Timer16bitCompareSet( uint16_t compare );
 
 
-void TC0_TimerCommandSet(TC_COMMAND command);
+
+void TC2_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context );
+
+
+void TC2_TimerCommandSet(TC_COMMAND command);
 
 
 // DOM-IGNORE-BEGIN
@@ -122,4 +122,4 @@ void TC0_TimerCommandSet(TC_COMMAND command);
 #endif
 // DOM-IGNORE-END
 
-#endif /* PLIB_TC0_H */
+#endif /* PLIB_TC2_H */

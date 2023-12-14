@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPU PLIB Implementation
+  MPU PLIB Header
 
   Company:
     Microchip Technology Inc.
@@ -8,7 +8,7 @@
     plib_mpu.h
 
   Summary:
-    MPU PLIB Source File
+    MPU PLIB Header File
 
   Description:
     None
@@ -38,50 +38,36 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 
-#include "plib_mpu.h"
-#include "plib_mpu_local.h"
+#ifndef PLIB_MPU_H
+#define PLIB_MPU_H
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: MPU Implementation
+// Section: Interface
 // *****************************************************************************
 // *****************************************************************************
 
-void MPU_Initialize(void)
-{
-    /*** Disable MPU            ***/
-    MPU->CTRL = 0;
+/****************************** MPU API *********************************/
 
-    /*** Configure MPU Regions  ***/
-
-    /* Region 0 Name: QSPI, Base Address: 0x4000000, Size: 256MB  */
-    MPU->RBAR = MPU_REGION(0U, 0x4000000U);
-    MPU->RASR = MPU_REGION_SIZE(27U) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_STRONGLY_ORDERED \
-                | MPU_ATTR_ENABLE  ;
+void MPU_Initialize( void );
 
 
 
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
 
+    }
 
+#endif
+// DOM-IGNORE-END
+#endif // PLIB_MPU_H
 
-
-
-
-
-
-
-
-
-
-
-    /* Enable Memory Management Fault */
-    SCB->SHCSR |= (SCB_SHCSR_MEMFAULTENA_Msk);
-
-    /* Enable MPU */
-    MPU->CTRL = MPU_CTRL_ENABLE_Msk  | MPU_CTRL_PRIVDEFENA_Msk;
-
-    __DSB();
-    __ISB();
-}
 

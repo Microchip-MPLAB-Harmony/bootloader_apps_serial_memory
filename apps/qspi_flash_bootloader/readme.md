@@ -90,8 +90,10 @@ The following table provides links to documentation on how to build and run QSPI
 
 | Development Kit |
 |:---------|
+|[PIC32CZ-CA80 Curiosity Ultra board](docs/readme_pic32cz_ca80_curiosity_ultra.md) |
 |[PIC32MZ Embedded Graphics with Stacked DRAM (DA) Starter Kit (Crypto)](docs/readme_pic32mz_das_sk.md) |
 |[PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](docs/readme_pic32mz_ef_sk.md) |
 |[SAM E54 Xplained Pro Evaluation Kit](docs/readme_sam_e54_xpro.md) |
 |[SAM E70 Xplained Ultra Evaluation Kit](docs/readme_sam_e70_xult.md) |
+|[WBZ451 Curiosity Development Board](docs/readme_wbz451_curiosity.md) |
 

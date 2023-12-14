@@ -283,17 +283,17 @@ static const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ]
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
 static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
-    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC0_TimerCallbackRegister,
-    .timerStart = (SYS_TIME_PLIB_START)TC0_TimerStart,
-    .timerStop = (SYS_TIME_PLIB_STOP)TC0_TimerStop,
-    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC0_TimerFrequencyGet,
-    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC0_Timer16bitPeriodSet,
+    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC2_TimerCallbackRegister,
+    .timerStart = (SYS_TIME_PLIB_START)TC2_TimerStart,
+    .timerStop = (SYS_TIME_PLIB_STOP)TC2_TimerStop,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC2_TimerFrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC2_Timer16bitPeriodSet,
 };
 
 static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
-    .hwTimerIntNum = TC0_IRQn,
+    .hwTimerIntNum = TC2_IRQn,
 };
 
 // </editor-fold>
@@ -305,6 +305,28 @@ static const SYS_TIME_INIT sysTimeInitData =
 // Section: Local initialization functions
 // *****************************************************************************
 // *****************************************************************************
+
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.6 deviated 2 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_6_DR_3 */
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
 
 /* MISRAC 2012 deviation block end */
 
@@ -324,6 +346,9 @@ void SYS_Initialize ( void* data )
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
+    STDIO_BufferModeSet();
+
+
   
     CLOCK_Initialize();
     /* Configure Prefetch, Wait States */
@@ -334,11 +359,13 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
-    SERCOM0_SPI_Initialize();
+    SERCOM1_USART_Initialize();
 
     EVSYS_Initialize();
 
-    TC0_TimerInitialize();
+    SERCOM0_SPI_Initialize();
+
+    TC2_TimerInitialize();
 
     NVM_Initialize();
 

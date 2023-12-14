@@ -1,24 +1,26 @@
 /*******************************************************************************
-  Non-Volatile Memory Controller(NVM) PLIB.
+  DMA System Service Library Implementation Source File
 
-  Company:
+  Company
     Microchip Technology Inc.
 
-  File Name:
-    plib_nvm.h
+  File Name
+    sys_dma.c
 
-  Summary:
-    Interface definition of NVM Plib.
+  Summary
+    DMA system service library interface implementation.
 
-  Description:
-    This file defines the interface for the NVM Plib.
-    It allows user to Program, Erase and lock the on-chip Non Volatile Flash
-    Memory.
+  Description
+    This file implements the interface to the DMA system service library.
+
+  Remarks:
+    DMA controller initialize will be done from within the MCC.
 
 *******************************************************************************/
+
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -41,80 +43,37 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_NVM_H
-#define PLIB_NVM_H
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include "system/dma/sys_dma.h"
 
-#include "device.h"     // For device registers and uint32_t
-#include <stdbool.h>    // For bool
+//******************************************************************************
+/* Function:
+    void SYS_DMA_AddressingModeSetup(SYS_DMA_CHANNEL channel, SYS_DMA_SOURCE_ADDRESSING_MODE sourceAddrMode, SYS_DMA_DESTINATION_ADDRESSING_MODE destAddrMode);
 
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
+  Summary:
+    Setup addressing mode of selected DMA channel.
 
-    extern "C" {
+  Remarks:
+    Check sys_dma.h for more info.
+*/
+void SYS_DMA_AddressingModeSetup(SYS_DMA_CHANNEL channel, SYS_DMA_SOURCE_ADDRESSING_MODE sourceAddrMode, SYS_DMA_DESTINATION_ADDRESSING_MODE destAddrMode)
+{
+}
 
-#endif
+//******************************************************************************
+/* Function:
+    void SYS_DMA_DataWidthSetup(SYS_DMA_CHANNEL channel, SYS_DMA_WIDTH dataWidth);
 
-// DOM-IGNORE-END
+  Summary:
+    Setup data width of selected DMA channel.
 
-#define NVM_FLASH_START_ADDRESS    (0x01000000U)
-#ifndef NVM_FLASH_SIZE
-#define NVM_FLASH_SIZE             (0x100000U)
-#endif
-#define NVM_FLASH_ROWSIZE          (1024U)
-#define NVM_FLASH_PAGESIZE         (4096U)
-
-
-/* No error */
-#define    NVM_ERROR_NONE      ( 0x0U )
-
-/* NVM write error */
-#define    NVM_ERROR_WRITE     ( NVM_NVMCON_WRERR_Msk )
-
-/* NVM Low Voltage Detect error */
-#define    NVM_ERROR_LOWVOLTAGE ( NVM_NVMCON_LVDERR_Msk )
-
-typedef uint32_t NVM_ERROR;
-
-
-
-
-void NVM_Initialize( void );
-
-bool NVM_Read( uint32_t *data, uint32_t length, const uint32_t address );
-
-bool NVM_WordWrite( uint32_t data, uint32_t address );
-
-bool NVM_QuadWordWrite( uint32_t *data, uint32_t address );
-
-bool NVM_RowWrite( uint32_t *data, uint32_t address );
-
-bool NVM_PageErase( uint32_t address );
-
-NVM_ERROR NVM_ErrorGet( void );
-
-bool NVM_IsBusy( void );
-
-void NVM_ProgramFlashWriteProtect( uint32_t laddress, uint32_t haddress);
-
-void NVM_ProgramFlashWriteProtectLock( void );
-
-void NVM_BootFlashWriteProtectUnlock( uint32_t bootFlashPagesMsk );
-
-void NVM_BootFlashWriteProtectLock( uint32_t bootFlashPagesMsk );
-
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-    }
-
-#endif
-
-// DOM-IGNORE-END
-#endif // PLIB_NVM_H
+  Remarks:
+    Check sys_dma.h for more info.
+*/
+void SYS_DMA_DataWidthSetup(SYS_DMA_CHANNEL channel, SYS_DMA_WIDTH dataWidth)
+{
+}

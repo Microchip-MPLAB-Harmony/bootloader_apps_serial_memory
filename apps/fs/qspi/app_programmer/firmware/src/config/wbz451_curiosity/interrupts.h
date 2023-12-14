@@ -64,9 +64,8 @@ void MemoryManagement_Handler (void);
 void BusFault_Handler (void);
 void UsageFault_Handler (void);
 void DebugMonitor_Handler (void);
-void NVM_InterruptHandler (void);
 void SERCOM0_SPI_InterruptHandler (void);
-void TC0_TimerInterruptHandler (void);
+void TC2_TimerInterruptHandler (void);
 
 
 

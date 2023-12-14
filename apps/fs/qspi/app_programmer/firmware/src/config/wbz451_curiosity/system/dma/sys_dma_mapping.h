@@ -1,21 +1,23 @@
 /*******************************************************************************
-  MPU PLIB Implementation
+  DMA System Service Mapping File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_mpu.h
+    sys_dma_mapping.h
 
   Summary:
-    MPU PLIB Source File
+    DMA System Service mapping file.
 
   Description:
-    None
-
+    This header file contains the mapping of the APIs defined in the API header
+    to either the function implementations or macro implementation or the
+    specific variant implementation.
 *******************************************************************************/
 
-/*******************************************************************************
+//DOM-IGNORE-BEGIN
+/******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
@@ -37,51 +39,24 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+//DOM-IGNORE-END
 
-#include "plib_mpu.h"
-#include "plib_mpu_local.h"
+#ifndef SYS_DMA_MAPPING_H
+#define SYS_DMA_MAPPING_H
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: MPU Implementation
+// Section: DMA System Service Mapping
 // *****************************************************************************
 // *****************************************************************************
 
-void MPU_Initialize(void)
-{
-    /*** Disable MPU            ***/
-    MPU->CTRL = 0;
 
-    /*** Configure MPU Regions  ***/
+#define SYS_DMA_ChannelCallbackRegister(channel, eventHandler, context)
 
-    /* Region 0 Name: QSPI, Base Address: 0x4000000, Size: 256MB  */
-    MPU->RBAR = MPU_REGION(0U, 0x4000000U);
-    MPU->RASR = MPU_REGION_SIZE(27U) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_STRONGLY_ORDERED \
-                | MPU_ATTR_ENABLE  ;
+#define SYS_DMA_ChannelTransfer(channel, srcAddr, destAddr, blockSize)
 
+#define SYS_DMA_ChannelIsBusy(channel)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Enable Memory Management Fault */
-    SCB->SHCSR |= (SCB_SHCSR_MEMFAULTENA_Msk);
-
-    /* Enable MPU */
-    MPU->CTRL = MPU_CTRL_ENABLE_Msk  | MPU_CTRL_PRIVDEFENA_Msk;
-
-    __DSB();
-    __ISB();
-}
-
+#define SYS_DMA_ChannelDisable(channel)
+#endif // SYS_DMA_MAPPING_H

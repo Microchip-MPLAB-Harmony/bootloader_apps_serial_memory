@@ -1,9 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="wbz451_curiosity" displayName="wbz451_curiosity" projectFiles="true">
+        <logicalFolder name="wbz451_curiosity"
+                       displayName="wbz451_curiosity"
+                       projectFiles="true">
           <logicalFolder name="bootloader" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/wbz451_curiosity/bootloader/bootloader_interrupt.h</itemPath>
             <itemPath>../src/config/wbz451_curiosity/bootloader/bootloader_common.h</itemPath>
@@ -45,6 +49,10 @@
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/wbz451_curiosity/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="mpu" displayName="mpu" projectFiles="true">
+              <itemPath>../src/config/wbz451_curiosity/peripheral/mpu/plib_mpu.h</itemPath>
+              <itemPath>../src/config/wbz451_curiosity/peripheral/mpu/plib_mpu_local.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/wbz451_curiosity/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
@@ -69,7 +77,9 @@
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/file_system/ff.h</itemPath>
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/file_system/ffconf.h</itemPath>
                 </logicalFolder>
-                <logicalFolder name="hardware_access" displayName="hardware_access" projectFiles="true">
+                <logicalFolder name="hardware_access"
+                               displayName="hardware_access"
+                               projectFiles="true">
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access/diskio.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
@@ -215,16 +225,24 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="wbz451_curiosity" displayName="wbz451_curiosity" projectFiles="true">
+        <logicalFolder name="wbz451_curiosity"
+                       displayName="wbz451_curiosity"
+                       projectFiles="true">
           <itemPath>../src/config/wbz451_curiosity/WBZ451.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="wbz451_curiosity" displayName="wbz451_curiosity" projectFiles="true">
+        <logicalFolder name="wbz451_curiosity"
+                       displayName="wbz451_curiosity"
+                       projectFiles="true">
           <logicalFolder name="bootloader" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/wbz451_curiosity/bootloader/bootloader_common.c</itemPath>
             <itemPath>../src/config/wbz451_curiosity/bootloader/bootloader_serial_memory.c</itemPath>
@@ -254,6 +272,9 @@
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/wbz451_curiosity/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="mpu" displayName="mpu" projectFiles="true">
+              <itemPath>../src/config/wbz451_curiosity/peripheral/mpu/plib_mpu.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/wbz451_curiosity/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
@@ -277,7 +298,9 @@
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/file_system/ffunicode.c</itemPath>
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/file_system/ff.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="hardware_access" displayName="hardware_access" projectFiles="true">
+                <logicalFolder name="hardware_access"
+                               displayName="hardware_access"
+                               projectFiles="true">
                   <itemPath>../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access/diskio.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
@@ -300,7 +323,9 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>fs_qspi_flash_bootloader_wbz451_curiosity.mc3</itemPath>
     </logicalFolder>
@@ -311,9 +336,9 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>WBZ451</targetDevice>
-        <targetHeader/>
-        <targetPluginBoard/>
-        <platformTool>pkob4hybrid</platformTool>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>snap</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
@@ -332,11 +357,24 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../app_programmer/firmware/wbz451_curiosity.X" CT="1" CN="wbz451_curiosity" AC="true" BL="true" WD="../../../app_programmer/firmware/wbz451_curiosity.X" BC="${MAKE}  -f Makefile CONF=wbz451_curiosity" DBC="${MAKE}  -f Makefile CONF=wbz451_curiosity TYPE_IMAGE=DEBUG_RUN" CC="rm -rf &quot;build/wbz451_curiosity&quot; &quot;dist/wbz451_curiosity&quot;" OP="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.hex" DOP="dist/wbz451_curiosity/debug/wbz451_curiosity.X.debug.elf" FL="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.hex" PD="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.elf" DD="dist/wbz451_curiosity/debug/wbz451_curiosity.X.debug.elf">
+          <makeArtifact PL="../../../app_programmer/firmware/wbz451_curiosity.X"
+                        CT="1"
+                        CN="wbz451_curiosity"
+                        AC="true"
+                        BL="true"
+                        WD="../../../app_programmer/firmware/wbz451_curiosity.X"
+                        BC="${MAKE}  -f Makefile CONF=wbz451_curiosity"
+                        DBC="${MAKE}  -f Makefile CONF=wbz451_curiosity TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/wbz451_curiosity&quot; &quot;dist/wbz451_curiosity&quot;"
+                        OP="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.hex"
+                        DOP="dist/wbz451_curiosity/debug/wbz451_curiosity.X.debug.elf"
+                        FL="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.hex"
+                        PD="dist/wbz451_curiosity/production/wbz451_curiosity.X.production.elf"
+                        DD="dist/wbz451_curiosity/debug/wbz451_curiosity.X.debug.elf">
           </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile/>
+          <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
         </subordinates>
@@ -344,9 +382,9 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep/>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep/>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -360,7 +398,8 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/wbz451_curiosity;../src/config/wbz451_curiosity/system/fs/fat_fs/file_system;../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/wbz451_curiosity;../src/config/wbz451_curiosity/system/fs/fat_fs/file_system;../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -437,7 +476,8 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value="RAM_LENGTH=0x1fff0;RAM_ORIGIN=0x20000010;ROM_LENGTH=0x6000"/>
+        <property key="preprocessor-macros"
+                  value="RAM_LENGTH=0x1fff0;RAM_ORIGIN=0x20000010;ROM_LENGTH=0x6000"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -459,7 +499,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/wbz451_curiosity;../src/config/wbz451_curiosity/system/fs/fat_fs/file_system;../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/wbz451_curiosity;../src/config/wbz451_curiosity/system/fs/fat_fs/file_system;../src/config/wbz451_curiosity/system/fs/fat_fs/hardware_access;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/WBZ451_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -493,11 +534,13 @@
       </C32Global>
       <Tool>
         <property key="memories.programmemory.ranges" value="1000000-2001ffff"/>
-        <property key="programmerToGoFilePath" value="C:/Users/I76597/h3-BB/bootloader_apps_serial_memory/apps/fs/qspi/bootloader/firmware/wbz451_curiosity.X/debug/wbz451_curiosity/wbz451_curiosity_ptg"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/I76597/h3-BB/bootloader_apps_serial_memory/apps/fs/qspi/bootloader/firmware/wbz451_curiosity.X/debug/wbz451_curiosity/wbz451_curiosity_ptg"/>
       </Tool>
       <pkob4hybrid>
         <property key="memories.programmemory.ranges" value="1000000-2001ffff"/>
-        <property key="programmerToGoFilePath" value="C:/Users/I76597/h3-BB/bootloader_apps_serial_memory/apps/fs/qspi/bootloader/firmware/wbz451_curiosity.X/debug/wbz451_curiosity/wbz451_curiosity_ptg"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/I76597/h3-BB/bootloader_apps_serial_memory/apps/fs/qspi/bootloader/firmware/wbz451_curiosity.X/debug/wbz451_curiosity/wbz451_curiosity_ptg"/>
       </pkob4hybrid>
     </conf>
   </confs>

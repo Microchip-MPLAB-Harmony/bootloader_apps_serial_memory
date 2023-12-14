@@ -1,24 +1,26 @@
 /*******************************************************************************
-  Non-Volatile Memory Controller(NVM) PLIB.
+  SERCOM Universal Synchronous/Asynchrnous Receiver/Transmitter PLIB
 
-  Company:
+  Company
     Microchip Technology Inc.
 
-  File Name:
-    plib_nvm.h
+  File Name
+    plib_sercom1_usart.h
 
-  Summary:
-    Interface definition of NVM Plib.
+  Summary
+    USART peripheral library interface.
 
-  Description:
-    This file defines the interface for the NVM Plib.
-    It allows user to Program, Erase and lock the on-chip Non Volatile Flash
-    Memory.
+  Description
+    This file defines the interface to the USART peripheral library. This
+    library provides access to and control of the associated peripheral
+    instance.
 
+  Remarks:
+    None.
 *******************************************************************************/
-// DOM-IGNORE-BEGIN
+
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,10 +41,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
 
-#ifndef PLIB_NVM_H
-#define PLIB_NVM_H
+#ifndef PLIB_SERCOM1_USART_H // Guards against multiple inclusion
+#define PLIB_SERCOM1_USART_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -50,8 +51,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "device.h"     // For device registers and uint32_t
-#include <stdbool.h>    // For bool
+#include "plib_sercom_usart_common.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -59,62 +59,56 @@
     extern "C" {
 
 #endif
-
 // DOM-IGNORE-END
 
-#define NVM_FLASH_START_ADDRESS    (0x01000000U)
-#ifndef NVM_FLASH_SIZE
-#define NVM_FLASH_SIZE             (0x100000U)
-#endif
-#define NVM_FLASH_ROWSIZE          (1024U)
-#define NVM_FLASH_PAGESIZE         (4096U)
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
+// *****************************************************************************
+// *****************************************************************************
+
+void SERCOM1_USART_Initialize( void );
+
+bool SERCOM1_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency );
+
+void SERCOM1_USART_Enable( void );
+
+void SERCOM1_USART_Disable( void );
+
+void SERCOM1_USART_TransmitterEnable( void );
+
+void SERCOM1_USART_TransmitterDisable( void );
+
+bool SERCOM1_USART_Write( void *buffer, const size_t size );
+
+bool SERCOM1_USART_TransmitComplete( void );
 
 
-/* No error */
-#define    NVM_ERROR_NONE      ( 0x0U )
+bool SERCOM1_USART_TransmitterIsReady( void );
 
-/* NVM write error */
-#define    NVM_ERROR_WRITE     ( NVM_NVMCON_WRERR_Msk )
-
-/* NVM Low Voltage Detect error */
-#define    NVM_ERROR_LOWVOLTAGE ( NVM_NVMCON_LVDERR_Msk )
-
-typedef uint32_t NVM_ERROR;
+void SERCOM1_USART_WriteByte( int data );
 
 
+void SERCOM1_USART_ReceiverEnable( void );
 
+void SERCOM1_USART_ReceiverDisable( void );
 
-void NVM_Initialize( void );
+bool SERCOM1_USART_Read( void *buffer, const size_t size );
 
-bool NVM_Read( uint32_t *data, uint32_t length, const uint32_t address );
+bool SERCOM1_USART_ReceiverIsReady( void );
 
-bool NVM_WordWrite( uint32_t data, uint32_t address );
+int SERCOM1_USART_ReadByte( void );
 
-bool NVM_QuadWordWrite( uint32_t *data, uint32_t address );
+USART_ERROR SERCOM1_USART_ErrorGet( void );
 
-bool NVM_RowWrite( uint32_t *data, uint32_t address );
-
-bool NVM_PageErase( uint32_t address );
-
-NVM_ERROR NVM_ErrorGet( void );
-
-bool NVM_IsBusy( void );
-
-void NVM_ProgramFlashWriteProtect( uint32_t laddress, uint32_t haddress);
-
-void NVM_ProgramFlashWriteProtectLock( void );
-
-void NVM_BootFlashWriteProtectUnlock( uint32_t bootFlashPagesMsk );
-
-void NVM_BootFlashWriteProtectLock( uint32_t bootFlashPagesMsk );
-
+uint32_t SERCOM1_USART_FrequencyGet( void );
 
 // DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
+#ifdef __cplusplus  // Provide C++ Compatibility
 
     }
 
 #endif
-
 // DOM-IGNORE-END
-#endif // PLIB_NVM_H
+
+#endif //PLIB_SERCOM1_USART_H

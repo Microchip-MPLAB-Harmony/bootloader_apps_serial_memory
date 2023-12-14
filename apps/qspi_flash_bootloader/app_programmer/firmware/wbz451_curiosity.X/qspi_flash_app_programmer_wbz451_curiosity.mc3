@@ -3373,7 +3373,10 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
     &lt;GraphSettings canvasHeight=&quot;372&quot; canvasWidth=&quot;736&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
+      &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
+    &lt;/PowerProfiles&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_WBZ451_Curiosity&quot; x=&quot;170&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;370&quot; y=&quot;60&quot;/&gt;
@@ -6605,7 +6608,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\definitions.h</file>
-         <hash>b6f207fef128c2ccea8e33978232d73736c277e227cec41b77f369e412870c32</hash>
+         <hash>c5baa5350e5e631e6afbc1b77f5c9f97bf4ec9e39a7107d31ce421da2ff3bebe</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\device.h</file>
@@ -6677,11 +6680,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>10ea7b1c81138608ab37a2d7850e014a8597dda80f05afec71c37aca37267059</hash>
+         <hash>778f051cb317e3f00e04227eb44d039ab5aece3339327984222e992586576cba</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\clk\plib_clk.h</file>
-         <hash>5c60d83daf6d9466ddbaf17627b852eee42dc0ab695c5410bba0c2c652cb7c09</hash>
+         <hash>2d1939a0da512a64fea40fffe4c2f30f2d3d16344591a807c5814fc1e67fcc01</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\peripheral\cmcc\plib_cmcc.c</file>

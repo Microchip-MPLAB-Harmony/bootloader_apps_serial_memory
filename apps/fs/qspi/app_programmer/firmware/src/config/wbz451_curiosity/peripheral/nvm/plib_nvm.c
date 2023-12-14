@@ -80,13 +80,6 @@ typedef enum
     NVM_UNLOCK_KEY2 = 0x556699AA
 } NVM_UNLOCK_KEYS;
 
-typedef struct
-{
-    NVM_CALLBACK CallbackFunc;
-    uintptr_t Context;
-}nvmCallbackObjType;
-
-volatile static nvmCallbackObjType nvmCallbackObj;
 /* ************************************************************************** */
 /* ************************************************************************** */
 // Section: Local Functions                                                   */
@@ -99,21 +92,6 @@ volatile static nvmCallbackObjType nvmCallbackObj;
 // *****************************************************************************
 // *****************************************************************************
 
-void NVM_CallbackRegister( NVM_CALLBACK callback, uintptr_t context )
-{
-    /* Register callback function */
-    nvmCallbackObj.CallbackFunc    = callback;
-    nvmCallbackObj.Context         = context;
-}
-
-void __attribute__((used)) NVM_InterruptHandler( void )
-{
-    if(nvmCallbackObj.CallbackFunc != NULL)
-    {
-        uintptr_t context = nvmCallbackObj.Context;
-        nvmCallbackObj.CallbackFunc(context);
-    }
-}
 
 static void NVM_WriteUnlockSequence( void )
 {

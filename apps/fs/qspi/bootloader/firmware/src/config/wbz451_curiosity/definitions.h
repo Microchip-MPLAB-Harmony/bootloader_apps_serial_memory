@@ -53,6 +53,7 @@
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/nvic/plib_nvic.h"
+#include "peripheral/mpu/plib_mpu.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "driver/memory/drv_memory.h"
 #include "driver/sst26/drv_sst26.h"

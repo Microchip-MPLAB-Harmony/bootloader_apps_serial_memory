@@ -66,7 +66,7 @@ extern "C" {
 #define SWITCH_GET()            SWITCH_Get()
 #define SWITCH_PRESSED          SWITCH_STATE_PRESSED
     
-#define BTL_TRIGGER_METHOD      "PRESS SWITCH 0"
+#define BTL_TRIGGER_METHOD      "PRESS SWITCH 1"
 #define BTL_TRIGGER_RAM_START   (0x20000000U)
 
 static inline void APP_SystemReset( void )
