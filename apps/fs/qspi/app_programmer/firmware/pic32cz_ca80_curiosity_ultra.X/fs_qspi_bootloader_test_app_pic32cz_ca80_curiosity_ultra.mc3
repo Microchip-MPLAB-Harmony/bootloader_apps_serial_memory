@@ -1,4 +1,4 @@
-<config configName="pic32cz_ca80_curiosity_ultra" projectName="fs_qspi_bootloader_test_app_pic32cz_ca80_curiosity_ultra" configVersion="1.1" device="PIC32CZ8110CA80208" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+<config configName="pic32cz_ca80_curiosity_ultra" projectName="fs_qspi_bootloader_test_app_pic32cz_ca80_curiosity_ultra" configVersion="1.1" device="PIC32CZ8110CA80208" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -79,7 +79,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.0"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -13897,11 +13897,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_curiosity_ultra\configuration.h</file>
-         <hash>31a5e1927f573fc0c7a1f2de0a71663d2ba2b63c846b7550cb682d1f7aa1c248</hash>
+         <hash>3cbc4e47368140029f2fc3adab530529b74ebacb605b52df6c36dba29e7d935e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_curiosity_ultra\definitions.h</file>
-         <hash>9e16416aa570a078c4e8e950cec634f77b2cdd08cb4c07b78d8e5307acd81c94</hash>
+         <hash>8a7db650d7073920ba842a0e93fde37c5d67d0515ac13d036ff897186746dfc4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_curiosity_ultra\device.h</file>
@@ -14001,7 +14001,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_curiosity_ultra\initialization.c</file>
-         <hash>6712900b5d18eb1153df8f2dbf07135b1e595c92750ca821c03210f879fb108d</hash>
+         <hash>d93ac35179dd148e11bbd172ec8efab81712d0e01a2ccc6ceefb0b817c4946c3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_curiosity_ultra\interrupts.c</file>
