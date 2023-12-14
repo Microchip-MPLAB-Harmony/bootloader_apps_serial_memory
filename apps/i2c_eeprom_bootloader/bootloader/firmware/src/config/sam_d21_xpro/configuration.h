@@ -89,13 +89,13 @@ extern "C" {
 /* AT24 Driver Configuration Options */
 
 
-#define DRV_AT24_INSTANCES_NUMBER              1
-#define DRV_AT24_INDEX                         0
-#define DRV_AT24_CLIENTS_NUMBER_IDX            1
-#define DRV_AT24_INT_SRC_IDX                   SERCOM2_IRQn
-#define DRV_AT24_EEPROM_FLASH_SIZE             262144
-#define DRV_AT24_EEPROM_PAGE_SIZE              256
-#define DRV_AT24_WRITE_BUFFER_SIZE             258
+#define DRV_AT24_INSTANCES_NUMBER              (1U)
+#define DRV_AT24_INDEX                         (0)
+#define DRV_AT24_CLIENTS_NUMBER_IDX            (1)
+#define DRV_AT24_INT_SRC_IDX                   (SERCOM2_IRQn)
+#define DRV_AT24_EEPROM_FLASH_SIZE             (262144U)
+#define DRV_AT24_EEPROM_PAGE_SIZE              (256U)
+#define DRV_AT24_WRITE_BUFFER_SIZE             (258)
 
 
 // *****************************************************************************
