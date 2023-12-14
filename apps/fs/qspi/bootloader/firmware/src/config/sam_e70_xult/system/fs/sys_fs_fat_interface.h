@@ -22,8 +22,8 @@
  *******************************************************************************/
 
 
-#ifndef _SYS_FS_FAT_INTERFACE_H
-#define _SYS_FS_FAT_INTERFACE_H
+#ifndef SYS_FS_FAT_INTERFACE_H
+#define SYS_FS_FAT_INTERFACE_H
 
 #include "system/fs/fat_fs/file_system/ff.h"
 
@@ -48,7 +48,7 @@ int FATFS_close (uintptr_t handle);
 
 int FATFS_lseek (uintptr_t handle, uint32_t ofs);
 
-int FATFS_stat (const char* path, uintptr_t ptr);
+int FATFS_stat (const char* path, uintptr_t fileInfo);
 
 int FATFS_getlabel (const char* path, char* label, uint32_t* vsn);
 
@@ -58,7 +58,7 @@ char* FATFS_gets (char* buff, int len, uintptr_t handle);
 
 int FATFS_opendir (uintptr_t handle, const char* path);
 
-int FATFS_readdir (uintptr_t handle, uintptr_t fno);
+int FATFS_readdir (uintptr_t handle, uintptr_t fileInfo);
 
 int FATFS_closedir (uintptr_t handle);
 

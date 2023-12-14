@@ -40,8 +40,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _BSP_H
-#define _BSP_H
+#ifndef BSP_H
+#define BSP_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -60,14 +60,17 @@
 // Section: BSP Macros
 // *****************************************************************************
 // *****************************************************************************
+#define sam_e70_xult
+#define BSP_NAME             "sam_e70_xult"
+
 /*** LED Macros for LED1 ***/
-#define LED1_Toggle() (PIOA_REGS->PIO_ODSR ^= (1<<5))
-#define LED1_On() (PIOA_REGS->PIO_CODR = (1<<5))
-#define LED1_Off() (PIOA_REGS->PIO_SODR = (1<<5))
+#define LED1_Toggle() (PIOA_REGS->PIO_ODSR ^= (1UL<<5))
+#define LED1_On() (PIOA_REGS->PIO_CODR = (1UL<<5))
+#define LED1_Off() (PIOA_REGS->PIO_SODR = (1UL<<5))
 /*** LED Macros for LED2 ***/
-#define LED2_Toggle() (PIOB_REGS->PIO_ODSR ^= (1<<8))
-#define LED2_On() (PIOB_REGS->PIO_CODR = (1<<8))
-#define LED2_Off() (PIOB_REGS->PIO_SODR = (1<<8))
+#define LED2_Toggle() (PIOB_REGS->PIO_ODSR ^= (1UL<<8))
+#define LED2_On() (PIOB_REGS->PIO_CODR = (1UL<<8))
+#define LED2_Off() (PIOB_REGS->PIO_SODR = (1UL<<8))
 
 
 
@@ -101,7 +104,6 @@
 
   Example:
     <code>
-    //Initialize the BSP
     BSP_Initialize();
     </code>
 
@@ -111,7 +113,7 @@
 
 void BSP_Initialize(void);
 
-#endif // _BSP_H
+#endif // BSP_H
 
 /*******************************************************************************
  End of File
