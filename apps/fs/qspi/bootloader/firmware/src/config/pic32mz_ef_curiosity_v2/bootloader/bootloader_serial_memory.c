@@ -94,9 +94,11 @@ typedef struct
 
 } BOOTLOADER_DATA;
 
-uint8_t CACHE_ALIGN fileBuffer[PAGE_SIZE];
+static uint8_t CACHE_ALIGN fileBuffer[PAGE_SIZE];
 
-BOOTLOADER_DATA btlData =
+/* MISRA C-2012 Rule 7.2 deviated:1 Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
+static BOOTLOADER_DATA btlData =
 {
     .currentState   = BOOTLOADER_REGISTER_FS_EVENT_HANDLER,
     .deviceAttached = false,
@@ -104,7 +106,10 @@ BOOTLOADER_DATA btlData =
 };
 
 
-void bootloader_SysFsEventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context)
+/* MISRAC 2012 deviation block end */
+
+
+static void bootloader_SysFsEventHandler(SYS_FS_EVENT event, void * eventData, uintptr_t context)
 {
     switch(event)
     {
@@ -124,12 +129,16 @@ void bootloader_SysFsEventHandler(SYS_FS_EVENT event, void * eventData, uintptr_
 
         default:
         {
+            /* Do Nothing */
             break;
         }
     }
 }
 
-void bootloader_NvmAppErase( uint32_t appLength )
+/* MISRA C-2012 Rule 11.3, 11.6 deviated below. Deviation record ID -  
+   H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_6_DR_1*/
+
+static void bootloader_NvmAppErase( uint32_t appLength )
 {
     uint32_t flashAddr = APP_START_ADDRESS;
 
@@ -137,13 +146,13 @@ void bootloader_NvmAppErase( uint32_t appLength )
     appLength = appLength + (ERASE_BLOCK_SIZE - (appLength % ERASE_BLOCK_SIZE));
 
     while ((flashAddr < (FLASH_START + FLASH_LENGTH)) &&
-           (appLength != 0))
+           (appLength != 0U))
     {
-        NVM_PageErase(flashAddr);
+        (void) NVM_PageErase(flashAddr);
 
         while(NVM_IsBusy() == true)
         {
-
+              /* Do Nothing */
         }
 
         flashAddr += ERASE_BLOCK_SIZE;
@@ -151,17 +160,20 @@ void bootloader_NvmAppErase( uint32_t appLength )
     }
 }
 
-void bootloader_NVMPageWrite(uint8_t* data)
+static void bootloader_NVMPageWrite(uint8_t* data)
 {
-    NVM_RowWrite((uint32_t *)data, btlData.progAddr);
+    (void) NVM_RowWrite((uint32_t *)data, btlData.progAddr);
 
     while(NVM_IsBusy() == true)
     {
-
+       /* Do Nothing */
     }
 
     btlData.progAddr += PAGE_SIZE;
 }
+
+
+/* MISRAC 2012 deviation block end */
 
 void bootloader_SERIAL_MEMORY_Tasks( void )
 {
@@ -171,7 +183,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
     {
         case BOOTLOADER_REGISTER_FS_EVENT_HANDLER:
         {
-            SYS_FS_EventHandlerSet(bootloader_SysFsEventHandler, (uintptr_t)NULL);
+            SYS_FS_EventHandlerSet(bootloader_SysFsEventHandler, 0U);
 
             btlData.currentState = BOOTLOADER_WAIT_FOR_DEVICE_ATTACH;
 
@@ -192,7 +204,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
             if (SYS_FS_FileStat(APP_IMAGE_FILE_PATH, &btlData.fileStat) == SYS_FS_RES_SUCCESS)
             {
                 /* Check if the application binary file has any content */
-                if (btlData.fileStat.fsize <= 0)
+                if (btlData.fileStat.fsize <= 0U)
                 {
                     break;
                 }
@@ -215,7 +227,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
 
             btlData.currentState = BOOTLOADER_READ_FILE;
 
-            memset((void *)fileBuffer, 0xFF, PAGE_SIZE);
+            (void) memset((void *)fileBuffer, 0xFF, PAGE_SIZE);
 
             break;
         }
@@ -225,9 +237,9 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
             fileReadLength = SYS_FS_FileRead(btlData.fileHandle, (void *)fileBuffer, PAGE_SIZE);
 
             /* Reached End of File */
-            if (fileReadLength <= 0)
+            if (fileReadLength <= 0U)
             {
-                SYS_FS_FileClose(btlData.fileHandle);
+                (void) SYS_FS_FileClose(btlData.fileHandle);
 
                 bootloader_TriggerReset();
             }
@@ -243,7 +255,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
         {
             bootloader_NVMPageWrite(fileBuffer);
 
-            memset((void *)fileBuffer, 0xFF, PAGE_SIZE);
+            (void) memset((void *)fileBuffer, 0xFF, PAGE_SIZE);
 
             btlData.currentState = BOOTLOADER_READ_FILE;
 
@@ -252,7 +264,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
 
         case BOOTLOADER_DEVICE_DETACHED:
         {
-            SYS_FS_FileClose(btlData.fileHandle);
+            (void) SYS_FS_FileClose(btlData.fileHandle);
 
             btlData.currentState = BOOTLOADER_WAIT_FOR_DEVICE_ATTACH;
             break;
@@ -260,6 +272,7 @@ void bootloader_SERIAL_MEMORY_Tasks( void )
 
         case BOOTLOADER_ERROR:
         default:
+            /* Do Nothing */
             break;
     }
 }
