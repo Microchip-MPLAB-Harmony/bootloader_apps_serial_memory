@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="pic32mm_usb_cur"
-                       displayName="pic32mm_usb_cur"
-                       projectFiles="true">
+        <logicalFolder name="pic32mm_usb_cur" displayName="pic32mm_usb_cur" projectFiles="true">
           <logicalFolder name="bootloader" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/pic32mm_usb_cur/bootloader/bootloader_common.h</itemPath>
             <itemPath>../src/config/pic32mm_usb_cur/bootloader/bootloader_serial_mem.h</itemPath>
@@ -75,18 +71,12 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <itemPath>../src/config/pic32mm_usb_cur/btl.ld</itemPath>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="pic32mm_usb_cur"
-                       displayName="pic32mm_usb_cur"
-                       projectFiles="true">
+        <logicalFolder name="pic32mm_usb_cur" displayName="pic32mm_usb_cur" projectFiles="true">
           <logicalFolder name="bootloader" displayName="bootloader" projectFiles="true">
             <itemPath>../src/config/pic32mm_usb_cur/bootloader/bootloader_common.c</itemPath>
             <itemPath>../src/config/pic32mm_usb_cur/bootloader/bootloader_serial_mem.c</itemPath>
@@ -135,9 +125,7 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
+    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>spi_eeprom_bootloader_pic32mm_usb_cur.mc3</itemPath>
     </logicalFolder>
@@ -148,11 +136,11 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MM0256GPM064</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -168,24 +156,11 @@
         <archiverTool>
         </archiverTool>
         <loading>
-          <makeArtifact PL="../../../app_programmer/firmware/pic32mm_usb_cur.X"
-                        CT="1"
-                        CN="pic32mm_usb_cur"
-                        AC="true"
-                        BL="true"
-                        WD="../../../app_programmer/firmware/pic32mm_usb_cur.X"
-                        BC="${MAKE}  -f Makefile CONF=pic32mm_usb_cur"
-                        DBC="${MAKE}  -f Makefile CONF=pic32mm_usb_cur TYPE_IMAGE=DEBUG_RUN"
-                        CC="rm -rf &quot;build/pic32mm_usb_cur&quot; &quot;dist/pic32mm_usb_cur&quot;"
-                        OP="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.hex"
-                        DOP="dist/pic32mm_usb_cur/debug/pic32mm_usb_cur.X.debug.elf"
-                        FL="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.hex"
-                        PD="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.elf"
-                        DD="dist/pic32mm_usb_cur/debug/pic32mm_usb_cur.X.debug.elf">
+          <makeArtifact PL="../../../app_programmer/firmware/pic32mm_usb_cur.X" CT="1" CN="pic32mm_usb_cur" AC="true" BL="true" WD="../../../app_programmer/firmware/pic32mm_usb_cur.X" BC="${MAKE}  -f Makefile CONF=pic32mm_usb_cur" DBC="${MAKE}  -f Makefile CONF=pic32mm_usb_cur TYPE_IMAGE=DEBUG_RUN" CC="rm -rf &quot;build/pic32mm_usb_cur&quot; &quot;dist/pic32mm_usb_cur&quot;" OP="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.hex" DOP="dist/pic32mm_usb_cur/debug/pic32mm_usb_cur.X.debug.elf" FL="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.hex" PD="dist/pic32mm_usb_cur/production/pic32mm_usb_cur.X.production.elf" DD="dist/pic32mm_usb_cur/debug/pic32mm_usb_cur.X.debug.elf">
           </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -193,9 +168,9 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -209,8 +184,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mm_usb_cur"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mm_usb_cur"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -309,8 +283,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mm_usb_cur"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mm_usb_cur"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
