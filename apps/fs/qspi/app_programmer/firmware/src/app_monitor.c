@@ -85,7 +85,7 @@
 
 APP_MONITOR_DATA app_monitorData;
 
-static uint32_t ramStart[4] __attribute__((address(BTL_TRIGGER_RAM_START)));
+static uint32_t *ramStart = (uint32_t *)BTL_TRIGGER_RAM_START;
 
 // *****************************************************************************
 // *****************************************************************************
