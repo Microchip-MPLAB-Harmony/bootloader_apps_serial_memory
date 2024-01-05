@@ -1,92 +1,98 @@
----
-parent: Serial Memory Bootloader Applications
-title: SPI Flash Bootloader
-has_children: false
-has_toc: false
-nav_order: 4
----
-
-[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
-
-To clone or download these application from Github,go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_serial_memory) and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following [these instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki)
-
 # SPI Flash Bootloader
 
-This example application shows how to use the Serial Memory Bootloader Library to bootload an application from SPI Flash memory (SST26) to Internal Flash.
+This example application shows how to use the Serial Memory Bootloader Library to bootload an application from SPI Flash memory \(SST26\) to Internal Flash.
 
-### Serial Memory Bootloader Applications Block Diagram
+**Serial Memory Bootloader Applications Block Diagram**
 
-![serial_mem_btl_block_diagram](../docs/images/serial_mem_btl_block_diagram.png)
+![serial_mem_btl_block_diagram](../../docs/GUID-2E28F1C7-0CA4-471F-8BFF-99D67C9B0D66-low.png)
 
-### Bootloader Application
+**Bootloader Application**
 
-- This is a bootloader application which resides from
-    - The starting location of the Boot flash memory region for PIC32MZ devices
-        - Uses a Custom linker script **btl.ld** to place it in Boot flash memory
+-   This is a bootloader application which resides from
+
+    -   The starting location of the Boot flash memory region for PIC32MZ devices
+
+        -   Uses a Custom linker script **btl.ld** to place it in Boot flash memory
+
 
 **Performs Below Operation:**
 
-1. Sets up the SPI Flash (SST26) using the SST26 driver and SPI Peripheral Library
+1.  Sets up the SPI Flash \(SST26\) using the SST26 driver and SPI Peripheral Library
 
-2. Checks if a firmware update is required by reading the **MetaData** stored in the last sector of SPI Flash
-    - If Firmware update is required then it jumps to **Step 4**
+2.  Checks if a firmware update is required by reading the **MetaData** stored in the last sector of SPI Flash
 
-3. If there was no firmware update request through **MetaData**, then it checks for any trigger implemented in application main()
-    - Here we use the On-board Switch to force trigger firmware update.
+    -   If Firmware update is required then it jumps to **Step 4**
 
-    - If no trigger is found then it jumps to **Step 7**
+3.  If there was no firmware update request through **MetaData**, then it checks for any trigger implemented in application main\(\)
 
-4. If firmware update is required then it
-    - Reads the **programmer application** binary stored from start of SPI flash memory **(0x0)**
+    -   Here we use the On-board Switch to force trigger firmware update.
 
-    - Programs the read binary to application space in Internal Flash
+    -   If no trigger is found then it jumps to **Step 7**
 
-5. Once programming is done it generates a CRC32 value over programmed space and verifies it against the CRC32 stored in SPI Flash MetaData
-    - If CRC32 verification fails it goes into Error State
+4.  If firmware update is required then it
 
-6. If CRC32 verification is successful, It clears the **firmware update required flag** in the SPI Flash MetaData and **triggers a Soft Reset**
-    - After reset, bootloader starts from **Step 1** through **Step 3** to do firmware update check and then jump to **Step 7**
+    -   Reads the **programmer application** binary stored from start of SPI flash memory **\(0x0\)**
 
-7. If there was no firmware update required then it
-    - Calls the SYS_Deinitialize() function which releases the resources used. **This Function is device specific and has to be implemented based on application requirement**
+    -   Programs the read binary to application space in Internal Flash
 
-    - **Jumps to application space to run the programmer application**
+5.  Once programming is done it generates a CRC32 value over programmed space and verifies it against the CRC32 stored in SPI Flash MetaData
 
-### Programmer Application
+    -   If CRC32 verification fails it goes into Error State
 
-- This is a SPI Flash programmer application which resides from
-    - The end of bootloader size in device flash memory for SAM devices
+6.  If CRC32 verification is successful, It clears the **firmware update required flag** in the SPI Flash MetaData and **triggers a Soft Reset**
 
-    - The start of Program Flash memory for PIC32MZ devices
-        - Uses a Custom linker script **app_mz.ld** to place it in Program flash memory
+    -   After reset, bootloader starts from **Step 1** through **Step 3** to do firmware update check and then jump to **Step 7**
 
-- It will be loaded into **internal flash memory** from **SPI Flash Memory** by bootloader application
+7.  If there was no firmware update required then it
 
-- It blinks an LED every 500Ms and has capabilty to program SPI Flash memory (SST26) using SST26 Driver and SPI peripheral Library
+    -   Calls the SYS\_Deinitialize\(\) function which releases the resources used. **This Function is device specific and has to be implemented based on application requirement**
 
-- It uses the Virtual Com port of the device (EDBG port or External USB to UART converters) to receive the binary to be programmed in SPI Flash from host PC
-    - As the application running in internal flash should have capability to program SPI Flash memory, we send the **programmer application binary itself** via UART to be programmed in SPI Flash Memory
+    -   **Jumps to application space to run the programmer application**
 
-- It calls the APP_INPUT_Tasks() function which receives the binary to be programmed into SPI flash memory over UART channel
-    - It uses the UART bootloader protocol but is updated to run along with other tasks
 
-- Once the binary is received and programmed from start location of SPI Flash memory it generates a CRC32 value over programmed SPI Flash space and verifies it against the CRC32 sent from host PC
+**Programmer Application**
 
-    - It Also Updates the CRC32 value received in the SPI Flash MetaData used by bootloader
+-   This is a SPI Flash programmer application which resides from
 
-    - If CRC32 verification fails it goes into Error State then resets the APP_INPUT_Tasks() state to receive new binary
+    -   The end of bootloader size in device flash memory for SAM devices
 
-- If verification is successful then it
-    - Waits for one of below user event to update the **MetaData** and **trigger bootloader** via soft reset to program new binary in Internal Flash **OR**
-        - A Switch press **OR**
-        - A Reboot command from Host PC
+    -   The start of Program Flash memory for PIC32MZ devices
 
-    - Waits for a new binary to be programmed in SPI Flash memory.
+        -   Uses a Custom linker script **app\_mz.ld** to place it in Program flash memory
 
-## Development Kits
-The following table provides links to documentation on how to build and run SPI Flash bootloader on different development kits
+-   It will be loaded into **internal flash memory** from **SPI Flash Memory** by bootloader application
 
-| Development Kit |
-|:---------|
-|[PIC32 WFI32E Curiosity Board](docs/readme_pic32mz_w1_curiosity.md) |
+-   It blinks an LED every 500Ms and has capabilty to program SPI Flash memory \(SST26\) using SST26 Driver and SPI peripheral Library
+
+-   It uses the Virtual Com port of the device \(EDBG port or External USB to UART converters\) to receive the binary to be programmed in SPI Flash from host PC
+
+    -   As the application running in internal flash should have capability to program SPI Flash memory, we send the **programmer application binary itself** via UART to be programmed in SPI Flash Memory
+
+-   It calls the APP\_INPUT\_Tasks\(\) function which receives the binary to be programmed into SPI flash memory over UART channel
+
+    -   It uses the UART bootloader protocol but is updated to run along with other tasks
+
+-   Once the binary is received and programmed from start location of SPI Flash memory it generates a CRC32 value over programmed SPI Flash space and verifies it against the CRC32 sent from host PC
+
+    -   It Also Updates the CRC32 value received in the SPI Flash MetaData used by bootloader
+
+    -   If CRC32 verification fails it goes into Error State then resets the APP\_INPUT\_Tasks\(\) state to receive new binary
+
+-   If verification is successful then it
+
+    -   Waits for one of below user event to update the **MetaData** and **trigger bootloader** via soft reset to program new binary in Internal Flash **OR**
+
+        -   A Switch press **OR**
+
+        -   A Reboot command from Host PC
+
+    -   Waits for a new binary to be programmed in SPI Flash memory.
+
+
+**Development Kits**<br />The following table provides links to documentation on how to build and run SPI Flash bootloader on different development kits
+
+-   **[PIC32 WFI32E Curiosity Board: Building and Running the SPI Flash Bootloader applications](../../docs/GUID-C0562670-0CEA-4FDA-B7CE-BF104FC674BA.md)**  
+
+
+**Parent topic:**[MPLAB® Harmony 3 Serial Memory Bootloader Application Examples](../../docs/GUID-47AB0512-9DCE-469D-91C9-7448A07AAAA7.md)
 

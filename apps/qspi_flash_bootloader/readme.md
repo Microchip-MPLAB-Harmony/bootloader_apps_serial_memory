@@ -1,99 +1,110 @@
----
-parent: Serial Memory Bootloader Applications
-title: QSPI Flash Bootloader
-has_children: false
-has_toc: false
-nav_order: 5
----
-
-[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
-
-To clone or download these application from Github,go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/bootloader_apps_serial_memory) and then click Clone button to clone this repo or download as zip file. This content can also be download using content manager by following [these instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki)
-
 # QSPI Flash Bootloader
 
-This example application shows how to use the Serial Memory Bootloader Library to bootload an application from QSPI Flash memory (SST26) to Internal Flash.
+This example application shows how to use the Serial Memory Bootloader Library to bootload an application from QSPI Flash memory \(SST26\) to Internal Flash.
 
-### Serial Memory Bootloader Applications Block Diagram
+**Serial Memory Bootloader Applications Block Diagram**
 
-![serial_mem_btl_block_diagram](../docs/images/serial_mem_btl_block_diagram.png)
+![serial_mem_btl_block_diagram](../../docs/GUID-2E28F1C7-0CA4-471F-8BFF-99D67C9B0D66-low.png)
 
-### Bootloader Application
+**Bootloader Application**
 
-- This is a bootloader application which resides from
-    - The starting location of the flash memory region for SAM devices
+-   This is a bootloader application which resides from
 
-    - The starting location of the Boot flash memory region for PIC32MZ devices
-        - Uses a Custom linker script **btl.ld** to place it in Boot flash memory
+    -   The starting location of the flash memory region for SAM devices
+
+    -   The starting location of the Boot flash memory region for PIC32MZ devices
+
+        -   Uses a Custom linker script **btl.ld** to place it in Boot flash memory
+
 
 **Performs Below Operation:**
 
-1. Sets up the QSPI Flash (SST26) using the SST26 driver and QSPI/SQI peripheral Library
+1.  Sets up the QSPI Flash \(SST26\) using the SST26 driver and QSPI/SQI peripheral Library
 
-2. Checks if a firmware update is required by reading the **MetaData** stored in the last sector of QSPI Flash
-    - If Firmware update is required then it jumps to **Step 4**
+2.  Checks if a firmware update is required by reading the **MetaData** stored in the last sector of QSPI Flash
 
-3. If there was no firmware update request through **MetaData**, then it checks for any trigger implemented in application main()
-    - Here we use the On-board Switch to force trigger firmware update.
+    -   If Firmware update is required then it jumps to **Step 4**
 
-    - If no trigger is found then it jumps to **Step 7**
+3.  If there was no firmware update request through **MetaData**, then it checks for any trigger implemented in application main\(\)
 
-4. If firmware update is required then it
-    - Reads the **programmer application** binary stored from start of QSPI flash memory **(0x0)**
+    -   Here we use the On-board Switch to force trigger firmware update.
 
-    - Programs the read binary to application space in Internal Flash
+    -   If no trigger is found then it jumps to **Step 7**
 
-5. Once programming is done it generates a CRC32 value over programmed space and verifies it against the CRC32 stored in QSPI Flash MetaData
-    - If CRC32 verification fails it goes into Error State
+4.  If firmware update is required then it
 
-6. If CRC32 verification is successful, It clears the **firmware update required flag** in the QSPI Flash MetaData and **triggers a Soft Reset**
-    - After reset, bootloader starts from **Step 1** through **Step 3** to do firmware update check and then jump to **Step 7**
+    -   Reads the **programmer application** binary stored from start of QSPI flash memory **\(0x0\)**
 
-7. If there was no firmware update required then it
-    - Calls the SYS_Deinitialize() function which releases the resources used. **This Function is device specific and has to be implemented based on application requirement**
+    -   Programs the read binary to application space in Internal Flash
 
-    - **Jumps to application space to run the programmer application**
+5.  Once programming is done it generates a CRC32 value over programmed space and verifies it against the CRC32 stored in QSPI Flash MetaData
 
-### Programmer Application
+    -   If CRC32 verification fails it goes into Error State
 
-- This is a QSPI Flash programmer application which resides from
-    - The end of bootloader size in device flash memory for SAM devices
+6.  If CRC32 verification is successful, It clears the **firmware update required flag** in the QSPI Flash MetaData and **triggers a Soft Reset**
 
-    - The start of Program Flash memory for PIC32MZ devices
-        - Uses a Custom linker script **app_mz.ld** to place it in Program flash memory
+    -   After reset, bootloader starts from **Step 1** through **Step 3** to do firmware update check and then jump to **Step 7**
 
-- It will be loaded into **internal flash memory** from **QSPI Flash Memory** by bootloader application
+7.  If there was no firmware update required then it
 
-- It blinks an LED every 500Ms and has capabilty to program QSPI Flash memory (SST26) using SST26 Driver and QSPI/SQI peripheral Library
+    -   Calls the SYS\_Deinitialize\(\) function which releases the resources used. **This Function is device specific and has to be implemented based on application requirement**
 
-- It uses the Virtual Com port of the device (EDBG port or External USB to UART converters) to receive the binary to be programmed in QSPI Flash from host PC
-    - As the application running in internal flash should have capability to program QSPI Flash memory, we send the **programmer application binary itself** via UART to be programmed in QSPI Flash Memory
+    -   **Jumps to application space to run the programmer application**
 
-- It calls the APP_INPUT_Tasks() function which receives the binary to be programmed into QSPI flash memory over UART channel
-    - It uses the UART bootloader protocol but is updated to run along with other tasks
 
-- Once the binary is received and programmed from start location of QSPI Flash memory it generates a CRC32 value over programmed QSPI Flash space and verifies it against the CRC32 sent from host PC
+**Programmer Application**
 
-    - It Also Updates the CRC32 value received in the QSPI Flash MetaData used by bootloader
+-   This is a QSPI Flash programmer application which resides from
 
-    - If CRC32 verification fails it goes into Error State then resets the APP_INPUT_Tasks() state to receive new binary
+    -   The end of bootloader size in device flash memory for SAM devices
 
-- If verification is successful then it
-    - Waits for one of below user event to update the **MetaData** and **trigger bootloader** via soft reset to program new binary in Internal Flash **OR**
-        - A Switch press **OR**
-        - A Reboot command from Host PC
+    -   The start of Program Flash memory for PIC32MZ devices
 
-    - Waits for a new binary to be programmed in QSPI Flash memory.
+        -   Uses a Custom linker script **app\_mz.ld** to place it in Program flash memory
 
-## Development Kits
-The following table provides links to documentation on how to build and run QSPI Flash bootloader on different development kits
+-   It will be loaded into **internal flash memory** from **QSPI Flash Memory** by bootloader application
 
-| Development Kit |
-|:---------|
-|[PIC32CZ-CA80 Curiosity Ultra board](docs/readme_pic32cz_ca80_curiosity_ultra.md) |
-|[PIC32MZ Embedded Graphics with Stacked DRAM (DA) Starter Kit (Crypto)](docs/readme_pic32mz_das_sk.md) |
-|[PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](docs/readme_pic32mz_ef_sk.md) |
-|[SAM E54 Xplained Pro Evaluation Kit](docs/readme_sam_e54_xpro.md) |
-|[SAM E70 Xplained Ultra Evaluation Kit](docs/readme_sam_e70_xult.md) |
-|[WBZ451 Curiosity Development Board](docs/readme_wbz451_curiosity.md) |
+-   It blinks an LED every 500Ms and has capabilty to program QSPI Flash memory \(SST26\) using SST26 Driver and QSPI/SQI peripheral Library
+
+-   It uses the Virtual Com port of the device \(EDBG port or External USB to UART converters\) to receive the binary to be programmed in QSPI Flash from host PC
+
+    -   As the application running in internal flash should have capability to program QSPI Flash memory, we send the **programmer application binary itself** via UART to be programmed in QSPI Flash Memory
+
+-   It calls the APP\_INPUT\_Tasks\(\) function which receives the binary to be programmed into QSPI flash memory over UART channel
+
+    -   It uses the UART bootloader protocol but is updated to run along with other tasks
+
+-   Once the binary is received and programmed from start location of QSPI Flash memory it generates a CRC32 value over programmed QSPI Flash space and verifies it against the CRC32 sent from host PC
+
+    -   It Also Updates the CRC32 value received in the QSPI Flash MetaData used by bootloader
+
+    -   If CRC32 verification fails it goes into Error State then resets the APP\_INPUT\_Tasks\(\) state to receive new binary
+
+-   If verification is successful then it
+
+    -   Waits for one of below user event to update the **MetaData** and **trigger bootloader** via soft reset to program new binary in Internal Flash **OR**
+
+        -   A Switch press **OR**
+
+        -   A Reboot command from Host PC
+
+    -   Waits for a new binary to be programmed in QSPI Flash memory.
+
+
+**Development Kits**<br />The following table provides links to documentation on how to build and run QSPI Flash bootloader on different development kits
+
+-   **[PIC32CZ CA80 Curiosity Ultra: Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-911A330D-1161-4445-9CF9-291FD6BBC6E6.md)**  
+
+-   **[PIC32MZ Embedded Graphics with Stacked DRAM \(DA\) Starter Kit \(Crypto\): Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-97537636-26AD-4274-9D51-DFB6E4FECB17.md)**  
+
+-   **[PIC32MZ Embedded Connectivity with FPU \(EF\) Starter Kit: Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-B79FFCE6-A447-4FC5-9B09-D3830B38272C.md)**  
+
+-   **[SAM E54 Xplained Pro Evaluation Kit: Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-0C1E7478-04F7-4E02-8341-3BCFBCEC78D9.md)**  
+
+-   **[SAM E70 Xplained Ultra Evaluation Kit: Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-A51C5C09-B7FB-4CFF-85C1-B18CE21EAE14.md)**  
+
+-   **[WBZ451 Curiosity Development Board: Building and Running the QSPI Flash Bootloader applications](../../docs/GUID-668B8752-25E2-461B-9D12-95B5322EF316.md)**  
+
+
+**Parent topic:**[MPLAB® Harmony 3 Serial Memory Bootloader Application Examples](../../docs/GUID-47AB0512-9DCE-469D-91C9-7448A07AAAA7.md)
 
