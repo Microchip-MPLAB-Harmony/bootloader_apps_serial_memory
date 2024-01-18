@@ -42,34 +42,40 @@
 // DOM-IGNORE-END
 
 #include "plib_sqi1.h"
+#include "interrupts.h"
 
 #define SQI1_INTERRUPT_ENABLE_MASK   0x200
 #define SQI1_INTERRUPT_FLAG_MASK     0x200
 
-#define SQI1_CFG_DMA_MODE            (SQI_DMA_MODE << _SQI1CFG_MODE_POSITION)
+#define SQI1_CFG_DMA_MODE            ((uint32_t)SQI_DMA_MODE << _SQI1CFG_MODE_POSITION)
 #define SQI1_CFG_XIP_MODE            (SQI_XIP_MODE << _SQI1CFG_MODE_POSITION)
-#define SQI1_CFG_DATAEN              (QUAD_MODE << _SQI1CFG_DATAEN_POSITION)
+#define SQI1_CFG_DATAEN              ((uint32_t)QUAD_MODE << _SQI1CFG_DATAEN_POSITION)
 
-#define SQI1_CFG_CHIP_SELECT         (0x3 << _SQI1CFG_CSEN_POSITION)
+#define SQI1_CFG_CHIP_SELECT         (0x3UL << _SQI1CFG_CSEN_POSITION)
 
-#define SQI1_CLKCON_CLK_DIV          (0x0 << _SQI1CLKCON_CLKDIV_POSITION)
+#define SQI1_CLKCON_CLK_DIV          (0x0UL << _SQI1CLKCON_CLKDIV_POSITION)
 
-#define SQI1_CMDTHR_RXCMDTHR(val)    (val << _SQI1CMDTHR_RXCMDTHR_POSITION)
-#define SQI1_CMDTHR_TXCMDTHR(val)    (val << _SQI1CMDTHR_TXCMDTHR_POSITION)
+#define SQI1_CMDTHR_RXCMDTHR(val)    ((val) << _SQI1CMDTHR_RXCMDTHR_POSITION)
+#define SQI1_CMDTHR_TXCMDTHR(val)    ((val) << _SQI1CMDTHR_TXCMDTHR_POSITION)
 
-#define SQI1_INTTHR_RXINTTHR(val)    (val << _SQI1INTTHR_RXINTTHR_POSITION)
-#define SQI1_INTTHR_TXINTTHR(val)    (val << _SQI1INTTHR_TXINTTHR_POSITION)
+#define SQI1_INTTHR_RXINTTHR(val)    ((val) << _SQI1INTTHR_RXINTTHR_POSITION)
+#define SQI1_INTTHR_TXINTTHR(val)    ((val) << _SQI1INTTHR_TXINTTHR_POSITION)
 
-#define SQI1_THR_THRES(val)          (val << _SQI1THR_THRES_POSITION)
+#define SQI1_THR_THRES(val)          ((val) << _SQI1THR_THRES_POSITION)
 
-#define SQI1_MEMSTAT_STATCMD_VAL     (0x5 << _SQI1MEMSTAT_STATCMD_POSITION)
-#define SQI1_MEMSTAT_STATBYTES_VAL   (0x2 << _SQI1MEMSTAT_STATBYTES_POSITION)
-#define SQI1_MEMSTAT_STATTYPE_VAL    (QUAD_MODE << _SQI1MEMSTAT_STATTYPE_POSITION)
-#define SQI1_MEMSTAT_STATPOS_VAL     (0x1 << _SQI1MEMSTAT_STATPOS_POSITION)
+#define SQI1_MEMSTAT_STATCMD_VAL     (0x5UL << _SQI1MEMSTAT_STATCMD_POSITION)
+#define SQI1_MEMSTAT_STATBYTES_VAL   (0x2UL << _SQI1MEMSTAT_STATBYTES_POSITION)
+#define SQI1_MEMSTAT_STATTYPE_VAL    ((uint32_t)QUAD_MODE << _SQI1MEMSTAT_STATTYPE_POSITION)
+#define SQI1_MEMSTAT_STATPOS_VAL     (0x1UL << _SQI1MEMSTAT_STATPOS_POSITION)
 
-SQI_EVENT_HANDLER SQI1EventHandler = NULL;
 
-uintptr_t SQI1Context = (uintptr_t)NULL;
+typedef struct
+{
+    SQI_EVENT_HANDLER EventHandler;
+    uintptr_t Context;
+}sqiCallbackObjType;
+
+volatile static sqiCallbackObjType sqi1CallbackObj;
 
 void SQI1_Initialize(void)
 {
@@ -83,7 +89,10 @@ void SQI1_Initialize(void)
      // SQICLK configuration
     SQI1CLKCON      = _SQI1CLKCON_EN_MASK;              // Enable Clock
 
-    while (!(SQI1CLKCON & _SQI1CLKCON_STABLE_MASK));    // Wait for clock to become stable
+    while ((SQI1CLKCON & _SQI1CLKCON_STABLE_MASK) == 0U)    // Wait for clock to become stable
+    {
+         /* Do Nothing */
+    }
 
     SQI1CLKCON      |= SQI1_CLKCON_CLK_DIV;
 
@@ -94,9 +103,9 @@ void SQI1_Initialize(void)
     SQI1INTEN       = 0x00000000;
     SQI1INTSTAT     = 0;
 
-    SQI1CMDTHR      = (SQI1_CMDTHR_RXCMDTHR(0x20) | SQI1_CMDTHR_TXCMDTHR(0x20));
-    SQI1INTTHR      = (SQI1_INTTHR_RXINTTHR(0x01) | SQI1_INTTHR_TXINTTHR(0x01));
-    SQI1THR         = SQI1_THR_THRES(0x01);
+    SQI1CMDTHR      = (SQI1_CMDTHR_RXCMDTHR(0x20UL) | SQI1_CMDTHR_TXCMDTHR(0x20UL));
+    SQI1INTTHR      = (SQI1_INTTHR_RXINTTHR(0x01UL) | SQI1_INTTHR_TXINTTHR(0x01UL));
+    SQI1THR         = SQI1_THR_THRES(0x01UL);
 
     SQI1INTEN       = (_SQI1INTEN_PKTCOMPIE_MASK | _SQI1INTEN_BDDONEIE_MASK);
     SQI1INTSIGEN    = (_SQI1INTSIGEN_PKTCOMPISE_MASK | _SQI1INTSIGEN_BDDONEISE_MASK);
@@ -112,7 +121,7 @@ void SQI1_Initialize(void)
 
 void SQI1_DMASetup(void)
 {
-    SQI1CFGbits.MODE            = SQI_DMA_MODE;
+    SQI1CFGbits.MODE            = (uint8_t)SQI_DMA_MODE;
 
     SQI1INTENbits.PKTCOMPIE     = 0;
     SQI1INTENbits.PKTCOMPIE     = 1;
@@ -141,20 +150,24 @@ void SQI1_XIPSetup(uint32_t sqiXcon1Val, uint32_t sqiXcon2Val)
     SQI1XCON1           = sqiXcon1Val;
     SQI1XCON2           = sqiXcon2Val;
 
-    SQI1CFGbits.MODE    = SQI_XIP_MODE;
+    SQI1CFGbits.MODE    = (uint8_t)SQI_XIP_MODE;
 }
 
 void SQI1_RegisterCallback(SQI_EVENT_HANDLER event_handler, uintptr_t context)
 {
-    SQI1EventHandler = event_handler;
-    SQI1Context      = context;
+    sqi1CallbackObj.EventHandler = event_handler;
+    sqi1CallbackObj.Context      = context;
 }
 
-void SQI1_InterruptHandler(void)
+void __attribute__((used)) SQI1_InterruptHandler(void)
 {
+    uint32_t temp = 0;
+    uintptr_t context_var;
+
     IFS5CLR  = SQI1_INTERRUPT_FLAG_MASK;
 
-    if (SQI1INTSTATbits.PKTCOMPIF || SQI1INTSTATbits.BDDONEIF)
+    temp = SQI1INTSTATbits.BDDONEIF;
+    if (((SQI1INTSTATbits.PKTCOMPIF) != 0U) || ( temp != 0U))
     {
         SQI1INTSTATbits.PKTCOMPIF   = 0;
         SQI1INTENbits.PKTCOMPIE     = 0;
@@ -167,9 +180,10 @@ void SQI1_InterruptHandler(void)
         // Disable DMA
         SQI1BDCON                   = 0x0;
 
-        if (SQI1EventHandler != NULL)
+        if (sqi1CallbackObj.EventHandler != NULL)
         {
-            SQI1EventHandler(SQI1Context);
+            context_var = sqi1CallbackObj.Context;
+            sqi1CallbackObj.EventHandler(context_var);
         }
     }
 }
