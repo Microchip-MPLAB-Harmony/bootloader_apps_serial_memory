@@ -4826,11 +4826,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\configuration.h</file>
-         <hash>2f0c44c08c2778d09366d2f09d42043304a8f4561b52b03c2f7004339c1ee3c5</hash>
+         <hash>a0dcc3ac05bbd65a5c6e4ef4c9caa1ddab3fd94252df126a5a972aafb5d71fb8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\definitions.h</file>
-         <hash>4afec5da9c605e05f02c0840556db8152bd1c01e6b3cca1401aafa4d4f5335b4</hash>
+         <hash>3075b8dddb3aad39b7ccdee37f36457ab5676a086bd599fdb67265835b4273b9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\device.h</file>
@@ -5062,7 +5062,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\debug\sys_debug.h</file>
-         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
+         <hash>6dc7375ac05501951020122a9baa63e17e9331e11423c70c8ddd3c0944fd632c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\dma\sys_dma.c</file>
