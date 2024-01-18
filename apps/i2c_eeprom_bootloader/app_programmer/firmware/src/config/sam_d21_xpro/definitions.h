@@ -48,10 +48,10 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "peripheral/sercom/usart/plib_sercom3_usart.h"
 #include "bsp/bsp.h"
-#include "peripheral/nvmctrl/plib_nvmctrl.h"
+#include "peripheral/sercom/usart/plib_sercom3_usart.h"
 #include "peripheral/sercom/i2c_master/plib_sercom2_i2c_master.h"
+#include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "driver/at24/drv_at24.h"
 #include "peripheral/port/plib_port.h"
@@ -76,6 +76,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAMD21J18A"
+#define DEVICE_ARCH			 "CORTEX-M0PLUS"
+#define DEVICE_FAMILY		 "SAMD"
+#define DEVICE_SERIES		 "SAMD21"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 48000000
