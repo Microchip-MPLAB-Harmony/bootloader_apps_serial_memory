@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_uart3.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -47,23 +48,23 @@
 // *****************************************************************************
 // *****************************************************************************
 
-UART_RING_BUFFER_OBJECT uart3Obj;
+volatile static UART_RING_BUFFER_OBJECT uart3Obj;
 
-#define UART3_READ_BUFFER_SIZE      128
-#define UART3_READ_BUFFER_SIZE_9BIT (128 >> 1)
+#define UART3_READ_BUFFER_SIZE      (128U)
+#define UART3_READ_BUFFER_SIZE_9BIT (128U >> 1)
 #define UART3_RX_INT_DISABLE()      IEC1CLR = _IEC1_U3RXIE_MASK;
 #define UART3_RX_INT_ENABLE()       IEC1SET = _IEC1_U3RXIE_MASK;
 
-static uint8_t UART3_ReadBuffer[UART3_READ_BUFFER_SIZE];
+volatile static uint8_t UART3_ReadBuffer[UART3_READ_BUFFER_SIZE];
 
-#define UART3_WRITE_BUFFER_SIZE     128
-#define UART3_WRITE_BUFFER_SIZE_9BIT       (128 >> 1)
-#define UART3_TX_INT_DISABLE()      IEC1CLR = _IEC1_U3TXIE_MASK;
-#define UART3_TX_INT_ENABLE()       IEC1SET = _IEC1_U3TXIE_MASK;
+#define UART3_WRITE_BUFFER_SIZE      (128U)
+#define UART3_WRITE_BUFFER_SIZE_9BIT (128U >> 1)
+#define UART3_TX_INT_DISABLE()       IEC1CLR = _IEC1_U3TXIE_MASK;
+#define UART3_TX_INT_ENABLE()        IEC1SET = _IEC1_U3TXIE_MASK;
 
-static uint8_t UART3_WriteBuffer[UART3_WRITE_BUFFER_SIZE];
+volatile static uint8_t UART3_WriteBuffer[UART3_WRITE_BUFFER_SIZE];
 
-#define UART3_IS_9BIT_MODE_ENABLED()    ( U3MODE & (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK)) == (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK) ? true:false
+#define UART3_IS_9BIT_MODE_ENABLED()    ( (U3MODE) & (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK)) == (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK) ? true:false
 
 void static UART3_ErrorClear( void )
 {
@@ -75,15 +76,15 @@ void static UART3_ErrorClear( void )
     if(errors != UART_ERROR_NONE)
     {
         /* If it's a overrun error then clear it to flush FIFO */
-        if(U3STA & _U3STA_OERR_MASK)
+        if((U3STA & _U3STA_OERR_MASK) != 0U)
         {
             U3STACLR = _U3STA_OERR_MASK;
         }
 
         /* Read existing error bytes from FIFO to clear parity and framing error flags */
-        while(U3STA & _U3STA_URXDA_MASK)
+        while((U3STA & _U3STA_URXDA_MASK) != 0U)
         {
-            dummyData = U3RXREG;
+            dummyData = (uint8_t)U3RXREG;
         }
 
         /* Clear error interrupt flag */
@@ -167,35 +168,34 @@ bool UART3_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
     bool status = false;
     uint32_t baud;
     uint32_t status_ctrl;
-    uint8_t brgh = 0;
-    int32_t uxbrg = 0;
+    uint32_t uxbrg = 0;
 
     if (setup != NULL)
     {
         baud = setup->baudRate;
 
-        if ((baud == 0) || ((setup->dataWidth == UART_DATA_9_BIT) && (setup->parity != UART_PARITY_NONE)))
+        if ((baud == 0U) || ((setup->dataWidth == UART_DATA_9_BIT) && (setup->parity != UART_PARITY_NONE)))
         {
             return status;
         }
 
-        if(srcClkFreq == 0)
+        if(srcClkFreq == 0U)
         {
             srcClkFreq = UART3_FrequencyGet();
         }
 
-         /* Calculate BRG value */
-        if (brgh == 0)
-        {
-            uxbrg = (((srcClkFreq >> 4) + (baud >> 1)) / baud ) - 1;
-        }
-        else
-        {
-            uxbrg = (((srcClkFreq >> 2) + (baud >> 1)) / baud ) - 1;
-        }
+        /* Calculate BRG value */
+        uxbrg = (((srcClkFreq >> 4) + (baud >> 1)) / baud);
 
         /* Check if the baud value can be set with low baud settings */
-        if((uxbrg < 0) || (uxbrg > UINT16_MAX))
+        if (uxbrg < 1U)
+        {
+            return status;
+        }
+
+        uxbrg -= 1U;
+
+        if (uxbrg > UINT16_MAX)
         {
             return status;
         }
@@ -250,12 +250,13 @@ static inline bool UART3_RxPushByte(uint16_t rdByte)
 {
     uint32_t tempInIndex;
     bool isSuccess = false;
+    uint32_t rdInIdx;
 
-    tempInIndex = uart3Obj.rdInIndex + 1;
+    tempInIndex = uart3Obj.rdInIndex + 1U;
 
     if (tempInIndex >= uart3Obj.rdBufferSize)
     {
-        tempInIndex = 0;
+        tempInIndex = 0U;
     }
 
     if (tempInIndex == uart3Obj.rdOutIndex)
@@ -263,14 +264,16 @@ static inline bool UART3_RxPushByte(uint16_t rdByte)
         /* Queue is full - Report it to the application. Application gets a chance to free up space by reading data out from the RX ring buffer */
         if(uart3Obj.rdCallback != NULL)
         {
-            uart3Obj.rdCallback(UART_EVENT_READ_BUFFER_FULL, uart3Obj.rdContext);
+            uintptr_t rdContext = uart3Obj.rdContext;
+
+            uart3Obj.rdCallback(UART_EVENT_READ_BUFFER_FULL, rdContext);
 
             /* Read the indices again in case application has freed up space in RX ring buffer */
-            tempInIndex = uart3Obj.rdInIndex + 1;
+            tempInIndex = uart3Obj.rdInIndex + 1U;
 
             if (tempInIndex >= uart3Obj.rdBufferSize)
             {
-                tempInIndex = 0;
+                tempInIndex = 0U;
             }
         }
     }
@@ -278,13 +281,16 @@ static inline bool UART3_RxPushByte(uint16_t rdByte)
     /* Attempt to push the data into the ring buffer */
     if (tempInIndex != uart3Obj.rdOutIndex)
     {
+        uint32_t rdInIndex = uart3Obj.rdInIndex;
         if (UART3_IS_9BIT_MODE_ENABLED())
         {
-            ((uint16_t*)&UART3_ReadBuffer)[uart3Obj.rdInIndex] = rdByte;
+            rdInIdx = uart3Obj.rdInIndex << 1U;
+            UART3_ReadBuffer[rdInIdx] = (uint8_t)rdByte;
+            UART3_ReadBuffer[rdInIdx + 1U] = (uint8_t)(rdByte >> 8U);
         }
         else
         {
-            UART3_ReadBuffer[uart3Obj.rdInIndex] = (uint8_t)rdByte;
+            UART3_ReadBuffer[rdInIndex] = (uint8_t)rdByte;
         }
 
         uart3Obj.rdInIndex = tempInIndex;
@@ -310,18 +316,20 @@ static void UART3_ReadNotificationSend(void)
 
         if(uart3Obj.rdCallback != NULL)
         {
+            uintptr_t rdContext = uart3Obj.rdContext;
+
             if (uart3Obj.isRdNotifyPersistently == true)
             {
                 if (nUnreadBytesAvailable >= uart3Obj.rdThreshold)
                 {
-                    uart3Obj.rdCallback(UART_EVENT_READ_THRESHOLD_REACHED, uart3Obj.rdContext);
+                    uart3Obj.rdCallback(UART_EVENT_READ_THRESHOLD_REACHED, rdContext);
                 }
             }
             else
             {
                 if (nUnreadBytesAvailable == uart3Obj.rdThreshold)
                 {
-                    uart3Obj.rdCallback(UART_EVENT_READ_THRESHOLD_REACHED, uart3Obj.rdContext);
+                    uart3Obj.rdCallback(UART_EVENT_READ_THRESHOLD_REACHED, rdContext);
                 }
             }
         }
@@ -333,6 +341,8 @@ size_t UART3_Read(uint8_t* pRdBuffer, const size_t size)
     size_t nBytesRead = 0;
     uint32_t rdOutIndex = 0;
     uint32_t rdInIndex = 0;
+    uint32_t rdOut16Idx;
+    uint32_t nBytesRead16Idx;
 
     /* Take a snapshot of indices to avoid creation of critical section */
     rdOutIndex = uart3Obj.rdOutIndex;
@@ -344,16 +354,22 @@ size_t UART3_Read(uint8_t* pRdBuffer, const size_t size)
         {
             if (UART3_IS_9BIT_MODE_ENABLED())
             {
-                ((uint16_t*)pRdBuffer)[nBytesRead++] = ((uint16_t*)&UART3_ReadBuffer)[rdOutIndex++];
+                rdOut16Idx = rdOutIndex << 1U;
+                nBytesRead16Idx = nBytesRead << 1U;
+
+                pRdBuffer[nBytesRead16Idx] = UART3_ReadBuffer[rdOut16Idx];
+                pRdBuffer[nBytesRead16Idx + 1U] = UART3_ReadBuffer[rdOut16Idx + 1U];
             }
             else
             {
-                pRdBuffer[nBytesRead++] = UART3_ReadBuffer[rdOutIndex++];
+                pRdBuffer[nBytesRead] = UART3_ReadBuffer[rdOutIndex];
             }
+            nBytesRead++;
+            rdOutIndex++;
 
             if (rdOutIndex >= uart3Obj.rdBufferSize)
             {
-                rdOutIndex = 0;
+                rdOutIndex = 0U;
             }
         }
         else
@@ -392,12 +408,12 @@ size_t UART3_ReadCountGet(void)
 
 size_t UART3_ReadFreeBufferCountGet(void)
 {
-    return (uart3Obj.rdBufferSize - 1) - UART3_ReadCountGet();
+    return (uart3Obj.rdBufferSize - 1U) - UART3_ReadCountGet();
 }
 
 size_t UART3_ReadBufferSizeGet(void)
 {
-    return (uart3Obj.rdBufferSize - 1);
+    return (uart3Obj.rdBufferSize - 1U);
 }
 
 bool UART3_ReadNotificationEnable(bool isEnabled, bool isPersistent)
@@ -413,7 +429,7 @@ bool UART3_ReadNotificationEnable(bool isEnabled, bool isPersistent)
 
 void UART3_ReadThresholdSet(uint32_t nBytesThreshold)
 {
-    if (nBytesThreshold > 0)
+    if (nBytesThreshold > 0U)
     {
         uart3Obj.rdThreshold = nBytesThreshold;
     }
@@ -432,21 +448,25 @@ static bool UART3_TxPullByte(uint16_t* pWrByte)
     bool isSuccess = false;
     uint32_t wrOutIndex = uart3Obj.wrOutIndex;
     uint32_t wrInIndex = uart3Obj.wrInIndex;
+    uint32_t wrOut16Idx;
 
     if (wrOutIndex != wrInIndex)
     {
         if (UART3_IS_9BIT_MODE_ENABLED())
         {
-            *pWrByte = ((uint16_t*)&UART3_WriteBuffer)[wrOutIndex++];
+            wrOut16Idx = wrOutIndex << 1U;
+            pWrByte[0] = UART3_WriteBuffer[wrOut16Idx];
+            pWrByte[1] = UART3_WriteBuffer[wrOut16Idx + 1U];
         }
         else
         {
-            *pWrByte = UART3_WriteBuffer[wrOutIndex++];
+            *pWrByte = UART3_WriteBuffer[wrOutIndex];
         }
+        wrOutIndex++;
 
         if (wrOutIndex >= uart3Obj.wrBufferSize)
         {
-            wrOutIndex = 0;
+            wrOutIndex = 0U;
         }
 
         uart3Obj.wrOutIndex = wrOutIndex;
@@ -461,21 +481,23 @@ static inline bool UART3_TxPushByte(uint16_t wrByte)
 {
     uint32_t tempInIndex;
     bool isSuccess = false;
-
     uint32_t wrOutIndex = uart3Obj.wrOutIndex;
     uint32_t wrInIndex = uart3Obj.wrInIndex;
+    uint32_t wrIn16Idx;
 
-    tempInIndex = wrInIndex + 1;
+    tempInIndex = wrInIndex + 1U;
 
     if (tempInIndex >= uart3Obj.wrBufferSize)
     {
-        tempInIndex = 0;
+        tempInIndex = 0U;
     }
     if (tempInIndex != wrOutIndex)
     {
         if (UART3_IS_9BIT_MODE_ENABLED())
         {
-            ((uint16_t*)&UART3_WriteBuffer)[wrInIndex] = wrByte;
+            wrIn16Idx = wrInIndex << 1U;
+            UART3_WriteBuffer[wrIn16Idx] = (uint8_t)wrByte;
+            UART3_WriteBuffer[wrIn16Idx + 1U] = (uint8_t)(wrByte >> 8U);
         }
         else
         {
@@ -505,18 +527,20 @@ static void UART3_WriteNotificationSend(void)
 
         if(uart3Obj.wrCallback != NULL)
         {
+            uintptr_t wrContext = uart3Obj.wrContext;
+
             if (uart3Obj.isWrNotifyPersistently == true)
             {
                 if (nFreeWrBufferCount >= uart3Obj.wrThreshold)
                 {
-                    uart3Obj.wrCallback(UART_EVENT_WRITE_THRESHOLD_REACHED, uart3Obj.wrContext);
+                    uart3Obj.wrCallback(UART_EVENT_WRITE_THRESHOLD_REACHED, wrContext);
                 }
             }
             else
             {
                 if (nFreeWrBufferCount == uart3Obj.wrThreshold)
                 {
-                    uart3Obj.wrCallback(UART_EVENT_WRITE_THRESHOLD_REACHED, uart3Obj.wrContext);
+                    uart3Obj.wrCallback(UART_EVENT_WRITE_THRESHOLD_REACHED, wrContext);
                 }
             }
         }
@@ -556,12 +580,16 @@ size_t UART3_WriteCountGet(void)
 size_t UART3_Write(uint8_t* pWrBuffer, const size_t size )
 {
     size_t nBytesWritten  = 0;
+    uint16_t halfWordData = 0U;
 
     while (nBytesWritten < size)
     {
         if (UART3_IS_9BIT_MODE_ENABLED())
         {
-            if (UART3_TxPushByte(((uint16_t*)pWrBuffer)[nBytesWritten]) == true)
+            halfWordData = pWrBuffer[(2U * nBytesWritten) + 1U];
+            halfWordData <<= 8U;
+            halfWordData |= pWrBuffer[(2U * nBytesWritten)];
+            if (UART3_TxPushByte(halfWordData) == true)
             {
                 nBytesWritten++;
             }
@@ -587,7 +615,7 @@ size_t UART3_Write(uint8_t* pWrBuffer, const size_t size )
     }
 
     /* Check if any data is pending for transmission */
-    if (UART3_WritePendingBytesGet() > 0)
+    if (UART3_WritePendingBytesGet() > 0U)
     {
         /* Enable TX interrupt as data is pending for transmission */
         UART3_TX_INT_ENABLE();
@@ -598,24 +626,23 @@ size_t UART3_Write(uint8_t* pWrBuffer, const size_t size )
 
 size_t UART3_WriteFreeBufferCountGet(void)
 {
-    return (uart3Obj.wrBufferSize - 1) - UART3_WriteCountGet();
+    return (uart3Obj.wrBufferSize - 1U) - UART3_WriteCountGet();
 }
 
 size_t UART3_WriteBufferSizeGet(void)
 {
-    return (uart3Obj.wrBufferSize - 1);
+    return (uart3Obj.wrBufferSize - 1U);
 }
 
 bool UART3_TransmitComplete(void)
 {
-    if((U3STA & _U3STA_TRMT_MASK))
+    bool status = false;
+
+    if((U3STA & _U3STA_TRMT_MASK) != 0U)
     {
-        return true;
+        status = true;
     }
-    else
-    {
-        return false;
-    }
+    return status;
 }
 
 bool UART3_WriteNotificationEnable(bool isEnabled, bool isPersistent)
@@ -631,7 +658,7 @@ bool UART3_WriteNotificationEnable(bool isEnabled, bool isPersistent)
 
 void UART3_WriteThresholdSet(uint32_t nBytesThreshold)
 {
-    if (nBytesThreshold > 0)
+    if (nBytesThreshold > 0U)
     {
         uart3Obj.wrThreshold = nBytesThreshold;
     }
@@ -656,10 +683,15 @@ UART_ERROR UART3_ErrorGet( void )
 
 bool UART3_AutoBaudQuery( void )
 {
-    if(U3MODE & _U3MODE_ABAUD_MASK)
-        return true;
-    else
-        return false;
+    bool autobaudcheck = false;
+
+    if((U3MODE & _U3MODE_ABAUD_MASK) != 0U)
+    {
+
+        autobaudcheck = true;
+
+    }
+    return autobaudcheck;
 }
 
 void UART3_AutoBaudSet( bool enable )
@@ -673,7 +705,7 @@ void UART3_AutoBaudSet( bool enable )
        direction of control is not allowed in this function.                      */
 }
 
-void UART3_ERR_InterruptHandler (void)
+void __attribute__((used)) UART3_ERR_InterruptHandler (void)
 {
     /* Save the error to be reported later */
     uart3Obj.errors = (UART_ERROR)(U3STA & (_U3STA_OERR_MASK | _U3STA_FERR_MASK | _U3STA_PERR_MASK));
@@ -683,11 +715,13 @@ void UART3_ERR_InterruptHandler (void)
     /* Client must call UARTx_ErrorGet() function to clear the errors */
     if( uart3Obj.rdCallback != NULL )
     {
-        uart3Obj.rdCallback(UART_EVENT_READ_ERROR, uart3Obj.rdContext);
+        uintptr_t rdContext = uart3Obj.rdContext;
+
+        uart3Obj.rdCallback(UART_EVENT_READ_ERROR, rdContext);
     }
 }
 
-void UART3_RX_InterruptHandler (void)
+void __attribute__((used)) UART3_RX_InterruptHandler (void)
 {
     /* Keep reading until there is a character availabe in the RX FIFO */
     while((U3STA & _U3STA_URXDA_MASK) == _U3STA_URXDA_MASK)
@@ -706,15 +740,15 @@ void UART3_RX_InterruptHandler (void)
     IFS1CLR = _IFS1_U3RXIF_MASK;
 }
 
-void UART3_TX_InterruptHandler (void)
+void __attribute__((used)) UART3_TX_InterruptHandler (void)
 {
     uint16_t wrByte;
 
     /* Check if any data is pending for transmission */
-    if (UART3_WritePendingBytesGet() > 0)
+    if (UART3_WritePendingBytesGet() > 0U)
     {
         /* Keep writing to the TX FIFO as long as there is space */
-        while(!(U3STA & _U3STA_UTXBF_MASK))
+        while((U3STA & _U3STA_UTXBF_MASK) == 0U)
         {
             if (UART3_TxPullByte(&wrByte) == true)
             {

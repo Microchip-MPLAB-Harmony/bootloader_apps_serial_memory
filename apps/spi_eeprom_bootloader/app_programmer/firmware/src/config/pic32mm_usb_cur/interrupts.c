@@ -48,10 +48,10 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "configuration.h"
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -61,16 +61,25 @@
 // *****************************************************************************
 
 
-void CORE_TIMER_InterruptHandler( void );
-void SPI3_TX_InterruptHandler( void );
-void SPI3_RX_InterruptHandler( void );
-void UART3_RX_InterruptHandler( void );
-void UART3_TX_InterruptHandler( void );
-void UART3_ERR_InterruptHandler( void );
-
-
-
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector declarations
+// *****************************************************************************
+// *****************************************************************************
+void CORE_TIMER_Handler (void);
+void SPI3_TX_Handler (void);
+void SPI3_RX_Handler (void);
+void UART3_RX_Handler (void);
+void UART3_TX_Handler (void);
+void UART3_ERR_Handler (void);
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector definitions
+// *****************************************************************************
+// *****************************************************************************
 void __ISR(_CORE_TIMER_VECTOR, ipl1SOFT) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();

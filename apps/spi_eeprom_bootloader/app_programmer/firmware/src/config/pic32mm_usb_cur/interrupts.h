@@ -57,6 +57,13 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void CORE_TIMER_InterruptHandler( void );
+void SPI3_TX_InterruptHandler( void );
+void SPI3_RX_InterruptHandler( void );
+void UART3_RX_InterruptHandler( void );
+void UART3_TX_InterruptHandler( void );
+void UART3_ERR_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H
