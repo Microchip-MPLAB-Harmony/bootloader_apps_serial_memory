@@ -67,7 +67,7 @@ bool HSMCI_IsCmdLineBusy (void);
 
 bool HSMCI_IsDatLineBusy (void);
 
-bool HSMCI_ClockSet ( uint32_t clock );
+bool HSMCI_ClockSet ( uint32_t clockfreq );
 
 uint16_t HSMCI_CommandErrorGet(void);
 

@@ -63,12 +63,12 @@
 
 
 /*** Macros for TRIGGER_PIN pin ***/
-#define TRIGGER_PIN_Set()               (PIOB_REGS->PIO_SODR = (1<<3))
-#define TRIGGER_PIN_Clear()             (PIOB_REGS->PIO_CODR = (1<<3))
-#define TRIGGER_PIN_Toggle()            (PIOB_REGS->PIO_ODSR ^= (1<<3))
-#define TRIGGER_PIN_OutputEnable()      (PIOB_REGS->PIO_OER = (1<<3))
-#define TRIGGER_PIN_InputEnable()       (PIOB_REGS->PIO_ODR = (1<<3))
-#define TRIGGER_PIN_Get()               ((PIOB_REGS->PIO_PDSR >> 3) & 0x1)
+#define TRIGGER_PIN_Set()               (PIOB_REGS->PIO_SODR = ((uint32_t)1U<<3U))
+#define TRIGGER_PIN_Clear()             (PIOB_REGS->PIO_CODR = ((uint32_t)1U<<3U))
+#define TRIGGER_PIN_Toggle()            (PIOB_REGS->PIO_ODSR ^= ((uint32_t)1U<<3U))
+#define TRIGGER_PIN_OutputEnable()      (PIOB_REGS->PIO_OER = ((uint32_t)1U<<3U))
+#define TRIGGER_PIN_InputEnable()       (PIOB_REGS->PIO_ODR = ((uint32_t)1U<<3U))
+#define TRIGGER_PIN_Get()               ((PIOB_REGS->PIO_PDSR >> 3U) & 0x1U)
 #define TRIGGER_PIN_PIN                  PIO_PIN_PB3
 
 
