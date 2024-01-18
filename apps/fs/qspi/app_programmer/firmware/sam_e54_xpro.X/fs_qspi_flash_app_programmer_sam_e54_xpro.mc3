@@ -5797,7 +5797,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\definitions.h</file>
-         <hash>665473db8ecbd1f5ec45e0a7f92a2d5185a0775328c53fa0a42c8202f3578dfd</hash>
+         <hash>ea34572e7db699b44657cbc6ff88f8b64de97288062d5eeb93d178126525a61a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\device.h</file>
@@ -6049,7 +6049,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\fat_fs\file_system\ff.c</file>

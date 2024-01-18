@@ -58,7 +58,7 @@
 
 static CACHE_ALIGN SDHC_ADMA_DESCR sdhc1DmaDescrTable[(SDHC1_DMA_DESC_TABLE_SIZE_CACHE_ALIGN/8U)];
 
-static SDHC_OBJECT sdhc1Obj;
+volatile static SDHC_OBJECT sdhc1Obj;
 
 static void SDHC1_VariablesInit ( void )
 {
@@ -104,7 +104,7 @@ static void SDHC1_TransferModeSet ( uint32_t opcode )
     SDHC1_REGS->SDHC_TMR = transferMode;
 }
 
-void SDHC1_InterruptHandler(void)
+void __attribute__((used)) SDHC1_InterruptHandler(void)
 {
     uint16_t nistr = 0U;
     uint16_t eistr = 0U;
@@ -172,7 +172,8 @@ void SDHC1_InterruptHandler(void)
 
     if ((sdhc1Obj.callback != NULL) && ((uint32_t)xferStatus > 0U))
     {
-        sdhc1Obj.callback(xferStatus, sdhc1Obj.context);
+        uintptr_t context = sdhc1Obj.context;
+        sdhc1Obj.callback(xferStatus, context);
     }
 }
 
