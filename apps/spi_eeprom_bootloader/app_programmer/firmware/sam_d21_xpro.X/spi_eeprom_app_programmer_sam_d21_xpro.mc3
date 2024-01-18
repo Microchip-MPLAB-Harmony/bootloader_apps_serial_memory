@@ -3545,7 +3545,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\definitions.h</file>
-         <hash>ea60eeca533acfc9fddba2209997af81baff09689927ab7effcbc1814fb24e20</hash>
+         <hash>09a78ad0caa7ca034e3cf8ae77df6fdcbc4dd4fdd2fd83e73f35e6496a4979d3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\device.h</file>
@@ -3589,7 +3589,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\initialization.c</file>
-         <hash>6fc887c8cda222823041e617dac53f52dec4312596d1c55331c877d034d7840d</hash>
+         <hash>3138d9746aa9b8c19ed492d6bbfeed70ffa0b720a4c23bb59592cc53158f0bb1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\interrupts.c</file>
@@ -3721,7 +3721,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\system\int\src\sys_int.c</file>
