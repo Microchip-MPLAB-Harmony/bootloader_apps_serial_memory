@@ -7299,7 +7299,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\definitions.h</file>
-         <hash>398b694d72005c2e025b8806b8b70bd59e8e5d1b86053a2c44abcbf51ccf12e2</hash>
+         <hash>cf8e61617653e81afecbc6ec38e3174a390310d688f65e255af88e6211a84b22</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\device.h</file>
@@ -7343,7 +7343,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\initialization.c</file>
-         <hash>4c97a20bc24e719afba6e4a77759ee1e858d92c26e8b2cdd1802ab096efa15e9</hash>
+         <hash>405f7a3dd20772680274ff7ee66b86a6aa454941437ba8b4f1806045fdeb2aae</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\interrupts.c</file>
@@ -7463,7 +7463,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\startup_xc32.c</file>
-         <hash>e2d9460ddd6b662bd743e38b8a87b586aa5ef981df6f472e265bdac6c04536ee</hash>
+         <hash>fe66331a8fdea9824325483bf6554927a0fbdd250ba7cc5616e75e9041aa277e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\stdio\xc32_monitor.c</file>
@@ -7483,7 +7483,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cz_ca80_cult\system\int\src\sys_int.c</file>
