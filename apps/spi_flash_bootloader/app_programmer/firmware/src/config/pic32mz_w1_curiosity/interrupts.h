@@ -57,6 +57,12 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void SPI1_RX_InterruptHandler( void );
+void SPI1_TX_InterruptHandler( void );
+void UART1_FAULT_InterruptHandler( void );
+void UART1_RX_InterruptHandler( void );
+void UART1_TX_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H
