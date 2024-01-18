@@ -8,6 +8,14 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Serial Memory Bootloader Applications Release v3.2.1
+
+### Bug Fixes
+- Regenerated and tested app progammer application examples
+
+### Development Tools
+- Same as v3.2.0 release
+
 ## Serial Memory Bootloader Applications Release v3.2.0
 
 ### New Features
