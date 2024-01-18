@@ -3815,7 +3815,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\definitions.h</file>
-         <hash>b27d5809d21b9fb4bacf30e39e279e95356216065642c3420672c2432da7ac97</hash>
+         <hash>3529f62e562298c8c2789d6144fb9b97e744a119b376b6ee523f71733b3f418f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\device.h</file>
@@ -3859,7 +3859,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\initialization.c</file>
-         <hash>4430d36c740b9dcd2d617508b5b3ec62f9a93a52bd6793e955222c13022400c8</hash>
+         <hash>be1e6e550672addb59e4faad4d6581de7e78296ade460f4c5a4d7ee453597bec</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\interrupts.c</file>
@@ -4019,7 +4019,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\int\src\sys_int.c</file>
