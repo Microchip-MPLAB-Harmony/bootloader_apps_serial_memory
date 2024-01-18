@@ -3112,7 +3112,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e70_xult\system\int\src\sys_int.c</file>

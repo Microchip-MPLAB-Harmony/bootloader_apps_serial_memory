@@ -48,7 +48,6 @@
 #include "device.h"
 
 
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
@@ -63,9 +62,13 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
 // <editor-fold defaultstate="collapsed" desc="DRV_SST26 Initialization Data">
 
-const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
+static const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
     .CommandWrite   = QSPI_CommandWrite,
     .RegisterRead   = QSPI_RegisterRead,
     .RegisterWrite  = QSPI_RegisterWrite,
@@ -73,11 +76,12 @@ const DRV_SST26_PLIB_INTERFACE drvSST26PlibAPI = {
     .MemoryWrite    = QSPI_MemoryWrite
 };
 
-const DRV_SST26_INIT drvSST26InitData =
+static const DRV_SST26_INIT drvSST26InitData =
 {
     .sst26Plib      = &drvSST26PlibAPI,
 };
 // </editor-fold>
+
 
 
 
@@ -110,7 +114,7 @@ SYSTEM_OBJECTS sysObj;
 // *****************************************************************************
 // *****************************************************************************
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -124,6 +128,7 @@ SYSTEM_OBJECTS sysObj;
 
 void SYS_Initialize ( void* data )
 {
+
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
@@ -146,20 +151,27 @@ void SYS_Initialize ( void* data )
     USART1_Initialize();
 
 
+
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
+
     sysObj.drvSST26 = DRV_SST26_Initialize((SYS_MODULE_INDEX)DRV_SST26_INDEX, (SYS_MODULE_INIT *)&drvSST26InitData);
 
 
 
 
+    /* MISRAC 2012 deviation block end */
     APP_Initialize();
     APP_INPUT_Initialize();
 
 
     NVIC_Initialize();
 
+
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File
