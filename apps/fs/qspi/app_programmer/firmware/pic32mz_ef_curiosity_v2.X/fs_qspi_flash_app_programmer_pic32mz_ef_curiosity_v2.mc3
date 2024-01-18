@@ -5712,11 +5712,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\configuration.h</file>
-         <hash>53152e6a32a3c8b6a2fd25def403ec3c84769399557ce1c31950fa468590e492</hash>
+         <hash>ed284557a368010765401201c9fa1fc182dbbf356af8784337e9b2772c3feb44</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\definitions.h</file>
-         <hash>f3bdc076efbc7b78515736a1535e46db71b8893bb0f8ca2e879c9002de3164f5</hash>
+         <hash>138cdd75c31d7c4f5e7382b3bc3b143ded9e352884b915181b4fcd454cb5e899</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\device.h</file>
@@ -5940,7 +5940,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\debug\sys_debug.h</file>
-         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
+         <hash>6dc7375ac05501951020122a9baa63e17e9331e11423c70c8ddd3c0944fd632c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2\system\dma\sys_dma.c</file>
