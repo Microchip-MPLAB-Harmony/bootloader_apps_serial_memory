@@ -56,10 +56,10 @@
 #include "bsp/bsp.h"
 #include "peripheral/sqi/plib_sqi1.h"
 #include "driver/sst26/drv_sst26.h"
+#include "peripheral/nvm/plib_nvm.h"
 #include "system/int/sys_int.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "peripheral/nvm/plib_nvm.h"
 #include "app.h"
 #include "app_input.h"
 
@@ -72,6 +72,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MZ2048EFH144"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MZEF"
+#define DEVICE_SERIES		 "PIC32MZ"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 200000000

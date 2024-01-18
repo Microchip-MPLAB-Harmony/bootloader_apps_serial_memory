@@ -3875,7 +3875,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_sk\definitions.h</file>
-         <hash>dfd48e19cfcf955991382c646627b28e79ff3978afb7c1a17ce165adae95b2f7</hash>
+         <hash>dd2a21288e954422cbd4e256cf4486f76df39faf37830ab31cf03f47e91fce83</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_sk\device.h</file>
@@ -4007,7 +4007,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_sk\system\debug\sys_debug.h</file>
-         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
+         <hash>6dc7375ac05501951020122a9baa63e17e9331e11423c70c8ddd3c0944fd632c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_sk\system\int\src\sys_int.c</file>
