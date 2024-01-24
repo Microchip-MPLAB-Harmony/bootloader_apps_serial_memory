@@ -67,6 +67,7 @@ devices = {
             "PIC32MZW"   : [4096, 12288],
             "PIC32MM"    : [2048, 4096],
             "PIC32CZ"    : [4096, 8192],
+            "PIC32CK"    : [4096, 8192],
             "WBZ451"     : [4096, 8192],
             "PIC32CXBZ2" : [4096, 8192],
             "WBZ45X"     : [4096, 8192],
@@ -216,7 +217,7 @@ def main():
     parser.add_option('-a', '--address', dest='address', help='destination address', metavar='ADDR')
     parser.add_option('-p', '--sectorSize', dest='sectSize', help='Device Sector Size in Bytes', metavar='SectSize')
     parser.add_option('-r', '--reboot', dest='reboot', help='updates meta data and triggers soft reset', default=False, action='store_true')
-    parser.add_option('-d', '--device', dest='device', help='target device (samc2x/samd1x/samd2x/samd5x/samda1/same7x/same5x/samg5x/saml2x/samha1/pic32cz/pic32mk/pic32mx/pic32mz/pic32mzw/pic32cm/pic32mm/wbz451/pic32cxbz2/wbz45x)', metavar='DEV')
+    parser.add_option('-d', '--device', dest='device', help='target device (samc2x/samd1x/samd2x/samd5x/samda1/same7x/same5x/samg5x/saml2x/samha1/pic32ck/pic32cz/pic32mk/pic32mx/pic32mz/pic32mzw/pic32cm/pic32mm/wbz451/pic32cxbz2/wbz45x)', metavar='DEV')
 
     (options, args) = parser.parse_args()
 
