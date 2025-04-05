@@ -51,7 +51,7 @@
 // *****************************************************************************
 // *****************************************************************************
 static const uint8_t* hsmciFifoBaseAddress = (uint8_t*)(HSMCI_BASE_ADDRESS + HSMCI_FIFO_REG_OFST);
-volatile static HSMCI_OBJECT hsmciObj;
+static volatile HSMCI_OBJECT hsmciObj;
 
 static void HSMCI_VariablesInit ( void )
 {
@@ -501,7 +501,7 @@ void HSMCI_CommandSend (
 
     /* Write to the command register and the operation */
     HSMCI_REGS->HSMCI_CMDR = cmd_reg;
-    
+
     /* Enable the needed interrupts */
     HSMCI_REGS->HSMCI_IER = ier_reg;
 }
