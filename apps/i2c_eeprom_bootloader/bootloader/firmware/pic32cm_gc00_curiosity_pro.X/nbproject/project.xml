@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>i2c_eeprom_bootloader_pic32cm_gc00_curiosity_pro</name>
+            <creation-uuid>b67bd717-f980-45e1-ad30-58ff6efa8227</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects>
+                <make-dep-project>../../../app_programmer/firmware/pic32cm_gc00_curiosity_pro.X</make-dep-project>
+            </make-dep-projects>
+            <sourceRootList>
+                <sourceRootElem>../src</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>pic32cm_gc00_curioisty_pro</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
