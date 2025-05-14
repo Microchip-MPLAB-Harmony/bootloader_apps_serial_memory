@@ -44,7 +44,7 @@
 #ifndef USER_H
 #define USER_H
 
-#include "bsp/bsp.h"
+#include "./peripheral/port/plib_port.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -59,12 +59,12 @@ extern "C" {
 // Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
-#define LED_ON()                LED1_On()
-#define LED_OFF()               LED1_Off()
+#define LED_ON()                LED1_Set()
+#define LED_OFF()               LED1_Clear()
 #define LED_TOGGLE()            LED1_Toggle()
 
 #define SWITCH_GET()            SWITCH0_Get()
-#define SWITCH_PRESSED          SWITCH0_STATE_PRESSED
+#define SWITCH_PRESSED          0
     
 #define BTL_TRIGGER_METHOD      "PRESS SWITCH 0"
 #define BTL_TRIGGER_RAM_START   (0x20020000U)
