@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  WBZ351 linker script
  * 
- * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -73,7 +73,7 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  define RAM_ORIGIN 0x20000000
 #endif
 #ifndef RAM_LENGTH
-#  define RAM_LENGTH 0x10000
+#  define RAM_LENGTH 0x18000
 #elif (RAM_LENGTH > 0x18000)
 #  error RAM_LENGTH is greater than the max size of 0x18000
 #endif
