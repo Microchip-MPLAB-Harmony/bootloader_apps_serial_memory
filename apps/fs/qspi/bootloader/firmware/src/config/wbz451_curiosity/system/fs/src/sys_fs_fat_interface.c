@@ -261,14 +261,14 @@ int FATFS_close (
 
 int FATFS_lseek (
     uintptr_t handle,   /* Pointer to the file object */
-    uint32_t ofs        /* File pointer from top of file */
+    FSIZE_t ofs         /* File pointer from top of file */
 )
 {
     FRESULT res;
     FATFS_FILE_OBJECT *ptr = (FATFS_FILE_OBJECT *)handle;
     FIL *fp = &ptr->fileObj;
 
-    res = f_lseek(fp, (FSIZE_t)ofs);
+    res = f_lseek(fp, ofs);
 
     return ((int)res);
 }
