@@ -4,20 +4,20 @@
 
 
 project: app_programmer
-creation_date: 2025-02-13T14:34:36.765+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
-operating_system: Windows 10
+creation_date: 2025-05-14T12:12:24.161+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.5.1
+mcc_version: v5.5.2
 mcc_core_version: v5.7.1
-mplabx_version: v6.20        # if MPLAB X plugin only
+mplabx_version: v6.25        # if MPLAB X plugin only
 harmony_version: v1.5.4
 compiler: XC32 4.50
 
 modules:
-    - {name: "csp", version: "mistral_bootloader"}
-    - {name: "core", version: "v3.14.1"}
+    - {name: "csp", version: "misrac_fix"}
+    - {name: "core", version: "dev"}
     - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "bsp", version: "add_bsp_WBZ350"}
+    - {name: "bsp", version: "dev"}
 
 packs:
     - {name: "PIC32CX-MT_DFP", version: "1.3.132"}

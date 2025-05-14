@@ -2,13 +2,13 @@
 
 manifest_file_version: 1.0.0
 project: i2c_eeprom_app_programmer_pic32cx_mtsh_db
-creation_date: 2025-02-13T14:34:36.739+05:30[Asia/Calcutta]
-operating_system: Windows 10
+creation_date: 2025-05-14T12:12:24.103+05:30[Asia/Calcutta]
+operating_system: Windows 11
 mcc_mode: IDE
-mcc_mode_version: v6.20
+mcc_mode_version: v6.25
 device_name: PIC32CX2051MTSH128
 compiler: XC32 4.50
-mcc_version: 5.5.1
+mcc_version: 5.5.2
 mcc_core_version: 5.7.1
 content_manager_version: 5.0.1
 is_mcc_offline: false
@@ -18,7 +18,7 @@ device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name:
     V3, version: 1.5.4}
 packs: {name: PIC32CX-MT_DFP, version: 1.3.132}
 modules:
-- {name: csp, type: HARMONY, version: mistral_bootloader}
-- {name: core, type: HARMONY, version: v3.14.1}
+- {name: csp, type: HARMONY, version: misrac_fix}
+- {name: core, type: HARMONY, version: dev}
 - {name: CMSIS_5, type: HARMONY, version: 5.9.0}
-- {name: bsp, type: HARMONY, version: add_bsp_WBZ350}
+- {name: bsp, type: HARMONY, version: dev}
