@@ -14,11 +14,13 @@
               <itemPath>../src/config/sam_e54_xpro/driver/memory/src/drv_memory_local.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/driver/memory/drv_memory.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro/driver/memory/src/drv_memory_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="sdmmc" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/driver/sdmmc/drv_sdmmc.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/driver/sdmmc/src/drv_sdmmc_local.h</itemPath>
               <itemPath>../src/config/sam_e54_xpro/driver/sdmmc/drv_sdmmc_definitions.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro/driver/sdmmc/src/drv_sdmmc_file_system.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="sst26" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro/driver/sst26/drv_sst26.h</itemPath>
@@ -120,6 +122,7 @@
           <itemPath>../src/config/sam_e54_xpro/device_vectors.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/user.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -408,7 +411,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
