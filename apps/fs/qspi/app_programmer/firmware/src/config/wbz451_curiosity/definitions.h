@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -58,8 +58,8 @@
 #include "peripheral/mpu/plib_mpu.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "driver/memory/drv_memory.h"
-#include "driver/sdspi/drv_sdspi.h"
 #include "driver/sst26/drv_sst26.h"
+#include "driver/sdspi/drv_sdspi.h"
 #include "peripheral/tc/plib_tc2.h"
 #include "system/time/sys_time.h"
 #include "peripheral/nvm/plib_nvm.h"
@@ -92,13 +92,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "WBZ451"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "PIC32CX_BZ2"
-#define DEVICE_SERIES		 "BZ45"
+#define DEVICE_NAME          "WBZ451"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "PIC32CX_BZ2"
+#define DEVICE_SERIES        "BZ45"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 64000000
+#define CPU_CLOCK_FREQUENCY 64000000U
 
 // *****************************************************************************
 // *****************************************************************************
