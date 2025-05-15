@@ -16,7 +16,6 @@
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
-                <sourceRootElem>../../../qspi_loader/firmware/src/config/sam_e54_xpro</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

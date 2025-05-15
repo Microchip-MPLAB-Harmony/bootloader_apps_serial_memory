@@ -330,6 +330,9 @@
       <itemPath>../src/app.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>../src</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="wbz451_curiosity" type="2">

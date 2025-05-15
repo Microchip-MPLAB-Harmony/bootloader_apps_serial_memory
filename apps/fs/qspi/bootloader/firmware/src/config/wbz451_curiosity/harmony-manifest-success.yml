@@ -4,14 +4,14 @@
 
 
 project: bootloader
-creation_date: 2025-05-15T12:38:13.950+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-05-15T14:53:25.887+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.2
 mcc_core_version: v5.7.1
 mplabx_version: v6.25        # if MPLAB X plugin only
 harmony_version: v1.5.3
-compiler: XC32 4.35
+compiler: XC32 4.45
 
 modules:
     - {name: "csp", version: "misrac_fix"}

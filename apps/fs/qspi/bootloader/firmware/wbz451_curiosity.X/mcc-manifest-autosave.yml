@@ -2,12 +2,12 @@
 
 manifest_file_version: 1.0.0
 project: fs_qspi_flash_bootloader_wbz451_curiosity
-creation_date: 2025-05-15T12:38:14.101+05:30[Asia/Calcutta]
+creation_date: 2025-05-15T14:53:26.032+05:30[Asia/Calcutta]
 operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: WBZ451
-compiler: XC32 4.35
+compiler: XC32 4.45
 mcc_version: 5.5.2
 mcc_core_version: 5.7.1
 content_manager_version: 5.0.1

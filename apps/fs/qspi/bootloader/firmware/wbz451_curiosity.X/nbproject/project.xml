@@ -10,7 +10,9 @@
             <make-dep-projects>
                 <make-dep-project>../../../app_programmer/firmware/wbz451_curiosity.X</make-dep-project>
             </make-dep-projects>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>../src</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
                     <name>wbz451_curiosity</name>

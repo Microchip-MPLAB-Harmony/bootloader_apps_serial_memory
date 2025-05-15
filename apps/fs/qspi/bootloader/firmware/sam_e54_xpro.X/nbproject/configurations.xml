@@ -419,7 +419,6 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
-    <Elem>../../../qspi_loader/firmware/src/config/sam_e54_xpro</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
