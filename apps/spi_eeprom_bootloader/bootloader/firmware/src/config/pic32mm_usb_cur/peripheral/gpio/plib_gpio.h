@@ -69,6 +69,7 @@
 #define EEPROM_HOLD_OutputEnable()      (TRISBCLR = (1<<0))
 #define EEPROM_HOLD_InputEnable()       (TRISBSET = (1<<0))
 #define EEPROM_HOLD_Get()               ((PORTB >> 0) & 0x1)
+#define EEPROM_HOLD_GetLatch()          ((LATB >> 0) & 0x1)
 #define EEPROM_HOLD_PIN                  GPIO_PIN_RB0
 
 /*** Macros for EEPROM_CS pin ***/
@@ -78,6 +79,7 @@
 #define EEPROM_CS_OutputEnable()      (TRISCCLR = (1<<11))
 #define EEPROM_CS_InputEnable()       (TRISCSET = (1<<11))
 #define EEPROM_CS_Get()               ((PORTC >> 11) & 0x1)
+#define EEPROM_CS_GetLatch()          ((LATC >> 11) & 0x1)
 #define EEPROM_CS_PIN                  GPIO_PIN_RC11
 
 /*** Macros for EEPROM_WP pin ***/
@@ -87,6 +89,7 @@
 #define EEPROM_WP_OutputEnable()      (TRISCCLR = (1<<14))
 #define EEPROM_WP_InputEnable()       (TRISCSET = (1<<14))
 #define EEPROM_WP_Get()               ((PORTC >> 14) & 0x1)
+#define EEPROM_WP_GetLatch()          ((LATC >> 14) & 0x1)
 #define EEPROM_WP_PIN                  GPIO_PIN_RC14
 
 

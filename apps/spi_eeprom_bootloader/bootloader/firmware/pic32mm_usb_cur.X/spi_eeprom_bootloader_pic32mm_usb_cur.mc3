@@ -1,4 +1,4 @@
-<config configName="pic32mm_usb_cur" projectName="pic32mm_usb_cur" configVersion="1.1" device="PIC32MM0256GPM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="pic32mm_usb_cur" projectName="pic32mm_usb_cur" configVersion="1.1" device="PIC32MM0256GPM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -35,7 +35,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1525,7 +1525,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\bootloader\bootloader_common.h</file>
-         <hash>cf24c102f4ef2e9a14ee517c270c9ee0275e0ec5adf87870da5967c2a29dd0ce</hash>
+         <hash>79cbfb7b1f157d748115eeed17888161b29e65e26ad1848e2f398e5c6284958d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\bootloader\bootloader_serial_mem.c</file>
@@ -1553,11 +1553,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\definitions.h</file>
-         <hash>a9ab5e2ed00921d14e9d70cffe326ee54aa2352c05dae976f7f6d91bc1a16d44</hash>
+         <hash>e3abd50bcb0e69898bf612d81301f5407dcab2290ebd0fcaf8ef92adb0f0e714</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
+         <hash>4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\driver\at25\drv_at25.h</file>
@@ -1585,23 +1585,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\exceptions.c</file>
-         <hash>7c1b9a2e42598d51c643984260a4b0d966a18f1ad97cc90d166aa9a4311ab6af</hash>
+         <hash>ed8f326d4f1abc2e74c1743119304a2f613522e3baacdd8df59fdda14c44619e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\initialization.c</file>
-         <hash>0bab93db1e1a42e61878d8d5917262528c19facf8862f4d469df2aedc8f5f229</hash>
+         <hash>ad55354ed0244bd7c880a61bc61101f529be32687d5ddfb877098bf7a081ee92</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\interrupts.c</file>
-         <hash>8b515cb687d08a27b099c800b018a0585409624889edf2062ba4c53c2c04965b</hash>
+         <hash>011c1f46483743d7add3870aa48d6a49a78bc93ed14079d8965c5799baf7b8ed</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\interrupts.h</file>
-         <hash>4848c295e5d395954705483d359781c35991705ac12718dba86d1ec787ad5931</hash>
+         <hash>5b834d3993ecf7ab3c617ac8b77118696b5b5c54ca013c52d96348e4f333d46a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\osal\osal.h</file>
-         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
+         <hash>1cfe3b61d9693b2369922041eef33fe16b3c1ccd9c85d4ded808b805f90a869c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\osal\osal_definitions.h</file>
@@ -1609,11 +1609,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\osal\osal_impl_basic.h</file>
-         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
+         <hash>65e68edbc0320d0407399f65e6d06ff7e6d3d7697231cf1fe0a1fdf1d65f0463</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\clk\plib_clk.c</file>
-         <hash>969cde967885a3a4bce6378a672527ffc78b77881fce6159b30e9023eec59e94</hash>
+         <hash>d7bd271eb43ffac485cd83a6aa98fe131595e085ff4ca88927dfb4ed4f794353</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\clk\plib_clk.h</file>
@@ -1621,11 +1621,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\evic\plib_evic.c</file>
-         <hash>d31a5972408bc01dd4c9dea8c92d5419d08edbd0a4880ceb18f6d2a2942dcb4a</hash>
+         <hash>278d59f87026faf6ade0410d933f2ffc42d4274260e53a37aa59a3397343a8c0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\evic\plib_evic.h</file>
-         <hash>31dd4fb9b8a2e88ca7fb7b35ceb5887dda0f6dacd099174385db8a2433aec6de</hash>
+         <hash>51ee35d6c1a13447fe5d8b63cd7a0e8b8ef10c991bb8ff47490daf855f55fcf1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\gpio\plib_gpio.c</file>
@@ -1633,7 +1633,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\gpio\plib_gpio.h</file>
-         <hash>1e61f1d671092bf737f28c5781006aece8139d515fc862afed2397847c939788</hash>
+         <hash>21dd35f3dfdd08fa84ce7d741e2348655e05f1d51b4c3716152ceebc854eec5d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\nvm\plib_nvm.c</file>
@@ -1645,7 +1645,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\spi\spi_master\plib_spi3_master.c</file>
-         <hash>55089f4c132ff3b9c327814fe1bd734d39cdbfe0b9028b6578bf0517486b2d41</hash>
+         <hash>d1ccf1c1ca90c6ad8b22dde694083de1d33e3896f78e35c5af5249909e963ded</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\peripheral\spi\spi_master\plib_spi3_master.h</file>
@@ -1665,7 +1665,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\system\debug\sys_debug.h</file>
-         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
+         <hash>aa94da8f32cbcb40672145542d149d077ff8f4b25c08d47d53e3d206d1c6bb83</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mm_usb_cur\system\int\src\sys_int.c</file>
