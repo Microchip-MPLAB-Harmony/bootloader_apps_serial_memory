@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -57,14 +57,14 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/systick/plib_systick.h"
 #include "peripheral/cmcc/plib_cmcc.h"
-#include "peripheral/pm/plib_pm.h"
 #include "peripheral/sercom/usart/plib_sercom5_usart.h"
+#include "peripheral/pm/plib_pm.h"
 #include "driver/sst26/drv_sst26.h"
+#include "peripheral/fcr/plib_fcr.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "peripheral/fcr/plib_fcr.h"
 #include "app.h"
 #include "app_input.h"
 
@@ -79,13 +79,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "PIC32CK2051GC01144"
-#define DEVICE_ARCH			 "CORTEX-M33"
-#define DEVICE_FAMILY		 "PIC32CK"
-#define DEVICE_SERIES		 "PIC32CKGC01"
+#define DEVICE_NAME          "PIC32CK2051GC01144"
+#define DEVICE_ARCH          "CORTEX-M33"
+#define DEVICE_FAMILY        "PIC32CK"
+#define DEVICE_SERIES        "PIC32CKGC01"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 120000000
+#define CPU_CLOCK_FREQUENCY 120000000U
 
 // *****************************************************************************
 // *****************************************************************************

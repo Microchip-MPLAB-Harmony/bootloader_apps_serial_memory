@@ -66,7 +66,7 @@ extern "C" {
 #define SWITCH_GET()            SW0_Get()
 #define SWITCH_PRESSED          SW0_STATE_PRESSED
 
-#define FLASH_START             (0xC000000UL)
+#define FLASH_START             (0xC002000UL)
 #define FLASH_LENGTH            (0x20000000UL)
 #define PAGE_SIZE               (4096UL)
 #define ERASE_BLOCK_SIZE        (4096UL)
