@@ -1,7 +1,9 @@
 /*
  * Instance header file for WBZ351
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +19,7 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2024-02-12T06:36:14Z */
+/* file generated from device description file (ATDF) version 2025-02-18T06:25:25Z */
 #ifndef _WBZ35_TC5_INSTANCE_
 #define _WBZ35_TC5_INSTANCE_
 

@@ -1,7 +1,9 @@
 /*
  * Component description for PCHE
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +19,12 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2024-02-12T06:36:14Z */
+/*  file generated from device description file (ATDF) version 2025-02-18T06:25:25Z  */
 #ifndef _WBZ35_PCHE_COMPONENT_H_
 #define _WBZ35_PCHE_COMPONENT_H_
 
 /* ************************************************************************** */
-/*   SOFTWARE API DEFINITION FOR PCHE                                         */
+/*                      SOFTWARE API DEFINITION FOR PCHE                      */
 /* ************************************************************************** */
 
 /* -------- PCHE_CHECON : (PCHE Offset: 0x00) (R/W 32)  -------- */
@@ -30,46 +32,46 @@
 
 #define PCHE_CHECON_PFMWS_Pos                 _UINT32_(0)                                          /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_PFMWS_Msk                 (_UINT32_(0xF) << PCHE_CHECON_PFMWS_Pos)             /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_PFMWS(value)              (PCHE_CHECON_PFMWS_Msk & (_UINT32_(value) << PCHE_CHECON_PFMWS_Pos)) /* Assigment of value for PFMWS in the PCHE_CHECON register */
+#define PCHE_CHECON_PFMWS(value)              (PCHE_CHECON_PFMWS_Msk & (_UINT32_(value) << PCHE_CHECON_PFMWS_Pos)) /* Assignment of value for PFMWS in the PCHE_CHECON register */
 #define PCHE_CHECON_PREFEN_Pos                _UINT32_(4)                                          /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_PREFEN_Msk                (_UINT32_(0x3) << PCHE_CHECON_PREFEN_Pos)            /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_PREFEN(value)             (PCHE_CHECON_PREFEN_Msk & (_UINT32_(value) << PCHE_CHECON_PREFEN_Pos)) /* Assigment of value for PREFEN in the PCHE_CHECON register */
+#define PCHE_CHECON_PREFEN(value)             (PCHE_CHECON_PREFEN_Msk & (_UINT32_(value) << PCHE_CHECON_PREFEN_Pos)) /* Assignment of value for PREFEN in the PCHE_CHECON register */
 #define PCHE_CHECON_PFMSECEN_Pos              _UINT32_(7)                                          /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_PFMSECEN_Msk              (_UINT32_(0x1) << PCHE_CHECON_PFMSECEN_Pos)          /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_PFMSECEN(value)           (PCHE_CHECON_PFMSECEN_Msk & (_UINT32_(value) << PCHE_CHECON_PFMSECEN_Pos)) /* Assigment of value for PFMSECEN in the PCHE_CHECON register */
+#define PCHE_CHECON_PFMSECEN(value)           (PCHE_CHECON_PFMSECEN_Msk & (_UINT32_(value) << PCHE_CHECON_PFMSECEN_Pos)) /* Assignment of value for PFMSECEN in the PCHE_CHECON register */
 #define PCHE_CHECON_ADRWS_Pos                 _UINT32_(8)                                          /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ADRWS_Msk                 (_UINT32_(0x1) << PCHE_CHECON_ADRWS_Pos)             /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ADRWS(value)              (PCHE_CHECON_ADRWS_Msk & (_UINT32_(value) << PCHE_CHECON_ADRWS_Pos)) /* Assigment of value for ADRWS in the PCHE_CHECON register */
+#define PCHE_CHECON_ADRWS(value)              (PCHE_CHECON_ADRWS_Msk & (_UINT32_(value) << PCHE_CHECON_ADRWS_Pos)) /* Assignment of value for ADRWS in the PCHE_CHECON register */
 #define PCHE_CHECON_CHEPERF_Pos               _UINT32_(12)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_CHEPERF_Msk               (_UINT32_(0x1) << PCHE_CHECON_CHEPERF_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_CHEPERF(value)            (PCHE_CHECON_CHEPERF_Msk & (_UINT32_(value) << PCHE_CHECON_CHEPERF_Pos)) /* Assigment of value for CHEPERF in the PCHE_CHECON register */
+#define PCHE_CHECON_CHEPERF(value)            (PCHE_CHECON_CHEPERF_Msk & (_UINT32_(value) << PCHE_CHECON_CHEPERF_Pos)) /* Assignment of value for CHEPERF in the PCHE_CHECON register */
 #define PCHE_CHECON_ICHECOH_Pos               _UINT32_(16)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ICHECOH_Msk               (_UINT32_(0x1) << PCHE_CHECON_ICHECOH_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ICHECOH(value)            (PCHE_CHECON_ICHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_ICHECOH_Pos)) /* Assigment of value for ICHECOH in the PCHE_CHECON register */
+#define PCHE_CHECON_ICHECOH(value)            (PCHE_CHECON_ICHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_ICHECOH_Pos)) /* Assignment of value for ICHECOH in the PCHE_CHECON register */
 #define PCHE_CHECON_DCHECOH_Pos               _UINT32_(17)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_DCHECOH_Msk               (_UINT32_(0x1) << PCHE_CHECON_DCHECOH_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_DCHECOH(value)            (PCHE_CHECON_DCHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_DCHECOH_Pos)) /* Assigment of value for DCHECOH in the PCHE_CHECON register */
+#define PCHE_CHECON_DCHECOH(value)            (PCHE_CHECON_DCHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_DCHECOH_Pos)) /* Assignment of value for DCHECOH in the PCHE_CHECON register */
 #define PCHE_CHECON_ACHECOH_Pos               _UINT32_(18)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ACHECOH_Msk               (_UINT32_(0x1) << PCHE_CHECON_ACHECOH_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ACHECOH(value)            (PCHE_CHECON_ACHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_ACHECOH_Pos)) /* Assigment of value for ACHECOH in the PCHE_CHECON register */
+#define PCHE_CHECON_ACHECOH(value)            (PCHE_CHECON_ACHECOH_Msk & (_UINT32_(value) << PCHE_CHECON_ACHECOH_Pos)) /* Assignment of value for ACHECOH in the PCHE_CHECON register */
 #define PCHE_CHECON_ICHEINV_Pos               _UINT32_(20)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ICHEINV_Msk               (_UINT32_(0x1) << PCHE_CHECON_ICHEINV_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ICHEINV(value)            (PCHE_CHECON_ICHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_ICHEINV_Pos)) /* Assigment of value for ICHEINV in the PCHE_CHECON register */
+#define PCHE_CHECON_ICHEINV(value)            (PCHE_CHECON_ICHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_ICHEINV_Pos)) /* Assignment of value for ICHEINV in the PCHE_CHECON register */
 #define PCHE_CHECON_DCHEINV_Pos               _UINT32_(21)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_DCHEINV_Msk               (_UINT32_(0x1) << PCHE_CHECON_DCHEINV_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_DCHEINV(value)            (PCHE_CHECON_DCHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_DCHEINV_Pos)) /* Assigment of value for DCHEINV in the PCHE_CHECON register */
+#define PCHE_CHECON_DCHEINV(value)            (PCHE_CHECON_DCHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_DCHEINV_Pos)) /* Assignment of value for DCHEINV in the PCHE_CHECON register */
 #define PCHE_CHECON_ACHEINV_Pos               _UINT32_(22)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ACHEINV_Msk               (_UINT32_(0x1) << PCHE_CHECON_ACHEINV_Pos)           /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ACHEINV(value)            (PCHE_CHECON_ACHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_ACHEINV_Pos)) /* Assigment of value for ACHEINV in the PCHE_CHECON register */
+#define PCHE_CHECON_ACHEINV(value)            (PCHE_CHECON_ACHEINV_Msk & (_UINT32_(value) << PCHE_CHECON_ACHEINV_Pos)) /* Assignment of value for ACHEINV in the PCHE_CHECON register */
 #define PCHE_CHECON_ICHEEN_Pos                _UINT32_(24)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ICHEEN_Msk                (_UINT32_(0x1) << PCHE_CHECON_ICHEEN_Pos)            /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ICHEEN(value)             (PCHE_CHECON_ICHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_ICHEEN_Pos)) /* Assigment of value for ICHEEN in the PCHE_CHECON register */
+#define PCHE_CHECON_ICHEEN(value)             (PCHE_CHECON_ICHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_ICHEEN_Pos)) /* Assignment of value for ICHEEN in the PCHE_CHECON register */
 #define PCHE_CHECON_DCHEEN_Pos                _UINT32_(25)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_DCHEEN_Msk                (_UINT32_(0x1) << PCHE_CHECON_DCHEEN_Pos)            /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_DCHEEN(value)             (PCHE_CHECON_DCHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_DCHEEN_Pos)) /* Assigment of value for DCHEEN in the PCHE_CHECON register */
+#define PCHE_CHECON_DCHEEN(value)             (PCHE_CHECON_DCHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_DCHEEN_Pos)) /* Assignment of value for DCHEEN in the PCHE_CHECON register */
 #define PCHE_CHECON_ACHEEN_Pos                _UINT32_(26)                                         /* (PCHE_CHECON)  Position */
 #define PCHE_CHECON_ACHEEN_Msk                (_UINT32_(0x1) << PCHE_CHECON_ACHEEN_Pos)            /* (PCHE_CHECON)  Mask */
-#define PCHE_CHECON_ACHEEN(value)             (PCHE_CHECON_ACHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_ACHEEN_Pos)) /* Assigment of value for ACHEEN in the PCHE_CHECON register */
+#define PCHE_CHECON_ACHEEN(value)             (PCHE_CHECON_ACHEEN_Msk & (_UINT32_(value) << PCHE_CHECON_ACHEEN_Pos)) /* Assignment of value for ACHEEN in the PCHE_CHECON register */
 #define PCHE_CHECON_Msk                       _UINT32_(0x077711BF)                                 /* (PCHE_CHECON) Register Mask  */
 
 
@@ -96,13 +98,13 @@
 
 #define PCHE_CHESTAT_PFMSECCNT_Pos            _UINT32_(0)                                          /* (PCHE_CHESTAT)  Position */
 #define PCHE_CHESTAT_PFMSECCNT_Msk            (_UINT32_(0xFF) << PCHE_CHESTAT_PFMSECCNT_Pos)       /* (PCHE_CHESTAT)  Mask */
-#define PCHE_CHESTAT_PFMSECCNT(value)         (PCHE_CHESTAT_PFMSECCNT_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMSECCNT_Pos)) /* Assigment of value for PFMSECCNT in the PCHE_CHESTAT register */
+#define PCHE_CHESTAT_PFMSECCNT(value)         (PCHE_CHESTAT_PFMSECCNT_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMSECCNT_Pos)) /* Assignment of value for PFMSECCNT in the PCHE_CHESTAT register */
 #define PCHE_CHESTAT_PFMSEC_Pos               _UINT32_(26)                                         /* (PCHE_CHESTAT)  Position */
 #define PCHE_CHESTAT_PFMSEC_Msk               (_UINT32_(0x1) << PCHE_CHESTAT_PFMSEC_Pos)           /* (PCHE_CHESTAT)  Mask */
-#define PCHE_CHESTAT_PFMSEC(value)            (PCHE_CHESTAT_PFMSEC_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMSEC_Pos)) /* Assigment of value for PFMSEC in the PCHE_CHESTAT register */
+#define PCHE_CHESTAT_PFMSEC(value)            (PCHE_CHESTAT_PFMSEC_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMSEC_Pos)) /* Assignment of value for PFMSEC in the PCHE_CHESTAT register */
 #define PCHE_CHESTAT_PFMDED_Pos               _UINT32_(27)                                         /* (PCHE_CHESTAT)  Position */
 #define PCHE_CHESTAT_PFMDED_Msk               (_UINT32_(0x1) << PCHE_CHESTAT_PFMDED_Pos)           /* (PCHE_CHESTAT)  Mask */
-#define PCHE_CHESTAT_PFMDED(value)            (PCHE_CHESTAT_PFMDED_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMDED_Pos)) /* Assigment of value for PFMDED in the PCHE_CHESTAT register */
+#define PCHE_CHESTAT_PFMDED(value)            (PCHE_CHESTAT_PFMDED_Msk & (_UINT32_(value) << PCHE_CHESTAT_PFMDED_Pos)) /* Assignment of value for PFMDED in the PCHE_CHESTAT register */
 #define PCHE_CHESTAT_Msk                      _UINT32_(0x0C0000FF)                                 /* (PCHE_CHESTAT) Register Mask  */
 
 
@@ -129,7 +131,7 @@
 
 #define PCHE_CHEHIT_CHEHIT_Pos                _UINT32_(0)                                          /* (PCHE_CHEHIT)  Position */
 #define PCHE_CHEHIT_CHEHIT_Msk                (_UINT32_(0xFFFFFFFF) << PCHE_CHEHIT_CHEHIT_Pos)     /* (PCHE_CHEHIT)  Mask */
-#define PCHE_CHEHIT_CHEHIT(value)             (PCHE_CHEHIT_CHEHIT_Msk & (_UINT32_(value) << PCHE_CHEHIT_CHEHIT_Pos)) /* Assigment of value for CHEHIT in the PCHE_CHEHIT register */
+#define PCHE_CHEHIT_CHEHIT(value)             (PCHE_CHEHIT_CHEHIT_Msk & (_UINT32_(value) << PCHE_CHEHIT_CHEHIT_Pos)) /* Assignment of value for CHEHIT in the PCHE_CHEHIT register */
 #define PCHE_CHEHIT_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PCHE_CHEHIT) Register Mask  */
 
 
@@ -156,7 +158,7 @@
 
 #define PCHE_CHEMIS_CHEMIS_Pos                _UINT32_(0)                                          /* (PCHE_CHEMIS)  Position */
 #define PCHE_CHEMIS_CHEMIS_Msk                (_UINT32_(0xFFFFFFFF) << PCHE_CHEMIS_CHEMIS_Pos)     /* (PCHE_CHEMIS)  Mask */
-#define PCHE_CHEMIS_CHEMIS(value)             (PCHE_CHEMIS_CHEMIS_Msk & (_UINT32_(value) << PCHE_CHEMIS_CHEMIS_Pos)) /* Assigment of value for CHEMIS in the PCHE_CHEMIS register */
+#define PCHE_CHEMIS_CHEMIS(value)             (PCHE_CHEMIS_CHEMIS_Msk & (_UINT32_(value) << PCHE_CHEMIS_CHEMIS_Pos)) /* Assignment of value for CHEMIS in the PCHE_CHEMIS register */
 #define PCHE_CHEMIS_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PCHE_CHEMIS) Register Mask  */
 
 
@@ -178,7 +180,7 @@
 #define PCHE_CHEMISINV_Msk                    _UINT32_(0x00000000)                                 /* (PCHE_CHEMISINV) Register Mask  */
 
 
-/** \brief PCHE register offsets definitions */
+/* PCHE register offsets definitions */
 #define PCHE_CHECON_REG_OFST           _UINT32_(0x00)      /* (PCHE_CHECON)  Offset */
 #define PCHE_CHECONCLR_REG_OFST        _UINT32_(0x04)      /* (PCHE_CHECONCLR)  Offset */
 #define PCHE_CHECONSET_REG_OFST        _UINT32_(0x08)      /* (PCHE_CHECONSET)  Offset */
@@ -197,25 +199,25 @@
 #define PCHE_CHEMISINV_REG_OFST        _UINT32_(0x3C)      /* (PCHE_CHEMISINV)  Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief PCHE register API structure */
+/* PCHE register API structure */
 typedef struct
 {  /* this is the PCHE */
-  __IO  uint32_t                       PCHE_CHECON;        /**< Offset: 0x00 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHECONCLR;     /**< Offset: 0x04 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHECONSET;     /**< Offset: 0x08 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHECONINV;     /**< Offset: 0x0C (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHESTAT;       /**< Offset: 0x10 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHESTATCLR;    /**< Offset: 0x14 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHESTATSET;    /**< Offset: 0x18 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHESTATINV;    /**< Offset: 0x1C (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEHIT;        /**< Offset: 0x20 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEHITCLR;     /**< Offset: 0x24 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEHITSET;     /**< Offset: 0x28 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEHITINV;     /**< Offset: 0x2C (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEMIS;        /**< Offset: 0x30 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEMISCLR;     /**< Offset: 0x34 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEMISSET;     /**< Offset: 0x38 (R/W  32)  */
-  __IO  uint32_t                       PCHE_CHEMISINV;     /**< Offset: 0x3C (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHECON;        /* Offset: 0x00 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHECONCLR;     /* Offset: 0x04 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHECONSET;     /* Offset: 0x08 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHECONINV;     /* Offset: 0x0C (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHESTAT;       /* Offset: 0x10 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHESTATCLR;    /* Offset: 0x14 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHESTATSET;    /* Offset: 0x18 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHESTATINV;    /* Offset: 0x1C (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEHIT;        /* Offset: 0x20 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEHITCLR;     /* Offset: 0x24 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEHITSET;     /* Offset: 0x28 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEHITINV;     /* Offset: 0x2C (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEMIS;        /* Offset: 0x30 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEMISCLR;     /* Offset: 0x34 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEMISSET;     /* Offset: 0x38 (R/W  32)  */
+  __IO  uint32_t                       PCHE_CHEMISINV;     /* Offset: 0x3C (R/W  32)  */
 } pche_registers_t;
 
 

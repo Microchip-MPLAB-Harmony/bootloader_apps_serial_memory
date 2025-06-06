@@ -20,7 +20,7 @@
  */
 
 /* file generated from device description file (ATDF) version 2025-02-18T06:25:25Z */
-#ifndef _WBZ35_GPIOA_INSTANCE_
-#define _WBZ35_GPIOA_INSTANCE_
+#ifndef _WBZ35_EFUSE_INSTANCE_
+#define _WBZ35_EFUSE_INSTANCE_
 
-#endif /* _WBZ35_GPIOA_INSTANCE_ */
+#endif /* _WBZ35_EFUSE_INSTANCE_ */

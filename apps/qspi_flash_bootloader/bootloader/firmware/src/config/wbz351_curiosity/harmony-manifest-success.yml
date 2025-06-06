@@ -4,22 +4,22 @@
 
 
 project: bootloader
-creation_date: 2025-05-14T12:28:48.688+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
-operating_system: Windows 11
-mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.5.2
+creation_date: 2025-06-06T10:44:23.225+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+operating_system: Windows 10
+mcc_mode: Headless            # [IDE|Standalone|Headless]
+mcc_version: v5.5.1
 mcc_core_version: v5.7.1
-mplabx_version: v6.25        # if MPLAB X plugin only
+mplabx_version: NA        # if MPLAB X plugin only
 harmony_version: v1.5.3
-compiler: XC32 4.30
+compiler: NA
 
 modules:
-    - {name: "csp", version: "misrac_fix"}
-    - {name: "core", version: "dev"}
-    - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "bootloader", version: "fix_btl_build_issue"}
-    - {name: "bsp", version: "dev"}
+    - {name: "csp", version: "v3.22.4-41-gae7d08d"}
+    - {name: "core", version: "v3.15.2"}
+    - {name: "CMSIS_5", version: "5.8.0"}
+    - {name: "bootloader", version: "v3.8.0-rc.1-41-gf1befa3"}
+    - {name: "bsp", version: "v3.22.0"}
 
 packs:
-    - {name: "PIC32CX-BZ3_DFP", version: "1.2.183"}
+    - {name: "PIC32CX-BZ3_DFP", version: "1.3.216"}
 

@@ -1,7 +1,9 @@
 /*
  * Component description for NVM
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +19,12 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2024-02-12T06:36:14Z */
+/*  file generated from device description file (ATDF) version 2025-02-18T06:25:25Z  */
 #ifndef _WBZ35_NVM_COMPONENT_H_
 #define _WBZ35_NVM_COMPONENT_H_
 
 /* ************************************************************************** */
-/*   SOFTWARE API DEFINITION FOR NVM                                          */
+/*                      SOFTWARE API DEFINITION FOR NVM                       */
 /* ************************************************************************** */
 
 /* -------- NVM_NVMCON : (NVM Offset: 0x00) (R/W 32)  -------- */
@@ -30,19 +32,19 @@
 
 #define NVM_NVMCON_NVMOP_Pos                  _UINT32_(0)                                          /* (NVM_NVMCON)  Position */
 #define NVM_NVMCON_NVMOP_Msk                  (_UINT32_(0xF) << NVM_NVMCON_NVMOP_Pos)              /* (NVM_NVMCON)  Mask */
-#define NVM_NVMCON_NVMOP(value)               (NVM_NVMCON_NVMOP_Msk & (_UINT32_(value) << NVM_NVMCON_NVMOP_Pos)) /* Assigment of value for NVMOP in the NVM_NVMCON register */
+#define NVM_NVMCON_NVMOP(value)               (NVM_NVMCON_NVMOP_Msk & (_UINT32_(value) << NVM_NVMCON_NVMOP_Pos)) /* Assignment of value for NVMOP in the NVM_NVMCON register */
 #define NVM_NVMCON_LVDERR_Pos                 _UINT32_(12)                                         /* (NVM_NVMCON)  Position */
 #define NVM_NVMCON_LVDERR_Msk                 (_UINT32_(0x1) << NVM_NVMCON_LVDERR_Pos)             /* (NVM_NVMCON)  Mask */
-#define NVM_NVMCON_LVDERR(value)              (NVM_NVMCON_LVDERR_Msk & (_UINT32_(value) << NVM_NVMCON_LVDERR_Pos)) /* Assigment of value for LVDERR in the NVM_NVMCON register */
+#define NVM_NVMCON_LVDERR(value)              (NVM_NVMCON_LVDERR_Msk & (_UINT32_(value) << NVM_NVMCON_LVDERR_Pos)) /* Assignment of value for LVDERR in the NVM_NVMCON register */
 #define NVM_NVMCON_WRERR_Pos                  _UINT32_(13)                                         /* (NVM_NVMCON)  Position */
 #define NVM_NVMCON_WRERR_Msk                  (_UINT32_(0x1) << NVM_NVMCON_WRERR_Pos)              /* (NVM_NVMCON)  Mask */
-#define NVM_NVMCON_WRERR(value)               (NVM_NVMCON_WRERR_Msk & (_UINT32_(value) << NVM_NVMCON_WRERR_Pos)) /* Assigment of value for WRERR in the NVM_NVMCON register */
+#define NVM_NVMCON_WRERR(value)               (NVM_NVMCON_WRERR_Msk & (_UINT32_(value) << NVM_NVMCON_WRERR_Pos)) /* Assignment of value for WRERR in the NVM_NVMCON register */
 #define NVM_NVMCON_WREN_Pos                   _UINT32_(14)                                         /* (NVM_NVMCON)  Position */
 #define NVM_NVMCON_WREN_Msk                   (_UINT32_(0x1) << NVM_NVMCON_WREN_Pos)               /* (NVM_NVMCON)  Mask */
-#define NVM_NVMCON_WREN(value)                (NVM_NVMCON_WREN_Msk & (_UINT32_(value) << NVM_NVMCON_WREN_Pos)) /* Assigment of value for WREN in the NVM_NVMCON register */
+#define NVM_NVMCON_WREN(value)                (NVM_NVMCON_WREN_Msk & (_UINT32_(value) << NVM_NVMCON_WREN_Pos)) /* Assignment of value for WREN in the NVM_NVMCON register */
 #define NVM_NVMCON_WR_Pos                     _UINT32_(15)                                         /* (NVM_NVMCON)  Position */
 #define NVM_NVMCON_WR_Msk                     (_UINT32_(0x1) << NVM_NVMCON_WR_Pos)                 /* (NVM_NVMCON)  Mask */
-#define NVM_NVMCON_WR(value)                  (NVM_NVMCON_WR_Msk & (_UINT32_(value) << NVM_NVMCON_WR_Pos)) /* Assigment of value for WR in the NVM_NVMCON register */
+#define NVM_NVMCON_WR(value)                  (NVM_NVMCON_WR_Msk & (_UINT32_(value) << NVM_NVMCON_WR_Pos)) /* Assignment of value for WR in the NVM_NVMCON register */
 #define NVM_NVMCON_Msk                        _UINT32_(0x0000F00F)                                 /* (NVM_NVMCON) Register Mask  */
 
 
@@ -69,28 +71,28 @@
 
 #define NVM_NVMCON2_NVMPREPG_Pos              _UINT32_(0)                                          /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_NVMPREPG_Msk              (_UINT32_(0x1) << NVM_NVMCON2_NVMPREPG_Pos)          /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_NVMPREPG(value)           (NVM_NVMCON2_NVMPREPG_Msk & (_UINT32_(value) << NVM_NVMCON2_NVMPREPG_Pos)) /* Assigment of value for NVMPREPG in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_NVMPREPG(value)           (NVM_NVMCON2_NVMPREPG_Msk & (_UINT32_(value) << NVM_NVMCON2_NVMPREPG_Pos)) /* Assignment of value for NVMPREPG in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_RETRY_Pos                 _UINT32_(8)                                          /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_RETRY_Msk                 (_UINT32_(0x3) << NVM_NVMCON2_RETRY_Pos)             /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_RETRY(value)              (NVM_NVMCON2_RETRY_Msk & (_UINT32_(value) << NVM_NVMCON2_RETRY_Pos)) /* Assigment of value for RETRY in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_RETRY(value)              (NVM_NVMCON2_RETRY_Msk & (_UINT32_(value) << NVM_NVMCON2_RETRY_Pos)) /* Assignment of value for RETRY in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_VREAD1_Pos                _UINT32_(12)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_VREAD1_Msk                (_UINT32_(0x1) << NVM_NVMCON2_VREAD1_Pos)            /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_VREAD1(value)             (NVM_NVMCON2_VREAD1_Msk & (_UINT32_(value) << NVM_NVMCON2_VREAD1_Pos)) /* Assigment of value for VREAD1 in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_VREAD1(value)             (NVM_NVMCON2_VREAD1_Msk & (_UINT32_(value) << NVM_NVMCON2_VREAD1_Pos)) /* Assignment of value for VREAD1 in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_CREAD1_Pos                _UINT32_(13)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_CREAD1_Msk                (_UINT32_(0x1) << NVM_NVMCON2_CREAD1_Pos)            /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_CREAD1(value)             (NVM_NVMCON2_CREAD1_Msk & (_UINT32_(value) << NVM_NVMCON2_CREAD1_Pos)) /* Assigment of value for CREAD1 in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_CREAD1(value)             (NVM_NVMCON2_CREAD1_Msk & (_UINT32_(value) << NVM_NVMCON2_CREAD1_Pos)) /* Assignment of value for CREAD1 in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_TEMP_Pos                  _UINT32_(14)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_TEMP_Msk                  (_UINT32_(0x1) << NVM_NVMCON2_TEMP_Pos)              /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_TEMP(value)               (NVM_NVMCON2_TEMP_Msk & (_UINT32_(value) << NVM_NVMCON2_TEMP_Pos)) /* Assigment of value for TEMP in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_TEMP(value)               (NVM_NVMCON2_TEMP_Msk & (_UINT32_(value) << NVM_NVMCON2_TEMP_Pos)) /* Assignment of value for TEMP in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_WS_Pos                    _UINT32_(16)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_WS_Msk                    (_UINT32_(0x1F) << NVM_NVMCON2_WS_Pos)               /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_WS(value)                 (NVM_NVMCON2_WS_Msk & (_UINT32_(value) << NVM_NVMCON2_WS_Pos)) /* Assigment of value for WS in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_WS(value)                 (NVM_NVMCON2_WS_Msk & (_UINT32_(value) << NVM_NVMCON2_WS_Pos)) /* Assignment of value for WS in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_SLEEP_Pos                 _UINT32_(24)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_SLEEP_Msk                 (_UINT32_(0x1) << NVM_NVMCON2_SLEEP_Pos)             /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_SLEEP(value)              (NVM_NVMCON2_SLEEP_Msk & (_UINT32_(value) << NVM_NVMCON2_SLEEP_Pos)) /* Assigment of value for SLEEP in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_SLEEP(value)              (NVM_NVMCON2_SLEEP_Msk & (_UINT32_(value) << NVM_NVMCON2_SLEEP_Pos)) /* Assignment of value for SLEEP in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_ERS_Pos                   _UINT32_(28)                                         /* (NVM_NVMCON2)  Position */
 #define NVM_NVMCON2_ERS_Msk                   (_UINT32_(0xF) << NVM_NVMCON2_ERS_Pos)               /* (NVM_NVMCON2)  Mask */
-#define NVM_NVMCON2_ERS(value)                (NVM_NVMCON2_ERS_Msk & (_UINT32_(value) << NVM_NVMCON2_ERS_Pos)) /* Assigment of value for ERS in the NVM_NVMCON2 register */
+#define NVM_NVMCON2_ERS(value)                (NVM_NVMCON2_ERS_Msk & (_UINT32_(value) << NVM_NVMCON2_ERS_Pos)) /* Assignment of value for ERS in the NVM_NVMCON2 register */
 #define NVM_NVMCON2_Msk                       _UINT32_(0xF11F7301)                                 /* (NVM_NVMCON2) Register Mask  */
 
 #define NVM_NVMCON2_VREAD_Pos                 _UINT32_(12)                                         /* (NVM_NVMCON2 Position)  */
@@ -123,7 +125,7 @@
 
 #define NVM_NVMKEY_NVMKEY_Pos                 _UINT32_(0)                                          /* (NVM_NVMKEY)  Position */
 #define NVM_NVMKEY_NVMKEY_Msk                 (_UINT32_(0xFFFFFFFF) << NVM_NVMKEY_NVMKEY_Pos)      /* (NVM_NVMKEY)  Mask */
-#define NVM_NVMKEY_NVMKEY(value)              (NVM_NVMKEY_NVMKEY_Msk & (_UINT32_(value) << NVM_NVMKEY_NVMKEY_Pos)) /* Assigment of value for NVMKEY in the NVM_NVMKEY register */
+#define NVM_NVMKEY_NVMKEY(value)              (NVM_NVMKEY_NVMKEY_Msk & (_UINT32_(value) << NVM_NVMKEY_NVMKEY_Pos)) /* Assignment of value for NVMKEY in the NVM_NVMKEY register */
 #define NVM_NVMKEY_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMKEY) Register Mask  */
 
 
@@ -132,7 +134,7 @@
 
 #define NVM_NVMADDR_NVMADDR_Pos               _UINT32_(0)                                          /* (NVM_NVMADDR)  Position */
 #define NVM_NVMADDR_NVMADDR_Msk               (_UINT32_(0xFFFFFFFF) << NVM_NVMADDR_NVMADDR_Pos)    /* (NVM_NVMADDR)  Mask */
-#define NVM_NVMADDR_NVMADDR(value)            (NVM_NVMADDR_NVMADDR_Msk & (_UINT32_(value) << NVM_NVMADDR_NVMADDR_Pos)) /* Assigment of value for NVMADDR in the NVM_NVMADDR register */
+#define NVM_NVMADDR_NVMADDR(value)            (NVM_NVMADDR_NVMADDR_Msk & (_UINT32_(value) << NVM_NVMADDR_NVMADDR_Pos)) /* Assignment of value for NVMADDR in the NVM_NVMADDR register */
 #define NVM_NVMADDR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMADDR) Register Mask  */
 
 
@@ -141,7 +143,7 @@
 
 #define NVM_NVMDATA0_NVMDATA0_Pos             _UINT32_(0)                                          /* (NVM_NVMDATA0)  Position */
 #define NVM_NVMDATA0_NVMDATA0_Msk             (_UINT32_(0xFFFFFFFF) << NVM_NVMDATA0_NVMDATA0_Pos)  /* (NVM_NVMDATA0)  Mask */
-#define NVM_NVMDATA0_NVMDATA0(value)          (NVM_NVMDATA0_NVMDATA0_Msk & (_UINT32_(value) << NVM_NVMDATA0_NVMDATA0_Pos)) /* Assigment of value for NVMDATA0 in the NVM_NVMDATA0 register */
+#define NVM_NVMDATA0_NVMDATA0(value)          (NVM_NVMDATA0_NVMDATA0_Msk & (_UINT32_(value) << NVM_NVMDATA0_NVMDATA0_Pos)) /* Assignment of value for NVMDATA0 in the NVM_NVMDATA0 register */
 #define NVM_NVMDATA0_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMDATA0) Register Mask  */
 
 
@@ -150,7 +152,7 @@
 
 #define NVM_NVMDATA1_NVMDATA1_Pos             _UINT32_(0)                                          /* (NVM_NVMDATA1)  Position */
 #define NVM_NVMDATA1_NVMDATA1_Msk             (_UINT32_(0xFFFFFFFF) << NVM_NVMDATA1_NVMDATA1_Pos)  /* (NVM_NVMDATA1)  Mask */
-#define NVM_NVMDATA1_NVMDATA1(value)          (NVM_NVMDATA1_NVMDATA1_Msk & (_UINT32_(value) << NVM_NVMDATA1_NVMDATA1_Pos)) /* Assigment of value for NVMDATA1 in the NVM_NVMDATA1 register */
+#define NVM_NVMDATA1_NVMDATA1(value)          (NVM_NVMDATA1_NVMDATA1_Msk & (_UINT32_(value) << NVM_NVMDATA1_NVMDATA1_Pos)) /* Assignment of value for NVMDATA1 in the NVM_NVMDATA1 register */
 #define NVM_NVMDATA1_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMDATA1) Register Mask  */
 
 
@@ -159,7 +161,7 @@
 
 #define NVM_NVMDATA2_NVMDATA2_Pos             _UINT32_(0)                                          /* (NVM_NVMDATA2)  Position */
 #define NVM_NVMDATA2_NVMDATA2_Msk             (_UINT32_(0xFFFFFFFF) << NVM_NVMDATA2_NVMDATA2_Pos)  /* (NVM_NVMDATA2)  Mask */
-#define NVM_NVMDATA2_NVMDATA2(value)          (NVM_NVMDATA2_NVMDATA2_Msk & (_UINT32_(value) << NVM_NVMDATA2_NVMDATA2_Pos)) /* Assigment of value for NVMDATA2 in the NVM_NVMDATA2 register */
+#define NVM_NVMDATA2_NVMDATA2(value)          (NVM_NVMDATA2_NVMDATA2_Msk & (_UINT32_(value) << NVM_NVMDATA2_NVMDATA2_Pos)) /* Assignment of value for NVMDATA2 in the NVM_NVMDATA2 register */
 #define NVM_NVMDATA2_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMDATA2) Register Mask  */
 
 
@@ -168,7 +170,7 @@
 
 #define NVM_NVMDATA3_NVMDATA3_Pos             _UINT32_(0)                                          /* (NVM_NVMDATA3)  Position */
 #define NVM_NVMDATA3_NVMDATA3_Msk             (_UINT32_(0xFFFFFFFF) << NVM_NVMDATA3_NVMDATA3_Pos)  /* (NVM_NVMDATA3)  Mask */
-#define NVM_NVMDATA3_NVMDATA3(value)          (NVM_NVMDATA3_NVMDATA3_Msk & (_UINT32_(value) << NVM_NVMDATA3_NVMDATA3_Pos)) /* Assigment of value for NVMDATA3 in the NVM_NVMDATA3 register */
+#define NVM_NVMDATA3_NVMDATA3(value)          (NVM_NVMDATA3_NVMDATA3_Msk & (_UINT32_(value) << NVM_NVMDATA3_NVMDATA3_Pos)) /* Assignment of value for NVMDATA3 in the NVM_NVMDATA3 register */
 #define NVM_NVMDATA3_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMDATA3) Register Mask  */
 
 
@@ -177,7 +179,7 @@
 
 #define NVM_NVMSRCADDR_NVMSRCADDR_Pos         _UINT32_(0)                                          /* (NVM_NVMSRCADDR)  Position */
 #define NVM_NVMSRCADDR_NVMSRCADDR_Msk         (_UINT32_(0xFFFFFFFF) << NVM_NVMSRCADDR_NVMSRCADDR_Pos) /* (NVM_NVMSRCADDR)  Mask */
-#define NVM_NVMSRCADDR_NVMSRCADDR(value)      (NVM_NVMSRCADDR_NVMSRCADDR_Msk & (_UINT32_(value) << NVM_NVMSRCADDR_NVMSRCADDR_Pos)) /* Assigment of value for NVMSRCADDR in the NVM_NVMSRCADDR register */
+#define NVM_NVMSRCADDR_NVMSRCADDR(value)      (NVM_NVMSRCADDR_NVMSRCADDR_Msk & (_UINT32_(value) << NVM_NVMSRCADDR_NVMSRCADDR_Pos)) /* Assignment of value for NVMSRCADDR in the NVM_NVMSRCADDR register */
 #define NVM_NVMSRCADDR_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (NVM_NVMSRCADDR) Register Mask  */
 
 
@@ -186,10 +188,10 @@
 
 #define NVM_NVMPWPLT_PWPLT_Pos                _UINT32_(0)                                          /* (NVM_NVMPWPLT)  Position */
 #define NVM_NVMPWPLT_PWPLT_Msk                (_UINT32_(0xFFFFFF) << NVM_NVMPWPLT_PWPLT_Pos)       /* (NVM_NVMPWPLT)  Mask */
-#define NVM_NVMPWPLT_PWPLT(value)             (NVM_NVMPWPLT_PWPLT_Msk & (_UINT32_(value) << NVM_NVMPWPLT_PWPLT_Pos)) /* Assigment of value for PWPLT in the NVM_NVMPWPLT register */
+#define NVM_NVMPWPLT_PWPLT(value)             (NVM_NVMPWPLT_PWPLT_Msk & (_UINT32_(value) << NVM_NVMPWPLT_PWPLT_Pos)) /* Assignment of value for PWPLT in the NVM_NVMPWPLT register */
 #define NVM_NVMPWPLT_ULOCK_Pos                _UINT32_(31)                                         /* (NVM_NVMPWPLT)  Position */
 #define NVM_NVMPWPLT_ULOCK_Msk                (_UINT32_(0x1) << NVM_NVMPWPLT_ULOCK_Pos)            /* (NVM_NVMPWPLT)  Mask */
-#define NVM_NVMPWPLT_ULOCK(value)             (NVM_NVMPWPLT_ULOCK_Msk & (_UINT32_(value) << NVM_NVMPWPLT_ULOCK_Pos)) /* Assigment of value for ULOCK in the NVM_NVMPWPLT register */
+#define NVM_NVMPWPLT_ULOCK(value)             (NVM_NVMPWPLT_ULOCK_Msk & (_UINT32_(value) << NVM_NVMPWPLT_ULOCK_Pos)) /* Assignment of value for ULOCK in the NVM_NVMPWPLT register */
 #define NVM_NVMPWPLT_Msk                      _UINT32_(0x80FFFFFF)                                 /* (NVM_NVMPWPLT) Register Mask  */
 
 
@@ -216,10 +218,10 @@
 
 #define NVM_NVMPWPGTE_PWPGTE_Pos              _UINT32_(0)                                          /* (NVM_NVMPWPGTE)  Position */
 #define NVM_NVMPWPGTE_PWPGTE_Msk              (_UINT32_(0xFFFFFF) << NVM_NVMPWPGTE_PWPGTE_Pos)     /* (NVM_NVMPWPGTE)  Mask */
-#define NVM_NVMPWPGTE_PWPGTE(value)           (NVM_NVMPWPGTE_PWPGTE_Msk & (_UINT32_(value) << NVM_NVMPWPGTE_PWPGTE_Pos)) /* Assigment of value for PWPGTE in the NVM_NVMPWPGTE register */
+#define NVM_NVMPWPGTE_PWPGTE(value)           (NVM_NVMPWPGTE_PWPGTE_Msk & (_UINT32_(value) << NVM_NVMPWPGTE_PWPGTE_Pos)) /* Assignment of value for PWPGTE in the NVM_NVMPWPGTE register */
 #define NVM_NVMPWPGTE_ULOCK_Pos               _UINT32_(31)                                         /* (NVM_NVMPWPGTE)  Position */
 #define NVM_NVMPWPGTE_ULOCK_Msk               (_UINT32_(0x1) << NVM_NVMPWPGTE_ULOCK_Pos)           /* (NVM_NVMPWPGTE)  Mask */
-#define NVM_NVMPWPGTE_ULOCK(value)            (NVM_NVMPWPGTE_ULOCK_Msk & (_UINT32_(value) << NVM_NVMPWPGTE_ULOCK_Pos)) /* Assigment of value for ULOCK in the NVM_NVMPWPGTE register */
+#define NVM_NVMPWPGTE_ULOCK(value)            (NVM_NVMPWPGTE_ULOCK_Msk & (_UINT32_(value) << NVM_NVMPWPGTE_ULOCK_Pos)) /* Assignment of value for ULOCK in the NVM_NVMPWPGTE register */
 #define NVM_NVMPWPGTE_Msk                     _UINT32_(0x80FFFFFF)                                 /* (NVM_NVMPWPGTE) Register Mask  */
 
 
@@ -246,79 +248,79 @@
 
 #define NVM_NVMLBWP_LBWP0_Pos                 _UINT32_(0)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP0_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP0_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP0(value)              (NVM_NVMLBWP_LBWP0_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP0_Pos)) /* Assigment of value for LBWP0 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP0(value)              (NVM_NVMLBWP_LBWP0_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP0_Pos)) /* Assignment of value for LBWP0 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP1_Pos                 _UINT32_(1)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP1_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP1_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP1(value)              (NVM_NVMLBWP_LBWP1_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP1_Pos)) /* Assigment of value for LBWP1 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP1(value)              (NVM_NVMLBWP_LBWP1_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP1_Pos)) /* Assignment of value for LBWP1 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP2_Pos                 _UINT32_(2)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP2_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP2_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP2(value)              (NVM_NVMLBWP_LBWP2_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP2_Pos)) /* Assigment of value for LBWP2 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP2(value)              (NVM_NVMLBWP_LBWP2_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP2_Pos)) /* Assignment of value for LBWP2 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP3_Pos                 _UINT32_(3)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP3_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP3_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP3(value)              (NVM_NVMLBWP_LBWP3_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP3_Pos)) /* Assigment of value for LBWP3 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP3(value)              (NVM_NVMLBWP_LBWP3_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP3_Pos)) /* Assignment of value for LBWP3 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP4_Pos                 _UINT32_(4)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP4_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP4_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP4(value)              (NVM_NVMLBWP_LBWP4_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP4_Pos)) /* Assigment of value for LBWP4 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP4(value)              (NVM_NVMLBWP_LBWP4_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP4_Pos)) /* Assignment of value for LBWP4 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP5_Pos                 _UINT32_(5)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP5_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP5_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP5(value)              (NVM_NVMLBWP_LBWP5_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP5_Pos)) /* Assigment of value for LBWP5 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP5(value)              (NVM_NVMLBWP_LBWP5_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP5_Pos)) /* Assignment of value for LBWP5 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP6_Pos                 _UINT32_(6)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP6_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP6_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP6(value)              (NVM_NVMLBWP_LBWP6_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP6_Pos)) /* Assigment of value for LBWP6 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP6(value)              (NVM_NVMLBWP_LBWP6_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP6_Pos)) /* Assignment of value for LBWP6 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP7_Pos                 _UINT32_(7)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP7_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP7_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP7(value)              (NVM_NVMLBWP_LBWP7_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP7_Pos)) /* Assigment of value for LBWP7 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP7(value)              (NVM_NVMLBWP_LBWP7_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP7_Pos)) /* Assignment of value for LBWP7 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP8_Pos                 _UINT32_(8)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP8_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP8_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP8(value)              (NVM_NVMLBWP_LBWP8_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP8_Pos)) /* Assigment of value for LBWP8 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP8(value)              (NVM_NVMLBWP_LBWP8_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP8_Pos)) /* Assignment of value for LBWP8 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP9_Pos                 _UINT32_(9)                                          /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP9_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_LBWP9_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP9(value)              (NVM_NVMLBWP_LBWP9_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP9_Pos)) /* Assigment of value for LBWP9 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP9(value)              (NVM_NVMLBWP_LBWP9_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP9_Pos)) /* Assignment of value for LBWP9 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP10_Pos                _UINT32_(10)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP10_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP10_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP10(value)             (NVM_NVMLBWP_LBWP10_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP10_Pos)) /* Assigment of value for LBWP10 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP10(value)             (NVM_NVMLBWP_LBWP10_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP10_Pos)) /* Assignment of value for LBWP10 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP11_Pos                _UINT32_(11)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP11_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP11_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP11(value)             (NVM_NVMLBWP_LBWP11_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP11_Pos)) /* Assigment of value for LBWP11 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP11(value)             (NVM_NVMLBWP_LBWP11_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP11_Pos)) /* Assignment of value for LBWP11 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP12_Pos                _UINT32_(12)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP12_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP12_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP12(value)             (NVM_NVMLBWP_LBWP12_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP12_Pos)) /* Assigment of value for LBWP12 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP12(value)             (NVM_NVMLBWP_LBWP12_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP12_Pos)) /* Assignment of value for LBWP12 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP13_Pos                _UINT32_(13)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP13_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP13_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP13(value)             (NVM_NVMLBWP_LBWP13_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP13_Pos)) /* Assigment of value for LBWP13 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP13(value)             (NVM_NVMLBWP_LBWP13_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP13_Pos)) /* Assignment of value for LBWP13 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP14_Pos                _UINT32_(14)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP14_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP14_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP14(value)             (NVM_NVMLBWP_LBWP14_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP14_Pos)) /* Assigment of value for LBWP14 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP14(value)             (NVM_NVMLBWP_LBWP14_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP14_Pos)) /* Assignment of value for LBWP14 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP15_Pos                _UINT32_(15)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP15_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP15_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP15(value)             (NVM_NVMLBWP_LBWP15_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP15_Pos)) /* Assigment of value for LBWP15 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP15(value)             (NVM_NVMLBWP_LBWP15_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP15_Pos)) /* Assignment of value for LBWP15 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP16_Pos                _UINT32_(16)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP16_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP16_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP16(value)             (NVM_NVMLBWP_LBWP16_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP16_Pos)) /* Assigment of value for LBWP16 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP16(value)             (NVM_NVMLBWP_LBWP16_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP16_Pos)) /* Assignment of value for LBWP16 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP17_Pos                _UINT32_(17)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP17_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP17_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP17(value)             (NVM_NVMLBWP_LBWP17_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP17_Pos)) /* Assigment of value for LBWP17 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP17(value)             (NVM_NVMLBWP_LBWP17_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP17_Pos)) /* Assignment of value for LBWP17 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP18_Pos                _UINT32_(18)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP18_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP18_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP18(value)             (NVM_NVMLBWP_LBWP18_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP18_Pos)) /* Assigment of value for LBWP18 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP18(value)             (NVM_NVMLBWP_LBWP18_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP18_Pos)) /* Assignment of value for LBWP18 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP19_Pos                _UINT32_(19)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP19_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP19_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP19(value)             (NVM_NVMLBWP_LBWP19_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP19_Pos)) /* Assigment of value for LBWP19 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP19(value)             (NVM_NVMLBWP_LBWP19_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP19_Pos)) /* Assignment of value for LBWP19 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP20_Pos                _UINT32_(20)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP20_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP20_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP20(value)             (NVM_NVMLBWP_LBWP20_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP20_Pos)) /* Assigment of value for LBWP20 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP20(value)             (NVM_NVMLBWP_LBWP20_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP20_Pos)) /* Assignment of value for LBWP20 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP21_Pos                _UINT32_(21)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP21_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP21_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP21(value)             (NVM_NVMLBWP_LBWP21_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP21_Pos)) /* Assigment of value for LBWP21 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP21(value)             (NVM_NVMLBWP_LBWP21_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP21_Pos)) /* Assignment of value for LBWP21 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP22_Pos                _UINT32_(22)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP22_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP22_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP22(value)             (NVM_NVMLBWP_LBWP22_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP22_Pos)) /* Assigment of value for LBWP22 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP22(value)             (NVM_NVMLBWP_LBWP22_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP22_Pos)) /* Assignment of value for LBWP22 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_LBWP23_Pos                _UINT32_(23)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_LBWP23_Msk                (_UINT32_(0x1) << NVM_NVMLBWP_LBWP23_Pos)            /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_LBWP23(value)             (NVM_NVMLBWP_LBWP23_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP23_Pos)) /* Assigment of value for LBWP23 in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_LBWP23(value)             (NVM_NVMLBWP_LBWP23_Msk & (_UINT32_(value) << NVM_NVMLBWP_LBWP23_Pos)) /* Assignment of value for LBWP23 in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_ULOCK_Pos                 _UINT32_(31)                                         /* (NVM_NVMLBWP)  Position */
 #define NVM_NVMLBWP_ULOCK_Msk                 (_UINT32_(0x1) << NVM_NVMLBWP_ULOCK_Pos)             /* (NVM_NVMLBWP)  Mask */
-#define NVM_NVMLBWP_ULOCK(value)              (NVM_NVMLBWP_ULOCK_Msk & (_UINT32_(value) << NVM_NVMLBWP_ULOCK_Pos)) /* Assigment of value for ULOCK in the NVM_NVMLBWP register */
+#define NVM_NVMLBWP_ULOCK(value)              (NVM_NVMLBWP_ULOCK_Msk & (_UINT32_(value) << NVM_NVMLBWP_ULOCK_Pos)) /* Assignment of value for ULOCK in the NVM_NVMLBWP register */
 #define NVM_NVMLBWP_Msk                       _UINT32_(0x80FFFFFF)                                 /* (NVM_NVMLBWP) Register Mask  */
 
 #define NVM_NVMLBWP_LBWP_Pos                  _UINT32_(0)                                          /* (NVM_NVMLBWP Position)  */
@@ -343,7 +345,7 @@
 #define NVM_NVMLBWPINV_Msk                    _UINT32_(0x00000000)                                 /* (NVM_NVMLBWPINV) Register Mask  */
 
 
-/** \brief NVM register offsets definitions */
+/* NVM register offsets definitions */
 #define NVM_NVMCON_REG_OFST            _UINT32_(0x00)      /* (NVM_NVMCON)  Offset */
 #define NVM_NVMCONCLR_REG_OFST         _UINT32_(0x04)      /* (NVM_NVMCONCLR)  Offset */
 #define NVM_NVMCONSET_REG_OFST         _UINT32_(0x08)      /* (NVM_NVMCONSET)  Offset */
@@ -373,43 +375,43 @@
 #define NVM_NVMLBWPINV_REG_OFST        _UINT32_(0xFC)      /* (NVM_NVMLBWPINV)  Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief NVM register API structure */
+/* NVM register API structure */
 typedef struct
 {  /* flash controller */
-  __IO  uint32_t                       NVM_NVMCON;         /**< Offset: 0x00 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCONCLR;      /**< Offset: 0x04 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCONSET;      /**< Offset: 0x08 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCONINV;      /**< Offset: 0x0C (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCON2;        /**< Offset: 0x10 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCON2CLR;     /**< Offset: 0x14 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCON2SET;     /**< Offset: 0x18 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMCON2INV;     /**< Offset: 0x1C (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMKEY;         /**< Offset: 0x20 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCON;         /* Offset: 0x00 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCONCLR;      /* Offset: 0x04 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCONSET;      /* Offset: 0x08 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCONINV;      /* Offset: 0x0C (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCON2;        /* Offset: 0x10 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCON2CLR;     /* Offset: 0x14 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCON2SET;     /* Offset: 0x18 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMCON2INV;     /* Offset: 0x1C (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMKEY;         /* Offset: 0x20 (R/W  32)  */
   __I   uint8_t                        Reserved1[0x0C];
-  __IO  uint32_t                       NVM_NVMADDR;        /**< Offset: 0x30 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMADDR;        /* Offset: 0x30 (R/W  32)  */
   __I   uint8_t                        Reserved2[0x0C];
-  __IO  uint32_t                       NVM_NVMDATA0;       /**< Offset: 0x40 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMDATA0;       /* Offset: 0x40 (R/W  32)  */
   __I   uint8_t                        Reserved3[0x0C];
-  __IO  uint32_t                       NVM_NVMDATA1;       /**< Offset: 0x50 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMDATA1;       /* Offset: 0x50 (R/W  32)  */
   __I   uint8_t                        Reserved4[0x0C];
-  __IO  uint32_t                       NVM_NVMDATA2;       /**< Offset: 0x60 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMDATA2;       /* Offset: 0x60 (R/W  32)  */
   __I   uint8_t                        Reserved5[0x0C];
-  __IO  uint32_t                       NVM_NVMDATA3;       /**< Offset: 0x70 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMDATA3;       /* Offset: 0x70 (R/W  32)  */
   __I   uint8_t                        Reserved6[0x4C];
-  __IO  uint32_t                       NVM_NVMSRCADDR;     /**< Offset: 0xC0 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMSRCADDR;     /* Offset: 0xC0 (R/W  32)  */
   __I   uint8_t                        Reserved7[0x0C];
-  __IO  uint32_t                       NVM_NVMPWPLT;       /**< Offset: 0xD0 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPLTCLR;    /**< Offset: 0xD4 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPLTSET;    /**< Offset: 0xD8 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPLTINV;    /**< Offset: 0xDC (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPGTE;      /**< Offset: 0xE0 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPGTECLR;   /**< Offset: 0xE4 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPGTESET;   /**< Offset: 0xE8 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMPWPGTEINV;   /**< Offset: 0xEC (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMLBWP;        /**< Offset: 0xF0 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMLBWPCLR;     /**< Offset: 0xF4 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMLBWPSET;     /**< Offset: 0xF8 (R/W  32)  */
-  __IO  uint32_t                       NVM_NVMLBWPINV;     /**< Offset: 0xFC (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPLT;       /* Offset: 0xD0 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPLTCLR;    /* Offset: 0xD4 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPLTSET;    /* Offset: 0xD8 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPLTINV;    /* Offset: 0xDC (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPGTE;      /* Offset: 0xE0 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPGTECLR;   /* Offset: 0xE4 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPGTESET;   /* Offset: 0xE8 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMPWPGTEINV;   /* Offset: 0xEC (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMLBWP;        /* Offset: 0xF0 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMLBWPCLR;     /* Offset: 0xF4 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMLBWPSET;     /* Offset: 0xF8 (R/W  32)  */
+  __IO  uint32_t                       NVM_NVMLBWPINV;     /* Offset: 0xFC (R/W  32)  */
 } nvm_registers_t;
 
 

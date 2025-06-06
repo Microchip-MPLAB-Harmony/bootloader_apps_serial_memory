@@ -96,7 +96,9 @@ void CLOCK_Initialize( void )
     {
         /* Nothing to do */
     }
-    //programming 4ms delay -  programming subsys_xtal_ready_delay
+    
+
+	//programming 4ms delay -  programming subsys_xtal_ready_delay
     //check xtal spec for delay required
     BTZBSYS_REGS->BTZBSYS_SUBSYS_CNTRL_REG1 = ((BTZBSYS_REGS->BTZBSYS_SUBSYS_CNTRL_REG1 & ~BTZBSYS_SUBSYS_CNTRL_REG1_subsys_xtal_ready_delay_Msk)
                                                 | ((0x01UL) << BTZBSYS_SUBSYS_CNTRL_REG1_subsys_xtal_ready_delay_Pos));

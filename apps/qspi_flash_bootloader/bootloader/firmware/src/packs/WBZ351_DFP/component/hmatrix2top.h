@@ -1,7 +1,9 @@
 /*
  * Component description for HMATRIX2TOP
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +19,12 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2024-02-12T06:36:14Z */
+/*  file generated from device description file (ATDF) version 2025-02-18T06:25:25Z  */
 #ifndef _WBZ35_HMATRIX2TOP_COMPONENT_H_
 #define _WBZ35_HMATRIX2TOP_COMPONENT_H_
 
 /* ************************************************************************** */
-/*   SOFTWARE API DEFINITION FOR HMATRIX2TOP                                  */
+/*                  SOFTWARE API DEFINITION FOR HMATRIX2TOP                   */
 /* ************************************************************************** */
 
 /* -------- HMATRIX2TOP_PRAS : (HMATRIX2TOP Offset: 0x00) (R/W 32) Priority A for Slave -------- */
@@ -37,25 +39,25 @@
 #define HMATRIX2TOP_PRBS_Msk                  _UINT32_(0x00000000)                                 /* (HMATRIX2TOP_PRBS) Register Mask  */
 
 
-/** \brief HMATRIX2TOP register offsets definitions */
+/* HMATRIX2TOP register offsets definitions */
 #define HMATRIX2TOP_PRAS_REG_OFST      _UINT32_(0x00)      /* (HMATRIX2TOP_PRAS) Priority A for Slave Offset */
 #define HMATRIX2TOP_PRBS_REG_OFST      _UINT32_(0x04)      /* (HMATRIX2TOP_PRBS) Priority B for Slave Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief PRS register API structure */
+/* PRS register API structure */
 typedef struct
 {
-  __IO  uint32_t                       HMATRIX2TOP_PRAS;   /**< Offset: 0x00 (R/W  32) Priority A for Slave */
-  __IO  uint32_t                       HMATRIX2TOP_PRBS;   /**< Offset: 0x04 (R/W  32) Priority B for Slave */
+  __IO  uint32_t                       HMATRIX2TOP_PRAS;   /* Offset: 0x00 (R/W  32) Priority A for Slave */
+  __IO  uint32_t                       HMATRIX2TOP_PRBS;   /* Offset: 0x04 (R/W  32) Priority B for Slave */
 } hmatrix2top_prs_registers_t;
 
 #define HMATRIX2TOP_PRS_NUMBER 16
 
-/** \brief HMATRIX2TOP register API structure */
+/* HMATRIX2TOP register API structure */
 typedef struct
 {  /* HSB Matrix */
   __I   uint8_t                        Reserved1[0x80];
-        hmatrix2top_prs_registers_t    PRS[HMATRIX2TOP_PRS_NUMBER]; /**< Offset: 0x80  */
+        hmatrix2top_prs_registers_t    PRS[HMATRIX2TOP_PRS_NUMBER]; /* Offset: 0x80  */
 } hmatrix2top_registers_t;
 
 

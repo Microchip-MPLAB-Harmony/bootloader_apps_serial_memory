@@ -1,7 +1,9 @@
 /*
  * Component description for ZIGBEE
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +19,18 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2024-02-12T06:36:14Z */
+/*  file generated from device description file (ATDF) version 2025-02-18T06:25:25Z  */
 #ifndef _WBZ35_ZIGBEE_COMPONENT_H_
 #define _WBZ35_ZIGBEE_COMPONENT_H_
 
 /* ************************************************************************** */
-/*   SOFTWARE API DEFINITION FOR ZIGBEE                                       */
+/*                     SOFTWARE API DEFINITION FOR ZIGBEE                     */
 /* ************************************************************************** */
 
-/** \brief ZIGBEE register offsets definitions */
+/* ZIGBEE register offsets definitions */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-/** \brief No register API structure defined for ZIGBEE */
+/* No register API structure defined for ZIGBEE */
 typedef void Zigbee;
 
 
