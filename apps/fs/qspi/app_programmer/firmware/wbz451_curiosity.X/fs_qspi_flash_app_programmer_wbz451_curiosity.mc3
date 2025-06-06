@@ -12525,11 +12525,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\configuration.h</file>
-         <hash>62b8bcec6868d2709f90ae03b8099c22b356cc3e75563c7decabf247f186b727</hash>
+         <hash>e198003217fd05306350effb9c20f26cac599e47a4ce386a0adf65ae94d93c77</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\definitions.h</file>
-         <hash>c8d3050c736844e57534f96543d362d150bdf55f1c309022e6a4f9d1ed17311c</hash>
+         <hash>1813d795db7fd82690f399fbea784ea98507fc2cd3757db98253ee858e18a016</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\device.h</file>
@@ -12805,7 +12805,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>6848cdc1e0e629ac4c44c28358ed40ac71651f502b941a1a9ef4468aad652091</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\system\fs\fat_fs\file_system\ffconf.h</file>
@@ -12833,7 +12833,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\system\fs\src\sys_fs_local.h</file>
-         <hash>ef6b5ddf2d37deece42f4f38d4c80cff0c5b4c67b150bfa11a78b78aec79baff</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\system\fs\src\sys_fs_media_manager.c</file>
@@ -12953,7 +12953,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
