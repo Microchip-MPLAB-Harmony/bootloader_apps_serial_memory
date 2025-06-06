@@ -28,14 +28,14 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
-#define LED_ON()                RGB_LED_BLUE_On()
-#define LED_OFF()               RGB_LED_BLUE_Off()
-#define LED_TOGGLE()            RGB_LED_BLUE_Toggle()
+#define LED_ON()                RGB_GREEN_BLUE_On()
+#define LED_OFF()               RGB_GREEN_BLUE_Off()
+#define LED_TOGGLE()            RGB_LED_GREEN_Toggle()
 
 #define SWITCH_GET()            SWITCH3_Get()
 #define SWITCH_PRESSED          SWITCH3_STATE_PRESSED
 
-#define FLASH_START             (0x01001000)
+#define FLASH_START             (0x01002000)
 #define FLASH_LENGTH            (0x80000)
 #define PAGE_SIZE               (1024UL)
 #define ERASE_BLOCK_SIZE        (4096UL)

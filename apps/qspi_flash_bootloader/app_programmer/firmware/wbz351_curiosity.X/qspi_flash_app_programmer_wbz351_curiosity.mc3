@@ -1,4 +1,4 @@
-<config configName="default" projectName="qspi_flash_app_programmer_wbz351_curiosity" configVersion="1.1" device="WBZ351" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="default" projectName="qspi_flash_app_programmer_wbz351_curiosity" configVersion="1.1" device="WBZ351" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -47,7 +47,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -4859,17 +4859,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="VTABLE_MEM_REGION"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;VTABLE_MEM_REGION&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;FCR_PFM&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="systickEnable"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;systickEnable&quot;&gt;
@@ -6726,7 +6715,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\WBZ351.ld</file>
-         <hash>daa4f9311edfcdae8b33c5d7a9cbf80eaccd897f5bf063912a8a3aaabd4c6d14</hash>
+         <hash>1faa8cae0a563e9e7c93b202c9ef98cb87d89b66a4057f17bb8e0c7b910375a5</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\bsp\bsp.c</file>
@@ -6742,11 +6731,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\definitions.h</file>
-         <hash>f727f800c0e592970cc7d1e7d29f4defceb3dbbc222626bfdd67fbf084afe9b6</hash>
+         <hash>1a7acf42e6560a2319b9affb4a658c8426ed3a04e7c6da2cf870e64f2ceb8268</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\device.h</file>
-         <hash>abb7224edd4a39b3a20dc87feea10a6c4af48f0f68ab5bf9aceb355cf1ff2896</hash>
+         <hash>03f506d01d5a227e764c2ac63b784a6be8d15703d975edce2709bd70b9900439</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\device_cache.h</file>
@@ -6774,27 +6763,27 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\driver\sst26\src\drv_sst26.c</file>
-         <hash>3b3e868e906b04eba26406b25baebdebcd8876419126d897463b67397db6a9ad</hash>
+         <hash>fa061a3905eb4018dd4802077cf00379300c8b5aff1907164656ea120eb43b0c</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\driver\sst26\src\drv_sst26_local.h</file>
-         <hash>29c71a6ae051fcf47b8235ad561a592dbdc820cfa2831c0aac0371c39671ad3a</hash>
+         <hash>0cf979afa692f6d4aea9f747b4df8857865aabfd8ff16b6ff097bd4ef437ea82</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\exceptions.c</file>
-         <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
+         <hash>a565e8d25d218b3e1069267ae9cc317161d062683a27c64e3cb454757bb82fd9</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\initialization.c</file>
-         <hash>abc5739fdbb722e15a118ef00099b24a355d4442d4cc10ee50cd9fbb9ecca209</hash>
+         <hash>2f97683f57660961eef3bd954171659a3e4f85d8acc8cdce56a0e0bd4030fb31</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\interrupts.c</file>
-         <hash>dd542eaaadf9c934980ec0a424f1c218a30708b1c683577b3d85dc8a79b7b6b2</hash>
+         <hash>79eba527aba88b5ad126ad1bbf6c7b444d1dd3d1a217954958c757a01af257dc</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\interrupts.h</file>
-         <hash>8010403ea03145566b8b2d6e5052b1900cf9acc8310b00e9e80631147dce81a5</hash>
+         <hash>db93a0d140a693f22e868aa2234303f53b42ff96436ccde7e393d42bf4177c59</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\libc_syscalls.c</file>
@@ -6802,7 +6791,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\osal\osal.h</file>
-         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
+         <hash>1cfe3b61d9693b2369922041eef33fe16b3c1ccd9c85d4ded808b805f90a869c</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\osal\osal_definitions.h</file>
@@ -6810,11 +6799,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\osal\osal_impl_basic.h</file>
-         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
+         <hash>65e68edbc0320d0407399f65e6d06ff7e6d3d7697231cf1fe0a1fdf1d65f0463</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>424304a9ee621ec343d9bce5057e75575abaa4528ef0f2ba741f0601eae8e115</hash>
+         <hash>560f0082560ee8bbad6856aeef87383c5aae333523ffa3fb2e05398766c8d8cd</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\clk\plib_clk.h</file>
@@ -6838,7 +6827,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\evsys\plib_evsys.c</file>
-         <hash>b2e1a8004049e687fc5544133f3346f743ced50cdaf860c8e3c7f58df3cc163f</hash>
+         <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\evsys\plib_evsys.h</file>
@@ -6854,15 +6843,15 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\nvic\plib_nvic.c</file>
-         <hash>760483c03f0543755e4cc27fb11655de3f0a7f0c7c242960d0ca62c9fef8084a</hash>
+         <hash>a782a9ca0c016aca8f1c59adb4e50c33103ebecb7b07af5a61977a521bdcaf47</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\nvm\plib_nvm.c</file>
-         <hash>66a70d8a03f2b9b4bcb2f5dabf3d0573901e971112326a5078efb42e1274c9db</hash>
+         <hash>7f487c81eefccd6ff53e03fd8f7253f29f8ccf40f3aa2b28eee701f1d08f9cc2</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\nvm\plib_nvm.h</file>
@@ -6870,7 +6859,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\pac\plib_pac.c</file>
-         <hash>f5f9d7cfc0b708ef27e7eb74b5e63719c20abf2124e3cfce6d84ba7817fd2352</hash>
+         <hash>40fa9482c15ce6e45bda4c049441e7f7e0f71ed3c6e3d2d827fb0ed824361ef8</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\pac\plib_pac.h</file>
@@ -6890,7 +6879,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\sercom\usart\plib_sercom0_usart.c</file>
-         <hash>dc9e68e30d9cc47fd71343288f44af92091a427f257a09cb9ea50dc3219d3eef</hash>
+         <hash>1b870ae42f420b6467780ebcf49170bb3a3b54a9074ed158907f0a6682c75a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\sercom\usart\plib_sercom0_usart.h</file>
@@ -6898,11 +6887,11 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
+         <hash>3653b66472c558c50f7037a1dd25d2678e9a13aa718f3c53a2195e6f3919ea48</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\systick\plib_systick.c</file>
-         <hash>623ad13cbd54a0c833ee2050bae71b42c7be4baf1b84a38c7b06456f55946f35</hash>
+         <hash>cc96e03dc02c2ca8977c9dfc8334d0c8ce7671da03319b341823b3f78c3b2441</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\peripheral\systick\plib_systick.h</file>
@@ -6910,7 +6899,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\startup_xc32.c</file>
-         <hash>6945b6a1826ae28babaae6cd59e20b8e74e464d4de4fa6fdbb92158ffaa02257</hash>
+         <hash>95d22da03176bc3a797e2e56be702fe4776ce754d18448cd86ca42ccd4083e00</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\stdio\xc32_monitor.c</file>
@@ -6930,7 +6919,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz351_curiosity\system\int\src\sys_int.c</file>
@@ -7010,7 +6999,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
@@ -7022,371 +7011,379 @@
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ac.h</file>
-         <hash>cd1fdd3b0016fd73e59bbdd9a705b14ac63e490e5812e2ab6ea5f1b5414656e5</hash>
+         <hash>fb57d638a906ce73182aa02178b9582b0ef3a39897f2476ec4e0b6e3f7667b38</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\adchs.h</file>
-         <hash>fcbe7bd4d1b93ec1a03852c0a119865a141c3eeb2a8d76c4e68d3f3694b9cef0</hash>
+         <hash>e1cdefa77c3635b971faa131c4297028994c86bb2a357d783595c8efc38166e3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\arb.h</file>
-         <hash>02c921054a612dc78e240478855d0b489ce12328bcaa2b62f4f8622d29d3f916</hash>
+         <hash>9124e483e20df7c770d2f9b23635c0b812b0b15e626b6caee22580696687f1c1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ble.h</file>
-         <hash>a79f31e6d7aada9e9f6be29edbc8b2dc45f13a8b762b61b3ea17e0381a922949</hash>
+         <hash>f5172df88597392898a928b9da89fec201a53c2120037852125aea81091ea41d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\btzbsys.h</file>
-         <hash>526292ccc542f91ff6c00689d9d2f8e949ca52f6acf01eaab601d18ebfbccddd</hash>
+         <hash>e8ffdf21b77bcb389702a5e88c8bd3e52ee734d14ec3a383a6cf36aca54b09aa</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ccl.h</file>
-         <hash>cc8cc83b0c9fe1e0ea461a20e2ce5e069b905a6beba1a175fe639ec1a14b539e</hash>
+         <hash>a21ae7fec0519ef33c9641df409b2ea7714f47593c0a49a731b5fa20023af66c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cfg.h</file>
-         <hash>ad608a684ea8c3380c388af28a8c4e8c4cc89af571338842c1faa331918145e6</hash>
+         <hash>7cd46392c432e87bd151ddf883e2333173d6f1b0eaa1759702e5e2fcd3dd6f2a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cmcc.h</file>
-         <hash>f9675576bd63e8859ff5777c9821ccd7da77116767a4804a4259eba97c884b52</hash>
+         <hash>83d3c6ee9ff0009f343d5e234727e94850619f847a1e76585288eaff5445a951</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cru.h</file>
-         <hash>a2c0c5f71bcd897dc2ed5e8bb5921cf327b1a5ab22237add65d81da8ab9cf265</hash>
+         <hash>085ece544fe28a99dbee2a4ba88abb25435fd8e3b8c56ef526ba248d577fceaa</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\cvd.h</file>
-         <hash>653fd6f168395f96f27b615e050f061ac1f1c9abb869a2c1a72b9aac24e36f1c</hash>
+         <hash>cb643bd004efd6ae2fe18076208f9618f695dbcb2b96f714da96bfcea75ec1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dac_ctrl.h</file>
-         <hash>76edb1df10352c38f8b7d1a2e9edf847a8d1ad4c7c24e34fdbb88f94dd6da477</hash>
+         <hash>4a75eaf9917f5f5c49b8ac0b9bd1ddeba7ac7eef985864cd22efea593100ae28</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dgi_spi.h</file>
-         <hash>e83dadd8129df10ea3d5f8aacb79c41d83a045f3532a24f27636b29b75ebe898</hash>
+         <hash>8d1c9ac2971bf4e45a967bbb3ea171888174c889bcbce8386258c1aae2f76446</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dmac.h</file>
-         <hash>fd3f5fea08f23aaec41bd35bad17a169ba9651b0654d3170da1ac95b3e4680b8</hash>
+         <hash>2afef491bf1f246a0f49b39f1f66faa5e495dce593ee96eaeee875d8bf3c6c64</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dmt.h</file>
-         <hash>21b471f0e77e2761573bfe9437c82648445120912144a02496b4490ccb59dd47</hash>
+         <hash>419d4dbac51e81e4027b0e3177f0e5f5c5f321f3c98144f83f501082974f8ae1</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dscon.h</file>
-         <hash>af94f3826675a6cb65e027150c7a3978fb0512adeed3fa8356d345d03cc40644</hash>
+         <hash>5e235746e0a0ba761c8e0db2221cba28c574a8e10ca9fa99bea6f04eb394a4fe</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\dsu.h</file>
-         <hash>b785b10effdba5a988929713a54aa0275c0a2ee151b62ee5af2daa88c7bc64b8</hash>
+         <hash>a5c45c262240906db1ec7393cadccf0c09563f08733ab74929f22365d0ac7286</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\component\efuse.h</file>
+         <hash>a32499d6ff8e2d9d633e735598ad535577114c06fd9ee6fb2ee9f234a4d89d52</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\eic.h</file>
-         <hash>e2d9ffe602aac94fc7756cb1154f9a07c856d2c3eca60eb77edf8d0d1c5df02a</hash>
+         <hash>e57eb776e1230716d1024410ca0858377d870a3db3081466f2723e76367e6826</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\evsys.h</file>
-         <hash>737a6094f56a4e44384857b4dbe79bd189e06d0e6f8d529b88e1cf2ac3382b38</hash>
+         <hash>403b857e6027dc41684cd9a9276190b4332dc2982746963055080702a031d486</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\freqm.h</file>
-         <hash>a90b57d5a20aa20bc16cdd468553ad34c995f5b6e86ad91a71b5d668bfdf19ad</hash>
+         <hash>374c5e9ecf20f8c01e60eb610ee8fc6488e16ef26a3afe8e1b8f52d22aad9b1d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\fuses.h</file>
-         <hash>f1ff44f0a5bd3bd2a35f475fb7aeabd068cec9e15ae9107035e98a261c7585f5</hash>
+         <hash>3cf65b376e7f7a646342f5fb714d68ef5872f4a3b85da0611d05803f7661d787</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\gpio.h</file>
-         <hash>f99bc3580af7d39bc5966d8cd0d8a86cd3ae211353cb92f6802edbb35f0baa3c</hash>
+         <hash>8deea0074f1c023125950d68ac3753eef6fe100839b3565d18d96f6db718e353</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\hmatrix2top.h</file>
-         <hash>d07653603afd72598843134d94c0bf8125bef7dcd12044df622e9c557c5480d9</hash>
+         <hash>0d83836ce8bf2bad6ff38c727beaf6da2a045c6e0f6be2bb404b8f851b13929a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\nvm.h</file>
-         <hash>821b0b6abb1558873e46115d4848dcdc57c048e30719127bf52aeeb05697fe55</hash>
+         <hash>dec3b7fc277c90b658fe9fd7a42a0b305b85851bf5d067a495527f0f2c321efe</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pac.h</file>
-         <hash>9d0feedf541a28dd011bed6d7bfa26bf3d0319156b4f0a0438fc9b4f90eb1d26</hash>
+         <hash>f8f30e6e47df5363f1d7678991395ffb4623018592fb33e80cab6088fbc408f2</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pche.h</file>
-         <hash>94ecce4a6886155f7fd2f2a12d099934076fbe22592751d84b4aac389b1cd2d0</hash>
+         <hash>a14ddc879b95495dc9e3e5052ee91d2ec0e424182f86c7d540dbdc15318c0346</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pfw.h</file>
-         <hash>c0a0e643e7d98f9a83bb463679ad19197f7382040c68a4cd7596d26e5a5fb449</hash>
+         <hash>1316ed90bee4948c74fef834801c8cad3b1068f5e0b06da6cdae8e2b8e90aead</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pmu.h</file>
-         <hash>31678841f03902d72851fae2c301d401be2cd6577c21f14b3f362ae02a4e8e31</hash>
+         <hash>a50ee935eaf9910f8c2d97fea935af1ae8e838dcfd560dd30a84138e20b89206</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\pps.h</file>
-         <hash>4ff7f72d55033db3059f1589bde59074fc3a2b84c9165c2255d444ac8461b696</hash>
+         <hash>1e87aa9a8e9eba2b49858e825b2b53ed602226b86fc4b94abee0693210117ca4</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\qspi.h</file>
-         <hash>9bcc9da79638b3ed17722126fbc1a2de19cd4faad06b11284512063da98f3c61</hash>
+         <hash>66291fbb8d2d77ae8358c6bf0c702b53b012dfdb4e67ad9586ff79b94e5de775</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\ramecc.h</file>
-         <hash>1b328542efb53037cfb5fd2730311f2ffa5dbeb55f39bad3828b1a5ba9bf484a</hash>
+         <hash>23799a77fe6f817dcd34886208b402b7aca6e13f50fb17aaa6509140fcf1d822</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rcon.h</file>
-         <hash>72049e94d54524d12f95fcf6601206a6e099d44115bafb50318f576c41555ce2</hash>
+         <hash>8c7539234a10e9e89205cf0f9ae1e448c4492eeb82e89d6f801796556bdf6177</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rot.h</file>
-         <hash>8633ec017bbc2713f35f1ddceb17e1a0ebb875ee154c0637869fd84053bdf9dd</hash>
+         <hash>d02d2443330524a1dc7d09c79717956780430fbe4b18ee8a9e38bc147b44fc79</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\rtc.h</file>
-         <hash>c3aabf88d9d504e1353ea9ba63d470a5101246385e3eeebab3919ee9636ea206</hash>
+         <hash>8782ea5d75595bcd097be6d71da387c170f11a9dab3193aee685b8d2d0f74974</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\sercom.h</file>
-         <hash>09ed6c5898719e53655a9ecaec422503f5579d77198f5f5d97a807dc12347f92</hash>
+         <hash>d90221b65311717660303f71d587c94b8d3926e16a0b9321dfc4bf4b55cc73bb</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\silex.h</file>
-         <hash>4f6a3453f5e0fdcfade21798697f7e8e896f8ad10326371fcc722042c80c676a</hash>
+         <hash>9d636ad44d0eccacb372697a2dcbf3796bc1d6c5881fe64a3031739f4bd480fb</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\tc.h</file>
-         <hash>47a5b650f536691d3d18c9da5ecc4563ff41ca9bad9535a23ae94ee5904f2daa</hash>
+         <hash>73ca1f11f832e71f74fa85fd258515dbc1ff04d04293a0bf840f5a43c32cb8ba</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\tcc.h</file>
-         <hash>d6e70487a585592d1683d3e6a2e0470a5615c1ca6b0743388e23497719dbbf25</hash>
+         <hash>d050ddb1df64b0a0429fe243599b6c8eca69b9906d566c5e39d6592b4e257e46</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\wdt.h</file>
-         <hash>e50e42bf216889921d429d73bc6246dc78e7a90b482daeedc39c78af1a479693</hash>
+         <hash>8e47234d7da8f6e8e7e42017be7900bf38cd89cf29d7876ca5b94a503c3448fb</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\component\zigbee.h</file>
-         <hash>7ae856c35a5ebcb5e74fd54d5ac6627bc32ed0181faf5cfddf79abb1c164b839</hash>
+         <hash>10327793ab8798c38f9b7a0cdb259fc152ee36387a6bf6e11d619c758b01a4a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ac.h</file>
-         <hash>e33a11abfa3106ee0bce95bffc908743906eb64448bf316a7228048a9021ddf9</hash>
+         <hash>9c48eb180ff63cd9d8fab90026299f5290774dfb6b68f8781a63f90ec4e14c6d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\adchs.h</file>
-         <hash>853cc6db27334a0e174410d17ed5db154ac8c56f408bfe9b3e737c4c6eb8e7b9</hash>
+         <hash>49d10a9a95b60d411d9c60013084bdc78fba6ac128d78477b8cd1682ef083f0c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\arb.h</file>
-         <hash>d0fb39c074c8892e28dc70758789b1b661f5d1196cf6a9109fd7bd783e1db3e1</hash>
+         <hash>f47dc0563f37995448af76e323347c32eed5899a6ede8d4c87797886485f80b4</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ble.h</file>
-         <hash>5e9043359b6bad87f023a754da03f3ac1bf7a935a936c2773c5595096edfe60c</hash>
+         <hash>8c081c17fc05c34f44d007a4d5021794aa585242bc7946a6e1cc567f347f0796</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\btzbsys.h</file>
-         <hash>c0176d1ba55b521d18592767b5d66608054733936ac3127321731ace3ca2349c</hash>
+         <hash>b19218395e1f059280e894c9d7938b3b585d0d1f18bc6f481cb075ad6f2469f7</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ccl.h</file>
-         <hash>233fa2afe362119f5ffbe4b24d565cbd3e549a36fa7595134e4b9bf2c0d8a847</hash>
+         <hash>23bf40e35d62cb5019cb75ce531b27f73adb7ec66901a13772cfab4f4b37b39f</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cfg.h</file>
-         <hash>0aed3800459bb0975fe24d891b86cf2d682ac87768ef3cd8de18daa3d5d327b2</hash>
+         <hash>b38be9392d3de13931310ab13ae271fa94f0401099668a0cab5670fac49fa224</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cmcc.h</file>
-         <hash>b4ba114991b51bc3ccbe0a03a9353842e9b00c6d626bb4dc508016f6de540adf</hash>
+         <hash>f7a55ce0707f5b1e50b2db648b45cc449413a422eae1664b658327da97989e3c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cru.h</file>
-         <hash>812731b46dea17e5cbe9be4ac4148b3646a75954e9699efe5644b6d188f91a99</hash>
+         <hash>0ae397e436f228e1d6f873f010c8c5ac95f507877b2603cab9b00e2dd02858d7</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\cvd.h</file>
-         <hash>0de71f03242b7061b1f9b093150a4d352679b61dfcc5b852a44b1bba864d28b1</hash>
+         <hash>c2f5f6c7d86900f8ad7d6adb2ed093602739d8da9ba7e01cbd9bb8b801467cdc</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dac_ctrl.h</file>
-         <hash>b2ff9b46e0fe031960531b8d8c4aa0084389597a2b6094f39de3a54f71e544af</hash>
+         <hash>ccd2845d3d5f3000649d05bc2080a2449746f3918c67c360c998aa2777b215da</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dgi_spi.h</file>
-         <hash>0ed28d8e0602a5d2d95a5453f9bff776de81241040a8fdec59e653f7040a30fc</hash>
+         <hash>37cc7cbaed1d4f619a987592b86d2ea6dbc911adbf66400d8cae797a10fbd230</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dmac.h</file>
-         <hash>df8b00089b186407f416d01db63c75c8d7f35317601e813152d600f877164151</hash>
+         <hash>ae4a4cb32931b3b92083ab5374174d68524be229d5c4cf67b1cd7bcc8f15cb1a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dmt.h</file>
-         <hash>57594777e311db1f45b7383c16626deef26c23c7095338d533af5acaa538acff</hash>
+         <hash>08db46e060cdd7fc025b4548fdeef38f90b0e0dfb05e7e39c761e82472a62c64</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dscon.h</file>
-         <hash>875e788e0ffae8595d616462251367b936b62dd9ba414c4c4265256bc5ad873e</hash>
+         <hash>b91508c90563217789f43a49f4e2eb2ece3181548e6adc49908cbf09b4201ef0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\dsu.h</file>
-         <hash>f14b87810718e904b7fef9106000f00f2cca0e61a60cdd62c0ae698c09593cfb</hash>
+         <hash>d4f5f23935100601d16af2d0ab91d96b2d9707b375a4898074dd690bc3aabada</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\WBZ351_DFP\instance\efuse.h</file>
+         <hash>35935c7d17d6c587af90a0bae0aef9c34d631fd7be5eca8abbac000ccde7b1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\eic.h</file>
-         <hash>a4b3a95a4935a90e63c3b04cd7b353ac45ba23db5e7c0aac9454c4282e28384c</hash>
+         <hash>ae4c62925370e27545d780dd372c0609d021e8cb11f8530236c3ad00ffdb0284</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\evsys.h</file>
-         <hash>2bdb64d33e1b4134ba1cfd27d6b3d81017bfe0d797937981b140450b38533d6f</hash>
+         <hash>25b40f637ac3fcc697ca85bc90bbd450c01a081c5161be5ca6befc8cde5c2b5e</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\freqm.h</file>
-         <hash>b4ca21d24096d48737965764f8376f22446c2584c428f7879824f98a3cdee9e6</hash>
+         <hash>70556425b62999a6836a10863739dfd625af82b954491e27ebb1a9da1613eb03</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\fuses.h</file>
-         <hash>628798c042db528a2bddee5244084b8fc148a44ef3cabc88e6ca100d86a14de6</hash>
+         <hash>90fe6d4f7b212859021ad966a916ca8c35830370b038be8228c36a0c3de88b48</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\gpioa.h</file>
-         <hash>087f28f15d242964ff91d74c9634f2951d8e389fede643f2fa3340e3fd3c62f2</hash>
+         <hash>6272f8bbd13fa71c5c34778dce86c95eb95a8530a6db53398e09704cfb910ee5</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\gpiob.h</file>
-         <hash>a7c274b0299e4ad5d9eead5477033ce86c7d8e14c4d2e242b6a465911b0b3496</hash>
+         <hash>74375622c7397f87c5e61876d9aa1508598b6927dbb6171f888386b0444cf6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\hmatrix2top.h</file>
-         <hash>564598c57f018a3f293b04edcd54b7feb40ebad01e307967c7a5ef9e10c98dbb</hash>
+         <hash>a78650a951724a10502529304d52e27268e2c01a306ed139dd1efd1749742ac2</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\nvm.h</file>
-         <hash>d32d3a2b6c5544a46e6f37b469f34fdd19bd76101b7b13b40694d43e46c0c82a</hash>
+         <hash>c64a3fb4715903e687cc72078587c6c3a4a03804ab64b1597eac7e44ac48e25d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pac.h</file>
-         <hash>7b92ca975eb7a9a9f66030be2ae250befac30c6dbc54db1b272306d27e85caad</hash>
+         <hash>0110fa65f05db938b9ee32192d01ff4fe649447c45d2ca23c50bb3ca04c39e50</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pche.h</file>
-         <hash>e9c05f752da1f827116d59377b933157d8730716b44c9686de9ecbfcbf4fd687</hash>
+         <hash>95f5e4eaa86466a59024d7d01e0e5d30c24a40256652f1c9312c5d4bdd8ec098</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pfw.h</file>
-         <hash>1c9d6d0d2585b2209c3d11caa5dc36d18b665d033f14914c5c8f855d73186d38</hash>
+         <hash>2f29aa56321712cc320096caab7e3bd418ee879f9d1004a639320852e8d6393d</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pmu.h</file>
-         <hash>7f88692ca27f1ec1e1489f1271c9ed79ffabd5cba995e40e125a256a2cd16b7a</hash>
+         <hash>280e3eb4e24d94c6775db4870d9c5e51d47599ed03635215d1586f657b1f8df8</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\pps.h</file>
-         <hash>4146980e11fa92806aaf877c177223d6229bb3fe9c44dfac03206eb2d4067ebc</hash>
+         <hash>6eeaf444c7abf774b85c27a6aef1bf76a3144d2fec21b6dd10129404fb554304</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\qspi.h</file>
-         <hash>187397bc4e4a7553a62bc06d3eb0738c22ca971d332d9725c14a8f0d58a66008</hash>
+         <hash>a3af3949dd624d45772b98e05baa290a374221b3e00dd427e4ede5663eb3f3b5</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\ramecc.h</file>
-         <hash>fab7ece07450f8c1f9cc9c111ed1623706ab4cb66ef8ea24ad3df51f524c105f</hash>
+         <hash>dd226fa34514434b9a00c4404de46a834bdd3101c46b8da5fa78f382beb07849</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rcon.h</file>
-         <hash>5a95d054d0d18644738757820f8d9669eeed86ec461ae6ad9e4e524dd54d39e5</hash>
+         <hash>54023392bed4a6fe9ec645c5e373102a0d0c0cc10e7509ae7c285302f4a2f15c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rot.h</file>
-         <hash>2f765e25c6ce612128a6b69ab53ad45a4cafc8fa60ffb2781a473d8378518ce0</hash>
+         <hash>e46808ec3e938a43fe2208009cf6d4cc9e65cfb15fb73d6fd4fc70d3cf9e27c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\rtc.h</file>
-         <hash>e6a3c60264ef302a95d96034f1f800536c5d36d21a86427dffb3b00c0776bad9</hash>
+         <hash>c3a09e02c7ce45322b186f09ed569ef62da6a632f781da9675c12422234a925e</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom0.h</file>
-         <hash>a0b00f4a4983ecbaaebe867a6d8ff562e9d80860a9e9147b4c2e3187fa3ac9d1</hash>
+         <hash>f17bf6086e3572793564190c56f05fd471af1823e1e18c8a035f982365b61c62</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom1.h</file>
-         <hash>a7897dd745e7d4eaa8820d4419c67ce7ed2f92003e7557bf4464a6e41b72a85e</hash>
+         <hash>499017526292e2dab131bbbd6ba6d2af1ee94e2668c263bb119d3c8e38226257</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\sercom2.h</file>
-         <hash>8253c942a89d6bd1fdc213acd583237a1ded9572bae9992ad89632012c45d897</hash>
+         <hash>eba26758be403f011172084a0f68cb11caf96800004fc3d13f493edee7ebe895</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\silex.h</file>
-         <hash>546aaf7eee421fdedba6d7a5d4b07bd5a9e3172eb34f656864eccb88f7fb76ac</hash>
+         <hash>f25054e5f905a36f6ba7b4462ee627ef2fbb8ce7164ce06f655ee88202788978</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc0.h</file>
-         <hash>4070509914ecf0afa6cec7855fb6e3720f36fdbfa69de426bd51fe7fa6be1219</hash>
+         <hash>f40343dc08e65ec3135b06ab509efea48f3ce8dc5b72b56ad6c5fc4168a3d238</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc1.h</file>
-         <hash>39c2e79bbb38c526b702f2256fa1271785843636ce406ea5711ac2cf86ea6daa</hash>
+         <hash>c14d2e41794fc25ae22481a3bed1089676920a891c326cdbe536a9e9436966d3</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc2.h</file>
-         <hash>b6fa6ad0ab6c14d8a44a51190e7ce96e47d321be20afccc3a78dace6dcbe2383</hash>
+         <hash>e903fac94cbb97fb51adafd3355e66cdafc9b09f731e468c686df7c7cd621702</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc3.h</file>
-         <hash>9137f92ed51f5f15d3237ff0ded9f5b977a38abc65a61f6c50de152b22076f24</hash>
+         <hash>26f4a51d10909aad742b781336a2efa93d0ad47a7bec9c921147a2f566e9f12c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc4.h</file>
-         <hash>83f88531041ce965b3e307c3e075540aea7c3aeabe77371de5a8a9bc9a0e7a25</hash>
+         <hash>119e7d2f9afbd370d88b6a99a1943fbf5e6e76d969bfc5db04c22c501859a9bc</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc5.h</file>
-         <hash>43ee3d5a50be116bb4f6ee9718897483fe02c1846be853098bba2b33c468d4db</hash>
+         <hash>64eedf0e07776f84baf9791f93dc3ab65c616ab8464c7a70b49be149d308a5f8</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc6.h</file>
-         <hash>5faa0250aa21d61c1dc324766849e66164b29bc2ed4ce71711a22c16c73c72eb</hash>
+         <hash>5e2703d5cfb1d70284967956f9a4c2450bcc96cb89ece78063ae9243fab8cb7a</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tc7.h</file>
-         <hash>5411f763efed04c4134be1f3a669d2ffbd4e5814019a7f3f79426435ad79b952</hash>
+         <hash>77fbf2bca88e3348373dbba2a7ced3be5f7d0f2aa21209cb8455c6d32fbc1ded</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc0.h</file>
-         <hash>76fd0e5dc7797e3dabb4f994c232e960b51a21e4c448f8a495e1830ce2c619f9</hash>
+         <hash>fa7442e3a0360f499a00adadbb88700859c9f670949a8104197c4edc3f57495c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc1.h</file>
-         <hash>49af7dd3a5e96c5f82349edb1c6d5431b7c45a13de89c593f68e5f677ae5f419</hash>
+         <hash>829f38d49cc74a1d16d91e947427e3a67fc34e5dd59c7774a08ba7b5835d7a0c</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\tcc2.h</file>
-         <hash>a43d39389010a50b2ab696f9abb80693527e2de6cb1599338eddc84116e2bbfb</hash>
+         <hash>73beb5e13b77b211488619cdd8605886ac8a2c7a6721f73efe7efacd4cc721e9</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\wdt.h</file>
-         <hash>27dbf928694757bffc38c80848c92ebf3da4e00f4316178859be3acf12f685d0</hash>
+         <hash>2a2e6fda5a52b5027f67e6e8384e1cb8b35b5deabcf1c38ebc709df7c7a178cc</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\instance\zigbee.h</file>
-         <hash>6bbedf06fa4d574cff04f364d4da74e36f2782f4a618bcf3eadb99da08de3245</hash>
+         <hash>5e0ea6c8485c520dae358a3990b82206998a8d4a938938a75512f9fca03d0023</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\pio\wbz351.h</file>
-         <hash>7c2eba259d0b9042c3fc27e9119d69591492011857103545f7efe68b09bf159a</hash>
+         <hash>ea713e369760a073a31f34f6e7cef7e1f6b8bdd552e413db27b4bdfdd29217f6</hash>
       </entry>
       <entry>
          <file>..\src\packs\WBZ351_DFP\wbz351.h</file>
-         <hash>250f4c71ccddddcca8eba725abfddf3134c23d204a2599c24f29c0a646697623</hash>
+         <hash>d9d33748cc3f6b26bc39ce605c10e75ebbed5ae55287b30f6600dc8dc32cb6e8</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

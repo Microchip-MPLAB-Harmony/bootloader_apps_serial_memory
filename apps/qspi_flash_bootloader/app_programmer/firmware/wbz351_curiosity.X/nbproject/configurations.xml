@@ -153,6 +153,7 @@
             <itemPath>../src/packs/WBZ351_DFP/component/gpio.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/tcc.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/component/hmatrix2top.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/component/efuse.h</itemPath>
           </logicalFolder>
           <logicalFolder name="instance" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/WBZ351_DFP/instance/ac.h</itemPath>
@@ -206,6 +207,7 @@
             <itemPath>../src/packs/WBZ351_DFP/instance/tc5.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/tcc1.h</itemPath>
             <itemPath>../src/packs/WBZ351_DFP/instance/hmatrix2top.h</itemPath>
+            <itemPath>../src/packs/WBZ351_DFP/instance/efuse.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/WBZ351_DFP/pio/wbz351.h</itemPath>
@@ -325,13 +327,13 @@
         <targetDevice>WBZ351</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.2.183"/>
+        <pack name="PIC32CX-BZ3_DFP" vendor="Microchip" version="1.3.216"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
@@ -364,6 +366,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -442,6 +445,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -488,6 +492,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -516,6 +521,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="combine-sourcefiles" value="false"/>
         <property key="common-include-directories" value=""/>
         <property key="common-macros" value=""/>

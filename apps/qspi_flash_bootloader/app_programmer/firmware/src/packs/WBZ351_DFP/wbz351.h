@@ -1,35 +1,34 @@
 /*
  * Header file for WBZ351
  *
- * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * SPDX-License-Identifier: Apache-2.0
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* File generated from device description version 2023-04-11T16:47:17Z */
+/* File generated from device description file (ATDF) version 2025-02-18T06:25:25Z */
 #ifndef _WBZ351_H_
 #define _WBZ351_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "2.1.0"
+#define HEADER_FORMAT_VERSION "2.1.1"
 
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (1)
-#define HEADER_FORMAT_VERSION_PATCH (0)
+#define HEADER_FORMAT_VERSION_PATCH (1)
 
 /* WBZ351 definitions
   This file defines all structures and symbols for WBZ351:
@@ -67,7 +66,7 @@
 #endif /* SKIP_INTEGER_LITERALS */
 
 /* ************************************************************************** */
-/* CMSIS DEFINITIONS FOR WBZ351                                             */
+/*                        CMSIS DEFINITIONS FOR WBZ351                        */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Interrupt Number Definition */
@@ -85,7 +84,7 @@ typedef enum IRQn
   PendSV_IRQn               =  -2, /* -2  Pendable request for system service */
   SysTick_IRQn              =  -1, /* -1  System Tick Timer                   */
 
-/******  WBZ351 specific Interrupt Numbers ***********************************/
+/* ******************* WBZ351 specific Interrupt Numbers ******************** */
   RTC_IRQn                  =   0, /* 0   Real-Time Counter (RTC)             */
   EIC_IRQn                  =   1, /* 1   External Interrupt Controller (EIC) */
   FREQM_IRQn                =   2, /* 2   Frequency Meter (FREQM)             */
@@ -266,13 +265,13 @@ void BT_LC_Handler                 ( void );
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* Configuration of the CORTEX-M4 Processor and Core Peripherals */
-#define __CM4_REV                     0x0001
-#define __DEBUG_LVL                        3
-#define __FPU_PRESENT                      1
-#define __MPU_PRESENT                      1
-#define __NVIC_PRIO_BITS                   3
-#define __TRACE_LVL                        2
-#define __VTOR_PRESENT                     1
+#define __CM4_REV                     0x0001 /*                                                                           */
+#define __DEBUG_LVL                        3 /*                                                                           */
+#define __FPU_PRESENT                      1 /*                                                                           */
+#define __MPU_PRESENT                      1 /*                                                                           */
+#define __NVIC_PRIO_BITS                   3 /*                                                                           */
+#define __TRACE_LVL                        2 /*                                                                           */
+#define __VTOR_PRESENT                     1 /*                                                                           */
 
 /* CMSIS includes */
 #include "core_cm4.h"
@@ -281,7 +280,7 @@ void BT_LC_Handler                 ( void );
 #endif /* USE_CMSIS_INIT */
 
 /* ************************************************************************** */
-/*   SOFTWARE PERIPHERAL API DEFINITION FOR WBZ351                            */
+/*               SOFTWARE PERIPHERAL API DEFINITIONS FOR WBZ351               */
 /* ************************************************************************** */
 #include "component/ac.h"
 #include "component/adchs.h"
@@ -299,6 +298,7 @@ void BT_LC_Handler                 ( void );
 #include "component/dmt.h"
 #include "component/dscon.h"
 #include "component/dsu.h"
+#include "component/efuse.h"
 #include "component/eic.h"
 #include "component/evsys.h"
 #include "component/freqm.h"
@@ -324,7 +324,7 @@ void BT_LC_Handler                 ( void );
 #include "component/zigbee.h"
 
 /* ************************************************************************** */
-/*   INSTANCE DEFINITIONS FOR WBZ351 */
+/*                      INSTANCE DEFINITIONS FOR WBZ351                       */
 /* ************************************************************************** */
 #include "instance/ac.h"
 #include "instance/adchs.h"
@@ -342,6 +342,7 @@ void BT_LC_Handler                 ( void );
 #include "instance/dmt.h"
 #include "instance/dscon.h"
 #include "instance/dsu.h"
+#include "instance/efuse.h"
 #include "instance/eic.h"
 #include "instance/evsys.h"
 #include "instance/freqm.h"
@@ -379,7 +380,7 @@ void BT_LC_Handler                 ( void );
 #include "instance/zigbee.h"
 
 /* ************************************************************************** */
-/*  PERIPHERAL ID DEFINITIONS FOR WBZ351                                      */
+/*                    PERIPHERAL ID DEFINITIONS FOR WBZ351                    */
 /* ************************************************************************** */
 #define ID_PAC           (  0) /* Peripheral Access Controller (PAC) */
 #define ID_FREQM         (  1) /* Frequency Meter (FREQM) */
@@ -410,7 +411,7 @@ void BT_LC_Handler                 ( void );
 #define ID_PERIPH_MAX    ( 73) /* Number of peripheral IDs */
 
 /* ************************************************************************** */
-/*   REGISTER STRUCTURE ADDRESS DEFINITIONS FOR WBZ351                        */
+/*             REGISTER STRUCTURE ADDRESS DEFINITIONS FOR WBZ351              */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define AC_REGS                          ((ac_registers_t*)0x42001c00)                 /* AC Registers Address         */
@@ -430,6 +431,7 @@ void BT_LC_Handler                 ( void );
 #define DSCON_REGS                       ((dscon_registers_t*)0x42011000)              /* DSCON Registers Address      */
 #define DSU_REGS                         ((dsu_registers_t*)0x41000000)                /* DSU Registers Address        */
 #define EIC_REGS                         ((eic_registers_t*)0x40000800)                /* EIC Registers Address        */
+#define EFUSE_REGS                       ((efuse_registers_t*)0x00000000)              /* EFUSE Registers Address      */
 #define EVSYS_REGS                       ((evsys_registers_t*)0x41006000)              /* EVSYS Registers Address      */
 #define FREQM_REGS                       ((freqm_registers_t*)0x40000400)              /* FREQM Registers Address      */
 #define FUSES_DEVICECFG_REGS             ((fuses_devicecfg_registers_t*)0x00805e80)    /* FUSES Registers Address      */
@@ -467,7 +469,7 @@ void BT_LC_Handler                 ( void );
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ************************************************************************** */
-/*   BASE ADDRESS DEFINITIONS FOR WBZ351                                      */
+/*                    BASE ADDRESS DEFINITIONS FOR WBZ351                     */
 /* ************************************************************************** */
 #define AC_BASE_ADDRESS                  _UINT32_(0x42001c00)                          /* AC Base Address */
 #define ADCHS_BASE_ADDRESS               _UINT32_(0x44001400)                          /* ADCHS Base Address */
@@ -486,6 +488,7 @@ void BT_LC_Handler                 ( void );
 #define DSCON_BASE_ADDRESS               _UINT32_(0x42011000)                          /* DSCON Base Address */
 #define DSU_BASE_ADDRESS                 _UINT32_(0x41000000)                          /* DSU Base Address */
 #define EIC_BASE_ADDRESS                 _UINT32_(0x40000800)                          /* EIC Base Address */
+#define EFUSE_BASE_ADDRESS               _UINT32_(0x00000000)                          /* EFUSE Base Address */
 #define EVSYS_BASE_ADDRESS               _UINT32_(0x41006000)                          /* EVSYS Base Address */
 #define FREQM_BASE_ADDRESS               _UINT32_(0x40000400)                          /* FREQM Base Address */
 #define FUSES_DEVICECFG_BASE_ADDRESS     _UINT32_(0x00805e80)                          /* FUSES Base Address */
@@ -522,12 +525,12 @@ void BT_LC_Handler                 ( void );
 #define ZIGBEE_BASE_ADDRESS              _UINT32_(0x41010000)                          /* ZIGBEE Base Address */
 
 /* ************************************************************************** */
-/*   PIO DEFINITIONS FOR WBZ351                                               */
+/*                         PIO DEFINITIONS FOR WBZ351                         */
 /* ************************************************************************** */
 #include "pio/wbz351.h"
 
 /* ************************************************************************** */
-/*   MEMORY MAPPING DEFINITIONS FOR WBZ351                                    */
+/*                   MEMORY MAPPING DEFINITIONS FOR WBZ351                    */
 /* ************************************************************************** */
 #define ROM_SECURE_BOOT_ROM_SIZE       _UINT32_(0x00010000)    /*   64kB Memory segment type: rom */
 #define ROM_SECURE_BOOT_PATCH_SIZE     _UINT32_(0x00000800)    /*    2kB Memory segment type: rom */
@@ -574,18 +577,19 @@ void BT_LC_Handler                 ( void );
 #define PBPIC_BRIDGE_ADDR              _UINT32_(0x44000000)    /* PBPIC_BRIDGE base address (type: io)*/
 #define MCROM_ROM_ADDR                 _UINT32_(0x45000000)    /* MCROM_ROM base address (type: rom)*/
 #define SYSTEM_CM4F_SYSTEM_REGISTERS_ADDR _UINT32_(0xe0000000)    /* SYSTEM_CM4F_SYSTEM_REGISTERS base address (type: io)*/
+#define EFUSE_ADDR                     _UINT32_(0x00000000)    /* EFUSE base address (type: fuses)*/
 
 /* ************************************************************************** */
-/*   DEVICE SIGNATURES FOR WBZ351                                             */
+/*                        DEVICE SIGNATURES FOR WBZ351                        */
 /* ************************************************************************** */
 #define CHIP_DSU_DID                   _UINT32_(0X00009E03)
 
 /* ************************************************************************** */
-/*   ELECTRICAL DEFINITIONS FOR WBZ351                                        */
+/*                     ELECTRICAL DEFINITIONS FOR WBZ351                      */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
-/* Event Generator IDs for Z351 */
+/*                        Event Generator IDs for Z351                        */
 /* ************************************************************************** */
 #define EVENT_ID_GEN_RTC_PER_0                            1 /* ID for RTC event generator PER_0 */
 #define EVENT_ID_GEN_RTC_PER_1                            2 /* ID for RTC event generator PER_1 */
@@ -669,7 +673,7 @@ void BT_LC_Handler                 ( void );
 #define EVENT_ID_GEN_ZIGBEE_RX_TS_ACTIVE                 80 /* ID for ZIGBEE event generator RX_TS_ACTIVE */
 
 /* ************************************************************************** */
-/*  Event User IDs for Z351 */
+/*                          Event User IDs for Z351                           */
 /* ************************************************************************** */
 #define EVENT_ID_USER_RTC_TAMPER                          0 /* ID for RTC event user TAMPER */
 #define EVENT_ID_USER_DMAC_CH_0                           1 /* ID for DMAC event user CH_0 */
