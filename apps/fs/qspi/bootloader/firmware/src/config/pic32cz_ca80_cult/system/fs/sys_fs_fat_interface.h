@@ -46,7 +46,7 @@ int FATFS_read (uintptr_t handle, void* buff, uint32_t btr, uint32_t* br);
 
 int FATFS_close (uintptr_t handle);
 
-int FATFS_lseek (uintptr_t handle, uint32_t ofs);
+int FATFS_lseek (uintptr_t handle, FSIZE_t ofs);
 
 int FATFS_stat (const char* path, uintptr_t fileInfo);
 
