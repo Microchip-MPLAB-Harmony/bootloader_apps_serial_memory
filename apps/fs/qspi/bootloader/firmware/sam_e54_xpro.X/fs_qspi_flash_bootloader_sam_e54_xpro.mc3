@@ -3438,7 +3438,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>6848cdc1e0e629ac4c44c28358ed40ac71651f502b941a1a9ef4468aad652091</hash>
+         <hash>2906f8255a58097a83011b023f09dfa602c04c2d154c39a9e35fcb48823940ac</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\fat_fs\file_system\ffconf.h</file>
@@ -3466,7 +3466,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\src\sys_fs_local.h</file>
-         <hash>ef6b5ddf2d37deece42f4f38d4c80cff0c5b4c67b150bfa11a78b78aec79baff</hash>
+         <hash>7e7721693694ecc133d6772321cad1337c0a2209b7457b9351dda3a01cb129b1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro\system\fs\src\sys_fs_media_manager.c</file>
@@ -3970,7 +3970,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
