@@ -360,9 +360,9 @@ void SYS_Initialize ( void* data )
 
     SERCOM3_SPI_Initialize();
 
-    EVSYS_Initialize();
-
     SERCOM0_USART_Initialize();
+
+    EVSYS_Initialize();
 
 	BSP_Initialize();
     RTC_Initialize();

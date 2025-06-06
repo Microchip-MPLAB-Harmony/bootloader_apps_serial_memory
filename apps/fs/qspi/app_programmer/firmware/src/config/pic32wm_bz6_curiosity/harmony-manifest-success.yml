@@ -4,21 +4,21 @@
 
 
 project: app_programmer
-creation_date: 2025-04-23T14:05:58.793+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-06-09T14:29:15.871+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.2
 mcc_core_version: v5.7.1
 mplabx_version: v6.25        # if MPLAB X plugin only
-harmony_version: v1.5.5
+harmony_version: v1.5.3
 compiler: XC32 4.60
 
 modules:
-    - {name: "csp", version: "v3.22.2"}
-    - {name: "core", version: "v3.15.1"}
+    - {name: "csp", version: "v3.22.4-41-gae7d08d"}
+    - {name: "core", version: "v3.15.2"}
     - {name: "filex", version: "v6.4.0_rel"}
-    - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "littlefs", version: "v2.10.1"}
+    - {name: "CMSIS_5", version: "5.8.0"}
+    - {name: "littlefs", version: "v2.11.0"}
     - {name: "bsp", version: "v3.22.0"}
 
 packs:

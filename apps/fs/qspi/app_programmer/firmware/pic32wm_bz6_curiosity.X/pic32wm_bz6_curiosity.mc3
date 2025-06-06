@@ -75,7 +75,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.5"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -18869,7 +18869,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\definitions.h</file>
-         <hash>1de3faa958bc68332471614459f72a6cc2a2049b0269f21da2c7035127459fb5</hash>
+         <hash>2a15a16f37ab2b7316a727b49d4dcef17a414a208c27731d050cd5e50ee091cb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\device.h</file>
@@ -18969,11 +18969,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\initialization.c</file>
-         <hash>ed4b3403444026787e7b2983b49c636dccd745f4889be50a2c7767aeabe9f872</hash>
+         <hash>dbbd7235a7dbb5e9d1700a6760b34d1ee346d7f9c0b0f8f2160eb30d84b17bc4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\interrupts.c</file>
-         <hash>29b1d4b4f75543895c00d1cd752d7ec2b39a01288277c4663302986e9df91826</hash>
+         <hash>39eee5f0cf514415ee33804f5eda69e13ff8475d9319771d0f37200e2da49275</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\interrupts.h</file>
@@ -18997,7 +18997,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>370a0811309c36beb51dba861e2197fb84b7c7b4c7c201485f6539dcbcdf0ee9</hash>
+         <hash>f4df6d213a3f12e438aec62e2998f5f8bab2ff277ae37527ca3741886866a6c4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\peripheral\clk\plib_clk.h</file>
@@ -19269,7 +19269,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
