@@ -1,4 +1,4 @@
-<config configName="sam_d21_xpro" projectName="i2c_eeprom_bootloader_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="sam_d21_xpro" projectName="i2c_eeprom_bootloader_sam_d21_xpro" configVersion="1.1" device="ATSAMD21J18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -47,7 +47,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -2581,7 +2581,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\bootloader\bootloader_common.h</file>
-         <hash>5488391ff65054efabcdd24094c915a558ad86d1289fcb3472fddda0013d4b62</hash>
+         <hash>407443fb98e1f257ee8c19b4d1ddb4393989710c88dfefebda192a60cb136fdf</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\bootloader\bootloader_interrupt.h</file>
@@ -2609,11 +2609,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\definitions.h</file>
-         <hash>260ade9b1302c300ac5c2af2fef757153fcd28ba4188685987b55fa456d9a1e6</hash>
+         <hash>a7a0e3e58ba47d3b7cbcb1cd193ccaed144402e9324395c669f3e9ab6aae17f3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\device.h</file>
-         <hash>3c978311bac2e13b73a420a163facffbb69f51584572acc349c1c3d167c23409</hash>
+         <hash>b47b11ceb9f360e667a14c68f72033c9a8c1dcb7abb5fb77d0b2cb4abe939249</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\device_cache.h</file>
@@ -2649,19 +2649,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\exceptions.c</file>
-         <hash>3d788ce1bd25caaaf6b533ec5b06e4b1e753044c1a217dd5cdf8629628ae85a9</hash>
+         <hash>b0b65c30aa1f7a01ef7be6c1628c331a5ca3eae7dc3bd76ebe647703b76f432d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\initialization.c</file>
-         <hash>e19cd570ff6aa0c01ca23471237006e1f7cac95c2ee22df729800e539bcc7e3c</hash>
+         <hash>465f0925002e41be76fc1149f9ca98c7a75abcf554b2aab951f8a2bc578e0630</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\interrupts.c</file>
-         <hash>c58f046a33a1db4236e278de405ca2e578283890b88f37fb22519e5c6b6c303f</hash>
+         <hash>05adc117010c7e1c2c6b010ec2f9a5cbf45d358b86cb2d4abe6a5be35e2d580f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\interrupts.h</file>
-         <hash>fc156a1e876e367226e3d67101ba62bfd15f0d597fb817cb948324d07646c858</hash>
+         <hash>c77c248fe0cf981d1d68072f91689ad6f92adddce2ddb870986750593c793b37</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\libc_syscalls.c</file>
@@ -2669,7 +2669,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\osal\osal.h</file>
-         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
+         <hash>1cfe3b61d9693b2369922041eef33fe16b3c1ccd9c85d4ded808b805f90a869c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\osal\osal_definitions.h</file>
@@ -2677,7 +2677,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\osal\osal_impl_basic.h</file>
-         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
+         <hash>65e68edbc0320d0407399f65e6d06ff7e6d3d7697231cf1fe0a1fdf1d65f0463</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\clock\plib_clock.c</file>
@@ -2705,11 +2705,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>04c393c1a7e223da256e1ec1333676f59db461caf6e4a24503a97d9c6076ca10</hash>
+         <hash>8b77738d5a4cce1c18d1adfe4e8cf97b066fe5692ea922d7ee91eedf41d67877</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
@@ -2717,7 +2717,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>a10c9385ab1460929c8d9efdbd3ee8e491051546a6e08c5dbf7767300235ebcd</hash>
+         <hash>5ed5f5c5b0892544d57303872afa61c7a560577850ce23de1af5f8113193f2dd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\pac\plib_pac.c</file>
@@ -2729,7 +2729,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\port\plib_port.c</file>
-         <hash>c5bf147de12b778e48080cef0c75fe861dd2d4c53fdb9c6efaa85d48474d1310</hash>
+         <hash>562dacd1930e13e76745187550b227e8a89b56b64c0507f83182a9c010d2b71a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\port\plib_port.h</file>
@@ -2737,11 +2737,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\sercom\i2c_master\plib_sercom2_i2c_master.c</file>
-         <hash>4f94e4deeb189b693dd1322b100b56ae63b0cd668e98f01c831c298652e80fa6</hash>
+         <hash>a194be198a940ee8b213ceb3a0d0a07f884b3bb734224fd6b41fde73b3466160</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\sercom\i2c_master\plib_sercom2_i2c_master.h</file>
-         <hash>3cb19d0a127d35f4200481e1b1e15356f5d46c98174a15297e8ffef2665d3fb6</hash>
+         <hash>5c38db7cf8afbf7ea812c743ac5469b709ce601038509cf3298c500011585f91</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
@@ -2765,7 +2765,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro\system\int\src\sys_int.c</file>
