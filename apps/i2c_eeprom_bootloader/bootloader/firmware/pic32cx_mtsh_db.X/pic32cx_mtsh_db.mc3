@@ -43,7 +43,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.4"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -12071,11 +12071,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\definitions.h</file>
-         <hash>57af5efc291ed3f6fca4ab4c6bc0303d94b01361e851457c4e338c2ee0a1340c</hash>
+         <hash>666afb79988d24fd7ece47890e85fbd173d7e39d42c7af12bda1f7313c106641</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\device.h</file>
-         <hash>f1e98c5f5f67d72e48008397572f18fe4f3ba3f2d50ae075b616f8b1cf3b9ccf</hash>
+         <hash>31f7ac2b10db22dd9085d8e61fa72a36d0300c3c8e09df0d2c23c3d3636c8b40</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\device_cache.h</file>
@@ -12115,15 +12115,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\initialization.c</file>
-         <hash>0adc988b7c0e2bc71910c7876e33aca429857639965c6c831c653057bff7dfe0</hash>
+         <hash>e7b8074cdd040f7b5147ae7922dac1a9b77b44efc395b2e4aca5e76e1de16ad0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\interrupts.c</file>
-         <hash>6e6e146f247446e7014f7e91d25c1dc780f0d089d06ac864f6968c360521b6ee</hash>
+         <hash>d869b87efc01325b0c7c2f804e9f8ca0345f0b6d596f2b62ad58ffd21220074a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\interrupts.h</file>
-         <hash>6a32a9aae4d40dc88261ee2d2fb6683df81d497620a5b0c70f1c19a50f9076f0</hash>
+         <hash>d4276a86c6d43f72bf837c320413be769ad19552d295d50d4569ddc4e4bffc31</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\libc_syscalls.c</file>
@@ -12167,7 +12167,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\peripheral\flexcom\twi\master\plib_flexcom7_twi_master.c</file>
-         <hash>31b5ad93fdb616ec2b7077d544b40e8b30a062b93558285f0bd7de6b35c35ceb</hash>
+         <hash>e859124bda8bf843693bcb94b82f8cb4a4266d4baa072f8bd45f8ec168065a0f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\peripheral\flexcom\twi\master\plib_flexcom7_twi_master.h</file>
@@ -12219,7 +12219,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\peripheral\sefc\plib_sefc_common.c</file>
-         <hash>766b9eb13c07428c2dafc6c41dcd600af07d25838a59c9ff607757de4d6b7c1a</hash>
+         <hash>0c27fb9a65f685636ea4c67725983303f364c576d7608fe4b36b4294e0e0a968</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cx_mtsh_db\peripheral\sefc\plib_sefc_common.h</file>
@@ -12339,7 +12339,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
