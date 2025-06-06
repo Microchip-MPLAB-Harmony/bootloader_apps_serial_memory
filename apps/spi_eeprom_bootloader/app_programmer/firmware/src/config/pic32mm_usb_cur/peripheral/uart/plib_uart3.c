@@ -48,25 +48,25 @@
 // *****************************************************************************
 // *****************************************************************************
 
-volatile static UART_RING_BUFFER_OBJECT uart3Obj;
+static volatile UART_RING_BUFFER_OBJECT uart3Obj;
 
 #define UART3_READ_BUFFER_SIZE      (128U)
 #define UART3_READ_BUFFER_SIZE_9BIT (128U >> 1)
 #define UART3_RX_INT_DISABLE()      IEC1CLR = _IEC1_U3RXIE_MASK;
 #define UART3_RX_INT_ENABLE()       IEC1SET = _IEC1_U3RXIE_MASK;
 
-volatile static uint8_t UART3_ReadBuffer[UART3_READ_BUFFER_SIZE];
+static volatile uint8_t UART3_ReadBuffer[UART3_READ_BUFFER_SIZE];
 
 #define UART3_WRITE_BUFFER_SIZE      (128U)
 #define UART3_WRITE_BUFFER_SIZE_9BIT (128U >> 1)
 #define UART3_TX_INT_DISABLE()       IEC1CLR = _IEC1_U3TXIE_MASK;
 #define UART3_TX_INT_ENABLE()        IEC1SET = _IEC1_U3TXIE_MASK;
 
-volatile static uint8_t UART3_WriteBuffer[UART3_WRITE_BUFFER_SIZE];
+static volatile uint8_t UART3_WriteBuffer[UART3_WRITE_BUFFER_SIZE];
 
 #define UART3_IS_9BIT_MODE_ENABLED()    ( (U3MODE) & (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK)) == (_U3MODE_PDSEL0_MASK | _U3MODE_PDSEL1_MASK) ? true:false
 
-void static UART3_ErrorClear( void )
+static void UART3_ErrorClear( void )
 {
     UART_ERROR errors = UART_ERROR_NONE;
     uint8_t dummyData = 0u;

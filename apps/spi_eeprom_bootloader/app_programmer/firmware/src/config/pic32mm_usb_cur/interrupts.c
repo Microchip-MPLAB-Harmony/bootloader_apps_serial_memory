@@ -20,7 +20,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -80,32 +80,32 @@ void UART3_ERR_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_CORE_TIMER_VECTOR, ipl1SOFT) CORE_TIMER_Handler (void)
+void __attribute__((used)) __ISR(_CORE_TIMER_VECTOR, ipl1SOFT) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_SPI3_TX_VECTOR, ipl1SOFT) SPI3_TX_Handler (void)
+void __attribute__((used)) __ISR(_SPI3_TX_VECTOR, ipl1SOFT) SPI3_TX_Handler (void)
 {
     SPI3_TX_InterruptHandler();
 }
 
-void __ISR(_SPI3_RX_VECTOR, ipl1SOFT) SPI3_RX_Handler (void)
+void __attribute__((used)) __ISR(_SPI3_RX_VECTOR, ipl1SOFT) SPI3_RX_Handler (void)
 {
     SPI3_RX_InterruptHandler();
 }
 
-void __ISR(_UART3_RX_VECTOR, ipl1SOFT) UART3_RX_Handler (void)
+void __attribute__((used)) __ISR(_UART3_RX_VECTOR, ipl1SOFT) UART3_RX_Handler (void)
 {
     UART3_RX_InterruptHandler();
 }
 
-void __ISR(_UART3_TX_VECTOR, ipl1SOFT) UART3_TX_Handler (void)
+void __attribute__((used)) __ISR(_UART3_TX_VECTOR, ipl1SOFT) UART3_TX_Handler (void)
 {
     UART3_TX_InterruptHandler();
 }
 
-void __ISR(_UART3_ERR_VECTOR, ipl1SOFT) UART3_ERR_Handler (void)
+void __attribute__((used)) __ISR(_UART3_ERR_VECTOR, ipl1SOFT) UART3_ERR_Handler (void)
 {
     UART3_ERR_InterruptHandler();
 }
