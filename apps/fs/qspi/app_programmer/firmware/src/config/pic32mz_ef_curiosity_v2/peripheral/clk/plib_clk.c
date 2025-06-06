@@ -89,19 +89,6 @@ void CLK_Initialize( void )
     SYSKEY = 0xAA996655U;
     SYSKEY = 0x556699AAU;
 
-
-    /* Set up Reference Clock 2 */
-    /* REFO2CON register */
-    /* ROSEL =  SYSCLK */
-    /* DIVSWEN = 1 */
-    /* RODIV = 2 */
-    REFO2CON = 0x20200;
-
-    /* Enable oscillator (ON bit) */
-    REFO2CONSET = 0x00008000;
-
-  
-
     /* Peripheral Module Disable Configuration */
 
     CFGCONbits.PMDLOCK = 0;
@@ -115,6 +102,19 @@ void CLK_Initialize( void )
     PMD7 = 0x500000U;
 
     CFGCONbits.PMDLOCK = 1;
+
+
+    /* Set up Reference Clock 2 */
+    /* REFO2CON register */
+    /* ROSEL =  SYSCLK */
+    /* DIVSWEN = 1 */
+    /* RODIV = 2 */
+    REFO2CON = 0x20200;
+
+    /* Enable oscillator (ON bit) */
+    REFO2CONSET = 0x00008000;
+
+      
 
     /* Lock system since done with clock configuration */
     SYSKEY = 0x33333333U;
