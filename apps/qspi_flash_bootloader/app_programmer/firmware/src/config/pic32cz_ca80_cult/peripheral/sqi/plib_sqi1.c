@@ -51,7 +51,7 @@ typedef struct
     uintptr_t Context;
 }sqiCallbackObjType;
 
-volatile static sqiCallbackObjType SQI1CallbackObj;
+static volatile sqiCallbackObjType SQI1CallbackObj;
 
 void SQI1_Initialize(void)
 {
