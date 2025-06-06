@@ -20,7 +20,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -78,22 +78,22 @@ void SQI1_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_UART2_FAULT_VECTOR, ipl1SRS) UART2_FAULT_Handler (void)
+void __attribute__((used)) __ISR(_UART2_FAULT_VECTOR, ipl1SRS) UART2_FAULT_Handler (void)
 {
     UART2_FAULT_InterruptHandler();
 }
 
-void __ISR(_UART2_RX_VECTOR, ipl1SRS) UART2_RX_Handler (void)
+void __attribute__((used)) __ISR(_UART2_RX_VECTOR, ipl1SRS) UART2_RX_Handler (void)
 {
     UART2_RX_InterruptHandler();
 }
 
-void __ISR(_UART2_TX_VECTOR, ipl1SRS) UART2_TX_Handler (void)
+void __attribute__((used)) __ISR(_UART2_TX_VECTOR, ipl1SRS) UART2_TX_Handler (void)
 {
     UART2_TX_InterruptHandler();
 }
 
-void __ISR(_SQI1_VECTOR, ipl1SRS) SQI1_Handler (void)
+void __attribute__((used)) __ISR(_SQI1_VECTOR, ipl1SRS) SQI1_Handler (void)
 {
     SQI1_InterruptHandler();
 }
