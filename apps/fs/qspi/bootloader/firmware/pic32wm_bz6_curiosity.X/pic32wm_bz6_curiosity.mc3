@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.5"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -12935,7 +12935,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\bootloader\bootloader_common.h</file>
-         <hash>849a17f93faeed4236d35996bff692b6fef47d619054837019bf4a2c34ecc6a9</hash>
+         <hash>926bd9d757dafaaf477162b5af348b49b2135a993d84f0e179e730f39208fdec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\bootloader\bootloader_interrupt.h</file>
@@ -13031,11 +13031,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\initialization.c</file>
-         <hash>7590bc275bd43a097c8c2e69db6e8c6530646ccbda813d5c0a16314cb559125a</hash>
+         <hash>ccf935a5aaa75868dced994164e41b1920689750a2e8a339605f1f461f88915f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\interrupts.c</file>
-         <hash>bef83e2b78caadb56ccbc291d7ce0a889f2ac3c829e1cf0208864d99f1ea37df</hash>
+         <hash>ff886938355f61341a76896ebc57e47ec2486ee3df13174eb7d145927fd2a2a7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\interrupts.h</file>
@@ -13059,7 +13059,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>45694af925222161517290a4dbf6860e68893d92d7d852d62c747c295e148b9d</hash>
+         <hash>5bddfcf9b6352264cc3cece524328e5587b5f625bf930975a9dc35c23d055e84</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32wm_bz6_curiosity\peripheral\clk\plib_clk.h</file>
@@ -13271,7 +13271,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
