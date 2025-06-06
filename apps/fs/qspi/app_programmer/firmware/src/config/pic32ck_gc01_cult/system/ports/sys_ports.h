@@ -129,6 +129,8 @@ typedef enum
 
     SYS_PORT_PIN_PA09 = 9,
 
+    SYS_PORT_PIN_PA10 = 10,
+
     SYS_PORT_PIN_PA11 = 11,
 
     SYS_PORT_PIN_PA12 = 12,
@@ -164,6 +166,8 @@ typedef enum
     SYS_PORT_PIN_PA28 = 28,
 
     SYS_PORT_PIN_PB00 = 32,
+
+    SYS_PORT_PIN_PB01 = 33,
 
     SYS_PORT_PIN_PB02 = 34,
 
@@ -278,10 +282,6 @@ typedef enum
     SYS_PORT_PIN_PD01 = 97,
 
     SYS_PORT_PIN_PD02 = 98,
-
-    SYS_PORT_PIN_PD03 = 99,
-
-    SYS_PORT_PIN_PD04 = 100,
 
     SYS_PORT_PIN_PD05 = 101,
 
