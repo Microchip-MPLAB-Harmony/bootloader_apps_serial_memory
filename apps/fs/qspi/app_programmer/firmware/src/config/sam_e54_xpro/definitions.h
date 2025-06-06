@@ -49,8 +49,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
+#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "driver/sdmmc/drv_sdmmc.h"
 #include "peripheral/port/plib_port.h"
@@ -60,8 +60,8 @@
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "driver/memory/drv_memory.h"
 #include "peripheral/tc/plib_tc0.h"
-#include "driver/sst26/drv_sst26.h"
 #include "peripheral/sdhc/plib_sdhc1.h"
+#include "driver/sst26/drv_sst26.h"
 #include "system/time/sys_time.h"
 #include "peripheral/qspi/plib_qspi.h"
 #include "bsp/bsp.h"
