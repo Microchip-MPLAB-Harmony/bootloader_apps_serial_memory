@@ -5394,7 +5394,7 @@
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\definitions.h</file>
-         <hash>bef67407377dd4d16fc05314b140c55b479a236acc35270273b2f3a30dde8381</hash>
+         <hash>e431a8b39afa54beae679156032d17ee7bd456c227e59054fd6ccd95362b1101</hash>
       </entry>
       <entry>
          <file>..\src\config\wbz451_curiosity\device.h</file>
@@ -5646,7 +5646,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
+         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
