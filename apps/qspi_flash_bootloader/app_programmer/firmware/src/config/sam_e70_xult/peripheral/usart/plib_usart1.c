@@ -60,9 +60,9 @@
 #define USART1_TX_INT_DISABLE()      USART1_REGS->US_IDR = US_IDR_USART_TXRDY_Msk;
 #define USART1_TX_INT_ENABLE()       USART1_REGS->US_IER = US_IER_USART_TXRDY_Msk;
 
-volatile static uint8_t USART1_ReadBuffer[USART1_READ_BUFFER_SIZE];
-volatile static USART_RING_BUFFER_OBJECT usart1Obj;
-volatile static uint8_t USART1_WriteBuffer[USART1_WRITE_BUFFER_SIZE];
+static volatile uint8_t USART1_ReadBuffer[USART1_READ_BUFFER_SIZE];
+static volatile USART_RING_BUFFER_OBJECT usart1Obj;
+static volatile uint8_t USART1_WriteBuffer[USART1_WRITE_BUFFER_SIZE];
 
 void USART1_Initialize( void )
 {
@@ -115,7 +115,6 @@ bool USART1_SerialSetup( USART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
     uint32_t overSampVal = 0;
     uint32_t usartMode;
     bool status = (setup != NULL);
-
     /*Valid pointer */
     if(status)
     {
