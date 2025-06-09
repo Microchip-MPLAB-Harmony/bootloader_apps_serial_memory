@@ -65,6 +65,15 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for GPIO_PC14 pin ***/
+#define GPIO_PC14_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = ((uint32_t)1U << 14U))
+#define GPIO_PC14_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = ((uint32_t)1U << 14U))
+#define GPIO_PC14_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = ((uint32_t)1U << 14U))
+#define GPIO_PC14_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = ((uint32_t)1U << 14U))
+#define GPIO_PC14_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = ((uint32_t)1U << 14U))
+#define GPIO_PC14_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 14U)) & 0x01U)
+#define GPIO_PC14_PIN                  PORT_PIN_PC14
+
 /*** Macros for SWITCH1 pin ***/
 #define SWITCH1_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = ((uint32_t)1U << 23U))
 #define SWITCH1_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = ((uint32_t)1U << 23U))
@@ -73,15 +82,6 @@
 #define SWITCH1_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = ((uint32_t)1U << 23U))
 #define SWITCH1_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 23U)) & 0x01U)
 #define SWITCH1_PIN                  PORT_PIN_PC23
-
-/*** Macros for GPIO_PC14 pin ***/
-#define GPIO_PC14_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = ((uint32_t)1U << 5U))
-#define GPIO_PC14_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = ((uint32_t)1U << 5U))
-#define GPIO_PC14_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = ((uint32_t)1U << 5U))
-#define GPIO_PC14_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = ((uint32_t)1U << 5U))
-#define GPIO_PC14_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = ((uint32_t)1U << 5U))
-#define GPIO_PC14_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 5U)) & 0x01U)
-#define GPIO_PC14_PIN                  PORT_PIN_PC05
 
 /*** Macros for SWITCH0 pin ***/
 #define SWITCH0_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 24U))

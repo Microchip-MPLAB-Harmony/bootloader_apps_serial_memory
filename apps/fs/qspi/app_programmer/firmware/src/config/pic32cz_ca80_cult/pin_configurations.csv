@@ -38,41 +38,41 @@ D17,PC17,,Available,,,,,,No,FAST
 E1,PA06,,Available,,,,,,No,FAST
 E2,PA05,,Available,,,,,,No,FAST
 E4,PA00,,Available,,,,,,No,FAST
-E17,PC14,,Available,,,,,,No,FAST
+E17,PC14,GPIO_PC14,GPIO,Digital,Out,High,,,No,FAST
 E18,PC29,,Available,,,,,,No,FAST
 F1,PA21,,Available,,,,,,No,FAST
 F2,PA30,,Available,,,,,,No,FAST
 F4,PE04,,Available,,,,,,No,FAST
 F7,PD07,,Available,,,,,,No,FAST
-F17,PC13,,Available,,,,,,No,FAST
-F18,PC12,,Available,,,,,,No,FAST
+F17,PC13,,SERCOM3_PAD1,Digital,High Impedance,n/a,No,No,No,FAST
+F18,PC12,,SERCOM3_PAD0,Digital,High Impedance,n/a,No,No,No,FAST
 G1,PA23,,Available,,,,,,No,FAST
 G2,PA31,,Available,,,,,,No,FAST
 G4,PA22,,Available,,,,,,No,FAST
 G6,PE05,,Available,,,,,,No,FAST
 G11,PG11,,Available,,,,,,No,FAST
-G12,PC15,,Available,,,,,,No,FAST
+G12,PC15,,SERCOM3_PAD3,Digital,High Impedance,n/a,No,No,No,FAST
 G13,PG10,,Available,,,,,,No,FAST
 G15,PC27,,Available,,,,,,No,FAST
-G17,PG03,,Available,,,,,,No,FAST
+G17,PG03,,SQI1_CS0,Digital,High Impedance,n/a,No,No,No,FAST
 G18,PC28,,Available,,,,,,No,FAST
 H1,PE00,,Available,,,,,,No,FAST
 H2,PE01,,Available,,,,,,No,FAST
 H4,PE06,,Available,,,,,,No,FAST
 H15,PC11,,Available,,,,,,No,FAST
 H17,PC10,,Available,,,,,,No,FAST
-H18,PG02,,Available,,,,,,No,FAST
+H18,PG02,,SQI1_DATA3,Digital,High Impedance,n/a,No,No,No,FAST
 J1,PE02,,Available,,,,,,No,FAST
 J2,PE07,,Available,,,,,,No,FAST
 J4,PE08,,Available,,,,,,No,FAST
-J15,PG01,,Available,,,,,,No,FAST
+J15,PG01,,SQI1_DATA2,Digital,High Impedance,n/a,No,No,No,FAST
 J17,PG05,,Available,,,,,,No,FAST
-J18,PG00,,Available,,,,,,No,FAST
+J18,PG00,,SQI1_DATA1,Digital,High Impedance,n/a,No,No,No,FAST
 K1,PA07,,Available,,,,,,No,FAST
 K2,PA08,,Available,,,,,,No,FAST
 K4,PE09,,Available,,,,,,No,FAST
 K12,PG09,,Available,,,,,,No,FAST
-K15,PC30,,Available,,,,,,No,FAST
+K15,PC30,,SQI1_CLK,Digital,High Impedance,n/a,No,No,No,FAST
 K17,PC25,,Available,,,,,,No,FAST
 K18,PC26,,Available,,,,,,No,FAST
 L1,PA09,,Available,,,,,,No,FAST
@@ -81,7 +81,7 @@ L4,PE10,,Available,,,,,,No,FAST
 L12,PG07,,Available,,,,,,No,FAST
 L15,PG06,,Available,,,,,,No,FAST
 L17,PG08,,Available,,,,,,No,FAST
-L18,PC31,,Available,,,,,,No,FAST
+L18,PC31,,SQI1_DATA0,Digital,High Impedance,n/a,No,No,No,FAST
 M1,PA24,,Available,,,,,,No,FAST
 M2,PA25,,Available,,,,,,No,FAST
 M4,PE03,,Available,,,,,,No,FAST
@@ -98,9 +98,9 @@ N2,PA27,,Available,,,,,,No,FAST
 N4,PA19,,Available,,,,,,No,FAST
 N7,PB01,,Available,,,,,,No,FAST
 N12,PB17,,Available,,,,,,No,FAST
-N15,PC05,GPIO_PC14,GPIO,Digital,Out,High,,,No,FAST
+N15,PC05,,Available,,,,,,No,FAST
 N17,PC06,,Available,,,,,,No,FAST
-N18,PC07,,Available,,,,,,No,FAST
+N18,PC07,,SERCOM1_PAD3,Digital,High Impedance,n/a,No,No,No,FAST
 P1,PA11,,Available,,,,,,No,FAST
 P2,PA12,,Available,,,,,,No,FAST
 P4,PA20,,Available,,,,,,No,FAST
@@ -117,7 +117,7 @@ R11,PB26,,Available,,,,,,No,FAST
 R13,PB12,,Available,,,,,,No,FAST
 R14,PG04,,Available,,,,,,No,FAST
 R17,PC03,,Available,,,,,,No,FAST
-R18,PC04,,Available,,,,,,No,FAST
+R18,PC04,,SERCOM1_PAD0,Digital,High Impedance,n/a,No,No,No,FAST
 T1,PA28,,Available,,,,,,No,FAST
 T2,PA29,,Available,,,,,,No,FAST
 T17,PC01,,Available,,,,,,No,FAST
