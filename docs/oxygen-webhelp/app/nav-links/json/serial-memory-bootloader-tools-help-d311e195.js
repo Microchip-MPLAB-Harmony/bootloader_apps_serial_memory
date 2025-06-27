@@ -1,1 +1,0 @@
-define({"topics":[{"title":"<ph>1.7.1<\/ph>\nUART Host Script Help","href":"GUID-68689A7C-FEE2-4993-A6B4-0F4C71163040.html","attributes":{"data-id":"uart-host-script-help"},"menu":{"hasChildren":false},"tocID":"uart-host-script-help-d311e203","topics":[]}]});

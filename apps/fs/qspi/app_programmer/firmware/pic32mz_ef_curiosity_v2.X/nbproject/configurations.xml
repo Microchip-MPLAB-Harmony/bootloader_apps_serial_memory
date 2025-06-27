@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="pic32mz_ef_curiosity_v2"
-                       projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_ef_curiosity_v2" projectFiles="true">
           <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/bsp/bsp.h</itemPath>
           </logicalFolder>
@@ -129,52 +125,21 @@
       <itemPath>../src/serial_mem.h</itemPath>
       <itemPath>../src/app_monitor.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="true">
-      <logicalFolder name="f1"
-                     displayName="pic32mz_ef_curiosity_v2.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/core.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/core_timer.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drv_memory.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drv_sdspi.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/drv_sst26.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/project.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/spi1.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sqi1.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_fs.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/pic32mz_ef_curiosity_v2/pic32mz_ef_curiosity_v2.mhc/uart6.yml</itemPath>
-      </logicalFolder>
+    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity_v2/harmony-manifest-success.yml</itemPath>
       <itemPath>fs_qspi_flash_app_programmer_pic32mz_ef_curiosity_v2.mc3</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="pic32mz_ef_curiosity_v2"
-                       projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_ef_curiosity_v2" projectFiles="true">
           <itemPath>../src/config/pic32mz_ef_curiosity_v2/app_mz.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="pic32mz_ef_curiosity_v2"
-                       projectFiles="true">
+        <logicalFolder name="f1" displayName="pic32mz_ef_curiosity_v2" projectFiles="true">
           <logicalFolder name="f1" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_curiosity_v2/bsp/bsp.c</itemPath>
           </logicalFolder>
@@ -274,8 +239,8 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
@@ -296,7 +261,7 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -304,7 +269,7 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -I ihex -O binary ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.hex ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.bin</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
@@ -320,8 +285,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -420,8 +384,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
+        <property key="extra-include-directories" value="../src;../src/config/pic32mz_ef_curiosity_v2;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/file_system;../src/config/pic32mz_ef_curiosity_v2/system/fs/fat_fs/hardware_access"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
